@@ -1,0 +1,62 @@
+[
+  {
+    "op": "add",
+    "path": "/entryManifest/角色/[mvu_plot]airine_场景",
+    "value": {
+      "scope": "specific",
+      "part": "scenario",
+      "keywords": ["星空下的相遇", "废墟中的速写", "次元隙间的旅伴", "索拉里斯的归途", "蛮族的肉凯"],
+      "abstract": "艾莉尼的5个开局场景（含NSFW）：星空下的相遇、废墟中的速写、次元隙间的旅伴、索拉里斯的归途、蛮族的肉凯",
+      "enabled": true,
+      "path": "世界书/角色/airine/场景.txt"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/entryManifest/角色/[mvu_plot]bathsheba_场景",
+    "value": {
+      "scope": "specific",
+      "part": "scenario",
+      "keywords": ["圣堂中的王座", "虚无中的一线留恋", "革新者的访客", "佩尔修斯的废墟", "命运之子的配种"],
+      "abstract": "拔示巴的5个开局场景（含NSFW）：圣堂中的王座、虚无中的一线留恋、革新者的访客、佩尔修斯的废墟、命运之子的配种",
+      "enabled": true,
+      "path": "世界书/角色/bathsheba/场景.txt"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/entryManifest/角色/[mvu_plot]lena_场景",
+    "value": {
+      "scope": "specific",
+      "part": "scenario",
+      "keywords": ["废土上的邂逅", "塞雷基亚之后", "伊欧尼亚的幸存者", "佩尔修斯的守护者", "淫魔史莱姆的觉醒"],
+      "abstract": "蕾娜的5个开局场景（含NSFW）：废土上的邂逅、塞雷基亚之后、伊欧尼亚的幸存者、佩尔修斯的守护者、淫魔史莱姆的觉醒",
+      "enabled": true,
+      "path": "世界书/角色/lena/场景.txt"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/entryManifest/角色/[mvu_plot]meme_场景",
+    "value": {
+      "scope": "specific",
+      "part": "scenario",
+      "keywords": ["新世界废墟", "泰斯塔蒙特的低语", "光之塔的旅伴", "医疗营的访客", "塞拉菲娜的困扰"],
+      "abstract": "米姆的5个开局场景（含NSFW）：新世界废墟、泰斯塔蒙特的低语、光之塔的旅伴、医疗营的访客、塞拉菲娜的困扰",
+      "enabled": true,
+      "path": "世界书/角色/meme/场景.txt"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/entryManifest/角色/[mvu_plot]belzeebul_场景",
+    "value": {
+      "scope": "specific",
+      "part": "scenario",
+      "keywords": ["Metaverse深渊", "猫戏老鼠", "混沌之器的契约", "工厂的入侵者", "一魂双体"],
+      "abstract": "贝尔泽布特的5个开局场景（含NSFW）：Metaverse深渊、猫戏老鼠、混沌之器的契约、工厂的入侵者、一魂双体",
+      "enabled": true,
+      "path": "世界书/角色/belzeebul/场景.txt"
+    }
+  }
+]

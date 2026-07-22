@@ -1,0 +1,87 @@
+{
+  "projects": {
+    "Metaverse-New": {
+      "state_file": "tavern-cards-state.json",
+      "artifact": "Metaverse-New.json"
+    },
+    "bathsheba": {
+      "state_file": "cards/bathsheba/tavern-cards-state.json",
+      "artifact": "cards/bathsheba/bathsheba.png"
+    },
+    "lena": {
+      "state_file": "cards/lena/tavern-cards-state.json",
+      "artifact": "cards/lena/lena.png"
+    },
+    "meme": {
+      "state_file": "cards/meme/tavern-cards-state.json",
+      "artifact": "cards/meme/meme.png"
+    },
+    "velzub": {
+      "state_file": "cards/velzub/tavern-cards-state.json",
+      "artifact": "cards/velzub/velzub.png"
+    },
+    "airine": {
+      "state_file": "cards/airine/tavern-cards-state.json",
+      "artifact": "cards/airine/airine.png"
+    }
+  },
+  "default_part_order": {
+    "角色": [
+      "basic",
+      "personality"
+    ],
+    "地理": [
+      "region"
+    ],
+    "时间线": [
+      "plot"
+    ],
+    "势力": [
+      "faction"
+    ]
+  },
+  "default_strategy_thresholds": {
+    "角色": {
+      "basic": {
+        "required": false,
+        "threshold": 4
+      },
+      "personality": {
+        "required": false,
+        "threshold": 2
+      }
+    },
+    "地理": {
+      "region": {
+        "required": false,
+        "threshold": 4
+      }
+    },
+    "时间线": {
+      "plot": {
+        "required": false,
+        "threshold": "Infinity"
+      }
+    },
+    "势力": {
+      "faction": {
+        "required": false,
+        "threshold": 4
+      }
+    }
+  },
+  "default_type_lists": {
+    "before_char": [
+      "时间线",
+      "地理",
+      "势力"
+    ],
+    "after_char": [
+      "角色"
+    ]
+  },
+  "depth_defaults": {
+    "depth": 0,
+    "role": "system"
+  }
+}

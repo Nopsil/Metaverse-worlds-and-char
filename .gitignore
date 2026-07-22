@@ -1,0 +1,28 @@
+# Build output
+tavern_helper_template/dist/
+tavern_helper_template/node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temp scripts
+sync_keys.py
+wrap_dist.py
+add_regex.py
+add_initvars.py
+add_keys.py
+
+# IDE
+.vscode/
+.idea/
+
+# Backup
+*.bak
+*.bak-*
+
+# OS
+.DS_Store
+Thumbs.db
+reborn_unpack/
+cardFIX/node_modules/

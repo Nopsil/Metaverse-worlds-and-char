@@ -1,0 +1,17 @@
+变量更新规则:
+  phase:
+    type: 'select_character|select_scenario|playing'
+    check:
+      - 由前端状态栏的用户点击驱动切换，AI 无需主动修改此变量
+      - select_character: 角色选择阶段
+      - select_scenario: 开局选择阶段
+      - playing: 进入对话
+  selected_character:
+    type: '""|airine|bathsheba|lena|meme|belzeebul'
+    check:
+      - 由前端状态栏的用户点击驱动设置，AI 无需主动修改此变量
+  selected_scenario:
+    type: number
+    range: 0~1
+    check:
+      - 由前端状态栏的用户点击驱动设置，AI 无需主动修改此变量

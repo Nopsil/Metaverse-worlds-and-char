@@ -1,0 +1,2966 @@
+{
+  "projectName": "CHUNITHM-Metaverse",
+  "worldbookName": "CHUNITHM-Metaverse",
+  "form": "worldbook",
+  "mvu": false,
+  "entryManifest": {
+    "世界观": {
+      "世界设定": {
+        "path": "世界书\\世界设定.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        },
+        "display_index": 0
+      }
+    },
+    "扮演准则": {
+      "系统规则": {
+        "path": "世界书\\系统规则.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 20
+        },
+        "display_index": 132
+      }
+    },
+    "时间线": {
+      "时间线": {
+        "path": "世界书\\时间线.yaml",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 30
+        },
+        "display_index": 1
+      }
+    },
+    "地理": {
+      "Metaverse核心层": {
+        "path": "世界书\\Metaverse核心层.yaml",
+        "keywords": [
+          "核心层",
+          "框架主脑",
+          "最古",
+          "艾崔兰克"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "核心层",
+            "框架主脑",
+            "最古",
+            "艾崔兰克"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 40
+        },
+        "display_index": 2
+      },
+      "中间层世界群": {
+        "path": "世界书\\中间层世界群.txt",
+        "keywords": [
+          "中间层",
+          "工厂",
+          "前哨基地"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "中间层",
+            "工厂",
+            "前哨基地"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 41
+        },
+        "display_index": 3
+      },
+      "最外周部": {
+        "path": "世界书\\最外周部.txt",
+        "keywords": [
+          "最外周",
+          "涅墨西斯",
+          "混沌之海",
+          "数据之海"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "最外周",
+            "涅墨西斯",
+            "混沌之海",
+            "数据之海"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 42
+        },
+        "display_index": 4
+      },
+      "地上世界": {
+        "path": "世界书\\地上世界.txt",
+        "keywords": [
+          "地上",
+          "真人",
+          "殖民地",
+          "归还者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "地上",
+            "真人",
+            "殖民地",
+            "归还者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 43
+        },
+        "display_index": 5
+      },
+      "势力_框架主脑": {
+        "path": "世界书\\势力_框架主脑.yaml",
+        "keywords": [
+          "框架主脑",
+          "最古",
+          "塞拉菲塔",
+          "艾克雷尔",
+          "提丰"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "框架主脑",
+            "最古",
+            "塞拉菲塔",
+            "艾克雷尔",
+            "提丰"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 49
+        },
+        "display_index": 6
+      },
+      "势力_工厂": {
+        "path": "世界书\\势力_工厂.yaml",
+        "keywords": [
+          "工厂",
+          "三贤者",
+          "尤巴尔",
+          "狄安娜",
+          "ES计划"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "工厂",
+            "三贤者",
+            "尤巴尔",
+            "狄安娜",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 50
+        },
+        "display_index": 7
+      },
+      "势力_MIR系列": {
+        "path": "世界书\\势力_MIR系列.yaml",
+        "keywords": [
+          "MIR",
+          "赫卡蒂",
+          "阿尔忒弥斯",
+          "塞蕾娜"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "MIR",
+            "赫卡蒂",
+            "阿尔忒弥斯",
+            "塞蕾娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 51
+        },
+        "display_index": 8
+      },
+      "势力_涅墨西斯": {
+        "path": "世界书\\势力_涅墨西斯.txt",
+        "keywords": [
+          "涅墨西斯",
+          "混沌七器",
+          "阿雷斯",
+          "贝尔泽布特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "涅墨西斯",
+            "混沌七器",
+            "阿雷斯",
+            "贝尔泽布特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 52
+        },
+        "display_index": 9
+      },
+      "势力_革新者": {
+        "path": "世界书\\势力_革新者.txt",
+        "keywords": [
+          "革新者",
+          "真人",
+          "亚哈",
+          "该隐",
+          "拔示巴"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "革新者",
+            "真人",
+            "亚哈",
+            "该隐",
+            "拔示巴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 53
+        },
+        "display_index": 10
+      },
+      "势力_LOGOS": {
+        "path": "世界书\\势力_LOGOS.yaml",
+        "keywords": [
+          "LOGOS",
+          "阿斯托尔",
+          "格雷"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "LOGOS",
+            "阿斯托尔",
+            "格雷"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 54
+        },
+        "display_index": 11
+      },
+      "势力_拾荒者": {
+        "path": "世界书\\势力_拾荒者.yaml",
+        "keywords": [
+          "拾荒者",
+          "安克",
+          "希尔德"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拾荒者",
+            "安克",
+            "希尔德"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 55
+        },
+        "display_index": 12
+      },
+      "势力_IDC": {
+        "path": "世界书\\势力_IDC.yaml",
+        "keywords": [
+          "IDC",
+          "拉维娜"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "IDC",
+            "拉维娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 56
+        },
+        "display_index": 13
+      },
+      "势力_恩迪商会": {
+        "path": "世界书\\势力_恩迪商会.yaml",
+        "keywords": [
+          "恩迪商会",
+          "毛毛",
+          "吉吉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "恩迪商会",
+            "毛毛",
+            "吉吉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 57
+        },
+        "display_index": 14
+      },
+      "势力_独立旅人": {
+        "path": "世界书\\势力_独立旅人.yaml",
+        "keywords": [
+          "旅人",
+          "艾莉尼",
+          "威廉",
+          "林内",
+          "拉尔瓦"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "旅人",
+            "艾莉尼",
+            "威廉",
+            "林内",
+            "拉尔瓦"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 58
+        },
+        "display_index": 15
+      },
+      "卡斯比裂谷": {
+        "path": "世界书\\卡斯比裂谷.yaml",
+        "keywords": [
+          "卡斯比裂谷",
+          "卡萨比",
+          "裂谷",
+          "禁域"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡斯比裂谷",
+            "卡萨比",
+            "裂谷",
+            "禁域"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 44
+        },
+        "display_index": 16
+      },
+      "安特路亚": {
+        "path": "世界书\\安特路亚.txt",
+        "keywords": [
+          "安特路亚",
+          "废弃都市",
+          "布鲁斯坦因",
+          "远古之蓝",
+          "基德翁之死",
+          "伊泽维尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安特路亚",
+            "废弃都市",
+            "布鲁斯坦因",
+            "远古之蓝",
+            "基德翁之死",
+            "伊泽维尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 45
+        },
+        "display_index": 17
+      },
+      "海伯里昂": {
+        "path": "世界书\\海伯里昂.txt",
+        "keywords": [
+          "海伯里昂",
+          "航行船"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海伯里昂",
+            "航行船"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 47
+        },
+        "display_index": 114
+      },
+      "ジグラット": {
+        "path": "世界书\\ジグラット.txt",
+        "keywords": [
+          "吉格拉ット",
+          "恒存之都",
+          "移动都市",
+          "Ziggurat"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "吉格拉ット",
+            "恒存之都",
+            "移动都市",
+            "Ziggurat"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 46
+        },
+        "display_index": 115
+      },
+      "诺瓦": {
+        "path": "世界书\\诺瓦.txt",
+        "keywords": [
+          "诺瓦",
+          "LOGOS"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "诺瓦",
+            "LOGOS"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 48
+        },
+        "display_index": 121
+      }
+    },
+    "NPC": {
+      "狄安娜": {
+        "path": "世界书\\狄安娜.txt",
+        "keywords": [
+          "狄安娜",
+          "XES-72",
+          "姐姐",
+          "ES计划"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "狄安娜",
+            "XES-72",
+            "姐姐",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        },
+        "display_index": 18
+      },
+      "露娜": {
+        "path": "世界书\\露娜.txt",
+        "keywords": [
+          "露娜",
+          "XGN-72",
+          "妹妹",
+          "ES计划"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "露娜",
+            "XGN-72",
+            "妹妹",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 61
+        },
+        "display_index": 19
+      },
+      "阿雷斯": {
+        "path": "世界书\\阿雷斯.txt",
+        "keywords": [
+          "阿雷斯",
+          "战神",
+          "混沌七器",
+          "涅墨西斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿雷斯",
+            "战神",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 62
+        },
+        "display_index": 20
+      },
+      "塞拉菲塔": {
+        "path": "世界书\\塞拉菲塔.txt",
+        "keywords": [
+          "塞拉菲塔",
+          "裁定者",
+          "最古",
+          "塞拉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲塔",
+            "裁定者",
+            "最古",
+            "塞拉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 63
+        },
+        "display_index": 21
+      },
+      "贝尔泽布特": {
+        "path": "世界书\\贝尔泽布特.txt",
+        "keywords": [
+          "贝尔泽布特",
+          "涅墨西斯",
+          "混沌七器",
+          "触手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "涅墨西斯",
+            "混沌七器",
+            "触手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 64
+        },
+        "display_index": 22
+      },
+      "米姆_米库拉": {
+        "path": "世界书\\米姆_米库拉.txt",
+        "keywords": [
+          "米姆",
+          "导师",
+          "米库拉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "导师",
+            "米库拉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 65
+        },
+        "display_index": 23
+      },
+      "蕾娜": {
+        "path": "世界书\\蕾娜.txt",
+        "keywords": [
+          "蕾娜",
+          "归还者",
+          "伊修梅尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "归还者",
+            "伊修梅尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 66
+        },
+        "display_index": 24
+      },
+      "拔示巴": {
+        "path": "世界书\\拔示巴.txt",
+        "keywords": [
+          "拔示巴",
+          "圣女",
+          "阿西德菲尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "圣女",
+            "阿西德菲尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 67
+        },
+        "display_index": 25
+      },
+      "艾莉尼": {
+        "path": "世界书\\艾莉尼.txt",
+        "keywords": [
+          "艾莉尼",
+          "蓝蝶",
+          "居里亚斯",
+          "Twilight"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "蓝蝶",
+            "居里亚斯",
+            "Twilight"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 68
+        },
+        "display_index": 26
+      },
+      "威廉": {
+        "path": "世界书\\威廉.txt",
+        "keywords": [
+          "威廉",
+          "滑板",
+          "Morning",
+          "温斯雷特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉",
+            "滑板",
+            "Morning",
+            "温斯雷特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 69
+        },
+        "display_index": 27
+      },
+      "林内": {
+        "path": "世界书\\林内.txt",
+        "keywords": [
+          "林内",
+          "Silent",
+          "触手少女"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "林内",
+            "Silent",
+            "触手少女"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        },
+        "display_index": 28
+      },
+      "捷夫提": {
+        "path": "世界书\\捷夫提.txt",
+        "keywords": [
+          "捷夫提",
+          "哲学主",
+          "最古",
+          "音叉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "捷夫提",
+            "哲学主",
+            "最古",
+            "音叉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 71
+        },
+        "display_index": 29
+      },
+      "提丰": {
+        "path": "世界书\\提丰.txt",
+        "keywords": [
+          "提丰",
+          "先王",
+          "框架主脑"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提丰",
+            "先王",
+            "框架主脑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 72
+        },
+        "display_index": 30
+      },
+      "尤巴尔": {
+        "path": "世界书\\尤巴尔.txt",
+        "keywords": [
+          "尤巴尔",
+          "三贤者",
+          "工厂",
+          "博士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尤巴尔",
+            "三贤者",
+            "工厂",
+            "博士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 73
+        },
+        "display_index": 31
+      },
+      "缇欧": {
+        "path": "世界书\\缇欧.txt",
+        "keywords": [
+          "缇欧",
+          "三贤者",
+          "工厂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "缇欧",
+            "三贤者",
+            "工厂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 74
+        },
+        "display_index": 32
+      },
+      "梅德": {
+        "keywords": [
+          "梅德",
+          "三贤者",
+          "工厂"
+        ],
+        "abstract": "",
+        "contents": [
+          {
+            "content": "<npc name=\"梅德\">"
+          },
+          {
+            "file": "世界书\\梅德.yaml"
+          },
+          {
+            "content": "</npc>"
+          }
+        ],
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅德",
+            "三贤者",
+            "工厂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 75
+        },
+        "display_index": 33
+      },
+      "厄里斯": {
+        "path": "世界书\\厄里斯.txt",
+        "keywords": [
+          "厄里斯",
+          "女帝",
+          "混沌七器",
+          "涅墨西斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "厄里斯",
+            "女帝",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 76
+        },
+        "display_index": 34
+      },
+      "拉尔瓦": {
+        "path": "世界书\\拉尔瓦.txt",
+        "keywords": [
+          "拉尔瓦",
+          "侵蚀",
+          "拉尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉尔瓦",
+            "侵蚀",
+            "拉尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 77
+        },
+        "display_index": 35
+      },
+      "玛利亚": {
+        "path": "世界书\\玛利亚.txt",
+        "keywords": [
+          "玛利亚",
+          "科学家",
+          "居里亚斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玛利亚",
+            "科学家",
+            "居里亚斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 36
+      },
+      "阿斯托尔": {
+        "path": "世界书\\阿斯托尔.txt",
+        "keywords": [
+          "阿斯托尔",
+          "LOGOS执行官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿斯托尔",
+            "LOGOS执行官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 79
+        },
+        "display_index": 37
+      },
+      "安克": {
+        "path": "世界书\\安克.txt",
+        "keywords": [
+          "安克",
+          "拾荒者",
+          "安克0"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "拾荒者",
+            "安克0"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        },
+        "display_index": 38
+      },
+      "希尔德": {
+        "path": "世界书\\希尔德.txt",
+        "keywords": [
+          "希尔德",
+          "拾荒者",
+          "护目镜"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔德",
+            "拾荒者",
+            "护目镜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 81
+        },
+        "display_index": 39
+      },
+      "该隐": {
+        "path": "世界书\\该隐.txt",
+        "keywords": [
+          "该隐",
+          "创始人",
+          "KHD",
+          "创世者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "该隐",
+            "创始人",
+            "KHD",
+            "创世者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 82
+        },
+        "display_index": 40
+      },
+      "亚哈": {
+        "path": "世界书\\亚哈.txt",
+        "keywords": [
+          "亚哈",
+          "革新者",
+          "领袖"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚哈",
+            "革新者",
+            "领袖"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 83
+        },
+        "display_index": 41
+      },
+      "天狼星": {
+        "path": "世界书\\天狼星.txt",
+        "keywords": [
+          "天狼星",
+          "MDA01",
+          "BOT",
+          "天狼"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天狼星",
+            "MDA01",
+            "BOT",
+            "天狼"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 84
+        },
+        "display_index": 42
+      },
+      "艾克雷尔": {
+        "path": "世界书\\艾克雷尔.txt",
+        "keywords": [
+          "艾克雷尔",
+          "神祖",
+          "创造者",
+          "神格"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾克雷尔",
+            "神祖",
+            "创造者",
+            "神格"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 85
+        },
+        "display_index": 43
+      },
+      "泰斯塔蒙特": {
+        "path": "世界书\\泰斯塔蒙特.txt",
+        "keywords": [
+          "泰斯塔蒙特",
+          "奏者",
+          "混沌七器",
+          "涅墨西斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泰斯塔蒙特",
+            "奏者",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 86
+        },
+        "display_index": 44
+      },
+      "迪安": {
+        "path": "世界书\\迪安.txt",
+        "keywords": [
+          "迪安",
+          "再生者",
+          "最古"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "迪安",
+            "再生者",
+            "最古"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 87
+        },
+        "display_index": 45
+      },
+      "艾弗雷特": {
+        "path": "世界书\\艾弗雷特.txt",
+        "keywords": [
+          "艾弗雷特",
+          "物理学者",
+          "教授",
+          "温斯雷特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾弗雷特",
+            "物理学者",
+            "教授",
+            "温斯雷特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 88
+        },
+        "display_index": 46
+      },
+      "格雷": {
+        "path": "世界书\\格雷.txt",
+        "keywords": [
+          "格雷",
+          "LOGOS上级执行官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格雷",
+            "LOGOS上级执行官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 89
+        },
+        "display_index": 47
+      },
+      "拉维娜": {
+        "path": "世界书\\拉维娜.txt",
+        "keywords": [
+          "拉维娜",
+          "IDC",
+          "研究员",
+          "基顿"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉维娜",
+            "IDC",
+            "研究员",
+            "基顿"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 90
+        },
+        "display_index": 48
+      },
+      "毛毛": {
+        "path": "世界书\\毛毛.txt",
+        "keywords": [
+          "毛毛",
+          "吉吉",
+          "恩迪商会"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "毛毛",
+            "吉吉",
+            "恩迪商会"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 91
+        },
+        "display_index": 49
+      },
+      "凯南": {
+        "path": "世界书\\凯南.txt",
+        "keywords": [
+          "凯南",
+          "革新者",
+          "指导者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯南",
+            "革新者",
+            "指导者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 92
+        },
+        "display_index": 50
+      },
+      "WISEMAN": {
+        "path": "世界书\\WISEMAN.txt",
+        "keywords": [
+          "WISEMAN",
+          "追放者",
+          "EXILE"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "WISEMAN",
+            "追放者",
+            "EXILE"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 93
+        },
+        "display_index": 51
+      },
+      "潘多拉": {
+        "path": "世界书\\潘多拉.txt",
+        "keywords": [
+          "潘多拉",
+          "管理程序",
+          "MTA"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "潘多拉",
+            "管理程序",
+            "MTA"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 94
+        },
+        "display_index": 52
+      },
+      "米斯拉": {
+        "path": "世界书\\米斯拉.txt",
+        "keywords": [
+          "米斯拉",
+          "卫士",
+          "归还种",
+          "特尔塞拉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉",
+            "卫士",
+            "归还种",
+            "特尔塞拉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 95
+        },
+        "display_index": 53
+      },
+      "尼亚": {
+        "path": "世界书\\尼亚.txt",
+        "keywords": [
+          "尼亚",
+          "卫士",
+          "归还种",
+          "尤迪特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚",
+            "卫士",
+            "归还种",
+            "尤迪特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 96
+        },
+        "display_index": 54
+      },
+      "赫卡蒂": {
+        "path": "世界书\\赫卡蒂.txt",
+        "keywords": [
+          "赫卡蒂",
+          "MIR201",
+          "链锯",
+          "探索型"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赫卡蒂",
+            "MIR201",
+            "链锯",
+            "探索型"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 97
+        },
+        "display_index": 55
+      },
+      "艾尔": {
+        "path": "世界书\\艾尔.txt",
+        "keywords": [
+          "艾尔",
+          "运输者",
+          "归还种",
+          "兔耳"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾尔",
+            "运输者",
+            "归还种",
+            "兔耳"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 98
+        },
+        "display_index": 56
+      },
+      "萨尔贡": {
+        "path": "世界书\\萨尔贡.txt",
+        "keywords": [
+          "萨尔贡",
+          "革新者",
+          "指导者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨尔贡",
+            "革新者",
+            "指导者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 99
+        },
+        "display_index": 57
+      },
+      "丹迪": {
+        "path": "世界书\\丹迪.txt",
+        "keywords": [
+          "丹迪",
+          "支配者",
+          "殖民地"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "丹迪",
+            "支配者",
+            "殖民地"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 100
+        },
+        "display_index": 58
+      },
+      "雪儿": {
+        "path": "世界书\\雪儿.txt",
+        "keywords": [
+          "雪儿",
+          "全天",
+          "最古",
+          "守护",
+          "Ciel"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "雪儿",
+            "全天",
+            "最古",
+            "守护",
+            "Ciel"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 101
+        },
+        "display_index": 59
+      },
+      "塞拉菲娜": {
+        "path": "世界书\\塞拉菲娜.txt",
+        "keywords": [
+          "塞拉菲娜",
+          "巫女",
+          "神统奏鸣剑",
+          "阿尼玛特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲娜",
+            "巫女",
+            "神统奏鸣剑",
+            "阿尼玛特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 102
+        },
+        "display_index": 60
+      },
+      "拉托娜": {
+        "path": "世界书\\拉托娜.txt",
+        "keywords": [
+          "拉托娜"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉托娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 103
+        },
+        "display_index": 61
+      },
+      "提亚马特": {
+        "path": "世界书\\提亚马特.txt",
+        "keywords": [
+          "提亚马特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提亚马特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 104
+        },
+        "display_index": 62
+      },
+      "断绝的破坏神": {
+        "path": "世界书\\断绝的破坏神.txt",
+        "keywords": [
+          "断绝的破坏神"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "断绝的破坏神"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 105
+        },
+        "display_index": 63
+      },
+      "格兰雷斯": {
+        "path": "世界书\\格兰雷斯.txt",
+        "keywords": [
+          "格兰雷斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格兰雷斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 106
+        },
+        "display_index": 64
+      },
+      "达因斯雷夫": {
+        "path": "世界书\\达因斯雷夫.txt",
+        "keywords": [
+          "达因斯雷夫"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "达因斯雷夫"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 107
+        },
+        "display_index": 65
+      },
+      "修伯利斯": {
+        "path": "世界书\\修伯利斯.txt",
+        "keywords": [
+          "修伯利斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "修伯利斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 108
+        },
+        "display_index": 66
+      },
+      "利希德修茨": {
+        "keywords": [
+          "利希德修茨"
+        ],
+        "abstract": "",
+        "contents": [
+          {
+            "content": "<npc name=\"利希德修茨\">"
+          },
+          {
+            "file": "世界书\\利希德修茨.yaml"
+          },
+          {
+            "content": "</npc>"
+          }
+        ],
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利希德修茨"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 109
+        },
+        "display_index": 67
+      },
+      "塞蕾": {
+        "path": "世界书\\塞蕾.txt",
+        "keywords": [
+          "塞蕾"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 110
+        },
+        "display_index": 68
+      },
+      "安歇尔与西梅翁": {
+        "path": "世界书\\安歇尔与西梅翁.txt",
+        "keywords": [
+          "安歇尔与西梅翁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安歇尔与西梅翁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 111
+        },
+        "display_index": 69
+      },
+      "尼加尔": {
+        "path": "世界书\\尼加尔.txt",
+        "keywords": [
+          "尼加尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼加尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 112
+        },
+        "display_index": 70
+      },
+      "布里兰特": {
+        "keywords": [
+          "布里兰特"
+        ],
+        "abstract": "",
+        "contents": [
+          {
+            "content": "<npc name=\"布里兰特\">"
+          },
+          {
+            "file": "世界书\\布里兰特.yaml"
+          },
+          {
+            "content": "</npc>"
+          }
+        ],
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布里兰特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 113
+        },
+        "display_index": 71
+      },
+      "斯托姆": {
+        "path": "世界书\\斯托姆.txt",
+        "keywords": [
+          "斯托姆"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "斯托姆"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 114
+        },
+        "display_index": 72
+      },
+      "格拉维": {
+        "path": "世界书\\格拉维.txt",
+        "keywords": [
+          "格拉维"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格拉维"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 115
+        },
+        "display_index": 73
+      },
+      "贝格尔米尔": {
+        "path": "世界书\\贝格尔米尔.txt",
+        "keywords": [
+          "贝格尔米尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝格尔米尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 116
+        },
+        "display_index": 74
+      },
+      "远古之蓝": {
+        "path": "世界书\\远古之蓝.txt",
+        "keywords": [
+          "远古之蓝"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "远古之蓝"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 117
+        },
+        "display_index": 75
+      },
+      "金恩": {
+        "path": "世界书\\金恩.txt",
+        "keywords": [
+          "金恩"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金恩"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 118
+        },
+        "display_index": 76
+      },
+      "古龙": {
+        "path": "世界书\\古龙.txt",
+        "keywords": [
+          "古龙"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "古龙"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 119
+        },
+        "display_index": 77
+      },
+      "塞夏特": {
+        "path": "世界书\\塞夏特.txt",
+        "keywords": [
+          "塞夏特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞夏特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 120
+        },
+        "display_index": 78
+      },
+      "索尔娜": {
+        "path": "世界书\\索尔娜.txt",
+        "keywords": [
+          "索尔娜"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索尔娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 121
+        },
+        "display_index": 79
+      },
+      "奥米茄": {
+        "path": "世界书\\奥米茄.txt",
+        "keywords": [
+          "奥米茄"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥米茄"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 122
+        },
+        "display_index": 80
+      },
+      "伊泽维尔": {
+        "path": "世界书\\伊泽维尔.txt",
+        "keywords": [
+          "伊泽维尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊泽维尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 123
+        },
+        "display_index": 81
+      },
+      "约拿": {
+        "path": "世界书\\约拿.txt",
+        "keywords": [
+          "约拿"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约拿"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 124
+        },
+        "display_index": 82
+      },
+      "基德翁": {
+        "path": "世界书\\基德翁.txt",
+        "keywords": [
+          "基德翁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "基德翁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 125
+        },
+        "display_index": 83
+      },
+      "米利安姆": {
+        "path": "世界书\\米利安姆.txt",
+        "keywords": [
+          "米利安姆"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米利安姆"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 126
+        },
+        "display_index": 84
+      },
+      "萨乌尔": {
+        "path": "世界书\\萨乌尔.txt",
+        "keywords": [
+          "萨乌尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨乌尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 127
+        },
+        "display_index": 85
+      },
+      "布鲁斯坦因": {
+        "path": "世界书\\布鲁斯坦因.txt",
+        "keywords": [
+          "布鲁斯坦因"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布鲁斯坦因"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 128
+        },
+        "display_index": 86
+      },
+      "米吉多": {
+        "path": "世界书\\米吉多.txt",
+        "keywords": [
+          "米吉多"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米吉多"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 129
+        },
+        "display_index": 87
+      },
+      "梅尼": {
+        "path": "世界书\\梅尼.txt",
+        "keywords": [
+          "梅尼"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅尼"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 130
+        },
+        "display_index": 88
+      },
+      "泽法": {
+        "path": "世界书\\泽法.txt",
+        "keywords": [
+          "泽法"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泽法"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 131
+        },
+        "display_index": 89
+      },
+      "索罗": {
+        "path": "世界书\\索罗.txt",
+        "keywords": [
+          "索罗",
+          "王子"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗",
+            "王子"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 132
+        },
+        "display_index": 90
+      },
+      "约基姆": {
+        "path": "世界书\\约基姆.txt",
+        "keywords": [
+          "约基姆"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约基姆"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 133
+        },
+        "display_index": 91
+      },
+      "艾萨克": {
+        "path": "世界书\\艾萨克.txt",
+        "keywords": [
+          "艾萨克"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾萨克"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 134
+        },
+        "display_index": 92
+      },
+      "米卡": {
+        "path": "世界书\\米卡.txt",
+        "keywords": [
+          "米卡"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米卡"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 135
+        },
+        "display_index": 93
+      },
+      "马尔杜克": {
+        "path": "世界书\\马尔杜克.txt",
+        "keywords": [
+          "马尔杜克"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔杜克"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 136
+        },
+        "display_index": 94
+      },
+      "艾娃": {
+        "path": "世界书\\艾娃.txt",
+        "keywords": [
+          "艾娃"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾娃"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 137
+        },
+        "display_index": 95
+      },
+      "艾莉夏": {
+        "path": "世界书\\艾莉夏.txt",
+        "keywords": [
+          "艾莉夏"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉夏"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 138
+        },
+        "display_index": 96
+      },
+      "纳丁": {
+        "path": "世界书\\纳丁.txt",
+        "keywords": [
+          "纳丁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "纳丁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 139
+        },
+        "display_index": 97
+      },
+      "德威格": {
+        "path": "世界书\\德威格.txt",
+        "keywords": [
+          "德威格"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德威格"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 140
+        },
+        "display_index": 98
+      },
+      "安夏尔": {
+        "path": "世界书\\安夏尔.txt",
+        "keywords": [
+          "安夏尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安夏尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 141
+        },
+        "display_index": 99
+      },
+      "艾斯特尔": {
+        "path": "世界书\\艾斯特尔.txt",
+        "keywords": [
+          "艾斯特尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾斯特尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 142
+        },
+        "display_index": 100
+      },
+      "蕾亚": {
+        "path": "世界书\\蕾亚.txt",
+        "keywords": [
+          "蕾亚"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾亚"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 143
+        },
+        "display_index": 101
+      },
+      "沃特": {
+        "path": "世界书\\沃特.txt",
+        "keywords": [
+          "沃特"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "沃特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 144
+        },
+        "display_index": 102
+      },
+      "赛罗": {
+        "path": "世界书\\赛罗.txt",
+        "keywords": [
+          "赛罗"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赛罗"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 145
+        },
+        "display_index": 103
+      },
+      "洛特": {
+        "path": "世界书\\洛特.txt",
+        "keywords": [
+          "洛特",
+          "十二"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "洛特",
+            "十二"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 146
+        },
+        "display_index": 104
+      },
+      "NEO": {
+        "path": "世界书\\NEO.txt",
+        "keywords": [
+          "NEO",
+          "VOX"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "NEO",
+            "VOX"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 147
+        },
+        "display_index": 105
+      },
+      "皮埃尔": {
+        "path": "世界书\\皮埃尔.txt",
+        "keywords": [
+          "皮埃尔",
+          "观测士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "皮埃尔",
+            "观测士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 148
+        },
+        "display_index": 106
+      },
+      "利兹利斯威尔": {
+        "path": "世界书\\利兹利斯威尔.txt",
+        "keywords": [
+          "利兹利斯威尔",
+          "调停官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利兹利斯威尔",
+            "调停官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 149
+        },
+        "display_index": 107
+      },
+      "拉菲恩": {
+        "path": "世界书\\拉菲恩.txt",
+        "keywords": [
+          "拉菲恩",
+          "调停官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉菲恩",
+            "调停官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 150
+        },
+        "display_index": 108
+      },
+      "调谐者": {
+        "path": "世界书\\调谐者.txt",
+        "keywords": [
+          "调谐者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "调谐者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 151
+        },
+        "display_index": 109
+      },
+      "瓦尔马西亚的亡灵": {
+        "path": "世界书\\瓦尔马西亚的亡灵.txt",
+        "keywords": [
+          "瓦尔马西亚",
+          "亡灵"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瓦尔马西亚",
+            "亡灵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 152
+        },
+        "display_index": 110
+      },
+      "威廉2": {
+        "path": "世界书\\威廉2.txt",
+        "keywords": [
+          "威廉",
+          "Morning",
+          "Breeze"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉",
+            "Morning",
+            "Breeze"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 153
+        },
+        "display_index": 111
+      },
+      "艾莉尼0": {
+        "path": "世界书\\艾莉尼0.txt",
+        "keywords": [
+          "艾莉尼",
+          "蓝天",
+          "起始"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "蓝天",
+            "起始"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 154
+        },
+        "display_index": 112
+      },
+      "安克0": {
+        "path": "世界书\\安克0.txt",
+        "keywords": [
+          "安克",
+          "Whirlwind"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "Whirlwind"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 155
+        },
+        "display_index": 113
+      },
+      "艾比斯": {
+        "path": "世界书\\艾比斯.txt",
+        "keywords": [
+          "艾比斯",
+          "哈宾杰",
+          "Ibis"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾比斯",
+            "哈宾杰",
+            "Ibis"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 156
+        },
+        "display_index": 116
+      },
+      "灾厄简": {
+        "path": "世界书\\灾厄简.txt",
+        "keywords": [
+          "灾厄简",
+          "Disaster",
+          "女代表"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "灾厄简",
+            "Disaster",
+            "女代表"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 157
+        },
+        "display_index": 117
+      },
+      "海凯": {
+        "path": "世界书\\海凯.txt",
+        "keywords": [
+          "海凯",
+          "观测士",
+          "海米利希"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海凯",
+            "观测士",
+            "海米利希"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 158
+        },
+        "display_index": 118
+      },
+      "贝奈黛塔": {
+        "path": "世界书\\贝奈黛塔.txt",
+        "keywords": [
+          "贝奈黛塔",
+          "机关长"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝奈黛塔",
+            "机关长"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 159
+        },
+        "display_index": 119
+      },
+      "莉扎": {
+        "path": "世界书\\莉扎.txt",
+        "keywords": [
+          "莉扎",
+          "驾驶员"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莉扎",
+            "驾驶员"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 160
+        },
+        "display_index": 120
+      },
+      "混沌巨人": {
+        "path": "世界书\\混沌巨人.txt",
+        "keywords": [
+          "混沌巨人"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "混沌巨人"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 161
+        },
+        "display_index": 122
+      },
+      "觉醒者巴西安": {
+        "path": "世界书\\觉醒者巴西安.txt",
+        "keywords": [
+          "觉醒者巴西安"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "觉醒者巴西安"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 162
+        },
+        "display_index": 123
+      },
+      "马尔库特的女神": {
+        "path": "世界书\\马尔库特的女神.txt",
+        "keywords": [
+          "马尔库特的女神"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔库特的女神"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 163
+        },
+        "display_index": 124
+      },
+      "尼亚拔示巴": {
+        "path": "世界书\\尼亚拔示巴.txt",
+        "keywords": [
+          "尼亚拔示巴"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚拔示巴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 164
+        },
+        "display_index": 125
+      },
+      "索罗Metaverse": {
+        "path": "世界书\\索罗Metaverse.txt",
+        "keywords": [
+          "索罗Metaverse"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗Metaverse"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 165
+        },
+        "display_index": 126
+      },
+      "米斯拉Metaverse": {
+        "path": "世界书\\米斯拉Metaverse.txt",
+        "keywords": [
+          "米斯拉Metaverse"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉Metaverse"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 166
+        },
+        "display_index": 127
+      },
+      "拔示巴Metaverse": {
+        "path": "世界书\\拔示巴Metaverse.txt",
+        "keywords": [
+          "拔示巴",
+          "Metaverse",
+          "异体"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "Metaverse",
+            "异体"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 167
+        },
+        "display_index": 128
+      },
+      "塞蕾娜": {
+        "path": "世界书\\塞蕾娜.txt",
+        "keywords": [
+          "塞蕾娜",
+          "MIR-203"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾娜",
+            "MIR-203"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 168
+        },
+        "display_index": 129
+      },
+      "轩辕十四": {
+        "path": "世界书\\轩辕十四.txt",
+        "keywords": [
+          "轩辕十四",
+          "MDA-21",
+          "BOT"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "轩辕十四",
+            "MDA-21",
+            "BOT"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 169
+        },
+        "display_index": 130
+      },
+      "阿尔忒弥斯": {
+        "path": "世界书\\阿尔忒弥斯.txt",
+        "keywords": [
+          "阿尔忒弥斯",
+          "MIR-202",
+          "蕾娜原型",
+          "Artemis"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿尔忒弥斯",
+            "MIR-202",
+            "蕾娜原型",
+            "Artemis"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 170
+        },
+        "display_index": 131
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "NPC"
+    ],
+    "depth": []
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": "Infinity",
+    "地理": 0,
+    "NPC": 0
+  },
+  "partOrder": {},
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": ""
+}

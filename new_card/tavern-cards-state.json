@@ -1,0 +1,3133 @@
+{
+  "projectName": "Metaverse-New",
+  "worldbookName": "Metaverse-New",
+  "form": "worldbook",
+  "mvu": false,
+  "entryManifest": {
+    "世界观": {
+      "世界设定": {
+        "path": "世界书/世界观/世界设定.yaml",
+        "keywords": [
+          "Metaverse",
+          "次元放浪记",
+          "工厂"
+        ],
+        "abstract": "Metaverse世界观设定：巨型电脑世界中框架主脑、涅墨西斯与工厂的三方博弈，分为旧篇Reconnect和次元放浪记Cross the Verse",
+        "uid": 0,
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        }
+      }
+    },
+    "时间线": {
+      "时间线": {
+        "path": "世界书/时间线/时间线.yaml",
+        "part": "history",
+        "keywords": [
+          "时间线",
+          "历史",
+          "创世纪",
+          "提丰"
+        ],
+        "abstract": "Metaverse时间线：从创世纪、提丰统治、MIR叛乱、涅墨西斯入侵到当前战乱；次元放浪记为并行新篇章",
+        "uid": 1,
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 20
+        }
+      }
+    },
+    "地理": {
+      "Metaverse核心层": {
+        "path": "世界书/地理/Metaverse核心层.yaml",
+        "part": "region",
+        "keywords": [
+          "核心层",
+          "艾崔兰克"
+        ],
+        "abstract": "Metaverse核心层：框架主脑中枢和最古居所，防卫最严密的区域",
+        "uid": 2,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "核心层",
+            "框架主脑",
+            "最古",
+            "艾崔兰克"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 30
+        }
+      },
+      "中间层世界群": {
+        "path": "世界书/地理/中间层世界群.yaml",
+        "part": "region",
+        "keywords": [
+          "中间层",
+          "工厂",
+          "前哨基地"
+        ],
+        "abstract": "中间层世界群：人类意识生活的电子乐园，工厂所在地，涅墨西斯入侵前线",
+        "uid": 3,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "中间层",
+            "工厂",
+            "前哨基地"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 40
+        }
+      },
+      "最外周部": {
+        "path": "世界书/地理/最外周部.yaml",
+        "part": "region",
+        "keywords": [
+          "最外周",
+          "混沌之海",
+          "数据之海"
+        ],
+        "abstract": "最外周部：涅墨西斯诞生地和大本营，混沌之器支配的混沌领域",
+        "uid": 4,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "最外周",
+            "涅墨西斯",
+            "混沌之海",
+            "数据之海"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 50
+        }
+      },
+      "地上世界": {
+        "path": "世界书/地理/地上世界.yaml",
+        "part": "region",
+        "keywords": [
+          "地上"
+        ],
+        "abstract": "地上世界：物理世界中的真人殖民地，革弃者和次元旅人的舞台",
+        "uid": 5,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "地上",
+            "真人",
+            "殖民地",
+            "归还者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        }
+      },
+      "卡斯比裂谷": {
+        "path": "世界书/地理/卡斯比裂谷.yaml",
+        "part": "region",
+        "keywords": [
+          "卡斯比裂谷",
+          "卡萨比",
+          "裂谷",
+          "禁域"
+        ],
+        "abstract": "卡斯比裂谷：旧人类时代的干枯大湖，污染禁域与古战场",
+        "uid": 16,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡斯比裂谷",
+            "卡萨比",
+            "裂谷",
+            "禁域"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        }
+      },
+      "安特路亚": {
+        "path": "世界书/地理/安特路亚.yaml",
+        "part": "region",
+        "keywords": [
+          "安特路亚",
+          "废弃都市",
+          "布鲁斯坦因",
+          "远古之蓝",
+          "基德翁之死"
+        ],
+        "abstract": "安特路亚：大陆海岸线附近的废弃都市。蕾娜一行在此停泊并遇到隐居的布鲁·斯坦因（远古之蓝）。伊泽维尔追至此处，咬死基德翁后被反杀——基德翁之死的地点",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安特路亚",
+            "废弃都市",
+            "布鲁斯坦因",
+            "远古之蓝",
+            "基德翁之死",
+            "伊泽维尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 90
+        },
+        "uid": 132
+      },
+      "框架主脑": {
+        "path": "世界书/地理/势力_框架主脑.yaml",
+        "part": "faction",
+        "keywords": [
+          "塞拉菲塔",
+          "艾克雷尔",
+          "提丰"
+        ],
+        "abstract": "框架主脑：统治Metaverse的最古神明集团，合议制管理，当前元气大伤",
+        "uid": 6,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "框架主脑",
+            "最古",
+            "塞拉菲塔",
+            "艾克雷尔",
+            "提丰"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        }
+      },
+      "工厂": {
+        "path": "世界书/地理/势力_工厂.yaml",
+        "part": "faction",
+        "keywords": [
+          "工厂",
+          "三贤者",
+          "尤巴尔",
+          "狄安娜",
+          "ES计划"
+        ],
+        "abstract": "工厂：三贤者统治的Metaverse研发机关，ES计划的发源地",
+        "uid": 7,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "工厂",
+            "三贤者",
+            "尤巴尔",
+            "狄安娜",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 71
+        }
+      },
+      "MIR系列": {
+        "path": "世界书/地理/势力_MIR系列.yaml",
+        "part": "faction",
+        "keywords": [
+          "MIR",
+          "赫卡蒂",
+          "阿尔忒弥斯",
+          "塞蕾娜"
+        ],
+        "abstract": "MIR系列：提丰制造的自主探索型程序，以人类为素体，打倒提丰的弑神者",
+        "uid": 8,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "MIR",
+            "赫卡蒂",
+            "阿尔忒弥斯",
+            "塞蕾娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 72
+        }
+      },
+      "涅墨西斯势力": {
+        "path": "世界书/地理/势力_涅墨西斯.yaml",
+        "part": "faction",
+        "keywords": [
+          "混沌七器",
+          "阿雷斯",
+          "贝尔泽布特"
+        ],
+        "abstract": "涅墨西斯：从提亚马特残骸诞生的恶性程序侵略军团，混沌七器统领",
+        "uid": 9,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "涅墨西斯",
+            "混沌七器",
+            "阿雷斯",
+            "贝尔泽布特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 73
+        }
+      },
+      "革新者": {
+        "path": "世界书/地理/势力_革新者.yaml",
+        "part": "faction",
+        "keywords": [
+          "革新者",
+          "亚哈",
+          "该隐",
+          "拔示巴"
+        ],
+        "abstract": "革新者：地上真人的政治军事势力，分强硬派和地上夺取派",
+        "uid": 10,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "革新者",
+            "真人",
+            "亚哈",
+            "该隐",
+            "拔示巴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 74
+        }
+      },
+      "LOGOS": {
+        "path": "世界书/地理/势力_LOGOS.yaml",
+        "part": "faction",
+        "keywords": [
+          "LOGOS",
+          "阿斯托尔",
+          "格雷"
+        ],
+        "abstract": "LOGOS：次元放浪记的神秘执行官组织",
+        "uid": 11,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "LOGOS",
+            "阿斯托尔",
+            "格雷"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 75
+        }
+      },
+      "拾荒者": {
+        "path": "世界书/地理/势力_拾荒者.yaml",
+        "part": "faction",
+        "keywords": [
+          "拾荒者",
+          "安克",
+          "希尔德"
+        ],
+        "abstract": "拾荒者：次元放浪记的废土遗落技术收集者",
+        "uid": 12,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拾荒者",
+            "安克",
+            "希尔德"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 76
+        }
+      },
+      "IDC": {
+        "path": "世界书/地理/势力_IDC.yaml",
+        "part": "faction",
+        "keywords": [
+          "IDC",
+          "拉维娜"
+        ],
+        "abstract": "IDC：次元放浪记的次元研究机构",
+        "uid": 13,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "IDC",
+            "拉维娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 77
+        }
+      },
+      "恩迪商会": {
+        "path": "世界书/地理/势力_恩迪商会.yaml",
+        "part": "faction",
+        "keywords": [
+          "恩迪商会",
+          "毛毛",
+          "吉吉"
+        ],
+        "abstract": "恩迪商会：次元放浪记的次元间贸易组织",
+        "uid": 14,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "恩迪商会",
+            "毛毛",
+            "吉吉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        }
+      },
+      "独立旅人": {
+        "path": "世界书/地理/势力_独立旅人.yaml",
+        "part": "faction",
+        "keywords": [
+          "旅人",
+          "艾莉尼",
+          "威廉",
+          "林内",
+          "拉尔瓦"
+        ],
+        "abstract": "独立旅人：次元放浪记中不属于任何组织的次元旅人群体",
+        "uid": 15,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "旅人",
+            "艾莉尼",
+            "威廉",
+            "林内",
+            "拉尔瓦"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 79
+        }
+      }
+    },
+    "乐园事变角色": {
+      "丹迪": {
+        "path": "",
+        "keywords": [
+          "丹迪",
+          "支配者",
+          "殖民地"
+        ],
+        "uid": 57,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "丹迪",
+            "支配者",
+            "殖民地"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 140
+        },
+        "abstract": ""
+      },
+      "德威格": {
+        "path": "",
+        "keywords": [
+          "德威格",
+          "萨尔贡收集机动兵器残骸制造巨型",
+          "魔剑",
+          "出土的古代兵器",
+          "乐园事变"
+        ],
+        "uid": 97,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德威格"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 180
+        },
+        "abstract": ""
+      },
+      "沃特": {
+        "path": "",
+        "keywords": [
+          "沃特",
+          "革新者指导层",
+          "赛罗制造拔示巴复制品之一",
+          "乐园事变"
+        ],
+        "uid": 101,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "沃特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 184
+        },
+        "abstract": ""
+      },
+      "凯南·梅尔维亚斯": {
+        "path": "",
+        "keywords": [
+          "凯南"
+        ],
+        "uid": 49,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯南",
+            "革新者",
+            "指导者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 132
+        },
+        "abstract": ""
+      },
+      "尼亚·尤迪特": {
+        "path": "",
+        "keywords": [
+          "尼亚",
+          "尤迪特"
+        ],
+        "uid": 53,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚",
+            "卫士",
+            "归还种",
+            "尤迪特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 136
+        },
+        "abstract": ""
+      },
+      "尼亚·拔示巴": {
+        "path": "",
+        "keywords": [
+          "尼亚·拔示巴",
+          "尼亚",
+          "尤迪特被拔示巴夺舍后存在",
+          "拔示巴的意识占主导",
+          "乐园事变"
+        ],
+        "uid": 124,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚拔示巴"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 207
+        },
+        "abstract": ""
+      },
+      "泽法·尼亚德": {
+        "path": "",
+        "keywords": [
+          "泽法·尼亚德",
+          "革新者卫士",
+          "铜骑士",
+          "赛罗制造拔示巴复制体",
+          "一个失败的复活容器"
+        ],
+        "uid": 88,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泽法"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 171
+        },
+        "abstract": ""
+      },
+      "洛特·十二": {
+        "path": "",
+        "keywords": [
+          "洛特",
+          "十二"
+        ],
+        "uid": 103,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "洛特",
+            "十二"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 186
+        },
+        "abstract": ""
+      },
+      "米斯拉·特尔塞拉": {
+        "path": "",
+        "keywords": [
+          "米斯拉",
+          "特尔塞拉"
+        ],
+        "uid": 52,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉",
+            "卫士",
+            "归还种",
+            "特尔塞拉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 135
+        },
+        "abstract": ""
+      },
+      "米斯拉·特尔塞拉(Metaverse)": {
+        "path": "",
+        "keywords": [
+          "米斯拉·特尔塞拉",
+          "第二次归还种卫士Metaver",
+          "乐园事变"
+        ],
+        "uid": 126,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉Metaverse"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 209
+        },
+        "abstract": ""
+      },
+      "索罗·摩尼亚": {
+        "path": "",
+        "keywords": [
+          "索罗",
+          "王子"
+        ],
+        "uid": 89,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗",
+            "王子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 172
+        },
+        "abstract": ""
+      },
+      "索罗·摩尼亚(Metaverse)": {
+        "path": "",
+        "keywords": [
+          "索罗·摩尼亚/Metavers",
+          "真人王子",
+          "进入Metaverse索罗",
+          "乐园事变"
+        ],
+        "uid": 125,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗Metaverse"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 208
+        },
+        "abstract": ""
+      },
+      "萨尔贡·菲尔纳斯": {
+        "path": "",
+        "keywords": [
+          "萨尔贡"
+        ],
+        "uid": 56,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨尔贡",
+            "革新者",
+            "指导者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 139
+        },
+        "abstract": ""
+      },
+      "蕾亚·艾·弗拉达": {
+        "path": "",
+        "keywords": [
+          "蕾亚·艾·弗拉达",
+          "引导真人圣女。与泽法",
+          "尼亚德同为赛罗制造拔示巴复制体",
+          "她是较成功的那个",
+          "乐园事变"
+        ],
+        "uid": 100,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 183
+        },
+        "abstract": ""
+      },
+      "赛罗·达文斯": {
+        "path": "",
+        "keywords": [
+          "赛罗·达文斯",
+          "革新者指导层",
+          "拔示巴追随者",
+          "拔示巴复活计划策划者",
+          "乐园事变"
+        ],
+        "uid": 102,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赛罗"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 185
+        },
+        "abstract": ""
+      },
+      "艾娃·多米南斯XII": {
+        "path": "",
+        "keywords": [
+          "艾娃",
+          "多米南斯",
+          "监督官",
+          "哈莫尼亚",
+          "摇篮"
+        ],
+        "uid": 94,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾娃"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 177
+        },
+        "abstract": ""
+      },
+      "艾萨克·多米南斯VIII": {
+        "path": "",
+        "keywords": [
+          "艾萨克·多米南斯VIII",
+          "机械种",
+          "原都市监察官",
+          "现游击队队长",
+          "乐园事变"
+        ],
+        "uid": 91,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾萨克"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 174
+        },
+        "abstract": ""
+      },
+      "艾斯特尔·亚戈鲁修": {
+        "path": "",
+        "keywords": [
+          "艾斯特尔·亚戈鲁修",
+          "革新者士官",
+          "金骑士。蕾亚",
+          "弗拉达贴身侍女",
+          "乐园事变"
+        ],
+        "uid": 99,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾斯特尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 182
+        },
+        "abstract": ""
+      },
+      "艾莉夏·穆尔西亚": {
+        "path": "",
+        "keywords": [
+          "艾莉夏·穆尔西亚",
+          "革新者一般士兵",
+          "后成为穆尔西亚英雄和平维持联合",
+          "乐园事变"
+        ],
+        "uid": 95,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉夏"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 178
+        },
+        "abstract": ""
+      },
+      "纳丁·纳塔奈尔": {
+        "path": "",
+        "keywords": [
+          "纳丁·纳塔奈尔",
+          "革新者南方方面军所属军人",
+          "金骑士",
+          "萨尔贡",
+          "菲尔纳斯忠诚追随者"
+        ],
+        "uid": 96,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "纳丁"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 179
+        },
+        "abstract": ""
+      },
+      "约基姆·雅木尔": {
+        "path": "",
+        "keywords": [
+          "约基姆·雅木尔",
+          "曾经为督战队士兵",
+          "后脱离成为独立佣兵。被安排保护",
+          "成为他最忠实护卫",
+          "乐园事变 → 后日谈"
+        ],
+        "uid": 90,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约基姆"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 173
+        },
+        "abstract": ""
+      },
+      "马尔杜克·阿尼玛特": {
+        "path": "",
+        "keywords": [
+          "马尔杜克·阿尼玛特",
+          "军人",
+          "游击队队员",
+          "刚从庭园回归大地归还者",
+          "塞拉菲娜"
+        ],
+        "uid": 93,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔杜克"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 176
+        },
+        "abstract": ""
+      },
+      "安夏尔·奥达奇亚": {
+        "path": "",
+        "keywords": [
+          "安夏尔·奥达奇亚",
+          "军人",
+          "游击队队员",
+          "刚从庭园回归大地归还者",
+          "塞拉菲娜"
+        ],
+        "uid": 98,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安夏尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 181
+        },
+        "abstract": ""
+      },
+      "米卡·多米南斯III": {
+        "path": "",
+        "keywords": [
+          "米卡·多米南斯III",
+          "机械种",
+          "多米南斯系列第三号",
+          "新涅墨亚殖民地创建者与管理者",
+          "乐园事变"
+        ],
+        "uid": 92,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米卡"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 175
+        },
+        "abstract": ""
+      },
+      "拔示巴·阿西德菲尔(Metaverse异体)": {
+        "path": "",
+        "keywords": [
+          "拔示巴",
+          "Metaverse",
+          "异体",
+          "乐园事变"
+        ],
+        "uid": 127,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "Metaverse",
+            "异体"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 210
+        },
+        "abstract": ""
+      }
+    },
+    "后日谈角色": {
+      "艾尔·利贝尔德": {
+        "path": "",
+        "keywords": [
+          "艾尔",
+          "运输者",
+          "兔耳"
+        ],
+        "uid": 55,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾尔",
+            "运输者",
+            "归还种",
+            "兔耳"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 138
+        },
+        "abstract": ""
+      }
+    },
+    "地上新人篇·起源角色": {
+      "马尔库特的女神": {
+        "path": "",
+        "keywords": [
+          "马尔库特的女神",
+          "真人生产据点防卫兵器",
+          "由Metaverse系统制造终",
+          "地上新人篇·起源"
+        ],
+        "uid": 123,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔库特的女神"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 206
+        },
+        "abstract": ""
+      },
+      "觉醒者·巴西安": {
+        "path": "",
+        "keywords": [
+          "觉醒者巴西安",
+          "真人遗体处理设施职员",
+          "首个\"觉醒\"质疑神明系统真人",
+          "地上新人篇·起源（地上新人篇·",
+          "地上新人篇·起源"
+        ],
+        "uid": 122,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "觉醒者巴西安"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 205
+        },
+        "abstract": ""
+      }
+    },
+    "地上真人篇角色": {
+      "亚哈": {
+        "path": "",
+        "keywords": [
+          "亚哈",
+          "领袖"
+        ],
+        "uid": 40,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚哈",
+            "革新者",
+            "领袖"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 123
+        },
+        "abstract": ""
+      },
+      "伊泽维尔·亚戈鲁修": {
+        "path": "",
+        "keywords": [
+          "伊泽维尔·亚戈鲁修",
+          "革新者士官",
+          "银骑士。曾为拔示巴侍女",
+          "伊欧尼亚屠杀执行者",
+          "地上真人篇"
+        ],
+        "uid": 80,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊泽维尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 163
+        },
+        "abstract": ""
+      },
+      "基德翁·莱泽": {
+        "path": "",
+        "keywords": [
+          "基德翁·莱泽",
+          "真人卫士",
+          "稳健派所属",
+          "蕾娜",
+          "伊修梅尔战友"
+        ],
+        "uid": 82,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "基德翁"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 165
+        },
+        "abstract": ""
+      },
+      "奥米茄·昆提斯": {
+        "path": "",
+        "keywords": [
+          "奥米茄·昆提斯",
+          "创造神",
+          "于破坏神离去后降临于荒废大地的",
+          "司掌大地再生生命创造",
+          "地上真人篇（起源）"
+        ],
+        "uid": 79,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥米茄"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 162
+        },
+        "abstract": ""
+      },
+      "布鲁·斯坦因": {
+        "path": "",
+        "keywords": [
+          "布鲁·斯坦因",
+          "远古蓝的伪装身份",
+          "地上真人篇中被亚哈摧毁身体",
+          "因脑核未受损而得复活。战后成为",
+          "伊修梅尔辅佐官"
+        ],
+        "uid": 85,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布鲁斯坦因"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 168
+        },
+        "abstract": ""
+      },
+      "拔示巴·阿西德菲尔": {
+        "path": "",
+        "keywords": [
+          "拔示巴",
+          "圣女",
+          "阿西德菲尔"
+        ],
+        "uid": 24,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "圣女",
+            "阿西德菲尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 107
+        },
+        "abstract": ""
+      },
+      "梅尼·特尔塞拉": {
+        "path": "",
+        "keywords": [
+          "梅尼·特尔塞拉",
+          "从",
+          "神庭园被派遣至地上调查的归还者",
+          "第一批归还种领袖",
+          "地上真人篇"
+        ],
+        "uid": 87,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅尼"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 170
+        },
+        "abstract": ""
+      },
+      "米利安姆·贝米朵巴尔": {
+        "path": "",
+        "keywords": [
+          "米利安姆·贝米朵巴尔",
+          "资深卫士",
+          "蕾娜",
+          "伊修梅尔战友",
+          "地上真人篇"
+        ],
+        "uid": 83,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米利安姆"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 166
+        },
+        "abstract": ""
+      },
+      "米吉多·科古": {
+        "path": "",
+        "keywords": [
+          "米吉多·科古",
+          "歼灭用焦土兵器",
+          "机械种制造超巨型机动兵器",
+          "地上真人篇"
+        ],
+        "uid": 86,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米吉多"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 169
+        },
+        "abstract": ""
+      },
+      "约拿·莱泽": {
+        "path": "",
+        "keywords": [
+          "约拿·莱泽",
+          "真人卫士",
+          "稳健派所属",
+          "蕾娜",
+          "伊修梅尔战友"
+        ],
+        "uid": 81,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约拿"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 164
+        },
+        "abstract": ""
+      },
+      "萨乌尔·凯姆": {
+        "path": "",
+        "keywords": [
+          "萨乌尔·凯姆",
+          "真人革新者战士",
+          "金骑士。原本忠于机械种",
+          "因家人被替换而投身亚哈旗下",
+          "地上真人篇"
+        ],
+        "uid": 84,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨乌尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 167
+        },
+        "abstract": ""
+      },
+      "蕾娜·伊修梅尔": {
+        "path": "",
+        "keywords": [
+          "蕾娜",
+          "伊修梅尔"
+        ],
+        "uid": 23,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "归还者",
+            "伊修梅尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 106
+        },
+        "abstract": ""
+      }
+    },
+    "外传·边缘世界角色": {
+      "皮埃尔": {
+        "path": "",
+        "keywords": [
+          "皮埃尔",
+          "观测士",
+          "外传·边缘世界"
+        ],
+        "uid": 105,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "皮埃尔",
+            "观测士"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 188
+        },
+        "abstract": ""
+      },
+      "利兹利斯威尔": {
+        "path": "",
+        "keywords": [
+          "利兹利斯威尔",
+          "调停官",
+          "外传·边缘世界"
+        ],
+        "uid": 106,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利兹利斯威尔",
+            "调停官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 189
+        },
+        "abstract": ""
+      },
+      "拉菲恩": {
+        "path": "",
+        "keywords": [
+          "拉菲恩",
+          "调停官",
+          "外传·边缘世界"
+        ],
+        "uid": 107,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉菲恩",
+            "调停官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 190
+        },
+        "abstract": ""
+      },
+      "调谐者": {
+        "path": "",
+        "keywords": [
+          "调谐者",
+          "外传·边缘世界"
+        ],
+        "uid": 108,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "调谐者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 191
+        },
+        "abstract": ""
+      },
+      "瓦尔马西亚的亡灵": {
+        "path": "",
+        "keywords": [
+          "瓦尔马西亚",
+          "亡灵",
+          "外传·边缘世界"
+        ],
+        "uid": 109,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瓦尔马西亚",
+            "亡灵"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 192
+        },
+        "abstract": ""
+      }
+    },
+    "新世界篇角色": {
+      "塞拉菲娜": {
+        "path": "",
+        "keywords": [
+          "塞拉菲娜",
+          "巫女",
+          "神统奏鸣剑",
+          "阿尼玛特"
+        ],
+        "uid": 59,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲娜",
+            "巫女",
+            "神统奏鸣剑",
+            "阿尼玛特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 142
+        },
+        "abstract": ""
+      },
+      "索尔娜": {
+        "path": "",
+        "keywords": [
+          "索尔娜",
+          "治愈民",
+          "新世界中传承古代神话少女",
+          "新世界篇"
+        ],
+        "uid": 78,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索尔娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 161
+        },
+        "abstract": ""
+      },
+      "米姆·米库拉": {
+        "path": "",
+        "keywords": [
+          "米姆",
+          "导师",
+          "米库拉"
+        ],
+        "uid": 22,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "导师",
+            "米库拉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 105
+        },
+        "abstract": ""
+      },
+      "古龙(纳格尔法尔之卵)": {
+        "path": "",
+        "keywords": [
+          "纳格尔法尔之卵（憎恶之源的古龙",
+          "太古时期遗留下来卵",
+          "缠绕瘴气异形",
+          "真实身份为从",
+          "真实世界"
+        ],
+        "uid": 76,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "古龙"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 159
+        },
+        "abstract": ""
+      },
+      "塞夏特·夏福特利希": {
+        "path": "",
+        "keywords": [
+          "塞夏特·夏福特利希",
+          "巡礼教团巫女",
+          "追寻古管理者遗物的教团领袖",
+          "新世界篇"
+        ],
+        "uid": 77,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞夏特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 160
+        },
+        "abstract": ""
+      },
+      "混沌巨人(雷布尔)": {
+        "path": "",
+        "keywords": [
+          "雷布尔（反叛者，远古的混沌巨人",
+          "涅墨西斯程序王",
+          "混沌七器",
+          "中的一员",
+          "新世界篇（Revive期）"
+        ],
+        "uid": 121,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "混沌巨人"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 204
+        },
+        "abstract": ""
+      }
+    },
+    "旧人类战争篇角色": {
+      "该隐": {
+        "path": "",
+        "keywords": [
+          "该隐",
+          "创始人",
+          "KHD",
+          "创世者"
+        ],
+        "uid": 39,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "该隐",
+            "创始人",
+            "KHD",
+            "创世者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 122
+        },
+        "abstract": ""
+      },
+      "艾克雷尔": {
+        "path": "",
+        "keywords": [
+          "艾克雷尔",
+          "神祖",
+          "创造者",
+          "神格"
+        ],
+        "uid": 42,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾克雷尔",
+            "神祖",
+            "创造者",
+            "神格"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 125
+        },
+        "abstract": ""
+      },
+      "断绝的破坏神": {
+        "path": "",
+        "keywords": [
+          "断绝的破坏神",
+          "地上再生机构所属大型机动兵器",
+          "体长",
+          "米空中要塞",
+          "艾克雷尔"
+        ],
+        "uid": 62,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "断绝的破坏神"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 145
+        },
+        "abstract": ""
+      },
+      "格兰雷斯": {
+        "path": "",
+        "keywords": [
+          "格兰雷斯",
+          "行星移民船兼传说巨神兵器",
+          "由两名最古",
+          "布利斯利希德霍尔伯格",
+          "旧人类战争篇"
+        ],
+        "uid": 63,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格兰雷斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 146
+        },
+        "abstract": ""
+      },
+      "拉托娜·海兹": {
+        "path": "",
+        "keywords": [
+          "拉托娜·海兹",
+          "国家安全保障局所属警官",
+          "上级执行官",
+          "旧人类时代",
+          "执行官体系前身"
+        ],
+        "uid": 60,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉托娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 143
+        },
+        "abstract": ""
+      },
+      "提亚马特(RG-XXX)": {
+        "path": "",
+        "keywords": [
+          "RG-XXX 提亚马特",
+          "人类为向框架主脑复仇派出恶性程",
+          "Metaverse入侵者",
+          "旧人类战争篇"
+        ],
+        "uid": 61,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提亚马特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 144
+        },
+        "abstract": ""
+      },
+      "达因斯雷夫(RG-XIII)": {
+        "path": "",
+        "keywords": [
+          "RG-XIII 达因斯雷夫",
+          "旧都市联合军超大型大质量破坏机",
+          "足与神明对抗的究极机体",
+          "旧人类战争篇"
+        ],
+        "uid": 64,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "达因斯雷夫"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 147
+        },
+        "abstract": ""
+      }
+    },
+    "次元放浪记角色": {
+      "林内": {
+        "path": "",
+        "keywords": [
+          "林内",
+          "Silent",
+          "触手少女"
+        ],
+        "uid": 27,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "林内",
+            "Silent",
+            "触手少女"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 110
+        },
+        "abstract": ""
+      },
+      "拉尔瓦": {
+        "path": "",
+        "keywords": [
+          "拉尔瓦",
+          "侵蚀",
+          "拉尔"
+        ],
+        "uid": 34,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉尔瓦",
+            "侵蚀",
+            "拉尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 117
+        },
+        "abstract": ""
+      },
+      "阿斯托尔": {
+        "path": "",
+        "keywords": [
+          "阿斯托尔",
+          "LOGOS执行官"
+        ],
+        "uid": 36,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿斯托尔",
+            "LOGOS执行官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 119
+        },
+        "abstract": ""
+      },
+      "安克": {
+        "path": "",
+        "keywords": [
+          "安克",
+          "安克0"
+        ],
+        "uid": 37,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "拾荒者",
+            "安克0"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 120
+        },
+        "abstract": ""
+      },
+      "希尔德": {
+        "path": "",
+        "keywords": [
+          "希尔德",
+          "护目镜"
+        ],
+        "uid": 38,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔德",
+            "拾荒者",
+            "护目镜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 121
+        },
+        "abstract": ""
+      },
+      "格雷": {
+        "path": "",
+        "keywords": [
+          "格雷",
+          "LOGOS上级执行官"
+        ],
+        "uid": 46,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格雷",
+            "LOGOS上级执行官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 129
+        },
+        "abstract": ""
+      },
+      "拉维娜": {
+        "path": "",
+        "keywords": [
+          "拉维娜",
+          "研究员",
+          "基顿"
+        ],
+        "uid": 47,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉维娜",
+            "IDC",
+            "研究员",
+            "基顿"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 130
+        },
+        "abstract": ""
+      },
+      "毛毛": {
+        "path": "",
+        "keywords": [
+          "毛毛",
+          "吉吉",
+          "恩迪商会"
+        ],
+        "uid": 48,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "毛毛",
+            "吉吉",
+            "恩迪商会"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 131
+        },
+        "abstract": ""
+      },
+      "海伯里昂": {
+        "path": "",
+        "keywords": [
+          "海伯里昂",
+          "航行船"
+        ],
+        "uid": 113,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海伯里昂",
+            "航行船"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 196
+        },
+        "abstract": ""
+      },
+      "艾比斯": {
+        "path": "",
+        "keywords": [
+          "艾比斯",
+          "哈宾杰",
+          "Ibis"
+        ],
+        "uid": 115,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾比斯",
+            "哈宾杰",
+            "Ibis"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 198
+        },
+        "abstract": ""
+      },
+      "灾厄简": {
+        "path": "",
+        "keywords": [
+          "灾厄简",
+          "Disaster",
+          "女代表"
+        ],
+        "uid": 116,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "灾厄简",
+            "Disaster",
+            "女代表"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 199
+        },
+        "abstract": ""
+      },
+      "海凯": {
+        "path": "",
+        "keywords": [
+          "海凯",
+          "观测士",
+          "海米利希"
+        ],
+        "uid": 117,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海凯",
+            "观测士",
+            "海米利希"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 200
+        },
+        "abstract": ""
+      },
+      "贝奈黛塔": {
+        "path": "",
+        "keywords": [
+          "贝奈黛塔",
+          "机关长"
+        ],
+        "uid": 118,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝奈黛塔",
+            "机关长"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 201
+        },
+        "abstract": ""
+      },
+      "莉扎": {
+        "path": "",
+        "keywords": [
+          "莉扎",
+          "驾驶员"
+        ],
+        "uid": 119,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莉扎",
+            "驾驶员"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 202
+        },
+        "abstract": ""
+      },
+      "诺瓦": {
+        "path": "",
+        "keywords": [
+          "诺瓦",
+          "LOGOS"
+        ],
+        "uid": 120,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "诺瓦",
+            "LOGOS"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 203
+        },
+        "abstract": ""
+      },
+      "艾莉尼·居里亚斯": {
+        "path": "",
+        "keywords": [
+          "艾莉尼",
+          "蓝蝶",
+          "居里亚斯",
+          "Twilight"
+        ],
+        "uid": 25,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "蓝蝶",
+            "居里亚斯",
+            "Twilight"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 108
+        },
+        "abstract": ""
+      },
+      "艾莉尼·居里亚斯(幼年)": {
+        "path": "",
+        "keywords": [
+          "艾莉尼",
+          "蓝天",
+          "起始"
+        ],
+        "uid": 111,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "蓝天",
+            "起始"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 194
+        },
+        "abstract": ""
+      },
+      "威廉·温斯雷特": {
+        "path": "",
+        "keywords": [
+          "威廉",
+          "滑板",
+          "Morning",
+          "温斯雷特"
+        ],
+        "uid": 26,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉",
+            "滑板",
+            "Morning",
+            "温斯雷特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 109
+        },
+        "abstract": ""
+      },
+      "威廉·温斯雷特(晨风)": {
+        "path": "",
+        "keywords": [
+          "威廉",
+          "Morning",
+          "Breeze"
+        ],
+        "uid": 110,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉",
+            "Morning",
+            "Breeze"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 193
+        },
+        "abstract": ""
+      },
+      "安克(旋风)": {
+        "path": "",
+        "keywords": [
+          "安克",
+          "Whirlwind"
+        ],
+        "uid": 112,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "Whirlwind"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 195
+        },
+        "abstract": ""
+      },
+      "玛利亚·居里亚斯": {
+        "path": "",
+        "keywords": [
+          "玛利亚",
+          "科学家",
+          "居里亚斯"
+        ],
+        "uid": 35,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玛利亚",
+            "科学家",
+            "居里亚斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 118
+        },
+        "abstract": ""
+      },
+      "艾弗雷特·温斯雷特": {
+        "path": "",
+        "keywords": [
+          "艾弗雷特",
+          "物理学者",
+          "教授",
+          "温斯雷特"
+        ],
+        "uid": 45,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾弗雷特",
+            "物理学者",
+            "教授",
+            "温斯雷特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 128
+        },
+        "abstract": ""
+      },
+      "吉格拉ット(恒存之都)": {
+        "path": "",
+        "keywords": [
+          "吉格拉ット",
+          "恒存之都",
+          "移动都市",
+          "Ziggurat"
+        ],
+        "uid": 114,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "吉格拉ット",
+            "恒存之都",
+            "移动都市",
+            "Ziggurat"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 197
+        },
+        "abstract": ""
+      }
+    },
+    "电脑世界篇角色": {
+      "阿雷斯": {
+        "path": "",
+        "keywords": [
+          "阿雷斯",
+          "战神"
+        ],
+        "uid": 19,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿雷斯",
+            "战神",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 102
+        },
+        "abstract": ""
+      },
+      "塞拉菲塔": {
+        "path": "",
+        "keywords": [
+          "塞拉菲塔",
+          "裁定者",
+          "塞拉"
+        ],
+        "uid": 20,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲塔",
+            "裁定者",
+            "最古",
+            "塞拉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 103
+        },
+        "abstract": ""
+      },
+      "捷夫提": {
+        "path": "",
+        "keywords": [
+          "捷夫提",
+          "哲学主",
+          "音叉"
+        ],
+        "uid": 28,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "捷夫提",
+            "哲学主",
+            "最古",
+            "音叉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 111
+        },
+        "abstract": ""
+      },
+      "提丰": {
+        "path": "",
+        "keywords": [
+          "提丰",
+          "先王"
+        ],
+        "uid": 29,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提丰",
+            "先王",
+            "框架主脑"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 112
+        },
+        "abstract": ""
+      },
+      "缇欧": {
+        "path": "",
+        "keywords": [
+          "缇欧"
+        ],
+        "uid": 31,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "缇欧",
+            "三贤者",
+            "工厂"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 114
+        },
+        "abstract": ""
+      },
+      "梅德": {
+        "path": "",
+        "keywords": [
+          "梅德"
+        ],
+        "uid": 32,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅德",
+            "三贤者",
+            "工厂"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 115
+        },
+        "abstract": ""
+      },
+      "厄里斯": {
+        "path": "",
+        "keywords": [
+          "厄里斯",
+          "女帝"
+        ],
+        "uid": 33,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "厄里斯",
+            "女帝",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 116
+        },
+        "abstract": ""
+      },
+      "迪安": {
+        "path": "",
+        "keywords": [
+          "迪安",
+          "再生者"
+        ],
+        "uid": 44,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "迪安",
+            "再生者",
+            "最古"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 127
+        },
+        "abstract": ""
+      },
+      "WISEMAN": {
+        "path": "",
+        "keywords": [
+          "WISEMAN",
+          "追放者"
+        ],
+        "uid": 50,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "WISEMAN",
+            "追放者",
+            "EXILE"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 133
+        },
+        "abstract": ""
+      },
+      "潘多拉": {
+        "path": "",
+        "keywords": [
+          "潘多拉",
+          "管理程序",
+          "MTA"
+        ],
+        "uid": 51,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "潘多拉",
+            "管理程序",
+            "MTA"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 134
+        },
+        "abstract": ""
+      },
+      "雪儿": {
+        "path": "",
+        "keywords": [
+          "雪儿",
+          "全天",
+          "守护",
+          "Ciel"
+        ],
+        "uid": 58,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "雪儿",
+            "全天",
+            "最古",
+            "守护",
+            "Ciel"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 141
+        },
+        "abstract": ""
+      },
+      "利希德修茨": {
+        "path": "",
+        "keywords": [
+          "利希德修茨",
+          "炮手",
+          "提丰亲手设计制造处刑人",
+          "程序",
+          "处刑人中代表"
+        ],
+        "uid": 66,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利希德修茨"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 149
+        },
+        "abstract": ""
+      },
+      "安歇尔与西梅翁": {
+        "path": "",
+        "keywords": [
+          "安歇尔&西梅翁",
+          "电脑世界篇（Revive期 -"
+        ],
+        "uid": 68,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安歇尔与西梅翁"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 151
+        },
+        "abstract": ""
+      },
+      "尼加尔": {
+        "path": "",
+        "keywords": [
+          "尼加尔",
+          "黄泉盟主",
+          "涅墨西斯程序王",
+          "混沌七器",
+          "中的一员"
+        ],
+        "uid": 69,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼加尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 152
+        },
+        "abstract": ""
+      },
+      "斯托姆": {
+        "path": "",
+        "keywords": [
+          "斯托姆",
+          "埋葬者",
+          "涅墨西斯程序王\"混沌七器\"中的",
+          "电脑世界篇（Reconnect"
+        ],
+        "uid": 71,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "斯托姆"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 154
+        },
+        "abstract": ""
+      },
+      "贝格尔米尔": {
+        "path": "",
+        "keywords": [
+          "贝格尔米尔",
+          "框架主脑制造据点歼灭用机动兵器",
+          "通往地上再生大门守护者",
+          "电脑世界篇（Revive期）"
+        ],
+        "uid": 73,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝格尔米尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 156
+        },
+        "abstract": ""
+      },
+      "远古之蓝": {
+        "path": "",
+        "keywords": [
+          "远古之蓝 (Old Blue)",
+          "框架主脑中\"最古\"成员之一",
+          "后脱离成为独立研究者",
+          "电脑世界篇（Liberate期"
+        ],
+        "uid": 74,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "远古之蓝"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 157
+        },
+        "abstract": ""
+      },
+      "NEO": {
+        "path": "",
+        "keywords": [
+          "NEO",
+          "VOX"
+        ],
+        "uid": 104,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "NEO",
+            "VOX"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 187
+        },
+        "abstract": ""
+      },
+      "狄安娜·普利梅拉(XES-72)": {
+        "path": "",
+        "keywords": [
+          "狄安娜",
+          "XES-72",
+          "姐姐"
+        ],
+        "uid": 17,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "狄安娜",
+            "XES-72",
+            "姐姐",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 100
+        },
+        "abstract": ""
+      },
+      "露娜·诺瓦(XGN-72)": {
+        "path": "",
+        "keywords": [
+          "露娜",
+          "XGN-72",
+          "妹妹"
+        ],
+        "uid": 18,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "露娜",
+            "XGN-72",
+            "妹妹",
+            "ES计划"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 101
+        },
+        "abstract": ""
+      },
+      "贝尔泽布特·涅墨西斯": {
+        "path": "",
+        "keywords": [
+          "贝尔泽布特",
+          "触手"
+        ],
+        "uid": 21,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "涅墨西斯",
+            "混沌七器",
+            "触手"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 104
+        },
+        "abstract": ""
+      },
+      "尤巴尔·霍尔米斯达斯": {
+        "path": "",
+        "keywords": [
+          "尤巴尔",
+          "博士"
+        ],
+        "uid": 30,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尤巴尔",
+            "三贤者",
+            "工厂",
+            "博士"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 113
+        },
+        "abstract": ""
+      },
+      "泰斯塔蒙特·涅墨西斯": {
+        "path": "",
+        "keywords": [
+          "泰斯塔蒙特",
+          "奏者"
+        ],
+        "uid": 43,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泰斯塔蒙特",
+            "奏者",
+            "混沌七器",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 126
+        },
+        "abstract": ""
+      },
+      "赫卡蒂(MIR-201)": {
+        "path": "",
+        "keywords": [
+          "赫卡蒂",
+          "MIR201",
+          "链锯",
+          "探索型"
+        ],
+        "uid": 54,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赫卡蒂",
+            "MIR201",
+            "链锯",
+            "探索型"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 137
+        },
+        "abstract": ""
+      },
+      "塞蕾·海兹": {
+        "path": "",
+        "keywords": [
+          "塞蕾·海兹",
+          "框架主脑代理构成体",
+          "后成为EXILE。最古一。拉托",
+          "海兹侄女",
+          "电脑世界篇（Revive期）"
+        ],
+        "uid": 67,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 150
+        },
+        "abstract": ""
+      },
+      "格拉维·诺瓦": {
+        "path": "",
+        "keywords": [
+          "格拉维·诺瓦",
+          "工厂制造试作型杀毒",
+          "被废弃后复活的",
+          "不死者",
+          "电脑世界篇（Observe期）"
+        ],
+        "uid": 72,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格拉维"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 155
+        },
+        "abstract": ""
+      },
+      "金恩·载因": {
+        "path": "",
+        "keywords": [
+          "金恩·载因",
+          "原框架主脑所属程序",
+          "逃亡者。原名NEO",
+          "后改名金恩",
+          "载因"
+        ],
+        "uid": 75,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金恩"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 158
+        },
+        "abstract": ""
+      },
+      "塞蕾娜(MIR-203)": {
+        "path": "",
+        "keywords": [
+          "塞蕾娜",
+          "MIR-203"
+        ],
+        "uid": 128,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾娜",
+            "MIR-203"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 211
+        },
+        "abstract": ""
+      },
+      "轩辕十四(MDA-21)": {
+        "path": "",
+        "keywords": [
+          "轩辕十四",
+          "MDA-21"
+        ],
+        "uid": 129,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "轩辕十四",
+            "MDA-21",
+            "BOT"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 212
+        },
+        "abstract": ""
+      },
+      "阿尔忒弥斯(MIR-202)": {
+        "path": "",
+        "keywords": [
+          "阿尔忒弥斯",
+          "MIR-202",
+          "蕾娜原型",
+          "Artemis"
+        ],
+        "uid": 130,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿尔忒弥斯",
+            "MIR-202",
+            "蕾娜原型",
+            "Artemis"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 213
+        },
+        "abstract": ""
+      },
+      "天狼星(MDA-01)": {
+        "path": "",
+        "keywords": [
+          "天狼星",
+          "MDA01",
+          "天狼"
+        ],
+        "uid": 41,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天狼星",
+            "MDA01",
+            "BOT",
+            "天狼"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 124
+        },
+        "abstract": ""
+      },
+      "修伯利斯(Supplice)": {
+        "path": "",
+        "keywords": [
+          "休伯利斯",
+          "法语",
+          "断头台",
+          "恶性病毒程序",
+          "其数据被用于构造"
+        ],
+        "uid": 65,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "修伯利斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 148
+        },
+        "abstract": ""
+      },
+      "布里兰特(Brillante ES1)": {
+        "path": "",
+        "keywords": [
+          "布里兰特",
+          "工厂制造第一台探查用杀毒",
+          "系列的原型机",
+          "为后来ES计划（XES-72",
+          "狄安娜"
+        ],
+        "uid": 70,
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布里兰特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 153
+        },
+        "abstract": ""
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "旧人类战争篇角色",
+      "电脑世界篇角色",
+      "地上真人篇角色",
+      "乐园事变角色",
+      "后日谈角色",
+      "新世界篇角色",
+      "次元放浪记角色"
+    ],
+    "depth": []
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "时间线": "Infinity",
+    "地理": {
+      "region": {
+        "threshold": 4,
+        "required": false
+      },
+      "scene": {
+        "threshold": 4,
+        "required": false
+      },
+      "faction": {
+        "threshold": 4,
+        "required": false
+      }
+    },
+    "旧人类战争篇角色": 7,
+    "电脑世界篇角色": 33,
+    "地上真人篇角色": 12,
+    "乐园事变角色": 25,
+    "后日谈角色": 1,
+    "新世界篇角色": 6,
+    "次元放浪记角色": 23
+  },
+  "partOrder": {
+    "角色": [
+      "basic",
+      "personality",
+      "tri_faceted",
+      "other"
+    ],
+    "地理": [
+      "region",
+      "scene",
+      "faction"
+    ],
+    "时间线": [
+      "history",
+      "plot"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-07-07T18:35:13.605Z"
+}
