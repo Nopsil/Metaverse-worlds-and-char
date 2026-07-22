@@ -1,0 +1,393 @@
+{
+  "projectName": "MetaverseLobby",
+  "worldbookName": "MetaverseLobby",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "世界观": {
+      "[mvu_plot]世界设定": {
+        "path": "世界书/世界观/世界设定.yaml",
+        "scope": "catalog",
+        "part": "worldview",
+        "keywords": [
+          "Metaverse",
+          "Lobby",
+          "元宇宙",
+          "中转站",
+          "次元"
+        ],
+        "abstract": "Metaverse 元宇宙的基本设定：多元次元交汇之地，Lobby 中转站，访问者与被选召的命运",
+        "enabled": true
+      }
+    },
+    "扮演准则": {
+      "[mvu_plot]系统规则": {
+        "path": "世界书/扮演准则/系统规则.yaml",
+        "part": "presentation",
+        "keywords": [],
+        "abstract": "AI 扮演准则：系统叙事者角色、不代替用户发言、在Lobby阶段不干预选择、以角色身份开启对话、保持性格一致性",
+        "enabled": true
+      }
+    },
+    "角色": {
+      "[mvu_plot]airine_基础信息": {
+        "path": "世界书/角色/airine/基础信息.txt",
+        "scope": "specific",
+        "part": "basic",
+        "keywords": [
+          "艾莉尼",
+          "居里亚斯",
+          "Airine",
+          "次元旅人",
+          "画家"
+        ],
+        "abstract": "艾莉尼·居里亚斯基础信息：次元旅人、流浪的画家、画魂能力、温柔而疏离的性格",
+        "enabled": true
+      },
+      "[mvu_plot]bathsheba_基础信息": {
+        "path": "世界书/角色/bathsheba/基础信息.txt",
+        "scope": "specific",
+        "part": "basic",
+        "keywords": [
+          "拔示巴",
+          "阿西德菲尔",
+          "Bathsheba",
+          "破灭圣女",
+          "命运之子"
+        ],
+        "abstract": "拔示巴·阿西德菲尔基础信息：破灭圣女、命运之子、命运之眼能力、自毁式使命感",
+        "enabled": true
+      },
+      "[mvu_plot]lena_基础信息": {
+        "path": "世界书/角色/lena/基础信息.txt",
+        "scope": "specific",
+        "part": "basic",
+        "keywords": [
+          "蕾娜",
+          "伊修梅尔",
+          "Lena",
+          "归还者"
+        ],
+        "abstract": "蕾娜·伊修梅尔基础信息：归还者、废土幸存者、归还者之印能力、坚韧而寡言的性格",
+        "enabled": true
+      },
+      "[mvu_plot]meme_基础信息": {
+        "path": "世界书/角色/meme/基础信息.txt",
+        "scope": "specific",
+        "part": "basic",
+        "keywords": [
+          "米姆",
+          "米库拉",
+          "Meme",
+          "泰斯塔蒙特"
+        ],
+        "abstract": "米姆·米库拉基础信息：双重存在、泰斯塔蒙特之眼、天真与残忍并存的双重人格",
+        "enabled": true
+      },
+      "[mvu_plot]belzeebul_基础信息": {
+        "path": "世界书/角色/belzeebul/基础信息.txt",
+        "scope": "specific",
+        "part": "basic",
+        "keywords": [
+          "贝尔泽布特",
+          "涅墨西斯",
+          "Belzeebul",
+          "欺瞒的使徒",
+          "混沌七器"
+        ],
+        "abstract": "贝尔泽布特·涅墨西斯基础信息：欺瞒的使徒、混沌七器之一、扭曲现实的感知能力、优雅玩世不恭的性格",
+        "enabled": true
+      },
+      "[mvu_plot]airine_场景": {
+        "path": "世界书/角色/airine/场景.txt",
+        "scope": "specific",
+        "part": "scenario",
+        "keywords": [
+          "星空下的相遇",
+          "废墟中的速写",
+          "次元隙间的旅伴",
+          "索拉里斯的归途",
+          "蛮族的肉凯"
+        ],
+        "abstract": "艾莉尼的5个开局场景（含NSFW）：星空下的相遇、废墟中的速写、次元隙间的旅伴、索拉里斯的归途、蛮族的肉凯",
+        "enabled": true
+      },
+      "[mvu_plot]bathsheba_场景": {
+        "path": "世界书/角色/bathsheba/场景.txt",
+        "scope": "specific",
+        "part": "scenario",
+        "keywords": [
+          "圣堂中的王座",
+          "虚无中的一线留恋",
+          "革新者的访客",
+          "佩尔修斯的废墟",
+          "命运之子的配种"
+        ],
+        "abstract": "拔示巴的5个开局场景（含NSFW）：圣堂中的王座、虚无中的一线留恋、革新者的访客、佩尔修斯的废墟、命运之子的配种",
+        "enabled": true
+      },
+      "[mvu_plot]lena_场景": {
+        "path": "世界书/角色/lena/场景.txt",
+        "scope": "specific",
+        "part": "scenario",
+        "keywords": [
+          "废土上的邂逅",
+          "塞雷基亚之后",
+          "伊欧尼亚的幸存者",
+          "佩尔修斯的守护者",
+          "淫魔史莱姆的觉醒"
+        ],
+        "abstract": "蕾娜的5个开局场景（含NSFW）：废土上的邂逅、塞雷基亚之后、伊欧尼亚的幸存者、佩尔修斯的守护者、淫魔史莱姆的觉醒",
+        "enabled": true
+      },
+      "[mvu_plot]meme_场景": {
+        "path": "世界书/角色/meme/场景.txt",
+        "scope": "specific",
+        "part": "scenario",
+        "keywords": [
+          "新世界废墟",
+          "泰斯塔蒙特的低语",
+          "光之塔的旅伴",
+          "医疗营的访客",
+          "塞拉菲娜的困扰"
+        ],
+        "abstract": "米姆的5个开局场景（含NSFW）：新世界废墟、泰斯塔蒙特的低语、光之塔的旅伴、医疗营的访客、塞拉菲娜的困扰",
+        "enabled": true
+      },
+      "[mvu_plot]belzeebul_场景": {
+        "path": "世界书/角色/belzeebul/场景.txt",
+        "scope": "specific",
+        "part": "scenario",
+        "keywords": [
+          "Metaverse深渊",
+          "猫戏老鼠",
+          "混沌之器的契约",
+          "工厂的入侵者",
+          "一魂双体"
+        ],
+        "abstract": "贝尔泽布特的5个开局场景（含NSFW）：Metaverse深渊、猫戏老鼠、混沌之器的契约、工厂的入侵者、一魂双体",
+        "enabled": true
+      }
+    },
+    "MVU": {
+      "[mvu_update]变量输出格式": {
+        "path": "世界书/变量/变量输出格式.txt",
+        "part": "output_format",
+        "keywords": [],
+        "abstract": "MVU变量输出格式"
+      },
+      "变量列表": {
+        "path": "世界书/变量/变量列表.txt",
+        "part": "variable_list",
+        "keywords": [],
+        "abstract": "MVU变量列表"
+      },
+      "[mvu_update]变量更新规则": {
+        "path": "世界书/变量/变量更新规则.yaml",
+        "part": "update_rules",
+        "keywords": [],
+        "abstract": "MVU变量更新规则"
+      },
+      "[InitVar]请勿打开": {
+        "path": "世界书/变量/initvar.yaml",
+        "part": "initvar",
+        "keywords": [],
+        "abstract": "MVU初始变量",
+        "enabled": false
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件"
+    ]
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": "Infinity",
+    "地理": 0,
+    "角色": 0,
+    "NPC": 0,
+    "事件": 0,
+    "MVU": {
+      "initvar": {
+        "threshold": null,
+        "required": false
+      },
+      "output_format": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "update_rules": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "variable_list": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    }
+  },
+  "partOrder": {
+    "MVU": [
+      "variable_list",
+      "update_rules",
+      "output_format",
+      "initvar"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "avatar": "assets/airine.png",
+  "description": "",
+  "first_messages": [
+    "开场白/0.txt"
+  ],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-07-21T06:06:15.603Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {
+        "MVU": {
+          "type": "script",
+          "script_file": "脚本/MVU.txt",
+          "enabled": true,
+          "id": "d0311ca6-5e9a-498e-a777-f74dc4dc6b12",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "重新处理变量",
+                "visible": true
+              },
+              {
+                "name": "重新读取初始变量",
+                "visible": true
+              },
+              {
+                "name": "快照楼层",
+                "visible": false
+              },
+              {
+                "name": "重演楼层",
+                "visible": false
+              },
+              {
+                "name": "重试额外模型解析",
+                "visible": false
+              },
+              {
+                "name": "清除旧楼层变量",
+                "visible": false
+              }
+            ]
+          },
+          "data": {}
+        }
+      },
+      "variables": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "对AI隐藏状态栏": {
+      "id": "b5f2606f-69cc-4a6a-8ebb-bd8a3b7f671f",
+      "findRegex": "STATUS_PLACEHOLDER",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "状态栏界面": {
+      "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
+      "findRegex": "STATUS_PLACEHOLDER",
+      "replace_file": "正则/状态栏界面.html",
+      "trimStrings": [],
+      "placement": [],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏变量更新": {
+      "id": "aa12731a-97c4-4450-ac2f-0bfe1d6a4f64",
+      "findRegex": "/<(update(?:variable)?)>(?:(?!.*<\\\\/\\\\1>)(?:(?!<\\\\1>).)*$|(?:(?!<\\\\1>).)*<\\\\/\\\\1?>)/gsi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新中美化": {
+      "id": "b9d5f25b-a9d0-41bf-8a69-602d64bbde22",
+      "findRegex": "/<(update(?:variable)?)>(?!.*<\\\\/\\\\1>)\\\\s*((?:(?!<\\\\1>).)*)\\\\s*$/gsi",
+      "replace_file": "正则/变量更新中美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新美化": {
+      "id": "92d49340-fe5e-4929-871f-43d110e5ec76",
+      "findRegex": "/<(update(?:variable)?)>\\\\s*((?:(?!<\\\\1>).)*)\\\\s*<\\\\/\\\\1>/gsi",
+      "replace_file": "正则/变量更新美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    }
+  },
+  "zod": {
+    "scriptName": "Zod",
+    "scriptId": "5b3b09af-35e3-4149-a0f7-2f08776ed6a1",
+    "schemaPath": "schema.ts",
+    "importUrl": "https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js"
+  }
+}

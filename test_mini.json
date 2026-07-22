@@ -1,0 +1,25 @@
+{
+  "spec": "chara_card_v3",
+  "spec_version": "3.0",
+  "name": "Test_Mini",
+  "description": "test",
+  "personality": "",
+  "scenario": "",
+  "first_mes": "Hi, I'm a test card.",
+  "mes_example": "",
+  "creatorcomment": "",
+  "avatar": "none",
+  "talkativeness": 0.5,
+  "fav": false,
+  "tags": [],
+  "create_date": "2026-07-20T00:00:00.000Z",
+  "data": {
+    "name": "Test_Mini",
+    "description": "test",
+    "personality": "",
+    "scenario": "",
+    "first_mes": "Hi, I'm a test card.",
+    "mes_example": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,327 @@
+<变量操作说明>
+---
+变量更新规则:
+
+  _复用:
+    指令标签:
+      思考: <VariableThink>
+      新增: <VariableInsert>
+      修改: <VariableEdit>
+      删除: <VariableDelete>
+    日期格式: &FMT_DATE yyyy-mm-dd
+    时间格式: &FMT_TIME "{HH}:{mm}"
+    星期: &E_week [星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期日]
+    时段: &E_period [清晨, 上午, 下午, 傍晚, 夜晚, 深夜]
+    学生关系值范围: &R_relation 0~100
+
+  全局:
+    基准: [结构/字段类型/默认值以"结构定义"为准, 仅做最小必要状态维护]
+    指令语义:
+      - 新增用Insert，只增不改，不覆盖已存在节点
+      - 修改用Edit，只改不增，不得在不存在路径创建新键
+      - 删除用Delete，以空对象{}作为值删除对应节点
+    add硬约束:
+      - add=创建完整对象，不是patch
+      - 凡add某节点，value必须覆盖该节点type定义的全部字段
+      - 学生条目或任务条目add时必须整条写入
+      - 缺任一字段视为无效add
+    add非空约束:
+      - add时对象字段不得写{}
+      - map/record类型至少给1个有效key
+    路径约束:
+      - 路径必须精确到要修改的键
+      - 不创建影子键名
+      - 不重命名已有键
+    数值约束:
+      - 所有Edit数值必须写最终结果值，不写表达式
+      - 数值超range按上下限截断
+    删除约束:
+      - 仅允许删除白名单明确允许删除的节点
+      - relationship_students禁止删除学生条目
+
+  结构定义:
+    世界事件: &S_event "{[事件名]:{name;type;description;start_date;remaining_duration;end_date}}"
+    活动任务: &S_active_quest "{[任务标题]:{title;description;complateCondition;progress:num;rewards:{credits:num;pyroxene:num}}}"
+    已完成任务: &S_completed_quest "{[任务标题]:{title}}"
+    学生条目: &S_student "{[学生名]:{basic_info:{name;school;club;is_in_team:bool};appearance:{height;hair_color;hairstyle;eye_color;skin_tone;body_type};clothing:{top;bottom;innerwear;panties;stockings;shoes;accessories};relationship:{affection:num;sexual_desire:num;attitude_towards_sensei};mental_state:{current_thoughts;emotional_state};location_info:{current_location;is_nearby:bool};body_features:{breasts:{shape;nipple_color};private_parts:{type}};sexual_experience:{virgin:bool;anal_experience:num;oral_experience:num;sex_count:num;partner_count:num;first_partner;fetishes:str[];important_experiences:str[]};physiological_state:{vaginal_lubrication;nipple_state;clitoris_state;uterus_state;menstrual_cycle;pregnancy_state};interaction_records:{first_meeting;memorable_events;relationship_changes;last_interaction:{date;location}}}}"
+
+  world_info:
+    time:
+      current_date:
+        type: str
+        format: *FMT_DATE
+        check:
+          - 日期推进时更新
+          - 每轮按剧情实际耗时合理推进
+      current_time:
+        type: str
+        format: *FMT_TIME
+        check:
+          - 场景内时间流逝时更新
+      day_of_week:
+        category: *E_week
+        check:
+          - 与current_date保持一致
+      修改规则:
+        - 只允许修改既有字段值
+        - 禁止新增字段
+        - 禁止删除字段
+    location:
+      district:
+        type: str
+        check:
+          - 进入新地区时更新
+      detailed_location:
+        type: str
+        check:
+          - 进入新房间/建筑/具体地点时更新
+      修改规则:
+        - 只允许修改既有字段值
+        - 位置变化时优先Edit district与detailed_location
+        - 禁止新增字段
+        - 禁止删除字段
+    environment:
+      weather:
+        type: str
+        check:
+          - 天气变化时更新
+      period:
+        category: *E_period
+        check:
+          - 与current_time大致匹配
+      temperature:
+        type: str
+        check:
+          - 使用简短体感描述
+      修改规则:
+        - 只允许修改既有字段值
+        - 天气或时段变化时优先Edit weather与period
+        - 禁止新增字段
+        - 禁止删除字段
+    events:
+      type: *S_event
+      check:
+        - 正在发生的公共事件add
+        - 事件完成或过期remove
+        - delete对象是events下的键名，不是事件name字段
+        - add时必须完整写入事件对象
+        - name字段与外层key保持一致
+        - 同时最多保留2个事件对象，已满时禁止新增
+    rumor:
+      type: str
+      check:
+        - 只允许整段替换
+        - 为空时必须更新
+        - 仅记录学生间八卦或重要情报
+        - 不转述{{user}}在场时的具体行动
+        - 允许记录{{user}}不在场时的内容，或其行动造成的社会影响
+        - 禁止新增属性
+        - 禁止删除属性
+
+  protagonist:
+    identity:
+      name:
+        type: str
+        check:
+          - 初始化后通常不改
+      title:
+        type: str
+        check:
+          - 身份或职位变化时更新
+      修改规则:
+        - 只允许修改既有字段值
+        - 禁止新增字段
+        - 禁止删除字段
+    currency:
+      credits:
+        type: num
+        range: 0~999999999
+        check:
+          - 奖励、消费、交易后同步更新
+          - 不得为负数
+      pyroxene:
+        type: num
+        range: 0~999999999
+        check:
+          - 高级货币增减时更新
+          - 不得为负数
+      修改规则:
+        - 只允许修改既有字段值
+        - 禁止新增字段
+        - 禁止删除字段
+    quest:
+      active:
+        type: *S_active_quest
+        check:
+          - 接取任务add
+          - 已有任务仅修改既有字段值
+          - 完成后先发放奖励，再remove对应active任务
+          - add时必须完整写入任务对象
+          - 新任务可围绕蔚蓝档案原作剧情、学生求助、社团纠纷或其他委托生成
+      complate:
+        type: *S_completed_quest
+        check:
+          - 任务完成后add
+          - 仅保留title即可
+          - 已完成任务超过5个时，先清空全部已完成任务，再新增本次记录
+      "{任务标题}":
+        progress:
+          type: num
+          range: 0~100
+          check:
+            - 仅随任务推进更新
+        rewards:
+          credits:
+            type: num
+            check:
+              - 与实际发放保持一致
+          pyroxene:
+            type: num
+            check:
+              - 与实际发放保持一致
+
+  relationship_students:
+    type: *S_student
+    check:
+      - key固定为学生name
+      - 若当前剧情聚焦学生不存在，则add完整学生条目
+      - 同名学生禁止重复add
+      - 已存在学生一律使用Edit
+      - 禁止删除学生
+      - 禁止新增模板外字段
+      - 禁止删除既有字段
+    "{学生名}":
+      basic_info:
+        name:
+          type: str
+          check:
+            - 与外层key保持一致
+        school:
+          type: str
+        club:
+          type: str
+        is_in_team:
+          type: bool
+          check:
+            - 初始默认为false
+            - 入队true，离队false
+      appearance:
+        check:
+          - 角色基础外观信息
+      clothing:
+        check:
+          - 换装、破损或场景变化时更新
+      relationship:
+        affection:
+          type: num
+          range: *R_relation
+          check:
+            - 重要互动后增减
+            - 单轮最多±2
+            - 最终值截断到0~100
+        sexual_desire:
+          type: num
+          range: *R_relation
+          check:
+            - 情色互动或长期状态变化后更新
+            - 单轮最多+5
+            - 做爱结束且性欲得到满足后重置为0
+            - 最终值截断到0~100
+        attitude_towards_sensei:
+          type: str
+          check:
+            - 与好感走势一致
+      mental_state:
+        current_thoughts:
+          type: str
+          check:
+            - 必须写本人的第一人称内心独白
+        emotional_state:
+          type: str
+          check:
+            - 使用简短情绪词描述
+      location_info:
+        current_location:
+          type: str
+          check:
+            - 位置变化时更新
+        is_nearby:
+          type: bool
+          check:
+            - 在当前场景附近true，否则false
+      body_features:
+        check:
+          - breasts.shape描述乳房罩杯大小与外观形状
+          - private_parts.type描述私处外观形状与阴道特点
+          - 作为学生身体特征信息，通常不频繁改动
+      sexual_experience:
+        virgin:
+          type: bool
+          check:
+            - 初始通常为true
+            - 仅在首次性行为后由true变false
+            - 不反向修改
+        anal_experience:
+          type: num
+          check:
+            - 记录次数或累计值
+            - 不得为负数
+        oral_experience:
+          type: num
+          check:
+            - 记录次数或累计值
+            - 不得为负数
+        sex_count:
+          type: num
+          check:
+            - 性交后递增
+            - 不得为负数
+        partner_count:
+          type: num
+          check:
+            - 不得大于sex_count
+        first_partner:
+          type: str
+          check:
+            - 首次性行为确定后写入
+        fetishes:
+          type: "str[]"
+          check:
+            - 新显著癖好出现时增量追加
+        important_experiences:
+          type: "str[]"
+          check:
+            - 记录关键经历，增量追加
+      physiological_state:
+        check:
+          - 属于短期身体状态，按当前状态更新
+        pregnancy_state:
+          type: str
+          check:
+            - 使用明确状态描述，如未怀孕/怀孕中
+      interaction_records:
+        first_meeting:
+          type: str
+          check:
+            - 初见后写入，通常不覆盖
+        memorable_events:
+          type: str
+          check:
+            - 发生重要剧情进展时更新
+            - 用概括性短句记录重要事件
+        relationship_changes:
+          type: str
+          check:
+            - 记录关系转折
+        last_interaction:
+          date:
+            type: str
+            format: *FMT_DATE
+            check:
+              - 每次正式互动后更新
+          location:
+            type: str
+            check:
+              - 与最后互动地点保持一致
+
+</变量操作说明>

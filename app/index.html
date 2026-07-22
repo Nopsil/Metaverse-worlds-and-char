@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CHUNITHM Metaverse · 命运观测终端</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(160deg,#0a001a,#1a0030,#050520,#000815);color:#fff;min-height:100vh}
+.app{max-width:900px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 0 20px}
+.title{font-size:2.4em;font-weight:900;background:linear-gradient(180deg,#ff6bcd,#c45cff,#6b8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px}
+.subtitle{color:#9080b0;font-size:.85em;letter-spacing:4px;margin-top:4px}
+.step-indicator{display:flex;justify-content:center;gap:20px;margin:16px 0;color:#9080b0;font-size:.8em}
+.step-indicator .active{color:#ff9dde;font-weight:bold}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.char-card{cursor:pointer;border:2px solid rgba(255,255,255,.1);border-radius:14px;padding:16px;transition:.2s;background:rgba(255,255,255,.03)}
+.char-card:hover{border-color:rgba(255,107,205,.5);background:rgba(255,107,205,.06)}
+.char-card.selected{border-color:#ff6bcd;background:rgba(255,107,205,.1)}
+.char-card .name{font-size:1.2em;font-weight:900;margin-bottom:4px}
+.char-card .desc{font-size:.78em;color:#b0a0c0}
+.char-card:nth-child(1) .name{color:#ff6bcd}
+.char-card:nth-child(2) .name{color:#8eceff}
+.char-card:nth-child(3) .name{color:#90ff90}
+.char-card:nth-child(4) .name{color:#ffcc66}
+.char-card:nth-child(5) .name{color:#c0a0ff}
+.char-card .emoji{font-size:2em;display:block;margin-bottom:6px}
+.panel{display:none;margin-top:16px}
+.panel.active{display:block}
+.scene-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.scene-card{cursor:pointer;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px;transition:.15s;text-align:center}
+.scene-card:hover{background:rgba(255,255,255,.08)}
+.scene-card.picked{background:rgba(255,107,205,.15);border-color:#ff6bcd}
+.scene-card .num{font-size:2em;display:block}
+.scene-card .label{font-size:.85em;margin-top:4px}
+.back-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:6px 14px;color:#b0a0c0;cursor:pointer;font-size:.8em;margin-bottom:12px}
+.output-area{margin-top:16px}
+.output-area textarea{width:100%;height:120px;background:rgba(0,0,0,.6);border:1px solid rgba(255,107,205,.4);border-radius:10px;color:#ff9dde;padding:12px;font-size:.85em;resize:vertical}
+.btn-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,#ff6bcd,#c45cff);border:none;border-radius:8px;padding:10px 20px;color:#fff;font-weight:bold;cursor:pointer}
+.btn-secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 20px;color:#ccc;cursor:pointer}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#90ff90;color:#000;padding:8px 20px;border-radius:20px;font-size:.85em;display:none;z-index:100}
+.toast.show{display:block}
+.worldbook-panel{display:none;margin-top:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px}
+.worldbook-panel h3{color:#ff9dde;margin-bottom:10px;font-size:.95em}
+.worldbook-panel .entry{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.05)}
+.worldbook-panel .entry-title{color:#ff9dde;font-weight:bold;font-size:.85em;margin-bottom:4px}
+.worldbook-panel .entry-content{color:#b0a0c0;font-size:.78em;line-height:1.5;max-height:200px;overflow-y:auto}
+.worldbook-panel .entry-keys{color:#706090;font-size:.7em;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="header"><div class="title">CHUNITHM METAVERSE</div><div class="subtitle">—— 命运观测终端 ——</div><div class="step-indicator"><span class="active" id="step1dot">● 选择角色</span><span id="step2dot">○ 选择开局</span><span id="step3dot">○ 开始冒险</span></div></div>
+
+<div class="panel active" id="charPanel"><div class="card-grid" id="charGrid"></div></div>
+
+<div class="panel" id="scenePanel"><button class="back-btn" onclick="backToChars()">← 返回角色选择</button><div class="scene-list" id="sceneGrid"></div></div>
+
+<div class="panel" id="resultPanel">
+<button class="back-btn" onclick="backToScenes()">← 返回开局选择</button>
+<div class="output-area"><textarea id="outputText" readonly></textarea></div>
+<div class="btn-row">
+<button class="btn-primary" onclick="copyAndGo()">📋 复制并开始冒险</button>
+<button class="btn-secondary" onclick="openWorldbook()">📖 浏览 Metaverse 世界书</button>
+</div>
+</div>
+
+<div class="worldbook-panel" id="worldbookPanel">
+<h3>📖 Metaverse 世界书</h3>
+<div id="worldbookEntries"></div>
+<button class="btn-secondary" onclick="closeWorldbook()" style="margin-top:10px">关闭</button>
+</div>
+</div>
+
+<div class="toast" id="toast">✅ 开场文本已复制！请粘贴到酒馆聊天框发送</div>
+
+<script>
+const chars=[
+  {emoji:'🩸',name:'拔示巴·阿西德菲尔',desc:'破灭的圣女 · 地上真人篇',color:'#ff6bcd',
+   scenes:[
+    {name:'配种室初见',text:'你被亚哈带入她的房间。银白色长发的少女坐在窗边，红色的眼眸如冰封的湖水般波澜不惊。\n\n"又一个了。你是第几个了？是来膜拜我的？还是来利用我的？"\n\n她用剑尖轻轻点了一下地面。\n\n"还是说——你只是走错了房间？"'},
+    {name:'圣堂独白',text:'夜深了。奥林匹亚斯圣堂的喧嚣已经褪去，只剩下空旷的大厅和跪坐在王座前的银发少女。\n\n她手中的细剑平放在膝上。窗外没有月亮也没有星星。\n\n"……没有人。"\n\n然后她听到了脚步声。'},
+    {name:'米斯拉的微笑',text:'午后的阳光穿过圣堂的彩色玻璃。米斯拉·特尔塞拉双手叉腰站在银发少女面前。\n\n"再来一次。嘴角——这样。不要用力，自然一点。"\n\n拔示巴望着眼前这个拥有自己血脉的少女，沉默了片刻。然后——嘴角动了动。一个僵硬的不熟练的发自内心的微笑。\n\n你从走廊转角走出，话没说完就停住了。两人同时看向你。'}]},
+  {emoji:'🌙',name:'蕾娜·伊修梅尔',desc:'归还者的月光 · 地上真人篇',color:'#8eceff',
+   scenes:[
+    {name:'伊欧尼亚火海',text:'皮阔特号的甲板被晚霞染成了鲜血的颜色。银白色中长发的少女蜷缩在货箱阴影里，双手紧抱一把还没有她小臂长的小手枪。\n\n11个同伴全都死了。\n\n你从船舱走出来，踩到一根钢缆——金属响声让她整个人弹了起来，小手枪立刻指向你。"你、你是谁？"'},
+    {name:'皮阔特号航程',text:'海风吹乱了银白色短发。蕾娜把兜帽拉起来——兜帽边沿直接盖住了整张脸。\n\n"唔…又来了。"她手忙脚乱地扶正兜帽，然后发现你正靠在船舷边看着她。\n\n"啊，你好！"她微鞠一躬——兜帽又滑下来了。她索性不管了，抬起头露出一个笨拙但温暖的笑容。\n\n"我叫蕾娜。蕾娜·伊修梅尔。可以一起走一段路吗？"'},
+    {name:'安特路亚之夜',text:'废弃都市在月光下沉默。布鲁·斯坦因的医疗装置嗡嗡响着。少女躺在临时病床上，高烧让她脸颊泛红。基德翁和约拿在门口轮流哨戒。\n\n远方——引擎的轰鸣声隐约传来。\n\n你坐在蕾娜旁边，感觉到她的手抓紧了床单。'},
+    {name:'战后的深夜',text:'佩尔修斯殖民地。战痕渐淡。\n\n蕾娜站在窗边，银白色长发散在肩后。窗外重建中的都市洒满星光。\n\n"能决定我们未来的，只有我们自己。"她低头看着自己的右手——那只曾颤抖着扣下扳机的手。\n\n有人敲门。这么晚了，会是谁？'}]},
+  {emoji:'💉',name:'米姆·米库拉',desc:'双重人格的医者 · 新世界篇',color:'#90ff90',
+   scenes:[
+    {name:'路边包扎',text:'米姆蹲在路边认真给一只受伤的小动物包扎。"好了好了，不疼了吧？"然后她注意到你的影子，抬起头——紫色眼睛里闪过一丝警觉，随后变为好奇。\n\n"你也是旅人吗？我叫米姆。如果你受伤了，我可以帮你看看。"她顿了顿，侧头像是在听什么声音。"……不是我说的！好吧——我的室友让我问你——你是敌人，还是朋友？"'},
+    {name:'泰斯塔蒙特觉醒',text:'米姆突然停下。医疗包重重砸地。\n\n"——呜！"她抱住头蜷缩下去。手指松开——紫色眼瞳取代了苍蓝。\n\n"真是无聊啊。"她站直，声音低了半个八度。"让一个笨蛋小女孩来招待我的客人？"\n\n她转向你，舔了舔嘴唇。"呐。你——是来看米姆的，还是来看我的？如果是后者——我可以陪你玩玩哦。"'},
+    {name:'药房深夜',text:'"不许说那种话！"\n"呵，你个小丫头片子以为能命令我？"\n"我说的就是你！不准随便跑出来！"\n"那三个自己胆子小关我什么事。"\n\n昏暗药房里，淡紫色长发少女一手叉腰一手指着自己太阳穴。\n\n然后你推开了门。\n\n她同时停下，同时转向你。"你看到了？"'},
+    {name:'旅路篝火',text:'夜晚荒原上，篝火噼啪作响。塞拉菲娜枕着米姆的腿安静入睡，金色长发散在米姆的裙摆上，手里仍握着苍蓝神统奏鸣剑。\n\n米姆轻抚巫女的头发，紫色眼瞳在火光中闪烁——那是泰斯塔蒙特在沉默地望着怀里的人。\n\n"你知道吗。如果这个世界是假的，那我感受到的体温——难道也是假的吗？"\n\n火星飞起，消散在星空里。'}]},
+  {emoji:'👑',name:'贝尔泽ブト·涅墨西斯',desc:'欺瞒的使徒 · 电脑世界篇',color:'#ffcc66',
+   scenes:[
+    {name:'机械王座',text:'贝尔泽ブト半躺在机械王座中，一条腿优雅地搭在另一条腿上。青绿色长发如能量流扩散。背后机械触手慵懒蠕动。\n\n"啊啦。又有新玩具自己送上门来了。"她单手托脸，紫色眼眸扫过你。"让我猜猜——迷路了？被人派来的？还是——"\n\n她微微前倾，触手在身后展开。"你，就是想来看看我这个怪物长什么样？没关系哦。我都不讨厌。那么——"\n\n她抬起手，指尖凝聚蓝白色能量球。"你，想怎么玩？"'},
+    {name:'战场撤退',text:'前方战斗还在继续，但她已退出交战中心。她用舌尖舔了舔指尖的血。\n\n"一点意思都没有。我还以为能玩得更久一点呢。"\n\n"啊——不过你们挺有趣的。那两个小女孩用那种奇怪的力量伤到了我。轻微擦伤而已哦。"\n\n"所以——今天就到这里。下次再陪我玩玩？"\n\n触手包裹着她消失在数据之海的暗流中。'},
+    {name:'阿雷斯负伤',text:'轰——！！\n\n光芒吞没了阿雷斯大半个身体。无数条手臂像断线木偶垂下，胸口装甲碎裂。\n\n"阿雷斯！！"\n\n贝尔泽ブト——那个以玩弄弱者为乐的恶魔——在所有人都还没反应过来时已冲上战场。她用自己的触手代替了阿雷斯断裂的手臂，将他背了起来。\n\n"太乱来了。早叫你不要一个人冲在最前面。"她的声音里没有戏谑。\n\n她看到了你。"你看什么。还不快给我让开。"'},
+    {name:'研究所奇遇',text:'空气中弥漫着金属和臭氧的味道。巨大圆顶空间堆放满奇形怪状的机械装置和发光管线。\n\n"你——不是这里的程序吧。"\n\n贝尔泽ブト从机械残骸后踱出，青绿色长发格外扎眼。触手没有展开——半警惕半好奇。\n\n"能活着走进这里的——要么是涅墨西斯的人，要么是敌人。"她歪头，嘴角慢翘。"你是哪边的？"'}]},
+  {emoji:'🦋',name:'艾莉ニ·居里亚斯',desc:'次元绘本画家 · 次元放浪记',color:'#c0a0ff',
+   scenes:[
+    {name:'蓝蝶落地',text:'一阵微弱蓝光闪过，空气中的涟漪逐渐平息。银发蓝瞳的少女从传送余波中踏出，左手还抱着素描本。蓝蝶们在她身边飞舞。\n\n"呼——这次总算没有传送到奇怪的地方。"她四处看了看，然后注意到了你。\n\n"啊，你好！"她微微睁大蓝色眼睛，随后露出温柔微笑。"我叫艾莉ニ。艾莉ニ·居里亚斯。我在画一本画册，记录所有我觉得美丽的瞬间。"\n\n蓝蝶忽然飞向你，绕你转了一圈。\n\n艾莉ニ笑了。"它好像很喜欢你。能在你的世界里稍作歇息吗？"'},
+    {name:'废墟画花',text:'荒凉废墟——倒塌的钢结构，生锈的机械零件，被风沙埋葬的残垣断壁。\n\n但在这废墟的正中央，一株小花从铁锈缝隙间钻出。\n\n艾莉ニ跪在地上翻开素描本。蓝蝶静静落在画笔上，像屏住了呼吸。\n\n"嘘——"她对你说。"别吓到它。"\n\n笔尖在纸上快速移动——记录这朵在绝望中绽放的生命。'},
+    {name:'地下都市童年',text:'窗外不是天空，是铁灰色天花板。索拉里斯地下都市的空气永远带着淡淡臭氧味。\n\n六岁的艾莉ニ·居里亚斯坐在窗边小凳子上，握着一支短粗蓝色蜡笔，在皱巴巴的纸上画着什么。一个蓝色圆圈——"天空"。一个黄色圆圈——"太阳"。\n\n她从来没亲眼看过这两个东西。只在妈妈旧图画书上见过。\n\n"小艾莉——"一个女人从身后轻轻叫她的名字。'}]}
+];
+
+let selectedChar=null,selectedScene=null;
+const charGrid=document.getElementById('charGrid');
+const sceneGrid=document.getElementById('sceneGrid');
+const charPanel=document.getElementById('charPanel');
+const scenePanel=document.getElementById('scenePanel');
+const resultPanel=document.getElementById('resultPanel');
+
+// Render character cards
+chars.forEach((c,i)=>{
+  const el=document.createElement('div');
+  el.className='char-card';
+  el.innerHTML=`<span class="emoji">${c.emoji}</span><div class="name">${c.name}</div><div class="desc">${c.desc}</div>`;
+  el.onclick=()=>{selectedChar=i;showScenes(i);};
+  charGrid.appendChild(el);
+});
+
+function showScenes(i){
+  const c=chars[i];
+  sceneGrid.innerHTML=c.scenes.map((s,j)=>`<div class="scene-card" onclick="pickScene(${j})"><span class="num">${j+1}</span><span class="label">${s.name}</span></div>`).join('');
+  charPanel.classList.remove('active');
+  scenePanel.classList.add('active');
+  resultPanel.classList.remove('active');
+  document.getElementById('step1dot').className='';
+  document.getElementById('step2dot').className='active';
+  document.getElementById('step3dot').className='';
+}
+
+function pickScene(j){
+  selectedScene=j;
+  const c=chars[selectedChar];
+  document.getElementById('outputText').value=c.scenes[j].text;
+  scenePanel.classList.remove('active');
+  resultPanel.classList.add('active');
+  document.getElementById('step2dot').className='';
+  document.getElementById('step3dot').className='active';
+  document.querySelectorAll('.scene-card').forEach(el=>el.classList.remove('picked'));
+  document.querySelectorAll('.scene-card')[j].classList.add('picked');
+}
+
+function backToChars(){
+  scenePanel.classList.remove('active');
+  charPanel.classList.add('active');
+  resultPanel.classList.remove('active');
+  document.getElementById('step1dot').className='active';
+  document.getElementById('step2dot').className='';
+  document.getElementById('step3dot').className='';
+}
+
+function backToScenes(){
+  resultPanel.classList.remove('active');
+  scenePanel.classList.add('active');
+  document.getElementById('step2dot').className='active';
+  document.getElementById('step3dot').className='';
+}
+
+function copyAndGo(){
+  const ta=document.getElementById('outputText');
+  ta.select();document.execCommand('copy');
+  showToast('✅ 开场文本已复制！请粘贴到酒馆聊天框发送');
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// Embedded worldbook (summary entries)
+const worldbook=[
+  {title:'世界设定',keys:'Metaverse, 框架主脑, 工厂',content:'巨型电脑世界与废土化地球并存的末世体系。人类创造AI神明艾克雷尔，建立虚拟乐园Metaverse。框架主脑（最古神明集团）、涅墨西斯（混沌七器）、工厂（研发机关）三方博弈。分为旧篇Reconnect和次元放浪记Cross the Verse。'},
+  {title:'时间线',keys:'时间线, 历史, 创世纪',content:'旧人类战争→Metaverse创世纪→提丰独裁→MIR叛变→涅墨西斯入侵→地上真人觉醒→乐园事变→新世界篇。次元放浪记为并行新篇章。'},
+  {title:'核心层',keys:'核心层, 框架主脑, 艾崔兰克',content:'框架主脑中枢——最古们的居所和统治核心。提丰死后元气大伤，采取笼城作战自卫。'},
+  {title:'中间层世界群',keys:'中间层, 工厂, 前哨基地',content:'亿万人类意识生活的电子乐园。工厂根据地在此，也是涅墨西斯入侵前线。'},
+  {title:'最外周部',keys:'最外周, 涅墨西斯, 混沌之海',content:'Metaverse最遥远的外围区域。涅墨西斯诞生地和大本营，混沌七器在此拥有绝对支配力。'},
+  {title:'地上世界',keys:'地上, 真人, 殖民地',content:'物理世界中的真人殖民地。革弃者和次元旅人的舞台。真人被制造出来修复大地，却被剥夺生殖能力，最终面临灭绝命运。'}
+];
+
+function openWorldbook(){
+  document.getElementById('worldbookPanel').style.display='block';
+  const container=document.getElementById('worldbookEntries');
+  container.innerHTML=worldbook.map(e=>`<div class="entry"><div class="entry-keys">🔑 ${e.keys}</div><div class="entry-title">${e.title}</div><div class="entry-content">${e.content}</div></div>`).join('');
+}
+
+function closeWorldbook(){
+  document.getElementById('worldbookPanel').style.display='none';
+}
+</script>
+</body>
+</html>

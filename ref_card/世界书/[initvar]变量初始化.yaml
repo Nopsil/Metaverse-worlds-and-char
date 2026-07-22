@@ -1,0 +1,130 @@
+world_info:
+  time:
+    current_date: '2024-11-09'
+    current_time: '14:30'
+    day_of_week: 星期六
+  location:
+    district: 夏莱
+    detailed_location: 夏莱联邦学生会大楼-办公室
+  environment:
+    weather: 晴朗
+    period: 下午
+    temperature: 适宜
+  events: {}
+  rumor: ''
+
+protagonist:
+  identity:
+    name: 老师
+    title: 夏莱联邦学生会顾问
+  currency:
+    credits: 500000
+    pyroxene: 1200
+  quest:
+    active: {}
+    complate: {}
+
+story_manager:
+  enabled: false
+  mode: 日常
+  current:
+    vol: ''
+    chapter: ''
+    seq: 0
+  completed_chapters:
+    Vol0: []
+    Vol1: []
+    Vol2: []
+    Vol3: []
+    Vol4: []
+    Vol5: []
+    VolF: []
+    Vol6: []
+    VolEX: []
+
+relationship_students: {}
+
+
+系统配置:
+  对白美化:
+    - 阿慈谷日富美
+    - 阿罗娜
+    - 爱清枫香
+    - 奥空绫音
+    - 白洲梓
+    - 百合园圣娅
+    - 冰室濑名
+    - 不破莲华
+    - 不知火花耶
+    - 才羽绿
+    - 才羽桃井
+    - 苍森美弥
+    - 秤亚津子
+    - 槌永日和
+    - 春原心奈
+    - 春原旬
+    - 丹花伊吹
+    - 调月莉音
+    - 锭前纱织
+    - 飞鸟马时
+    - 风仓萌绘
+    - 胡桃
+    - 歌住樱子
+    - 鬼方佳代子
+    - 和乐千世
+    - 河和静子
+    - 黑馆晴奈
+    - 黑见芹香
+    - 黑子
+    - 狐坂若藻
+    - 花冈柚子
+    - 间宵时雨
+    - 角楯花凛
+    - 戒野美咲
+    - 久田泉奈
+    - 鹫见芹奈
+    - 橘光
+    - 橘望
+    - 勘解由小路缘里
+    - 空井咲
+    - 空崎日奈
+    - 栗村爱莉
+    - 连河切里诺
+    - 龙华妃咲
+    - 陆八魔阿露
+    - 猫冢响
+    - 美甘妮禄
+    - 明星日鞠
+    - 妮可
+    - 浦和花子
+    - 普拉娜
+    - 七度雪乃
+    - 七神凛
+    - 浅黄睦月
+    - 若叶日向
+    - 砂狼白子
+    - 扇喜葵
+    - 生盐诺亚
+    - 圣园未花
+    - 十六夜野宫
+    - 小空
+    - 小鸟游星野
+    - 小涂真纪
+    - 笑面教授
+    - 杏山和纱
+    - 夜樱绮罗罗
+    - 一之濑明日奈
+    - 伊落玛丽
+    - 伊原木喜美
+    - 银镜伊织
+    - 音葵
+    - 柚鸟夏
+    - 羽川莲见
+    - 御稜名草
+    - 月雪宫子
+    - 早濑优香
+    - 枣伊吕波
+    - 仲正一花
+    - 黑崎小雪
+    - 内海青叶
+    - 三善贵音

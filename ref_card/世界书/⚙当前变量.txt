@@ -1,0 +1,78 @@
+---
+## 以下为当前世界变量，以此核准状态，规划剧情
+<%_
+;(() => {
+const messageData = _.cloneDeep(getMessageVar('stat_data', { defaults: {} }));
+const localData = _.cloneDeep(getvar('stat_data', { scope: 'local', clone: true }) || {});
+const data = !_.isEmpty(messageData) ? messageData : localData;
+
+if (!data || _.isEmpty(data)) { _%>
+<status_current_variables>
+数据为空
+</status_current_variables>
+<%_ } else {
+
+const safeStringify = (obj) => {
+  if (typeof YAML !== 'undefined' && YAML && typeof YAML.stringify === 'function') {
+    return YAML.stringify(obj, { blockQuote: 'literal' }).trim();
+  }
+  return JSON.stringify(obj, null, 2);
+};
+
+const current = {};
+
+const worldInfo = _.cloneDeep(data.world_info || {});
+const protagonist = _.cloneDeep(data.protagonist || {});
+const storyManager = _.cloneDeep(data.story_manager || {});
+const relationshipStudents = _.cloneDeep(data.relationship_students || {});
+const showStoryManager = storyManager?.enabled === true;
+
+const currentLocation =
+  worldInfo?.location?.detailed_location ||
+  worldInfo?.location?.district ||
+  '未知地点';
+
+const filteredStudents = {};
+const allNames = Object.keys(relationshipStudents).filter(name => name && name.charCodeAt(0) !== 36);
+
+let fullCount = 0;
+let partialCount = 0;
+
+for (const name of allNames) {
+  const student = relationshipStudents[name] || {};
+  const isNearby = student.location_info?.is_nearby === true;
+  const inTeam = student.basic_info?.is_in_team === true;
+
+  if (isNearby || inTeam) {
+    filteredStudents[name] = student;
+    fullCount++;
+    continue;
+  }
+
+  filteredStudents[name] = {
+    basic_info: {
+      name: student.basic_info?.name || name
+    }
+  };
+  partialCount++;
+}
+
+current.world_info = worldInfo;
+current.protagonist = protagonist;
+if (showStoryManager) {
+  current.story_manager = storyManager;
+}
+current.relationship_students = filteredStudents;
+
+_%>
+
+## ERA变量详情
+[系统提示：relationship_students 中已注册的学生不需要重复使用Insert注册，只能使用Edit更新。附近学生或队伍成员会完整展示，其余已注册学生只做简略展示。]
+[当前地点：<%= currentLocation %>]
+[学生加载统计：完整 <%= fullCount %> 人 | 简略 <%= partialCount %> 人 | 总计 <%= allNames.length %> 人]
+
+<status_current_variables>
+<%= safeStringify(current) %>
+</status_current_variables>
+<%_ }
+})(); _%>

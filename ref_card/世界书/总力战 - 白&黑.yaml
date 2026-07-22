@@ -1,0 +1,31 @@
+---   
+ {
+      "name_cn": "白&黑",
+      "name_jp": "Shiro & Kuro",
+      "series": "史林皮亚",
+      "appearance": "由两个独立的Boss组成。Shiro(白)是一个巨大的、白色的、在游乐园球体上滚动前进的吉祥物，表情天真但行为充满破坏性。Kuro(黑)则是一个体型稍小、黑色的、骑在导弹上的吉祥物，表情更加调皮和具有攻击性。",
+      "background": "废弃游乐园“史林皮亚”中的神秘存在。白(Shiro)和黑(Kuro)似乎是这个乐园的守护者或化身，对所有到访者发起挑战，行为模式充满了游乐设施的特征。",
+      "attributes": {
+        "armor_type": "特殊装甲",
+        "attack_type": "贯通",
+        "location": "市街/室内"
+      },
+      "combat_flow": {
+        "summary": "分为两个独立的战斗阶段，先对战白，再对战黑。考验队伍在移动战和范围攻击中的应对能力。",
+        "phases": [
+          {
+            "phase_number": 1,
+            "trigger": "战斗开始",
+            "description": "对战Shiro(白)。战斗场地分为三条路径，Shiro会在路径间移动并发动攻击。攻击目标会影响视角。",
+            "mechanics": ["Shiro会使用'哦啦！'和'凌空滚动！'等技能。当其ATG充满后，会释放强力技能，然后移动到另一条路径。"]
+          },
+          {
+            "phase_number": 2,
+            "trigger": "击败Shiro后",
+            "description": "对战Kuro(黑)。Kuro会使用'突击！'和'史林皮亚的恐慌'等技能。'史林皮亚的恐慌'技能会持续增加其攻击力。",
+            "mechanics": ["Kuro的ATG会随时间持续增长，充满后释放强力技能。", "部分攻击会召唤小怪或设置障碍物。"]
+          }
+        ],
+        "groggy_condition": "通过对Shiro和Kuro各自造成伤害来累积其独立的无力值槽。"
+      }
+    }

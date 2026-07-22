@@ -1,0 +1,41 @@
+{
+  "projects": {
+    "Metaverse": {
+      "state_file": "cards/Metaverse/tavern-cards-state.json",
+      "artifact": "cards/Metaverse/Metaverse.json"
+    },
+    "MetaverseLobby": {
+      "state_file": "cards/MetaverseLobby/tavern-cards-state.json",
+      "artifact": "cards/MetaverseLobby/MetaverseLobby.png"
+    }
+  },
+  "default_type_lists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件"
+    ]
+  },
+  "default_strategy_thresholds": {
+    "世界观": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": "Infinity",
+    "地理": 0,
+    "角色": 0,
+    "NPC": 0,
+    "事件": 0
+  },
+  "default_part_order": {},
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  }
+}

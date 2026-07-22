@@ -1,0 +1,370 @@
+``` text
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碧蓝档案大世界</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      padding: 0 16px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    /* 封面图区域 */
+    .cover-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      background: #f9fafb;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .cover-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 主内容区 */
+    .content {
+      padding: 32px 40px;
+    }
+
+    /* 标题区 */
+    .header {
+      margin-bottom: 32px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 24px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #111827;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #10b981;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* 特性区 */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .feature-card {
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 6px;
+      border-left: 3px solid #3b82f6;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      color: #111827;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    /* 提示区 */
+    .notice {
+      padding: 20px 24px;
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      margin-bottom: 32px;
+    }
+
+    .notice p {
+      font-size: 0.938rem;
+      color: #92400e;
+      line-height: 1.7;
+    }
+
+    .notice strong {
+      color: #78350f;
+    }
+
+    /* 指南区 */
+    .guide {
+      margin-bottom: 32px;
+    }
+
+    .guide h2 {
+      font-size: 1.25rem;
+      color: #111827;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .guide-item {
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .guide-item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .guide-number {
+      width: 28px;
+      height: 28px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .guide-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .guide-important {
+      padding: 2px 8px;
+      background: #fee2e2;
+      color: #dc2626;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .guide-content {
+      color: #4b5563;
+      font-size: 0.938rem;
+      line-height: 1.7;
+    }
+
+    .guide-content p {
+      margin-bottom: 8px;
+    }
+
+    .guide-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA提示 */
+    .cta-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #3b82f6;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #eff6ff;
+      border-radius: 8px;
+      border: 2px solid #3b82f6;
+      user-select: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .cta-text:hover {
+      background: #3b82f6;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .cta-text::after {
+      content: '→';
+      font-size: 1.5rem;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 0;
+      }
+
+      .container {
+        border-radius: 0;
+      }
+
+      .cover-image {
+        max-width: 100%;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 主内容区 -->
+    <div class="content">
+      <!-- 标题区 -->
+      <div class="header">
+        <h1>碧蓝档案大世界</h1>
+        <p>——在基沃托斯跟学生们涩涩的日子！<span class="badge">灰鸠</span></p>
+      </div>
+
+      <!-- 特性卡片 -->
+      <div class="features">
+        <div class="feature-card">
+          <h3>超顶的插画涩图</h3>
+          <p>力求还原原作人设风格与清新画风</p>
+        </div>
+        <div class="feature-card">
+          <h3>沉浸式涩涩体验</h3>
+          <p>青春氛围拉满的互动剧情</p>
+        </div>
+        <div class="feature-card">
+          <h3>持续更新中</h3>
+          <p>更多角色插画正在补完</p>
+        </div>
+      </div>
+
+      <!-- 催更提示 -->
+      <div class="notice">
+        <p>💌 <strong>更多角色插画补完、更新方向定制</strong>，请来我的帖子评论点赞催更！</p>
+      </div>
+
+      <!-- 封面图区域 -->
+      <div class="cover-image">
+        <img src="https://r2-proxy.saugrodep.workers.dev/b/bluearchive/%E5%B0%81%E9%9D%A2/%E5%BC%80%E5%B1%80%E5%B0%81%E9%9D%A2.webp?ref_type=heads" alt="碧蓝档案封面">
+      </div>
+
+      <!-- 必读指南 -->
+      <div class="guide">
+        <h2>📖 游玩必读</h2>
+        
+        <div class="guide-item">
+          <div class="guide-item-header">
+            <div class="guide-number">1</div>
+            <div class="guide-title">必装插件<span class="guide-important">重要</span></div>
+          </div>
+          <div class="guide-content">
+            <p>确保「酒馆助手」以及「提示词模版」已安装</p>
+            <p><strong>插图依赖提示词模版</strong>，不装提示词模版是看不见插画的！</p>
+          </div>
+        </div>
+
+        <div class="guide-item">
+          <div class="guide-item-header">
+            <div class="guide-number">2</div>
+            <div class="guide-title">插画说明</div>
+          </div>
+          <div class="guide-content">
+            <p>已有插画的角色，在提及她的第二楼对话开始时会自动触发插画</p>
+            <p>已关闭的世界书条目无需开启，它们通过 EJS 动态读取</p>
+            <p>查看插画种类：可查阅世界书条目 sfw/nsfw_image_database</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 开始游戏提示 -->
+      <div class="cta-text" id="startButton">🚀 点击切换到「角色卡开场白2」选择开局</div>
+    </div>
+  </div>
+  
+  <script>
+    async function switchToOpening(swipeId) {
+      const clickedCard = event.currentTarget;
+      if (clickedCard) {
+        clickedCard.style.opacity = '0.6';
+        clickedCard.style.pointerEvents = 'none';
+      }
+      try {
+        const messages = await getChatMessages("0", { include_swipe: true });
+        if (messages && messages[0].swipes && messages[0].swipes[swipeId]) {
+          await setChatMessage(messages[0].swipes[swipeId], 0, {
+            swipe_id: swipeId,
+            refresh: 'display_and_render_current'
+          });
+        } else {
+          throw new Error(`开场白 ${swipeId} 未找到，请确保已按顺序添加所有开场白。`);
+        }
+      } catch (error) {
+        console.error('切换开场白失败:', error);
+        alert(`切换失败: ${error.message}`);
+        if (clickedCard) {
+          clickedCard.style.opacity = '1';
+          clickedCard.style.pointerEvents = 'auto';
+        }
+      }
+    }
+    
+    const startButton = document.getElementById('startButton');
+    if (startButton) {
+      startButton.onclick = function() {
+        switchToOpening(1);
+      };
+    }
+  </script>
+</body>
+</html>
+```

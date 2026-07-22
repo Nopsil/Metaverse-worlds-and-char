@@ -1,0 +1,30 @@
+<div class="modern-dark-log" style="width: 98%; margin: 8px auto; font-family: 'JetBrains Mono', monospace; font-size: 13px;">
+    <details style="background: #1a1b26; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+        <summary style="padding: 10px 15px; background: #16161e; color: #7aa2f7; cursor: pointer; display: flex; align-items: center; justify-content: space-between; list-style: none;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <!-- Requires Font Awesome -->
+                <i class="fa-solid fa-terminal"></i>
+                <span style="color: #c0caf5;">System Update</span>
+            </div>
+            <i class="fa-solid fa-chevron-down toggle-icon" style="font-size: 10px; opacity: 0.7; transition: transform 0.2s;"></i>
+        </summary>
+        <div style="padding: 15px; color: #9aa5ce; line-height: 1.6; border-top: 1px solid #24283b;">
+            $1
+        </div>
+    </details>
+</div>
+
+<style>
+    /* Reset default marker */
+    .modern-dark-log details > summary::-webkit-details-marker {
+        display: none;
+    }
+    .modern-dark-log details > summary {
+        list-style: none;
+    }
+
+    /* Chevron rotation */
+    .modern-dark-log details[open] .toggle-icon {
+        transform: rotate(180deg);
+    }
+</style>

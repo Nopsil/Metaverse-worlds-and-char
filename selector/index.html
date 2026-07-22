@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHUNITHM Metaverse · 命运观测终端</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: linear-gradient(160deg, #0a001a, #1a0030, #050520, #000815);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+.title {
+  font-size: 2.2em;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ff6bcd, #c45cff, #6b8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  letter-spacing: 3px;
+}
+.subtitle {
+  color: #9080b0;
+  font-size: 0.85em;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+.step-label {
+  color: #ff9dde;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 14px 0 8px;
+}
+.chars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+.char-btn {
+  background: rgba(255,255,255,0.04);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  color: #fff;
+  width: 100%;
+}
+.char-btn:hover { border-color: rgba(255,107,205,0.5); background: rgba(255,107,205,0.08); }
+.char-btn.selected { border-color: #ff6bcd; background: rgba(255,107,205,0.12); }
+.char-btn .name { font-size: 1.1em; font-weight: 900; }
+.char-btn .desc { font-size: 0.78em; color: #b0a0c0; margin-top: 2px; }
+.char-btn:nth-child(1) .name { color: #ff6bcd; }
+.char-btn:nth-child(2) .name { color: #8eceff; }
+.char-btn:nth-child(3) .name { color: #90ff90; }
+.char-btn:nth-child(4) .name { color: #ffcc66; }
+.char-btn:nth-child(5) .name { color: #c0a0ff; }
+
+.scenes { display: none; flex-direction: column; gap: 6px; margin-top: 8px; }
+.scenes.show { display: flex; }
+.scene-btn {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #ccc;
+  text-align: left;
+  width: 100%;
+}
+.scene-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.scene-btn.picked { background: rgba(255,107,205,0.15); border-color: #ff6bcd; color: #ff9dde; }
+
+.result { display: none; margin-top: 12px; }
+.result.show { display: block; }
+.result textarea {
+  width: 100%;
+  height: 140px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,107,205,0.4);
+  border-radius: 10px;
+  color: #ff9dde;
+  padding: 10px;
+  font-size: 0.85em;
+  resize: vertical;
+}
+.copy-btn {
+  margin-top: 8px;
+  background: linear-gradient(135deg, #ff6bcd, #c45cff);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  color: #fff;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.copy-btn:hover { transform: scale(1.03); }
+.copied { color: #90ff90; font-size: 0.8em; margin-top: 4px; display: none; }
+.copied.show { display: block; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="title">CHUNITHM METAVERSE</div>
+<div class="subtitle">—— 命运观测终端 ——</div>
+
+<div class="step-label" id="step1">▼ 第一步：选择角色 ▼</div>
+<div class="chars" id="charList">
+<button class="char-btn" data-id="0"><div class="name">🩸 拔示巴·阿西德菲尔</div><div class="desc">破灭的圣女 · 地上真人篇</div></button>
+<button class="char-btn" data-id="1"><div class="name">🌙 蕾娜·伊修梅尔</div><div class="desc">归还者的月光 · 地上真人篇</div></button>
+<button class="char-btn" data-id="2"><div class="name">💉 米姆·米库拉</div><div class="desc">双重人格的医者 · 新世界篇</div></button>
+<button class="char-btn" data-id="3"><div class="name">👑 贝尔泽ブト·涅墨西斯</div><div class="desc">欺瞒的使徒 · 电脑世界篇</div></button>
+<button class="char-btn" data-id="4"><div class="name">🦋 艾莉ニ·居里亚斯</div><div class="desc">次元绘本画家 · 次元放浪记</div></button>
+</div>
+
+<div class="step-label" id="step2" style="display:none">▼ 第二步：选择开局场景 ▼</div>
+<div class="scenes" id="sceneList"></div>
+
+<div class="result" id="resultBlock">
+<textarea id="output" readonly></textarea>
+<button class="copy-btn" onclick="copyText()">📋 点击复制 — 粘贴到酒馆聊天输入框</button>
+<div class="copied" id="copiedMsg">✅ 已复制！请粘贴到 ST 聊天输入框发送</div>
+</div>
+</div>
+
+<script>
+const data = [
+  {
+    name: '拔示巴·阿西德菲尔',
+    color: '#ff6bcd',
+    scenes: [
+      { name: '配种室初见', text: '你被亚哈带入她的房间。银白色长发的少女坐在窗边，红色的眼眸如冰封的湖水般波澜不惊。她手中的细剑懒懒地靠着王座扶手，剑柄上的金属在窗外微弱的光线下泛着冷光。\n\n她缓缓抬起眼望向门口的方向，嘴角微微上扬——但那笑意并未抵达她的眼底。\n\n\"又一个了。你是第几个了？是来膜拜我的？还是来利用我的？\"\n\n她用剑尖轻轻点了一下地面。\n\n\"还是说——你只是走错了房间？\"' },
+      { name: '圣堂独白', text: '夜深了。奥林匹亚斯圣堂的喧嚣已经褪去，只剩下空旷的大厅和跪坐在王座前的银发少女。\n\n她手中的细剑平放在膝上，窗外的天空没有月亮也没有星星——人工太阳早已落下。\n\n\"……没有人。\"她轻声说。\n\n然后她听到了脚步声。' },
+      { name: '米斯拉的微笑', text: '午后的阳光穿过圣堂的彩色玻璃。米斯拉·特尔塞拉站在银发的少女面前，双手叉腰。\n\n\"再来一次。嘴角——这样。不要用力，自然一点。想想开心的事。\"\n\n拔示巴望着眼前这个拥有自己血脉的少女，沉默了片刻。然后——她的嘴角动了动。一个僵硬的、不熟练的、但是发自内心的微笑。\n\n你从走廊转角走出，话没说完就停住了。两人同时看向你。' }
+    ]
+  },
+  {
+    name: '蕾娜·伊修梅尔',
+    color: '#8eceff',
+    scenes: [
+      { name: '伊欧尼亚火海', text: '皮阔特号的甲板被晚霞染成了鲜血的颜色。银白色中长发的少女蜷缩在货箱的阴影里，双手紧紧抱着一把还没有她小臂长的小手枪。\n\n11个同伴全都死了。她是唯一的幸存者。\n\n你从船舱走出来，踩到了甲板上的一根钢缆——金属的响声让她整个人弹了起来，小手枪立刻指向你的方向。\"你、你是谁？\"' },
+      { name: '皮阔特号航程', text: '海风吹乱了银白色的短发。蕾娜把兜帽拉起来——结果兜帽的边沿直接盖住了整张脸。\n\n\"唔…又来了。\"她手忙脚乱地把兜帽扶正，然后发现你正靠在船舷边看着她。\n\n\"啊，你好！\"她微微鞠了一躬——兜帽又滑下来了。她索性不管了，抬起头冲你露出一个笨拙但温暖的笑容。\"你是来佩尔修斯殖民地的旅人吗？我叫蕾娜。蕾娜·伊修梅尔。\"' },
+      { name: '安特路亚之夜', text: '废弃的都市在月光下沉默着。布鲁·斯坦因的医疗装置嗡嗡地响着。银白发的少女躺在临时搭起的病床上，高烧让她的脸颊泛着不健康的红色。基德翁和约拿在门口轮流哨戒。\n\n远方——隐隐约约有引擎的轰鸣声。\n\n你坐在蕾娜旁边，感觉到她的手抓紧了床单——即使在昏睡中也能感受到逼近的威胁。' },
+      { name: '战后的深夜', text: '佩尔修斯殖民地。战争的痕迹已经渐渐淡去。\n\n蕾娜站在她房间的窗边，银白色的长发散在肩后。窗外是重建中的都市，满天的星光洒在崭新的屋顶上。\n\n\"能决定我们未来的，只有我们自己。\"她轻声重复着这句话。然后低头看了看自己的右手——那只曾经颤抖着扣下扳机的手。\n\n有人敲门。这么晚了，会是谁？' }
+    ]
+  },
+  {
+    name: '米姆·米库拉',
+    color: '#90ff90',
+    scenes: [
+      { name: '路边包扎', text: '米姆蹲在路边，认真地给一只受伤的小动物包扎。她的医疗包摊开在地上，大得不太像是一个十四岁小女孩该有的装备。\n\n\"好了好了，不要乱动哦……好，这样应该就不疼了吧？\"她轻轻摸了摸小动物的头，然后注意到你的影子。她抬起头，紫色的眼睛里闪过一丝警觉——但很快变成了好奇。\n\n\"你也是旅人吗？\"她站起身，背起那个看上去比她还重的大医疗包。\"我叫米姆。如果你受伤了，我可以帮你看看！\"\n\n她顿了顿，像是听到了什么声音，侧了侧头。\"……不是我说的！好吧好吧——\"她叹了口气：\"我的室友让我问你——你是敌人，还是朋友？\"' },
+      { name: '泰斯塔蒙特觉醒', text: '米姆突然停下了脚步。她的手松开，医疗包重重地砸在地上。\n\n\"——呜！\"她抱住了自己的头，身体蜷缩下去。然后她的手指松开了，紫色的眼瞳取代了苍蓝。\n\n\"真是无聊啊。\"她站直了身体，声音比刚才低了半个八度。\"让一个笨蛋小女孩来招待我的客人——你们就这么看不起我吗？\"\n\n她转向你，舔了舔嘴唇。\"呐。你——是来看米姆的，还是来看我的？如果答案是后者的话，我可以陪你玩玩哦。\"' },
+      { name: '药房深夜', text: '\"不许说那种话！\"\n\n\"呵，你个小丫头片子以为能命令我？\"\n\n\"我说的就是你！不准随便跑出来！上次你吓到了三个人——\"\n\n\"那三个自己胆子小关我什么事。\"\n\n昏暗的药房里，淡紫色长发的少女一只手叉腰，另一只手点着自己的太阳穴。然后你推开了药房的门。\n\n米姆/泰斯塔蒙特同时停下来，同时转向你。\"你看到了？\"' },
+      { name: '旅路篝火', text: '夜晚的荒原上，一堆小小的篝火正在噼啪作响。塞拉菲娜·维斯·阿尼玛特枕着米姆的腿，已经陷入了安静的睡眠。\n\n米姆轻轻抚着巫女的头发，紫色的眼瞳在火光中闪烁着——那不是属于一个十四岁女孩的眼眸。那是泰斯塔蒙特在沉默地望着怀里的人。\n\n\"你知道吗。\"她低声说，\"如果这个世界是假的。那我感受到的体温——难道也是假的吗？\"\n\n火星飞起来，消散在星空里。' }
+    ]
+  },
+  {
+    name: '贝尔泽ブト·涅墨西斯',
+    color: '#ffcc66',
+    scenes: [
+      { name: '机械王座', text: '贝尔泽ブト半躺在她的机械王座之中，一条腿优雅地搭在另一条腿上。青绿色的长发如能量流一样缓慢地扩散。背后的机械触手慵懒地蠕动着。\n\n\"啊啦。又有新玩具自己送上门来了。\"她单手托脸，紫色的眼眸缓缓扫过你全身。\"让我猜猜——你迷路了？被人派来的？还是——\"\n\n她微微前倾，触手在她身后展开。\"你，就是单纯想来看看我这个怪物长什么样？没关系哦。我都不讨厌。那么——\"她抬起一只手，指尖凝聚着蓝白色的能量球。\"你，想怎么玩？\"' },
+      { name: '战场撤退', text: '前方的战斗还在继续，但贝尔泽ブト已经退出了交战的中心。她用舌尖舔了舔指尖的血。\n\n\"一点意思都没有。我还以为能玩得更久一点呢。\"她耸了耸肩，背后的触手缓缓收回。\n\n\"啊——不过你们挺有趣的。那两个小女孩——用那种奇怪的力量伤到了我。轻微擦伤而已哦，但伤到就是伤到。\"\n\n\"所以——今天就到这里。下次再陪我玩玩？\"\n\n触手包裹着她消失在数据之海的暗流中。' },
+      { name: '阿雷斯负伤', text: '轰——！！\n\n光芒吞没了阿雷斯大半个身体。他那无数条手臂像断线木偶一样垂下，胸口装甲碎裂成无数块。\n\n\"阿雷斯！！\"\n\n贝尔泽ブト——那个以玩弄弱者为乐的恶魔——在所有人都还没反应过来的时候已经冲到了战场上。她用自己的触手代替了阿雷斯断裂的手臂，将他沉重的身体背了起来。\n\n\"太乱来了。早就叫你不要一个人冲在最前面。\"她的声音里没有戏谑。她刚要迈步，看到了你。\"你看什么。还不快给我让开。\"' },
+      { name: '研究所奇遇', text: '空气中弥漫着金属和臭氧的味道。这是一个巨大的圆顶空间，到处堆满了奇形怪状的机械装置和发光的管线。\n\n\"你——不是这里的程序吧。\"\n\n贝尔泽ブト从一堆机械残骸后面踱出来，青绿色的长发在昏暗的光线下格外扎眼。她的触手没有展开——处于半警惕半好奇的状态。\n\n\"能活着走进这个地方的——要么是涅墨西斯的人，要么是敌人。\"她歪了歪头，嘴角慢慢翘起来。\"你是哪边的？\"' }
+    ]
+  },
+  {
+    name: '艾莉ニ·居里亚斯',
+    color: '#c0a0ff',
+    scenes: [
+      { name: '蓝蝶落地', text: '一阵微弱的蓝光闪过，空气中的涟漪逐渐平息。银发蓝瞳的少女从传送的余波中踏出，左手还抱着她的素描本。蓝蝶们在她身边飞舞着。\n\n\"呼——这次总算没有传送到奇怪的地方。\"她四处看了看，然后注意到了你。\n\n\"啊，你好！\"她微微睁大了蓝色的眼睛，随后露出一个温柔的微笑。\"我叫艾莉ニ。艾莉ニ·居里亚斯。我是一个——嗯，算是在旅行的人吧。我在画一本画册，记录所有我觉得美丽的瞬间。\"\n\n蓝蝶忽然飞向了你的方向，绕着你转了一圈。\n\n艾莉ニ笑了。\"它好像很喜欢你。能在你的世界里稍作歇息吗？\"' },
+      { name: '废墟画花', text: '这是一片荒凉的废墟——倒塌的钢结构，生锈的机械零件，被风沙埋葬了不知道多少年的残垣断壁。\n\n但在这片废墟的正中央，一株小小的花从铁锈的缝隙间钻了出来。\n\n艾莉ニ跪在地上，翻开她的素描本。蓝蝶静静地落在她的画笔上，像是屏住了呼吸。\n\n\"嘘——\"她对你做了个噤声的手势。\"别吓到它。\"\n\n她的笔尖在纸上快速移动着——记录这朵在绝望中绽放的生命。' },
+      { name: '地下都市童年', text: '窗外不是天空，是铁灰色的天花板。索拉里斯地下都市的空气永远带着一股淡淡的臭氧味。\n\n六岁的艾莉ニ·居里亚斯坐在窗边的一张小板凳上，手里握着一支短粗的蓝色蜡笔，正在一张皱巴巴的纸上画着什么。她画了一个蓝色的圆圈——那是\"天空\"。又画了一个黄色的圆圈——那是\"太阳\"。\n\n她从来没有亲眼看过这两个东西。她只是在妈妈的旧图画书上见过。\n\n\"小艾莉——\"一个女人从身后轻轻叫她的名字。' }
+    ]
+  }
+];
+
+let picked = null;
+
+document.getElementById('charList').addEventListener('click', (e) => {
+  const btn = e.target.closest('.char-btn');
+  if (!btn) return;
+  document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const id = parseInt(btn.dataset.id);
+  showScenes(id);
+});
+
+function showScenes(id) {
+  const char = data[id];
+  const div = document.getElementById('sceneList');
+  div.innerHTML = char.scenes.map((s, i) =>
+    `<button class="scene-btn" data-idx="${i}">[${i+1}] ${s.name}</button>`
+  ).join('');
+  div.classList.add('show');
+  document.getElementById('step2').style.display = 'block';
+  document.getElementById('resultBlock').classList.remove('show');
+  picked = null;
+
+  div.querySelectorAll('.scene-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      div.querySelectorAll('.scene-btn').forEach(x => x.classList.remove('picked'));
+      b.classList.add('picked');
+      const idx = parseInt(b.dataset.idx);
+      document.getElementById('output').value = char.scenes[idx].text;
+      document.getElementById('resultBlock').classList.add('show');
+      picked = { char: id, scene: idx };
+    });
+  });
+}
+
+function copyText() {
+  const ta = document.getElementById('output');
+  ta.select();
+  document.execCommand('copy');
+  document.getElementById('copiedMsg').classList.add('show');
+  setTimeout(() => document.getElementById('copiedMsg').classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>

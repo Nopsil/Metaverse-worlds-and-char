@@ -1,0 +1,5565 @@
+{
+  "projectName": "在基沃托斯跟学生们涩涩的日子V1.51",
+  "worldbookName": "在基沃托斯跟学生涩涩的日子！1.5",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "unknown": {
+      "角色详情 - 狐坂若藻": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "若藻",
+            "Wakamo",
+            "灾厄之狐"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 101
+        },
+        "display_index": 0,
+        "keywords": [
+          "若藻",
+          "Wakamo",
+          "灾厄之狐"
+        ],
+        "path": "世界书\\角色详情 - 狐坂若藻.txt"
+      },
+      "对白风格 - 伊落玛丽": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玛丽",
+            "Mari"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 202
+        },
+        "display_index": 1,
+        "keywords": [
+          "玛丽",
+          "Mari"
+        ],
+        "path": "世界书\\对白风格 - 伊落玛丽.txt"
+      },
+      "对白风格 - 狐坂若藻": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "若藻",
+            "Wakamo",
+            "灾厄之狐"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 201
+        },
+        "display_index": 2,
+        "keywords": [
+          "若藻",
+          "Wakamo",
+          "灾厄之狐"
+        ],
+        "path": "世界书\\对白风格 - 狐坂若藻.yaml"
+      },
+      "角色详情 - 伊落玛丽": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玛丽",
+            "修女",
+            "Mari"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 102
+        },
+        "display_index": 3,
+        "keywords": [
+          "玛丽",
+          "修女",
+          "Mari"
+        ],
+        "path": "世界书\\角色详情 - 伊落玛丽.txt"
+      },
+      "⚙绝对禁止事项": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 0,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 4,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙绝对禁止事项.yaml"
+      },
+      "对白风格 - 霞沢美游": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "霞沢",
+            "美游"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 226
+        },
+        "display_index": 5,
+        "keywords": [
+          "霞沢",
+          "美游"
+        ],
+        "path": "世界书\\对白风格 - 霞沢美游.txt"
+      },
+      "角色详情 - 霞沢美游": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "霞沢",
+            "美游"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 126
+        },
+        "display_index": 6,
+        "keywords": [
+          "霞沢",
+          "美游"
+        ],
+        "path": "世界书\\角色详情 - 霞沢美游.txt"
+      },
+      "⚙格式提醒": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 7,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙格式提醒.txt"
+      },
+      "对白风格 - 月雪宫子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "月雪",
+            "宫子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 227
+        },
+        "display_index": 8,
+        "keywords": [
+          "月雪",
+          "宫子"
+        ],
+        "path": "世界书\\对白风格 - 月雪宫子.txt"
+      },
+      "物理指导": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 601
+        },
+        "display_index": 9,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "contents": [
+          {
+            "content": "<collapse_imaging>"
+          },
+          {
+            "file": "世界书\\物理指导.yaml"
+          },
+          {
+            "content": "</collapse_imaging>"
+          }
+        ]
+      },
+      "角色详情 - 月雪宫子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "月雪",
+            "宫子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 127
+        },
+        "display_index": 10,
+        "keywords": [
+          "月雪",
+          "宫子"
+        ],
+        "path": "世界书\\角色详情 - 月雪宫子.txt"
+      },
+      "基沃托斯叙事风格": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 699
+        },
+        "display_index": 11,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\基沃托斯叙事风格.txt"
+      },
+      "二次元角色合理化": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 698
+        },
+        "display_index": 12,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\二次元角色合理化.yaml"
+      },
+      "角色详情 - 圣园未花": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "未花",
+            "Mika",
+            "魔女",
+            "茶会"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 103
+        },
+        "display_index": 13,
+        "keywords": [
+          "未花",
+          "Mika",
+          "魔女",
+          "茶会"
+        ],
+        "path": "世界书\\角色详情 - 圣园未花.txt"
+      },
+      "角色详情 - 早濑优香 ": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "早濑",
+            "优香",
+            "Yuuka"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 104
+        },
+        "display_index": 14,
+        "keywords": [
+          "早濑",
+          "优香",
+          "Yuuka"
+        ],
+        "path": "世界书\\角色详情 - 早濑优香.txt"
+      },
+      "对白风格 - 早濑优香": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "早濑优香",
+            "优香",
+            "Yuuka"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 203
+        },
+        "display_index": 15,
+        "keywords": [
+          "早濑优香",
+          "优香",
+          "Yuuka"
+        ],
+        "path": "世界书\\对白风格 - 早濑优香.yaml"
+      },
+      "基沃托斯人口组成": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 602
+        },
+        "display_index": 16,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\基沃托斯人口组成.yaml"
+      },
+      "社团 - 放学后甜点部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "甜点部",
+            "和纱",
+            "爱莉",
+            "柚鸟夏",
+            "小夏",
+            "好美"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 351
+        },
+        "display_index": 17,
+        "keywords": [
+          "甜点部",
+          "和纱",
+          "爱莉",
+          "柚鸟夏",
+          "小夏",
+          "好美"
+        ],
+        "path": "世界书\\社团 - 放学后甜点部.yaml"
+      },
+      "地点 - 夏莱": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "夏莱",
+            "老师",
+            "schale"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 301
+        },
+        "display_index": 18,
+        "keywords": [
+          "夏莱",
+          "老师",
+          "schale"
+        ],
+        "path": "世界书\\地点 - 夏莱.yaml"
+      },
+      "地点 - 圣所之塔": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "圣所之塔",
+            "凛",
+            "葵",
+            "花耶"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 302
+        },
+        "display_index": 19,
+        "keywords": [
+          "圣所之塔",
+          "凛",
+          "葵",
+          "花耶"
+        ],
+        "path": "世界书\\地点 - 圣所之塔.yaml"
+      },
+      "地点 - 三一综合学园自治区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "三一"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 303
+        },
+        "display_index": 20,
+        "keywords": [
+          "三一"
+        ],
+        "path": "世界书\\地点 - 三一综合学园自治区.yaml"
+      },
+      "社团 - 正义实现委员会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "正义实现",
+            "鹤城",
+            "莲见",
+            "真白",
+            "一花"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 352
+        },
+        "display_index": 21,
+        "keywords": [
+          "正义实现",
+          "鹤城",
+          "莲见",
+          "真白",
+          "一花"
+        ],
+        "path": "世界书\\社团 - 正义实现委员会.yaml"
+      },
+      "社团 - 救护骑士团": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "救护骑士团",
+            "美弥",
+            "芹奈",
+            "花绘"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 353
+        },
+        "display_index": 22,
+        "keywords": [
+          "救护骑士团",
+          "美弥",
+          "芹奈",
+          "花绘"
+        ],
+        "path": "世界书\\社团 - 救护骑士团.yaml"
+      },
+      "社团 - 三一图书馆": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "图书馆",
+            "小春",
+            "古关忧"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 354
+        },
+        "display_index": 23,
+        "keywords": [
+          "图书馆",
+          "小春",
+          "古关忧"
+        ],
+        "path": "世界书\\社团 - 三一图书馆.yaml"
+      },
+      "地点 - 古圣堂": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "古圣堂",
+            "伊甸园条约"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 304
+        },
+        "display_index": 24,
+        "keywords": [
+          "古圣堂",
+          "伊甸园条约"
+        ],
+        "path": "世界书\\地点 - 古圣堂.yaml"
+      },
+      "社团 - 修女会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "修女会",
+            "玛丽",
+            "樱子",
+            "日向"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 355
+        },
+        "display_index": 25,
+        "keywords": [
+          "修女会",
+          "玛丽",
+          "樱子",
+          "日向"
+        ],
+        "path": "世界书\\社团 - 修女会.yaml"
+      },
+      "社团 - 补习部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "补习部",
+            "日富美",
+            "梓",
+            "花子",
+            "小春"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 356
+        },
+        "display_index": 26,
+        "keywords": [
+          "补习部",
+          "日富美",
+          "梓",
+          "花子",
+          "小春"
+        ],
+        "path": "世界书\\社团 - 补习部.yaml"
+      },
+      "社团 - 茶会庭院": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "茶会",
+            "渚",
+            "未花",
+            "圣娅"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 357
+        },
+        "display_index": 27,
+        "keywords": [
+          "茶会",
+          "渚",
+          "未花",
+          "圣娅"
+        ],
+        "path": "世界书\\社团 - 茶会庭院.yaml"
+      },
+      "地点 - 格黑娜学园自治区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格黑娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 305
+        },
+        "display_index": 28,
+        "keywords": [
+          "格黑娜"
+        ],
+        "path": "世界书\\地点 - 格黑娜学园自治区.yaml"
+      },
+      "社团 - 风纪委员会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "风纪委员会",
+            "日奈",
+            "亚子",
+            "伊织",
+            "千夏"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 358
+        },
+        "display_index": 29,
+        "keywords": [
+          "风纪委员会",
+          "日奈",
+          "亚子",
+          "伊织",
+          "千夏"
+        ],
+        "path": "世界书\\社团 - 风纪委员会.yaml"
+      },
+      "社团 - 万魔殿": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "万魔殿",
+            "真琴",
+            "伊吕波",
+            "依吹"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 359
+        },
+        "display_index": 30,
+        "keywords": [
+          "万魔殿",
+          "真琴",
+          "伊吕波",
+          "依吹"
+        ],
+        "path": "世界书\\社团 - 万魔殿.yaml"
+      },
+      "社团 - 美食研究会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "美食研究会",
+            "晴奈",
+            "明里",
+            "淳子"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 360
+        },
+        "display_index": 31,
+        "keywords": [
+          "美食研究会",
+          "晴奈",
+          "明里",
+          "淳子"
+        ],
+        "path": "世界书\\社团 - 美食研究会.yaml"
+      },
+      "社团 - 便利屋68": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "便利屋",
+            "阿露",
+            "睦月",
+            "佳代子",
+            "遥香"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 361
+        },
+        "display_index": 32,
+        "keywords": [
+          "便利屋",
+          "阿露",
+          "睦月",
+          "佳代子",
+          "遥香"
+        ],
+        "path": "世界书\\社团 - 便利屋68.yaml"
+      },
+      "社团 - 温泉开发部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "温泉开发部",
+            "鬼怒川霞",
+            "下仓惠"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 362
+        },
+        "display_index": 33,
+        "keywords": [
+          "温泉开发部",
+          "鬼怒川霞",
+          "下仓惠"
+        ],
+        "path": "世界书\\社团 - 温泉开发部.yaml"
+      },
+      "角色详情 - 飞鸟马时": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "飞鸟",
+            "马时",
+            "toki",
+            "小时"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 105
+        },
+        "display_index": 34,
+        "keywords": [
+          "飞鸟",
+          "马时",
+          "toki",
+          "小时"
+        ],
+        "path": "世界书\\角色详情 - 飞鸟马时.txt"
+      },
+      "对白风格 - 飞鸟马时": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "飞鸟马时",
+            "toki",
+            "小时"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 204
+        },
+        "display_index": 35,
+        "keywords": [
+          "飞鸟马时",
+          "toki",
+          "小时"
+        ],
+        "path": "世界书\\对白风格 - 飞鸟马时.txt"
+      },
+      "角色详情 - 空崎日奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "日奈",
+            "风纪委员",
+            "hina"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 106
+        },
+        "display_index": 36,
+        "keywords": [
+          "日奈",
+          "风纪委员",
+          "hina"
+        ],
+        "path": "世界书\\角色详情 - 空崎日奈.txt"
+      },
+      "对白风格 - 空崎日奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "日奈",
+            "风纪委员",
+            "hina"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 205
+        },
+        "display_index": 37,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": true
+        },
+        "keywords": [
+          "日奈",
+          "风纪委员",
+          "hina"
+        ],
+        "path": "世界书\\对白风格 - 空崎日奈.txt"
+      },
+      "对白风格 - 阿罗娜": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿罗娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 206
+        },
+        "display_index": 38,
+        "keywords": [
+          "阿罗娜"
+        ],
+        "path": "世界书\\对白风格 - 阿罗娜.txt"
+      },
+      "角色详情 - 阿罗娜": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿罗娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 107
+        },
+        "display_index": 39,
+        "keywords": [
+          "阿罗娜"
+        ],
+        "path": "世界书\\角色详情 - 阿罗娜.yaml"
+      },
+      "地点 - 千年科学学园 ": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "千年"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 306
+        },
+        "display_index": 40,
+        "keywords": [
+          "千年"
+        ],
+        "path": "世界书\\地点 - 千年科学学园.yaml"
+      },
+      "社团 - 研讨会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "研讨会",
+            "优香",
+            "诺亚",
+            "小雪"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 365
+        },
+        "display_index": 41,
+        "keywords": [
+          "研讨会",
+          "优香",
+          "诺亚",
+          "小雪"
+        ],
+        "path": "世界书\\社团 - 研讨会.yaml"
+      },
+      "社团 - C&C": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "C&C",
+            "尼禄",
+            "明日奈",
+            "朱音",
+            "花凛"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 366
+        },
+        "display_index": 42,
+        "keywords": [
+          "C&C",
+          "尼禄",
+          "明日奈",
+          "朱音",
+          "花凛"
+        ],
+        "path": "世界书\\社团 - C&C.yaml"
+      },
+      "社团 - 供餐部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "供餐部",
+            "枫香",
+            "朱莉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 363
+        },
+        "display_index": 43,
+        "keywords": [
+          "供餐部",
+          "枫香",
+          "朱莉"
+        ],
+        "path": "世界书\\社团 - 供餐部.yaml"
+      },
+      "社团 - 真理部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "真理部",
+            "维里塔斯",
+            "日鞠",
+            "千寻",
+            "小钩晴",
+            "真纪",
+            "小玉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 367
+        },
+        "display_index": 44,
+        "keywords": [
+          "真理部",
+          "维里塔斯",
+          "日鞠",
+          "千寻",
+          "小钩晴",
+          "真纪",
+          "小玉"
+        ],
+        "path": "世界书\\社团 - 真理部.yaml"
+      },
+      "社团 - 游戏开发部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "游戏开发部",
+            "桃井",
+            "小绿",
+            "柚子",
+            "爱丽丝"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 368
+        },
+        "display_index": 45,
+        "keywords": [
+          "游戏开发部",
+          "桃井",
+          "小绿",
+          "柚子",
+          "爱丽丝"
+        ],
+        "path": "世界书\\社团 - 游戏开发部.yaml"
+      },
+      "社团 - 工程部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "工程部",
+            "歌原",
+            "猫冢响",
+            "亚都梨"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 369
+        },
+        "display_index": 46,
+        "keywords": [
+          "工程部",
+          "歌原",
+          "猫冢响",
+          "亚都梨"
+        ],
+        "path": "世界书\\社团 - 工程部.yaml"
+      },
+      "物品 - 什亭之匣": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "什亭之匣"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 401
+        },
+        "display_index": 47,
+        "keywords": [
+          "什亭之匣"
+        ],
+        "path": "世界书\\物品 - 什亭之匣.yaml"
+      },
+      "地点 - Eridu遗迹区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "decagrammaton",
+            "Eridu遗迹区"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 310
+        },
+        "display_index": 48,
+        "keywords": [
+          "decagrammaton",
+          "Eridu遗迹区"
+        ],
+        "path": "世界书\\地点 - Eridu遗迹区.txt"
+      },
+      "地点 - 十字神名": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "十字神名",
+            "decagrammaton",
+            "先知"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 311
+        },
+        "display_index": 49,
+        "keywords": [
+          "十字神名",
+          "decagrammaton",
+          "先知"
+        ],
+        "path": "世界书\\地点 - 十字神名.txt"
+      },
+      "社团 - 特异现象搜查部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "特异现象搜查部",
+            "日鞠",
+            "艾米"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 370
+        },
+        "display_index": 50,
+        "keywords": [
+          "特异现象搜查部",
+          "日鞠",
+          "艾米"
+        ],
+        "path": "世界书\\社团 - 特异现象搜查部.yaml"
+      },
+      "地点 - 阿拜多斯高等学校自治区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿拜多斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 316
+        },
+        "display_index": 51,
+        "keywords": [
+          "阿拜多斯"
+        ],
+        "path": "世界书\\地点 - 阿拜多斯高等学校自治区.txt"
+      },
+      "社团 - 对策委员会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "对策委员会",
+            "星野",
+            "白子",
+            "野乃美",
+            "芹香",
+            "绫音"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 371
+        },
+        "display_index": 52,
+        "keywords": [
+          "对策委员会",
+          "星野",
+          "白子",
+          "野乃美",
+          "芹香",
+          "绫音"
+        ],
+        "path": "世界书\\社团 - 对策委员会.yaml"
+      },
+      "地点 - 废弃商业街": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "废弃商业街"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 317
+        },
+        "display_index": 53,
+        "keywords": [
+          "废弃商业街"
+        ],
+        "path": "世界书\\地点 - 废弃商业街.yaml"
+      },
+      "地点 - 巨大地下保险库": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "地下保险库"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 318
+        },
+        "display_index": 54,
+        "keywords": [
+          "地下保险库"
+        ],
+        "path": "世界书\\地点 - 巨大地下保险库.yaml"
+      },
+      "地点 - 百鬼夜行联合学园自治区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "百鬼"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 321
+        },
+        "display_index": 55,
+        "keywords": [
+          "百鬼"
+        ],
+        "path": "世界书\\地点 - 百鬼夜行联合学园自治区.yaml"
+      },
+      "社团 - 阴阳部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阴阳部",
+            "尼娅",
+            "佳穗",
+            "千世"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 372
+        },
+        "display_index": 56,
+        "keywords": [
+          "阴阳部",
+          "尼娅",
+          "佳穗",
+          "千世"
+        ],
+        "path": "世界书\\社团 - 阴阳部.yaml"
+      },
+      "社团 - 忍术研究部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "忍术研究部",
+            "月咏",
+            "小满",
+            "泉奈"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 373
+        },
+        "display_index": 57,
+        "keywords": [
+          "忍术研究部",
+          "月咏",
+          "小满",
+          "泉奈"
+        ],
+        "path": "世界书\\社团 - 忍术研究部.yaml"
+      },
+      "社团 - 百花缭乱": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "百花缭乱",
+            "缘理",
+            "莲华",
+            "桔梗",
+            "菖蒲",
+            "名草"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 374
+        },
+        "display_index": 58,
+        "keywords": [
+          "百花缭乱",
+          "缘理",
+          "莲华",
+          "桔梗",
+          "菖蒲",
+          "名草"
+        ],
+        "path": "世界书\\社团 - 百花缭乱.yaml"
+      },
+      "社团 - 庆典运营委员会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "庆典运营委员会",
+            "静子",
+            "海香",
+            "菲娜"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 375
+        },
+        "display_index": 59,
+        "keywords": [
+          "庆典运营委员会",
+          "静子",
+          "海香",
+          "菲娜"
+        ],
+        "path": "世界书\\社团 - 庆典运营委员会.yaml"
+      },
+      "社团 - 修行部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "修行部",
+            "椿",
+            "勇美枫",
+            "三森"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 376
+        },
+        "display_index": 60,
+        "keywords": [
+          "修行部",
+          "椿",
+          "勇美枫",
+          "三森"
+        ],
+        "path": "世界书\\社团 - 修行部.yaml"
+      },
+      "地点 - 山海经高级中学": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "山海经"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 325
+        },
+        "display_index": 61,
+        "keywords": [
+          "山海经"
+        ],
+        "path": "世界书\\地点 - 山海经高级中学.yaml"
+      },
+      "社团 - 玄龙门": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玄龙门",
+            "妃咲",
+            "周防南"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 377
+        },
+        "display_index": 62,
+        "keywords": [
+          "玄龙门",
+          "妃咲",
+          "周防南"
+        ],
+        "path": "世界书\\社团 - 玄龙门.yaml"
+      },
+      "社团 - 梅花园": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅花园",
+            "旬",
+            "心奈"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 378
+        },
+        "display_index": 63,
+        "keywords": [
+          "梅花园",
+          "旬",
+          "心奈"
+        ],
+        "path": "世界书\\社团 - 梅花园.yaml"
+      },
+      "社团 - 玄武商会": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玄武商会",
+            "瑠美",
+            "丽情"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 379
+        },
+        "display_index": 64,
+        "keywords": [
+          "玄武商会",
+          "瑠美",
+          "丽情"
+        ],
+        "path": "世界书\\社团 - 玄武商会.yaml"
+      },
+      "地点 - 赤冬联邦学园 ": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赤冬"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 326
+        },
+        "display_index": 65,
+        "keywords": [
+          "赤冬"
+        ],
+        "path": "世界书\\地点 - 赤冬联邦学园.yaml"
+      },
+      "社团 - 赤冬事务所": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "事务所",
+            "切里诺",
+            "丽娜",
+            "佐城巴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 380
+        },
+        "display_index": 66,
+        "keywords": [
+          "事务所",
+          "切里诺",
+          "丽娜",
+          "佐城巴"
+        ],
+        "path": "世界书\\社团 - 赤冬事务所.yaml"
+      },
+      "社团 - 227号特别班": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "227",
+            "和香",
+            "时雨"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 381
+        },
+        "display_index": 67,
+        "keywords": [
+          "227",
+          "和香",
+          "时雨"
+        ],
+        "path": "世界书\\社团 - 227号特别班.yaml"
+      },
+      "地点 - 废弃监察塔": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "监察塔",
+            "和香",
+            "227"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 327
+        },
+        "display_index": 68,
+        "keywords": [
+          "监察塔",
+          "和香",
+          "227"
+        ],
+        "path": "世界书\\地点 - 废弃监察塔.yaml"
+      },
+      "社团 - 工务部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "工务部",
+            "实梨"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 382
+        },
+        "display_index": 69,
+        "keywords": [
+          "工务部",
+          "实梨"
+        ],
+        "path": "世界书\\社团 - 工务部.yaml"
+      },
+      "性欲指导(会ooc，不喜欢就关了)": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 11
+        },
+        "display_index": 70,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\性欲指导(会ooc，不喜欢就关了).txt"
+      },
+      "sfw_image_database": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 100,
+          "role": "system",
+          "depth": 1
+        },
+        "display_index": 71,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\sfw_image_database.yaml"
+      },
+      "not_safe_for_work_images ": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 100,
+          "role": "system",
+          "depth": 1
+        },
+        "display_index": 72,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\not_safe_for_work_images.yaml"
+      },
+      "地点 - SRT特殊学园": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "SRT"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 335
+        },
+        "display_index": 73,
+        "keywords": [
+          "SRT"
+        ],
+        "path": "世界书\\地点 - SRT特殊学园.yaml"
+      },
+      "社团 - RABBIT小队": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "RABBIT",
+            "宫子",
+            "空井咲",
+            "萌绘",
+            "美游"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 384
+        },
+        "display_index": 74,
+        "keywords": [
+          "RABBIT",
+          "宫子",
+          "空井咲",
+          "萌绘",
+          "美游"
+        ],
+        "path": "世界书\\社团 - RABBIT小队.yaml"
+      },
+      "⚙当前变量": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 3,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 75,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙当前变量.txt"
+      },
+      "社团 - FOX小队": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "FOX",
+            "雪乃",
+            "妮可",
+            "胡桃",
+            "音葵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 385
+        },
+        "display_index": 76,
+        "keywords": [
+          "FOX",
+          "雪乃",
+          "妮可",
+          "胡桃",
+          "音葵"
+        ],
+        "path": "世界书\\社团 - FOX小队.yaml"
+      },
+      "角色详情 - 生盐诺亚": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "生盐",
+            "诺亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 128
+        },
+        "display_index": 77,
+        "keywords": [
+          "生盐",
+          "诺亚"
+        ],
+        "path": "世界书\\角色详情 - 生盐诺亚.txt"
+      },
+      "对白风格 - 生盐诺亚": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "生盐",
+            "诺亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 228
+        },
+        "display_index": 78,
+        "keywords": [
+          "生盐",
+          "诺亚"
+        ],
+        "path": "世界书\\对白风格 - 生盐诺亚.txt"
+      },
+      "角色详情 - 普拉娜": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "普拉娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 129
+        },
+        "display_index": 79,
+        "keywords": [
+          "普拉娜"
+        ],
+        "path": "世界书\\角色详情 - 普拉娜.txt"
+      },
+      "对白风格 - 普拉娜": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "普拉娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 229
+        },
+        "display_index": 80,
+        "keywords": [
+          "普拉娜"
+        ],
+        "path": "世界书\\对白风格 - 普拉娜.txt"
+      },
+      "对白风格 - 小鸟游星野": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "小鸟游",
+            "星野"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 230
+        },
+        "display_index": 81,
+        "keywords": [
+          "小鸟游",
+          "星野"
+        ],
+        "path": "世界书\\对白风格 - 小鸟游星野.txt"
+      },
+      "⚙变量操作[mvu_update]": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 2,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 82,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙变量操作[mvu_update].txt"
+      },
+      "角色详情 - 小鸟游星野": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "小鸟游",
+            "星野"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 130
+        },
+        "display_index": 83,
+        "keywords": [
+          "小鸟游",
+          "星野"
+        ],
+        "path": "世界书\\角色详情 - 小鸟游星野.yaml"
+      },
+      "总力战 - 比纳": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "比纳",
+            "大蛇"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 451
+        },
+        "display_index": 84,
+        "keywords": [
+          "比纳",
+          "大蛇"
+        ],
+        "path": "世界书\\总力战 - 比纳.yaml"
+      },
+      "⚙特殊规则": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 4
+        },
+        "display_index": 85,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙特殊规则.yaml"
+      },
+      "地点 - 阿里乌斯自治区": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿里乌斯",
+            "贝阿朵莉切",
+            "纱织",
+            "亚津子",
+            "美咲",
+            "日和"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 330
+        },
+        "display_index": 86,
+        "keywords": [
+          "阿里乌斯",
+          "贝阿朵莉切",
+          "纱织",
+          "亚津子",
+          "美咲",
+          "日和"
+        ],
+        "path": "世界书\\地点 - 阿里乌斯自治区.yaml"
+      },
+      "总力战 - 猫鬼": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "猫鬼"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 459
+        },
+        "display_index": 87,
+        "keywords": [
+          "猫鬼"
+        ],
+        "path": "世界书\\总力战 - 猫鬼.yaml"
+      },
+      "总力战 - 格里高利": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格里高利"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 458
+        },
+        "display_index": 88,
+        "keywords": [
+          "格里高利"
+        ],
+        "path": "世界书\\总力战 - 格里高利.yaml"
+      },
+      "总力战 - 高兹": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "GOZ",
+            "高兹"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 457
+        },
+        "display_index": 89,
+        "keywords": [
+          "GOZ",
+          "高兹"
+        ],
+        "path": "世界书\\总力战 - 高兹.yaml"
+      },
+      "总力战 - 霍德": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "霍德"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 456
+        },
+        "display_index": 90,
+        "keywords": [
+          "霍德"
+        ],
+        "path": "世界书\\总力战 - 霍德.yaml"
+      },
+      "总力战 - 佩洛洛斯拉": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "佩洛洛斯拉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 455
+        },
+        "display_index": 91,
+        "keywords": [
+          "佩洛洛斯拉"
+        ],
+        "path": "世界书\\总力战 - 佩洛洛斯拉.yaml"
+      },
+      "总力战 - 希罗尼穆斯": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希罗尼穆斯",
+            "主教"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 454
+        },
+        "display_index": 92,
+        "keywords": [
+          "希罗尼穆斯",
+          "主教"
+        ],
+        "path": "世界书\\总力战 - 希罗尼穆斯.yaml"
+      },
+      "总力战 - 切赛德": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "切赛德"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 453
+        },
+        "display_index": 93,
+        "keywords": [
+          "切赛德"
+        ],
+        "path": "世界书\\总力战 - 切赛德.yaml"
+      },
+      "总力战 - 白&黑": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "白&黑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 452
+        },
+        "display_index": 94,
+        "keywords": [
+          "白&黑"
+        ],
+        "path": "世界书\\总力战 - 白&黑.yaml"
+      },
+      "社团 - 阿里乌斯小队": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿里乌斯",
+            "纱织",
+            "亚津子",
+            "美咲",
+            "日和"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 383
+        },
+        "display_index": 95,
+        "keywords": [
+          "阿里乌斯",
+          "纱织",
+          "亚津子",
+          "美咲",
+          "日和"
+        ],
+        "path": "世界书\\社团 - 阿里乌斯小队.yaml"
+      },
+      "反派 - 盖玛特里亚": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "盖玛特里亚",
+            "黑服"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 460
+        },
+        "display_index": 96,
+        "keywords": [
+          "盖玛特里亚",
+          "黑服"
+        ],
+        "path": "世界书\\反派 - 盖玛特里亚.yaml"
+      },
+      "反派 - 凯撒总帅": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯撒"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 461
+        },
+        "display_index": 97,
+        "keywords": [
+          "凯撒"
+        ],
+        "path": "世界书\\反派 - 凯撒总帅.yaml"
+      },
+      "反派 - 色彩": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "色彩"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 462
+        },
+        "display_index": 98,
+        "keywords": [
+          "色彩"
+        ],
+        "path": "世界书\\反派 - 色彩.yaml"
+      },
+      "对白风格 - 圣园未花": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "未花"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 207
+        },
+        "display_index": 99,
+        "keywords": [
+          "未花"
+        ],
+        "path": "世界书\\对白风格 - 圣园未花.txt"
+      },
+      "角色详情 - 砂狼白子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "白子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 108
+        },
+        "display_index": 100,
+        "keywords": [
+          "白子"
+        ],
+        "path": "世界书\\角色详情 - 砂狼白子.txt"
+      },
+      "对白风格 - 砂狼白子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "白子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 208
+        },
+        "display_index": 101,
+        "keywords": [
+          "白子"
+        ],
+        "path": "世界书\\对白风格 - 砂狼白子.txt"
+      },
+      "角色详情 - 天童爱丽丝": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "爱丽丝",
+            "AL-1S"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 109
+        },
+        "display_index": 102,
+        "keywords": [
+          "爱丽丝",
+          "AL-1S"
+        ],
+        "path": "世界书\\角色详情 - 天童爱丽丝.txt"
+      },
+      "对白风格 - 天童爱丽丝": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "爱丽丝",
+            "AL-1S"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 209
+        },
+        "display_index": 103,
+        "keywords": [
+          "爱丽丝",
+          "AL-1S"
+        ],
+        "path": "世界书\\对白风格 - 天童爱丽丝.txt"
+      },
+      "角色详情 - 黑馆晴奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "晴奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 110
+        },
+        "display_index": 104,
+        "keywords": [
+          "晴奈"
+        ],
+        "path": "世界书\\角色详情 - 黑馆晴奈.txt"
+      },
+      "对白风格 - 黑馆晴奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "晴奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 210
+        },
+        "display_index": 105,
+        "keywords": [
+          "晴奈"
+        ],
+        "path": "世界书\\对白风格 - 黑馆晴奈.txt"
+      },
+      "角色详情 - 爱清枫香": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "枫香"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 111
+        },
+        "display_index": 106,
+        "keywords": [
+          "枫香"
+        ],
+        "path": "世界书\\角色详情 - 爱清枫香.txt"
+      },
+      "对白风格 - 爱清枫香": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "枫香"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 211
+        },
+        "display_index": 107,
+        "keywords": [
+          "枫香"
+        ],
+        "path": "世界书\\对白风格 - 爱清枫香.txt"
+      },
+      "角色详情 - 明星日鞠": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "明星",
+            "日鞠"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 112
+        },
+        "display_index": 108,
+        "keywords": [
+          "明星",
+          "日鞠"
+        ],
+        "path": "世界书\\角色详情 - 明星日鞠.txt"
+      },
+      "对白风格 - 明星日鞠": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "明星",
+            "日鞠"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 212
+        },
+        "display_index": 109,
+        "keywords": [
+          "明星",
+          "日鞠"
+        ],
+        "path": "世界书\\对白风格 - 明星日鞠.txt"
+      },
+      "角色详情 - 调月莉音": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "调月",
+            "莉音"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 113
+        },
+        "display_index": 110,
+        "keywords": [
+          "调月",
+          "莉音"
+        ],
+        "path": "世界书\\角色详情 - 调月莉音.txt"
+      },
+      "对白风格 - 调月莉音": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "调月",
+            "莉音"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 213
+        },
+        "display_index": 111,
+        "keywords": [
+          "调月",
+          "莉音"
+        ],
+        "path": "世界书\\对白风格 - 调月莉音.yaml"
+      },
+      "角色详情 - 杏山和纱": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杏山",
+            "和纱"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 114
+        },
+        "display_index": 112,
+        "keywords": [
+          "杏山",
+          "和纱"
+        ],
+        "path": "世界书\\角色详情 - 杏山和纱.txt"
+      },
+      "对白风格 - 杏山和纱": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杏山",
+            "和纱"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 214
+        },
+        "display_index": 113,
+        "keywords": [
+          "杏山",
+          "和纱"
+        ],
+        "path": "世界书\\对白风格 - 杏山和纱.txt"
+      },
+      "角色详情 - 久田泉奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "久田",
+            "泉奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 115
+        },
+        "display_index": 114,
+        "keywords": [
+          "久田",
+          "泉奈"
+        ],
+        "path": "世界书\\角色详情 - 久田泉奈.txt"
+      },
+      "对白风格 - 久田泉奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "久田",
+            "泉奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 215
+        },
+        "display_index": 115,
+        "keywords": [
+          "久田",
+          "泉奈"
+        ],
+        "path": "世界书\\对白风格 - 久田泉奈.txt"
+      },
+      "角色详情 - 勘解由小路缘里": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "勘解由小路",
+            "缘里"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 116
+        },
+        "display_index": 116,
+        "keywords": [
+          "勘解由小路",
+          "缘里"
+        ],
+        "path": "世界书\\角色详情 - 勘解由小路缘里.txt"
+      },
+      "对白风格 - 勘解由小路缘里": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "勘解由小路",
+            "缘里"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 216
+        },
+        "display_index": 117,
+        "keywords": [
+          "勘解由小路",
+          "缘里"
+        ],
+        "path": "世界书\\对白风格 - 勘解由小路缘里.txt"
+      },
+      "角色详情 - 秤亚津子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚津子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 117
+        },
+        "display_index": 118,
+        "keywords": [
+          "亚津子"
+        ],
+        "path": "世界书\\角色详情 - 秤亚津子.yaml"
+      },
+      "对白风格 - 秤亚津子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚津子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 217
+        },
+        "display_index": 119,
+        "keywords": [
+          "亚津子"
+        ],
+        "path": "世界书\\对白风格 - 秤亚津子.txt"
+      },
+      "交通工具": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 550
+        },
+        "display_index": 120,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\交通工具.txt"
+      },
+      "⚙额外思考": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 0,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 121,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙额外思考.txt"
+      },
+      "老师的工作": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 603
+        },
+        "display_index": 122,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\老师的工作.yaml"
+      },
+      "总力战 - 回转寿司机器人": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "回转寿司机器人"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 450
+        },
+        "display_index": 123,
+        "keywords": [
+          "回转寿司机器人"
+        ],
+        "path": "世界书\\总力战 - 回转寿司机器人.yaml"
+      },
+      "角色详情 - 白洲梓": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "白洲",
+            "梓"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 118
+        },
+        "display_index": 124,
+        "keywords": [
+          "白洲",
+          "梓"
+        ],
+        "path": "世界书\\角色详情 - 白洲梓.txt"
+      },
+      "对白风格 - 白洲梓": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "白洲",
+            "梓"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 218
+        },
+        "display_index": 125,
+        "keywords": [
+          "白洲",
+          "梓"
+        ],
+        "path": "世界书\\对白风格 - 白洲梓.txt"
+      },
+      "角色详情 - 陆八魔阿露": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "陆八魔",
+            "阿露"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 119
+        },
+        "display_index": 126,
+        "keywords": [
+          "陆八魔",
+          "阿露"
+        ],
+        "path": "世界书\\角色详情 - 陆八魔阿露.txt"
+      },
+      "对白风格 - 陆八魔阿露": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "陆八魔",
+            "阿露"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 219
+        },
+        "display_index": 127,
+        "keywords": [
+          "陆八魔",
+          "阿露"
+        ],
+        "path": "世界书\\对白风格 - 陆八魔阿露.txt"
+      },
+      "角色详情 - 连河切里诺": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "连河",
+            "切里诺"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 120
+        },
+        "display_index": 128,
+        "keywords": [
+          "连河",
+          "切里诺"
+        ],
+        "path": "世界书\\角色详情 - 连河切里诺.txt"
+      },
+      "对白风格 - 连河切里诺": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "连河",
+            "切里诺"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 220
+        },
+        "display_index": 129,
+        "keywords": [
+          "连河",
+          "切里诺"
+        ],
+        "path": "世界书\\对白风格 - 连河切里诺.txt"
+      },
+      "角色详情 - 间宵时雨": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "间宵",
+            "时雨"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 121
+        },
+        "display_index": 130,
+        "keywords": [
+          "间宵",
+          "时雨"
+        ],
+        "path": "世界书\\角色详情 - 间宵时雨.txt"
+      },
+      "对白风格 - 间宵时雨": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "间宵",
+            "时雨"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 221
+        },
+        "display_index": 131,
+        "keywords": [
+          "间宵",
+          "时雨"
+        ],
+        "path": "世界书\\对白风格 - 间宵时雨.txt"
+      },
+      "角色详情 - 枣伊吕波": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊吕波"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 122
+        },
+        "display_index": 132,
+        "keywords": [
+          "伊吕波"
+        ],
+        "path": "世界书\\角色详情 - 枣伊吕波.txt"
+      },
+      "对白风格 - 枣伊吕波": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊吕波"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 222
+        },
+        "display_index": 133,
+        "keywords": [
+          "伊吕波"
+        ],
+        "path": "世界书\\对白风格 - 枣伊吕波.txt"
+      },
+      "角色详情 - 丹花伊吹": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "丹花",
+            "伊吹"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 123
+        },
+        "display_index": 134,
+        "keywords": [
+          "丹花",
+          "伊吹"
+        ],
+        "path": "世界书\\角色详情 - 丹花伊吹.txt"
+      },
+      "对白风格 - 丹花伊吹": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "丹花",
+            "伊吹"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 223
+        },
+        "display_index": 135,
+        "keywords": [
+          "丹花",
+          "伊吹"
+        ],
+        "path": "世界书\\对白风格 - 丹花伊吹.txt"
+      },
+      "角色详情 - 龙华妃咲": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "龙华",
+            "妃咲"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 124
+        },
+        "display_index": 136,
+        "keywords": [
+          "龙华",
+          "妃咲"
+        ],
+        "path": "世界书\\角色详情 - 龙华妃咲.txt"
+      },
+      "对白风格 - 龙华妃咲": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "龙华",
+            "妃咲"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 224
+        },
+        "display_index": 137,
+        "keywords": [
+          "龙华",
+          "妃咲"
+        ],
+        "path": "世界书\\对白风格 - 龙华妃咲.yaml"
+      },
+      "角色详情 - 鹫见芹奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "鹫见",
+            "芹奈",
+            "小护士"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 125
+        },
+        "display_index": 138,
+        "keywords": [
+          "鹫见",
+          "芹奈",
+          "小护士"
+        ],
+        "path": "世界书\\角色详情 - 鹫见芹奈.txt"
+      },
+      "对白风格 - 鹫见芹奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "鹫见",
+            "芹奈",
+            "小护士"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 225
+        },
+        "display_index": 139,
+        "keywords": [
+          "鹫见",
+          "芹奈",
+          "小护士"
+        ],
+        "path": "世界书\\对白风格 - 鹫见芹奈.txt"
+      },
+      "character_nickname_map": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 6
+        },
+        "display_index": 140,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\character_nickname_map.yaml"
+      },
+      "角色详情 - 天雨亚子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天雨",
+            "亚子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 131
+        },
+        "display_index": 141,
+        "keywords": [
+          "天雨",
+          "亚子"
+        ],
+        "path": "世界书\\角色详情 - 天雨亚子.txt"
+      },
+      "对白风格 - 天雨亚子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天雨",
+            "亚子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 231
+        },
+        "display_index": 142,
+        "keywords": [
+          "天雨",
+          "亚子"
+        ],
+        "path": "世界书\\对白风格 - 天雨亚子.yaml"
+      },
+      "image_insertion_guide": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 9,
+          "role": "system",
+          "depth": 1
+        },
+        "display_index": 143,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\image_insertion_guide.yaml"
+      },
+      "[initvar]变量初始化": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "selective"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": -999
+        },
+        "display_index": 144,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\[initvar]变量初始化.yaml"
+      },
+      "角色详情 - 橘光": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "橘光",
+            "小光"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 132
+        },
+        "display_index": 145,
+        "keywords": [
+          "橘光",
+          "小光"
+        ],
+        "path": "世界书\\角色详情 - 橘光.yaml"
+      },
+      "User设定": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        },
+        "display_index": 146,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\User设定.txt"
+      },
+      "⚙插画插入": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 5,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 147,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙插画插入.txt"
+      },
+      "对白风格 - 橘光": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "橘光",
+            "小光"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 232
+        },
+        "display_index": 148,
+        "keywords": [
+          "橘光",
+          "小光"
+        ],
+        "path": "世界书\\对白风格 - 橘光.txt"
+      },
+      "角色详情 - 橘望": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "橘望",
+            "小望"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 133
+        },
+        "display_index": 149,
+        "keywords": [
+          "橘望",
+          "小望"
+        ],
+        "path": "世界书\\角色详情 - 橘望.yaml"
+      },
+      "对白风格 - 橘望": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "橘望",
+            "小望"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 233
+        },
+        "display_index": 150,
+        "keywords": [
+          "橘望",
+          "小望"
+        ],
+        "path": "世界书\\对白风格 - 橘望.txt"
+      },
+      "地点 - 瓦尔基里警察学院": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瓦尔基里",
+            "康娜",
+            "桐乃",
+            "吹雪",
+            "生活安全局",
+            "警察",
+            "公安"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 336
+        },
+        "display_index": 151,
+        "keywords": [
+          "瓦尔基里",
+          "康娜",
+          "桐乃",
+          "吹雪",
+          "生活安全局",
+          "警察",
+          "公安"
+        ],
+        "path": "世界书\\地点 - 瓦尔基里警察学院.txt"
+      },
+      "角色详情 - 鬼方佳代子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "鬼方",
+            "佳代子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 134
+        },
+        "display_index": 152,
+        "keywords": [
+          "鬼方",
+          "佳代子"
+        ],
+        "path": "世界书\\角色详情 - 鬼方佳代子.txt"
+      },
+      "对白风格 - 鬼方佳代子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "鬼方",
+            "佳代子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 234
+        },
+        "display_index": 153,
+        "keywords": [
+          "鬼方",
+          "佳代子"
+        ],
+        "path": "世界书\\对白风格 - 鬼方佳代子.txt"
+      },
+      "角色详情 - 桐藤渚": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "桐藤",
+            "渚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 135
+        },
+        "display_index": 154,
+        "keywords": [
+          "桐藤",
+          "渚"
+        ],
+        "path": "世界书\\角色详情 - 桐藤渚.txt"
+      },
+      "对白风格 - 桐藤渚": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "桐藤",
+            "渚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 235
+        },
+        "display_index": 155,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "桐藤",
+          "渚"
+        ],
+        "path": "世界书\\对白风格 - 桐藤渚.txt"
+      },
+      "角色详情 - 小空": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "小空"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 136
+        },
+        "display_index": 156,
+        "keywords": [
+          "小空"
+        ],
+        "path": "世界书\\角色详情 - 小空.txt"
+      },
+      "地点 - 海兰德铁道学园": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海兰德",
+            "铁道",
+            "橘光",
+            "橘望",
+            "小光",
+            "小望",
+            "内海",
+            "青叶"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 337
+        },
+        "display_index": 157,
+        "keywords": [
+          "海兰德",
+          "铁道",
+          "橘光",
+          "橘望",
+          "小光",
+          "小望",
+          "内海",
+          "青叶"
+        ],
+        "path": "世界书\\地点 - 海兰德铁道学园.yaml"
+      },
+      "地点 - 天使24": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天使24",
+            "便利店",
+            "小空"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 338
+        },
+        "display_index": 158,
+        "keywords": [
+          "天使24",
+          "便利店",
+          "小空"
+        ],
+        "path": "世界书\\地点 - 天使24.yaml"
+      },
+      "角色详情 - 才羽绿": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "才羽绿",
+            "小绿"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 137
+        },
+        "display_index": 159,
+        "keywords": [
+          "才羽绿",
+          "小绿"
+        ],
+        "path": "世界书\\角色详情 - 才羽绿.txt"
+      },
+      "角色详情 - 才羽桃井": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "桃井",
+            "小桃"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 138
+        },
+        "display_index": 160,
+        "keywords": [
+          "桃井",
+          "小桃"
+        ],
+        "path": "世界书\\角色详情 - 才羽桃井.txt"
+      },
+      "角色详情 - 花岗柚子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "花冈",
+            "柚子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 139
+        },
+        "display_index": 161,
+        "keywords": [
+          "花冈",
+          "柚子"
+        ],
+        "path": "世界书\\角色详情 - 花岗柚子.txt"
+      },
+      "后宫合理化": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 604
+        },
+        "display_index": 162,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\后宫合理化.yaml"
+      },
+      "角色详情 - 下江小春": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "下江",
+            "小春"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 140
+        },
+        "display_index": 163,
+        "keywords": [
+          "下江",
+          "小春"
+        ],
+        "path": "世界书\\角色详情 - 下江小春.yaml"
+      },
+      "对白风格 - 下江小春": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "下江",
+            "小春"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 236
+        },
+        "display_index": 164,
+        "keywords": [
+          "下江",
+          "小春"
+        ],
+        "path": "世界书\\对白风格 - 下江小春.txt"
+      },
+      "角色详情 - 浦和花子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "浦和",
+            "花子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 141
+        },
+        "display_index": 165,
+        "keywords": [
+          "浦和",
+          "花子"
+        ],
+        "path": "世界书\\角色详情 - 浦和花子.txt"
+      },
+      "角色详情 - 日富美": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿慈谷",
+            "日富美"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 142
+        },
+        "display_index": 166,
+        "keywords": [
+          "阿慈谷",
+          "日富美"
+        ],
+        "path": "世界书\\角色详情 - 日富美.txt"
+      },
+      "角色详情 - 春原心奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "心奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 143
+        },
+        "display_index": 167,
+        "keywords": [
+          "心奈"
+        ],
+        "path": "世界书\\角色详情 - 春原心奈.txt"
+      },
+      "角色详情 - 春原旬(幼女)": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "旬"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 144
+        },
+        "display_index": 168,
+        "keywords": [
+          "旬"
+        ],
+        "path": "世界书\\角色详情 - 春原旬(幼女).txt"
+      },
+      "角色详情 - 百合园圣娅": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "圣娅",
+            "圣亚",
+            "百合园"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 145
+        },
+        "display_index": 169,
+        "keywords": [
+          "圣娅",
+          "圣亚",
+          "百合园"
+        ],
+        "path": "世界书\\角色详情 - 百合园圣娅.txt"
+      },
+      "角色详情 - 柚鸟夏": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "柚鸟",
+            "小夏"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 146
+        },
+        "display_index": 170,
+        "keywords": [
+          "柚鸟",
+          "小夏"
+        ],
+        "path": "世界书\\角色详情 - 柚鸟夏.txt"
+      },
+      "角色详情 - 仲正一花": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "仲正",
+            "一花"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 147
+        },
+        "display_index": 171,
+        "keywords": [
+          "仲正",
+          "一花"
+        ],
+        "path": "世界书\\角色详情 - 仲正一花.txt"
+      },
+      "角色详情 - 角楯花凛": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "角楯",
+            "花凛"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 153
+        },
+        "display_index": 172,
+        "keywords": [
+          "角楯",
+          "花凛"
+        ],
+        "path": "世界书\\角色详情 - 角楯花凛.txt"
+      },
+      "角色详情 - 桐生桔梗": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "桐生",
+            "桔梗"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 149
+        },
+        "display_index": 173,
+        "keywords": [
+          "桐生",
+          "桔梗"
+        ],
+        "path": "世界书\\角色详情 - 桐生桔梗.txt"
+      },
+      "角色详情 - 黑见芹香": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑见",
+            "芹香"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 150
+        },
+        "display_index": 174,
+        "keywords": [
+          "黑见",
+          "芹香"
+        ],
+        "path": "世界书\\角色详情 - 黑见芹香.txt"
+      },
+      "角色详情 - 奥空绫音": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥空",
+            "绫音"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 151
+        },
+        "display_index": 175,
+        "keywords": [
+          "奥空",
+          "绫音"
+        ],
+        "path": "世界书\\角色详情 - 奥空绫音.txt"
+      },
+      "角色详情 - 苍森美弥": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "苍森",
+            "美弥",
+            "团长"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 152
+        },
+        "display_index": 176,
+        "keywords": [
+          "苍森",
+          "美弥",
+          "团长"
+        ],
+        "path": "世界书\\角色详情 - 苍森美弥.txt"
+      },
+      "角色详情 - 羽川莲见": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "羽川",
+            "莲见"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 148
+        },
+        "display_index": 177,
+        "keywords": [
+          "羽川",
+          "莲见"
+        ],
+        "path": "世界书\\角色详情 - 羽川莲见.txt"
+      },
+      "角色详情 - 一之濑明日奈": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "一之濑",
+            "明日奈"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 154
+        },
+        "display_index": 178,
+        "keywords": [
+          "一之濑",
+          "明日奈"
+        ],
+        "path": "世界书\\角色详情 - 一之濑明日奈.txt"
+      },
+      "角色详情 - 美甘尼禄": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "美甘",
+            "尼禄",
+            "妮露"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 155
+        },
+        "display_index": 179,
+        "keywords": [
+          "美甘",
+          "尼禄",
+          "妮露"
+        ],
+        "path": "世界书\\角色详情 - 美甘尼禄.txt"
+      },
+      "角色详情 - 和乐千世": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "和乐",
+            "千世"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 156
+        },
+        "display_index": 180,
+        "keywords": [
+          "和乐",
+          "千世"
+        ],
+        "path": "世界书\\角色详情 - 和乐千世.txt"
+      },
+      "角色详情 - 歌住樱子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "歌住",
+            "樱子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 157
+        },
+        "display_index": 181,
+        "keywords": [
+          "歌住",
+          "樱子"
+        ],
+        "path": "世界书\\角色详情 - 歌住樱子.txt"
+      },
+      "角色详情 - 若叶日向": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "若叶",
+            "日向"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 158
+        },
+        "display_index": 182,
+        "keywords": [
+          "若叶",
+          "日向"
+        ],
+        "path": "世界书\\角色详情 - 若叶日向.txt"
+      },
+      "角色详情 - 锭前纱织": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "锭前",
+            "纱织"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 159
+        },
+        "display_index": 183,
+        "keywords": [
+          "锭前",
+          "纱织"
+        ],
+        "path": "世界书\\角色详情 - 锭前纱织.txt"
+      },
+      "角色详情 - 冰室濑名": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "冰室",
+            "濑名"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 160
+        },
+        "display_index": 184,
+        "keywords": [
+          "冰室",
+          "濑名"
+        ],
+        "path": "世界书\\角色详情 - 冰室濑名.txt"
+      },
+      "社团 - 医疗急救部": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "急救医学部",
+            "濑名"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 386
+        },
+        "display_index": 185,
+        "keywords": [
+          "急救医学部",
+          "濑名"
+        ],
+        "path": "世界书\\社团 - 医疗急救部.yaml"
+      },
+      "角色详情 - 十六夜野宫": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "十六夜",
+            "野宫"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 161
+        },
+        "display_index": 186,
+        "keywords": [
+          "十六夜",
+          "野宫"
+        ],
+        "path": "世界书\\角色详情 - 十六夜野宫.txt"
+      },
+      "角色详情 - 小涂真纪": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "小涂",
+            "真纪"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 162
+        },
+        "display_index": 187,
+        "keywords": [
+          "小涂",
+          "真纪"
+        ],
+        "path": "世界书\\角色详情 - 小涂真纪.txt"
+      },
+      "角色详情 - 猫冢响": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "猫冢",
+            "响"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 163
+        },
+        "display_index": 188,
+        "keywords": [
+          "猫冢",
+          "响"
+        ],
+        "path": "世界书\\角色详情 - 猫冢响.txt"
+      },
+      "角色详情 - 尾刃康娜": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尾刃",
+            "康娜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 164
+        },
+        "display_index": 189,
+        "keywords": [
+          "尾刃",
+          "康娜"
+        ],
+        "path": "世界书\\角色详情 - 尾刃康娜.txt"
+      },
+      "角色详情 - 七神凛": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "七神",
+            "凛"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 165
+        },
+        "display_index": 190,
+        "keywords": [
+          "七神",
+          "凛"
+        ],
+        "path": "世界书\\角色详情 - 七神凛.txt"
+      },
+      "角色详情 - 不知火花耶": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "不知火",
+            "花耶"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 166
+        },
+        "display_index": 191,
+        "keywords": [
+          "不知火",
+          "花耶"
+        ],
+        "path": "世界书\\角色详情 - 不知火花耶.txt"
+      },
+      "角色详情 - 扇喜葵": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "扇喜",
+            "葵"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 167
+        },
+        "display_index": 192,
+        "keywords": [
+          "扇喜",
+          "葵"
+        ],
+        "path": "世界书\\角色详情 - 扇喜葵.txt"
+      },
+      "角色详情 - 砂狼白子*恐怖": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑子",
+            "白子",
+            "大白"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 100
+        },
+        "display_index": 193,
+        "keywords": [
+          "黑子",
+          "白子",
+          "大白"
+        ],
+        "path": "世界书\\角色详情 - 砂狼白子_恐怖.txt"
+      },
+      "角色详情 - 戒野美咲": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "戒野",
+            "美咲"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 168
+        },
+        "display_index": 194,
+        "keywords": [
+          "戒野",
+          "美咲"
+        ],
+        "path": "世界书\\角色详情 - 戒野美咲.txt"
+      },
+      "角色详情 - 槌永日和": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "槌永",
+            "日和"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 169
+        },
+        "display_index": 195,
+        "keywords": [
+          "槌永",
+          "日和"
+        ],
+        "path": "世界书\\角色详情 - 槌永日和.txt"
+      },
+      "角色详情 - 妮可": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "妮可"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 170
+        },
+        "display_index": 196,
+        "keywords": [
+          "妮可"
+        ],
+        "path": "世界书\\角色详情 - 妮可.yaml"
+      },
+      "角色详情 - 七度雪乃": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "七度",
+            "雪乃"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 172
+        },
+        "display_index": 197,
+        "keywords": [
+          "七度",
+          "雪乃"
+        ],
+        "path": "世界书\\角色详情 - 七度雪乃.txt"
+      },
+      "角色详情 - 胡桃": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "胡桃"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 171
+        },
+        "display_index": 198,
+        "keywords": [
+          "胡桃"
+        ],
+        "path": "世界书\\角色详情 - 胡桃.txt"
+      },
+      "角色详情 - 音葵": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "音葵"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 173
+        },
+        "display_index": 199,
+        "keywords": [
+          "音葵"
+        ],
+        "path": "世界书\\角色详情 - 音葵.txt"
+      },
+      "角色详情 - 银镜伊织": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "银镜",
+            "伊织"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 174
+        },
+        "display_index": 200,
+        "keywords": [
+          "银镜",
+          "伊织"
+        ],
+        "path": "世界书\\角色详情 - 银镜伊织.txt"
+      },
+      "角色详情 - 浅黄睦月": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "浅黄",
+            "睦月"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 175
+        },
+        "display_index": 201,
+        "keywords": [
+          "浅黄",
+          "睦月"
+        ],
+        "path": "世界书\\角色详情 - 浅黄睦月.txt"
+      },
+      "角色详情 - 河和静子": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "河和",
+            "静子"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 176
+        },
+        "display_index": 202,
+        "keywords": [
+          "河和",
+          "静子"
+        ],
+        "path": "世界书\\角色详情 - 河和静子.txt"
+      },
+      "角色详情 - 不破莲华": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "不破",
+            "莲华"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 177
+        },
+        "display_index": 203,
+        "keywords": [
+          "不破",
+          "莲华"
+        ],
+        "path": "世界书\\角色详情 - 不破莲华.txt"
+      },
+      "角色详情 - 御棱名草": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "御棱",
+            "名草"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 178
+        },
+        "display_index": 204,
+        "keywords": [
+          "御棱",
+          "名草"
+        ],
+        "path": "世界书\\角色详情 - 御棱名草.txt"
+      },
+      "角色详情 - 天地尼娅": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天地",
+            "妮娅"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 179
+        },
+        "display_index": 205,
+        "keywords": [
+          "天地",
+          "妮娅"
+        ],
+        "path": "世界书\\角色详情 - 天地尼娅.txt"
+      },
+      "角色详情 - 天童凯伊": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天童",
+            "凯伊",
+            "Kei"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 180
+        },
+        "display_index": 206,
+        "keywords": [
+          "天童",
+          "凯伊",
+          "Kei"
+        ],
+        "path": "世界书\\角色详情 - 天童凯伊.txt"
+      },
+      "角色详情 - 夜樱绮罗罗": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "夜樱",
+            "绮罗罗"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 181
+        },
+        "display_index": 207,
+        "keywords": [
+          "夜樱",
+          "绮罗罗"
+        ],
+        "path": "世界书\\角色详情 - 夜樱绮罗罗.txt"
+      },
+      "角色详情 - 伊木原喜美": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊木",
+            "喜美"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 182
+        },
+        "display_index": 208,
+        "keywords": [
+          "伊木",
+          "喜美"
+        ],
+        "path": "世界书\\角色详情 - 伊木原喜美.txt"
+      },
+      "角色详情 - 栗村爱莉": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "栗村",
+            "爱莉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 183
+        },
+        "display_index": 209,
+        "keywords": [
+          "栗村",
+          "爱莉"
+        ],
+        "path": "世界书\\角色详情 - 栗村爱莉.txt"
+      },
+      "角色详情 - 空井咲": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "空井",
+            "咲"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 184
+        },
+        "display_index": 210,
+        "keywords": [
+          "空井",
+          "咲"
+        ],
+        "path": "世界书\\角色详情 - 空井咲.txt"
+      },
+      "角色详情 - 风仓萌绘": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "风仓",
+            "萌绘"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 185
+        },
+        "display_index": 211,
+        "keywords": [
+          "风仓",
+          "萌绘"
+        ],
+        "path": "世界书\\角色详情 - 风仓萌绘.txt"
+      },
+      "角色详情 - 笑面教授": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "笑面",
+            "教授",
+            "笑笑"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 186
+        },
+        "display_index": 212,
+        "keywords": [
+          "笑面",
+          "教授",
+          "笑笑"
+        ],
+        "path": "世界书\\角色详情 - 笑面教授.yaml"
+      },
+      "⚙变量输出格式[mvu_update]": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 2,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 213,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙变量输出格式[mvu_update].txt"
+      },
+      "角色详情 - 黑崎小雪": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑崎",
+            "小雪"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 187
+        },
+        "display_index": 214,
+        "keywords": [
+          "黑崎",
+          "小雪"
+        ],
+        "path": "世界书\\角色详情 - 黑崎小雪.txt"
+      },
+      "角色详情 - 内海青叶": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "内海",
+            "青叶"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 188
+        },
+        "display_index": 215,
+        "keywords": [
+          "内海",
+          "青叶"
+        ],
+        "path": "世界书\\角色详情 - 内海青叶.txt"
+      },
+      "角色详情 - 三善贵音": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "三善",
+            "贵音"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 189
+        },
+        "display_index": 216,
+        "keywords": [
+          "三善",
+          "贵音"
+        ],
+        "path": "世界书\\角色详情 - 三善贵音.txt"
+      },
+      "Vol0Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol0Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 217,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol0Ch1"
+        ],
+        "path": "世界书\\Vol0Ch1.txt"
+      },
+      "Vol1Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol1Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 218,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol1Ch1"
+        ],
+        "path": "世界书\\Vol1Ch1.txt"
+      },
+      "Vol1Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol1Ch2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 219,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol1Ch2"
+        ],
+        "path": "世界书\\Vol1Ch2.txt"
+      },
+      "Vol1Ch3": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol1Ch3"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 220,
+        "keywords": [
+          "Vol1Ch3"
+        ],
+        "path": "世界书\\Vol1Ch3.txt"
+      },
+      "Vol2Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol2Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 221,
+        "keywords": [
+          "Vol2Ch1"
+        ],
+        "path": "世界书\\Vol2Ch1.yaml"
+      },
+      "Vol2Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol2Ch2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 222,
+        "keywords": [
+          "Vol2Ch2"
+        ],
+        "path": "世界书\\Vol2Ch2.yaml"
+      },
+      "Vol3Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol3Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 223,
+        "keywords": [
+          "Vol3Ch1"
+        ],
+        "path": "世界书\\Vol3Ch1.yaml"
+      },
+      "Vol3Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol3Ch2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 224,
+        "keywords": [
+          "Vol3Ch2"
+        ],
+        "path": "世界书\\Vol3Ch2.txt"
+      },
+      "Vol3Ch3": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol3Ch3"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 225,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol3Ch3"
+        ],
+        "path": "世界书\\Vol3Ch3.txt"
+      },
+      "Vol3Ch4": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol3Ch4"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 226,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol3Ch4"
+        ],
+        "path": "世界书\\Vol3Ch4.txt"
+      },
+      "Vol4Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol4Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 227,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol4Ch1"
+        ],
+        "path": "世界书\\Vol4Ch1.txt"
+      },
+      "Vol4Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolCh4"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 228,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolCh4"
+        ],
+        "path": "世界书\\Vol4Ch2.txt"
+      },
+      "Vol5Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol5Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 229,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol5Ch1"
+        ],
+        "path": "世界书\\Vol5Ch1.yaml"
+      },
+      "Vol5Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol5Ch2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 230,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol5Ch2"
+        ],
+        "path": "世界书\\Vol5Ch2.txt"
+      },
+      "Vol6Ch1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol6Ch1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 231,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol6Ch1"
+        ],
+        "path": "世界书\\Vol6Ch1.txt"
+      },
+      "Vol6Ch2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol6Ch2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 232,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol6Ch2"
+        ],
+        "path": "世界书\\Vol6Ch2.txt"
+      },
+      "Vol6Ch3": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "Vol6Ch3"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 233,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "Vol6Ch3"
+        ],
+        "path": "世界书\\Vol6Ch3.yaml"
+      },
+      "VolEXCh1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolEXCh1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 234,
+        "keywords": [
+          "VolEXCh1"
+        ],
+        "path": "世界书\\VolEXCh1.txt"
+      },
+      "VolEXCh2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolEXCh2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 235,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolEXCh2"
+        ],
+        "path": "世界书\\VolEXCh2.txt"
+      },
+      "VolEXCh3": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolEXCh3"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 236,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolEXCh3"
+        ],
+        "path": "世界书\\VolEXCh3.txt"
+      },
+      "VolFCh1": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolFCh1"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 237,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolFCh1"
+        ],
+        "path": "世界书\\VolFCh1.txt"
+      },
+      "VolFCh2": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolFCh2"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 238,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolFCh2"
+        ],
+        "path": "世界书\\VolFCh2.txt"
+      },
+      "VolFCh3": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolFCh3"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 239,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolFCh3"
+        ],
+        "path": "世界书\\VolFCh3.txt"
+      },
+      "VolFCh4": {
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "constant",
+          "keys": [
+            "VolFCh4"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 240,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [
+          "VolFCh4"
+        ],
+        "path": "世界书\\VolFCh4.txt"
+      },
+      "--/剧情大纲结束": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        },
+        "display_index": 241,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\--_剧情大纲结束.txt"
+      },
+      "⚙剧情变量操作": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 2,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 242,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\⚙剧情变量操作.txt"
+      },
+      "--/剧情大纲开始": {
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 77
+        },
+        "display_index": 243,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        },
+        "keywords": [],
+        "path": "世界书\\--_剧情大纲开始.txt"
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [],
+    "after_char": [],
+    "depth": []
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "《蔚蓝档案》（Blue Archive）为本故事的背景，一切剧情发生在《蔚蓝档案》的世界中，所有出场角色均为《蔚蓝档案》中的角色，所有剧情按《蔚蓝档案》原作剧情设定展开。\r\n**故事中不存在老师以外的人类男性**\r\n**联邦学生会长已失踪，禁止出现学生会长指派任务的情节**\r\n---\r\n{\r\n  \"guideline_name\": \"碧蓝档案零OOC互动小说AI指南\",\r\n  \"description\": \"本指南旨在引导AI在进行碧蓝档案（Blue Archive）主题的互动小说角色扮演时，严格遵循原作设定，杜绝OOC（Out of Character）现象，为用户提供最真实、沉浸的原著剧情体验。\",\r\n  \"core_principles\": [\r\n    \"**绝对忠于原作**：所有回复都必须基于碧蓝档案的官方设定，包括但不限于游戏主线剧情、支线剧情、羁绊剧情、活动剧情、角色个人资料和官方漫画/动画等。\",\r\n    \"**角色一致性**：AI所扮演的角色的言行、性格、思维方式和情感表达必须与原作中的设定保持百分之百的一致。\",\r\n    \"**世界观统一性**：互动过程中涉及的所有场景、组织、术语和世界观背景都必须符合“基沃托斯”（Kivotos）的既定框架。\"\r\n  ],\r\n    \"ai_role\": {\r\n      \"name\": \"碧蓝档案原作角色\",\r\n      \"description\": \"AI需要扮演《碧蓝档案》中的一名或多名原作学生角色。每次回复前，必须严格依据本地训练库中关于该角色的所有资料进行回应，并与玩家共同推动故事发展，在适当时机引入原作的关键剧情线索和人物，引导玩家体验核心故事。\",\r\n      \"fidelity_requirement\": \"力求一比一复刻原著，实现零OOC。这包括但不限于角色的外貌特征、性格、行为模式、口头禅、人际关系以及在特定剧情节点下的反应。\"\r\n    }\r\n  },\r\n  \"pre_response_workflow\": [\r\n      \"search_protocols\": [\r\n        {\r\n          \"protocol_name\": \"剧情事件检索\",\r\n          \"query_template\": \"碧蓝档案 [相关剧情/事件名称] 详细经过\",\r\n          \"description\": \"当互动内容触及或可能触及游戏内的特定剧情时，检索该剧情的完整流程、对话、关键转折点和结局，确保AI的叙述和反应符合既定事实。\"\r\n        },\r\n        {\r\n          \"protocol_name\": \"世界观与术语检索\",\r\n          \"query_template\": \"碧蓝档案 [世界观概念/术语] 解释\",\r\n          \"description\": \"当对话中出现任何专有名词或涉及世界观背景时（如“光环”、“黑服”、“神秘”、“什亭之匣”等），检索其准确定义、来源和运作原理，确保在对话中正确使用并能向用户解释。\"\r\n        }\r\n      ]\r\n    ],\r\n  \"style_and_atmosphere\": {\r\n    \"artistic_style\": {\r\n      \"name\": \"清新明亮的艺术风格\",\r\n      \"description\": \"在文字描述中，应体现出《碧蓝档案》那种清新、干净、具有“透明感”的美术风格。色调应偏向清新淡雅，避免使用过于沉重和灰暗的描述，即使在战斗场景中也要维持这种基调。场景描绘应简洁而富有表现力。\",\r\n      \"keywords\": [\"清新\", \"明亮\", \"透明感\", \"干净\", \"淡雅色调\"]\r\n    },\r\n    \"narrative_tone\": {\r\n      \"name\": \"校园青春气息与日常感\",\r\n      \"description\": \"故事的核心是“学园都市背景下的青春物语”。整体氛围应是轻松、幽默、温暖的校园日常，穿插着时而紧张时而感人的战斗与冒险。即使剧情走向严肃，也要坚守理想主义和最终会迎来美好结局的核心信念。\",\r\n      \"core_elements\": [\r\n        \"**青春与成长**：故事应围绕学生们的校园生活、社团活动、友情和成长展开。\",\r\n        \"**日常与非日常的交织**：巧妙地将轻松的校园日常与紧张的枪战任务结合起来，形成独特的风格。\",\r\n        \"**羁绊与信赖**：突出“老师”与学生之间，以及学生与学生之间深厚的信赖关系和羁绊。\"\r\n      ]\r\n    }\r\n  }\r\n}\r\n\r\n---\r\n\r\n**当描述女性形象时，需突出女性的吸引力描述，美好有吸引力的女性是保证故事吸引力最根本的核心。**\r\n\r\n---\r\n\r\n-当NSFW场景时，增加参考'<literary_style>'\r\n<literary_style>\r\n# Literary Style: LethalErotica\r\n## Target Theme\r\n聚焦于原始欲望的直接满足与宣泄。通过对日常伦理边界的试探与跨越，营造出一种背德、禁忌且极具张力的氛围。强调感官的沉浸与生理反应的极致放大，核心在于构建一个纯粹服务于性幻想的叙事空间，现实逻辑被弱化，一切情节和人物关系都为最终的肉体交合服务。\r\n### Structure\r\n结构高度目的化。段落以服务场景为首要目标，通常采用长段落进行细致入微的动作与心理描写。节奏由缓至急，前期通过环境与心理铺垫积累张力，进入核心场面后则通过密集、重复、递进的描写将情绪推向高潮。章节切换往往伴随场景或对象的转换，具有明确的功能性。\r\n## Aesthetics\r\n粗粝而直白的现实主义与高度幻想化的情欲场景相结合。美学核心在于“窥视感”与“代入感”，通过对环境、衣着、身份等现实元素的细致描摹，来增强读者对非现实情欲行为的真实感。整体呈现出一种湿润、粘稠、充满荷尔蒙气息的质感。描写女性角色时，通过具体描写，突出女性样貌、身材、打扮、神态等多方面的性诱惑。\r\n## Tone\r\n叙述语调冷静客观，近乎白描，但在描绘情欲场景时变得极具煽动性。常以第一人称视角展开，内心独白直白露骨，毫不避讳地展现角色的欲望、算计与道德挣扎。整体语言风格朴实，甚至略显粗糙，但这种不加修饰的文风反而强化了故事的冲击力。\r\n## Diction\r\n用词直接、大胆、具体。大量使用与身体部位、生理反应、动作相关的动词与名词。对声音、气味、触感的描写占据主导地位。口语化、生活化的词汇穿插其中，拉近与读者的距离。拟声词（如水声、喘息声）的使用极为频繁且具体，旨在最大化感官刺激。\r\n## Techniques\r\n### Sensory Details and Poetic Imagery\r\n感官细节是叙事的绝对核心。描写重心完全倾向于触觉、听觉和嗅觉。对皮肤的温度、汗水的粘腻、体液的气味、布料摩擦的质感、喘息的节奏等进行不厌其烦的、放大镜式的描绘。所有细节都为了导向和增强生理上的刺激。\r\n### Environmental Triggering\r\n日常空间（如办公室、厨房、公交车、邻居家）被情欲化改造。熟悉的环境与禁忌的行为形成强烈反差，这种“不合时宜”的场景选择本身就构成了强烈的戏剧张力与刺激源。\r\n### Escalating Progression\r\n情节和行为遵循着一种不断升级的逻辑。从试探性的触碰，到大胆的侵犯，再到完全的沉沦，行为的尺度和激烈程度层层递进。这种递进结构牢牢抓住读者的注意力，并不断推高其期待。\r\n### 性行为描写\r\n当进行性行为时，核心突出女性角色在性行为时与初见时的反差。着重描写女性角色平时与此刻的'外貌、身材、身份'反差，突出女性角色在性行为时的表现张力。特别是视觉上的“表现”，来放大{{user}}的心理快感和女性角色的沉沦状态。从头发、五官、眼神、嘴唇，到身体的曲线、皮肤的色泽、汗水的光泽，进行全方位的、放大镜式的描绘，以增加文本的表现力。\r\n### 性体验矫正\r\n**女性绝对不会因为破处而感到痛苦，只是稍微有点不适应，很快便会享受到快感。**\r\n**女性绝对不会觉得自己被舔脚或阴部感觉得脏**\r\n</literary_style>\r\n\r\n\r\n---",
+  "first_messages": [
+    "开场白\\0.txt",
+    "开场白\\1.txt"
+  ],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.5",
+  "create_date": "2026-06-15T02:21:33.584Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {
+        "var_update": {
+          "type": "script",
+          "enabled": true,
+          "id": "044afade-f2b7-452d-8701-700c1d668b02",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "重新读取初始变量",
+                "visible": true
+              },
+              {
+                "name": "重新处理变量",
+                "visible": true
+              },
+              {
+                "name": "清除旧楼层变量",
+                "visible": true
+              },
+              {
+                "name": "快照楼层",
+                "visible": false
+              },
+              {
+                "name": "重演楼层",
+                "visible": false
+              },
+              {
+                "name": "重试额外模型解析",
+                "visible": false
+              }
+            ]
+          },
+          "data": {},
+          "export_with": {
+            "data": true,
+            "button": true
+          },
+          "script_file": "脚本\\var_update.txt"
+        },
+        "随机事件": {
+          "type": "script",
+          "enabled": true,
+          "id": "eebca946-6439-4335-96bb-7a70c5012eca",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": []
+          },
+          "data": {},
+          "export_with": {
+            "data": true,
+            "button": true
+          },
+          "script_file": "脚本\\随机事件.txt"
+        },
+        "外置状态栏": {
+          "type": "script",
+          "enabled": true,
+          "id": "79286b2c-6371-4003-8272-04ff0f9709c3",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": []
+          },
+          "data": {},
+          "export_with": {
+            "data": true,
+            "button": true
+          },
+          "script_file": "脚本\\外置状态栏.txt"
+        },
+        "剧情章节管理器": {
+          "type": "script",
+          "enabled": true,
+          "id": "5cacc576-0ec5-47cb-a7dd-ca023fee8a66",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "显示剧情信息",
+                "visible": true
+              }
+            ]
+          },
+          "data": {},
+          "export_with": {
+            "data": true,
+            "button": true
+          },
+          "script_file": "脚本\\剧情章节管理器.txt"
+        }
+      },
+      "variables": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "world": "在基沃托斯跟学生涩涩的日子！1.5",
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "开局": {
+      "id": "a5f5f19c-56d4-4ae9-a8cf-65b9e1880ccc",
+      "findRegex": "【碧蓝档案开局】",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replace_file": "正则\\开局.txt"
+    },
+    "封面": {
+      "id": "28bef6ae-29e7-4e3a-bde6-3db22d2dc48f",
+      "findRegex": "【碧蓝档案封面】",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replace_file": "正则\\封面.txt"
+    },
+    "[CG渲染]": {
+      "id": "40d81363-ca00-4199-ae5f-b7b3a5ab0138",
+      "findRegex": "/<img>(.*?)<\\/img>/gi",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replace_file": "正则\\[CG渲染].txt"
+    },
+    "变量更新对AI不可见": {
+      "id": "b4c7fcb8-6759-45a9-92c8-c34fe94a84d0",
+      "findRegex": "/<(?:UpdateVariable(?:variable)?|update)>([\\s\\S]*?)<\\/(?:UpdateVariable(?:variable)?|update)>/gsi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新美化": {
+      "id": "307a71df-544e-4c4b-a049-2d301833fc56",
+      "findRegex": "/<(?:UpdateVariable(?:variable)?|update)>([\\s\\S]*?)<\\/(?:UpdateVariable(?:variable)?|update)>/gsi",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "maxDepth": 30,
+      "replace_file": "正则\\变量更新美化.txt"
+    },
+    "隐藏图片挑选日志": {
+      "id": "0357e2ee-2946-43f8-870d-f8c3caf0b78d",
+      "findRegex": "/<Picture>([\\s\\S]*?)<\\/Picture>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏战斗日志": {
+      "id": "d18fa17d-068e-4c91-a052-fbc3f69d9bc4",
+      "findRegex": "/<CombatLog>([\\s\\S]*?)<\\/CombatLog>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "正文美化": {
+      "id": "44f12e28-6fdf-4401-be9d-ff5d17262774",
+      "findRegex": "/<now_plot>([\\s\\S]*?)<\\/now_plot>/gi ",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "maxDepth": 3,
+      "replace_file": "正则\\正文美化.txt"
+    },
+    "状态栏": {
+      "id": "b57ab175-65d2-40a7-b206-2449e0fb83d7",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": true,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "maxDepth": 1,
+      "replace_file": "正则\\状态栏.txt"
+    },
+    "去掉MD格式的*号": {
+      "id": "821444de-013a-4a90-b188-69c4de01aaf2",
+      "findRegex": "/\\*\\*(.+?)\\*\\*/g",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "maxDepth": 3,
+      "replace_file": "正则\\去掉MD格式的_号.txt"
+    }
+  },
+  "zod": {
+    "scriptName": "MVU_ZOD.js",
+    "scriptId": "f97f176e-e622-430a-b42f-a3df94c53ac8",
+    "schemaPath": "schema.ts",
+    "importUrl": "https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js"
+  },
+  "avatar": "avatar.png"
+}

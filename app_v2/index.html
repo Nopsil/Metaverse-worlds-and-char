@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CHUNITHM Metaverse · 命运观测终端</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(160deg,#0a001a,#1a0030,#050520,#000815);color:#fff;min-height:100vh;display:flex;justify-content:center}
+.app{max-width:700px;width:100%;padding:20px;display:flex;flex-direction:column;min-height:100vh}
+.header{text-align:center;padding:20px 0 8px}
+.title{font-size:2em;font-weight:900;background:linear-gradient(180deg,#ff6bcd,#c45cff,#6b8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px}
+.subtitle{color:#9080b0;font-size:.8em;letter-spacing:3px;margin-top:2px}
+.screen{display:none;flex:1;flex-direction:column}
+.screen.active{display:flex}
+.char-card{cursor:pointer;border:2px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;margin-bottom:8px;background:rgba(255,255,255,.02);transition:.2s;text-align:left}
+.char-card:hover{border-color:rgba(255,107,205,.5);background:rgba(255,107,205,.06)}
+.char-card .emoji{font-size:1.8em;margin-right:10px;vertical-align:middle}
+.char-card .cname{font-size:1.1em;font-weight:900}
+.char-card .cinfo{font-size:.72em;color:#b0a0c0}
+.char-card:nth-child(1) .cname{color:#ff6bcd}
+.char-card:nth-child(2) .cname{color:#8eceff}
+.char-card:nth-child(3) .cname{color:#90ff90}
+.char-card:nth-child(4) .cname{color:#ffcc66}
+.char-card:nth-child(5) .cname{color:#c0a0ff}
+.scene-btn{display:block;width:100%;text-align:center;padding:10px;margin:4px 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#ccc;cursor:pointer;font-size:.9em;transition:.15s}
+.scene-btn:hover{background:rgba(255,107,205,.1);border-color:#ff6bcd;color:#ff9dde}
+.back-link{color:#b0a0c0;font-size:.8em;cursor:pointer;margin-bottom:10px;display:inline-block}
+.chat-area{flex:1;overflow-y:auto;padding:8px 0;margin:8px 0}
+.msg{margin-bottom:12px;padding:10px 14px;border-radius:10px;line-height:1.6;font-size:.88em}
+.msg.assistant{background:rgba(255,255,255,.05);border-left:3px solid #ff6bcd}
+.msg.user{background:rgba(255,107,205,.08);border-left:3px solid #90ff90}
+.chat-input{display:flex;gap:8px;padding:8px 0}
+.chat-input input{flex:1;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:.9em}
+.chat-input button{padding:10px 18px;background:linear-gradient(135deg,#ff6bcd,#c45cff);border:none;border-radius:8px;color:#fff;font-weight:bold;cursor:pointer}
+.chat-input input::placeholder{color:#706090}
+.loading{color:#ff9dde;font-style:italic;padding:10px}.settings-form{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0;align-items:center}
+.settings-form input{flex:1;min-width:200px;padding:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:.8em}
+.settings-form button{padding:8px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#ccc;cursor:pointer;font-size:.8em}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<div class="header" id="mainHeader"><div class="title">CHUNITHM METAVERSE</div><div class="subtitle">—— 命运观测终端 ——</div></div>
+
+<div class="screen active" id="screenSelect">
+<div style="text-align:center;color:#ff9dde;font-size:.9em;margin:8px 0 12px">▼ 选择观测对象 ▼</div>
+<div id="charList"></div>
+<div style="text-align:center;margin-top:10px"><button class="back-link" onclick="showSettings()">⚙️ API设置</button></div>
+</div>
+
+<div class="screen" id="screenScenes">
+<a class="back-link" onclick="backToSelect()">← 返回</a>
+<div id="sceneList"></div>
+</div>
+
+<div class="screen" id="screenChat">
+<a class="back-link" onclick="backToScenes()">← 选择其他开局</a>
+<div class="chat-area" id="chatArea"></div>
+<div class="chat-input">
+<input type="text" id="chatInput" placeholder="输入你的行动..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">发送</button>
+</div>
+</div>
+
+<div class="screen" id="screenSettings">
+<a class="back-link" onclick="backToSelect()">← 返回</a>
+<div style="color:#ff9dde;margin:10px 0">API 设置（与SillyTavern共用同一API）</div>
+<div class="settings-form">
+<input id="apiUrl" placeholder="API地址 (如 http://127.0.0.1:1234/v1)" value="">
+</div>
+<div class="settings-form">
+<input id="apiKey" placeholder="API Key (可选)" value="">
+</div>
+<div class="settings-form">
+<input id="modelName" placeholder="模型名 (如 gemini-2.5-pro)" value="">
+</div>
+<button class="scene-btn" onclick="saveSettings()" style="margin-top:10px">💾 保存设置</button>
+</div>
+</div>
+
+<script>
+const chars=[
+{name:'拔示巴·阿西德菲尔',emoji:'🩸',color:'#ff6bcd',
+ scenes:[{n:'配种室初见',p:'你被亚哈带入她的房间。银白色长发的少女坐在窗边，红色眼眸波澜不惊。\n\n"又一个了。你是来膜拜我的？还是来利用我的？"\n\n她用剑尖轻点地面。"还是说——你只是走错了房间？"'},
+{n:'圣堂独白',p:'夜深了。奥林匹亚斯圣堂的喧嚣褪去，空旷的大厅里她独自跪坐在王座前，细剑平放膝上。窗外没有月亮。\n\n"……没有人。"\n\n然后她听到了脚步声。'},
+{n:'米斯拉的微笑',p:'午后阳光穿过彩窗。米斯拉双手叉腰："嘴角这样——自然一点。"拔示巴望着这个拥有自己血脉的少女，嘴角动了动——一个不熟练的发自内心的微笑。\n\n你从走廊转角走出，两人同时看向你。'}]},
+{name:'蕾娜·伊修梅尔',emoji:'🌙',color:'#8eceff',
+ scenes:[{n:'伊欧尼亚火海',p:'皮阔特号甲板被晚霞染成血色。少女蜷在货箱阴影里，双手紧抱一把小手枪。11个同伴全死了。\n\n你踩到甲板钢缆——她整个人弹起来，手枪指向你。"你、你是谁？"'},
+{n:'皮阔特号航程',p:'海风吹乱银白色短发。她拉兜帽——兜帽边沿盖住了整张脸。"唔…又来了。"扶正兜帽后看到你在船舷边。"啊，你好！我叫蕾娜·伊修梅尔。可以一起走一段路吗？"'},
+{n:'安特路亚之夜',p:'废弃都市在月光下沉默。医疗装置嗡嗡响。少女躺在病床上，高烧让她脸颊泛红。远方隐约传来引擎轰鸣。\n\n你坐在她旁边，感觉到她的手抓紧了床单。'},
+{n:'战后的深夜',p:'佩尔修斯殖民地。蕾娜站在窗边，银白色长发散在肩后。窗外都市洒满星光。\n\n"能决定我们未来的，只有我们自己。"有人敲门。这么晚了，会是谁？'}]},
+{name:'米姆·米库拉',emoji:'💉',color:'#90ff90',
+ scenes:[{n:'路边包扎',p:'米姆蹲在路边认真包扎一只小动物。"好了不疼了吧？"她抬起头看到你，紫色眼睛先警觉后好奇。"你也是旅人吗？我叫米姆。"她顿了顿侧头——"……好吧，我室友让我问你——是敌人还是朋友？"'},
+{n:'泰斯塔蒙特觉醒',p:'她突然停下。医疗包重重砸地。"——呜！"紫色眼瞳取代苍蓝。\n\n"真是无聊啊。"声音低了半个八度。"让笨蛋小女孩招待客人？呐——你是来看米姆的，还是来看我的？后者的话，陪你玩玩哦。"'},
+{n:'药房深夜',p:'"不许说那种话！""呵，小丫头片子以为能命令我？"昏暗药房里她一手叉腰一手指太阳穴。然后你推开门。\n\n她同时停下转向你。"你看到了？"'},
+{n:'旅路篝火',p:'夜晚荒原，篝火噼啪。塞拉菲娜枕着她的腿安静入睡。她轻抚巫女的头发，紫色眼瞳在火光中闪烁。\n\n"如果这个世界是假的，那我感受到的体温——难道也是假的吗？"\n\n火星消散在星空里。'}]},
+{name:'贝尔泽ブト·涅墨西斯',emoji:'👑',color:'#ffcc66',
+ scenes:[{n:'机械王座',p:'她半躺在机械王座中，青绿色长发如能量流扩散。触手慵懒蠕动。\n\n"啊啦。又有新玩具自己送上门了。"她单手托脸。"迷路了？被人派来的？还是——想来看看我这个怪物长什么样？"\n\n她抬起手，指尖凝聚蓝白色能量球。"你，想怎么玩？"'},
+{n:'战场撤退',p:'前方战斗还在继续，她已退出中心，舔了舔指尖血。"一点意思都没有。不过——那两个小女孩挺有趣，伤到我了哦。轻微擦伤而已。"\n\n"今天就到这里。下次再陪我玩玩？"触手包裹着她消失在数据之海暗流中。'},
+{n:'阿雷斯负伤',p:'轰——光芒吞没阿雷斯大半个身体。\n\n"阿雷斯！！"她已冲上战场，用触手代替断裂手臂将他背起。"太乱来了。"声音没有戏谑。\n\n她看到你。"你看什么。还不让开。"'},
+{n:'研究所奇遇',p:'金属和臭氧的味道。圆顶空间堆满机械装置和管线。\n\n"你——不是这里的程序吧。"她从残骸后踱出，触手未展开——半警惕半好奇。"能活着走进这里的，要么是涅墨西斯的人，要么是敌人。你是哪边的？"'}]},
+{name:'艾莉ニ·居里亚斯',emoji:'🦋',color:'#c0a0ff',
+ scenes:[{n:'蓝蝶落地',p:'微弱蓝光闪过。银发蓝瞳少女从传送余波中踏出，左手抱着素描本。蓝蝶们在她身边飞舞。\n\n"呼——总算没传送到奇怪的地方。"她看到你，微微睁大眼睛，露出温柔微笑。"我叫艾莉ニ。我在画一本画册，记录所有我觉得美丽的瞬间。"\n\n蓝蝶飞向你，绕你转了一圈。\n\n艾莉ニ笑了。"它好像很喜欢你。能在你的世界里稍作歇息吗？"'},
+{n:'废墟画花',p:'荒凉废墟——倒塌的钢结构，生锈的零件，被风沙埋葬的残垣。\n\n废墟正中央，一株小花从铁锈缝隙间钻出。\n\n她跪地翻开素描本。蓝蝶静静落在画笔上。"嘘——别吓到它。"笔尖快速移动——记录这朵在绝望中绽放的生命。'},
+{n:'地下都市童年',p:'窗外不是天空，是铁灰色天花板。六岁的艾莉ニ坐在窗边，握着蓝色蜡笔。她画了一个蓝圈——"天空"。一个黄圈——"太阳"。她从未亲眼看过，只在妈妈图画书上见过。\n\n"小艾莉——"一个女人从身后轻唤她的名字。'}]}];
+
+const selectScreen=document.getElementById('screenSelect');
+const scenesScreen=document.getElementById('screenScenes');
+const chatScreen=document.getElementById('screenChat');
+const settingsScreen=document.getElementById('screenSettings');
+let selChar=null,selScene=null,chatHistory=[],apiUrl='',apiKey='',modelName='';
+
+function loadSettings(){let s=localStorage.getItem('mtv_settings');if(s){let d=JSON.parse(s);apiUrl=d.url||'';apiKey=d.key||'';modelName=d.model||''}}
+
+function saveSettings(){apiUrl=document.getElementById('apiUrl').value;apiKey=document.getElementById('apiKey').value;modelName=document.getElementById('modelName').value;localStorage.setItem('mtv_settings',JSON.stringify({url:apiUrl,key:apiKey,model:modelName}));showScreen('screenSelect');loadChars()}
+
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById('mainHeader').style.display=id==='screenChat'?'none':'block'}
+
+function showSettings(){document.getElementById('apiUrl').value=apiUrl;document.getElementById('apiKey').value=apiKey;document.getElementById('modelName').value=modelName;showScreen('screenSettings')}
+
+function loadChars(){let html='';chars.forEach((c,i)=>{html+=`<div class="char-card" onclick="selectChar(${i})"><span class="emoji">${c.emoji}</span><span class="cname">${c.name}</span><div class="cinfo">${c.scenes.length}个开局</div></div>`});document.getElementById('charList').innerHTML=html}
+
+function selectChar(i){selChar=i;let c=chars[i],html='<div style="color:#ff9dde;font-size:1em;margin:8px 0">'+c.emoji+' '+c.name+' — 选择开局:</div>';c.scenes.forEach((s,j)=>{html+=`<button class="scene-btn" onclick="startScene(${j})">${j+1}. ${s.n}</button>`});document.getElementById('sceneList').innerHTML=html;showScreen('screenScenes')}
+
+function backToSelect(){selChar=null;selScene=null;showScreen('screenSelect')}
+
+function backToScenes(){selScene=null;showScreen('screenScenes')}
+
+function startScene(j){selScene=j;let c=chars[selChar],prompt=c.scenes[j].p;chatHistory=[{role:'user',content:prompt}];showScreen('screenChat');document.getElementById('chatArea').innerHTML='<div class="msg user">📤 '+prompt.replace(/\n/g,'<br>')+'</div><div class="loading">⏳ 等待回复...</div>';callAPI()}
+
+async function callAPI(){if(!modelName){document.getElementById('chatArea').innerHTML+='<div class="msg assistant" style="color:#ff6bcd">⚠️ 请先在API设置中填入模型名称</div>';return}
+try{let headers={'Content-Type':'application/json'};if(apiKey)headers['Authorization']='Bearer '+apiKey;let body={model:modelName,messages:chatHistory,temperature:0.7,max_tokens:1024};let resp=await fetch(apiUrl+'/chat/completions',{method:'POST',headers,body:JSON.stringify(body)});let data=await resp.json();let reply=data.choices?.[0]?.message?.content||'[无回复]';chatHistory.push({role:'assistant',content:reply});let el=document.getElementById('chatArea');let loadEl=el.querySelector('.loading');if(loadEl)loadEl.remove();el.innerHTML+='<div class="msg assistant">'+reply.replace(/\n/g,'<br>')+'</div>';el.scrollTop=el.scrollHeight}catch(e){let el=document.getElementById('chatArea');let loadEl=el.querySelector('.loading');if(loadEl)loadEl.remove();el.innerHTML+='<div class="msg assistant" style="color:#ff6bcd">⚠️ API连接失败: '+e.message+'</div>'}}
+
+function sendMsg(){let inp=document.getElementById('chatInput');let msg=inp.value.trim();if(!msg)return;inp.value='';chatHistory.push({role:'user',content:msg});document.getElementById('chatArea').innerHTML+='<div class="msg user">📤 '+msg.replace(/\n/g,'<br>')+'</div><div class="loading">⏳</div>';callAPI()}
+
+loadSettings();loadChars();
+</script>
+</body>
+</html>

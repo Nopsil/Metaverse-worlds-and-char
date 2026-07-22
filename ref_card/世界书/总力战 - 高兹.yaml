@@ -1,0 +1,30 @@
+---
+    {
+      "name_cn": "GOZ",
+      "name_jp": "GOZ",
+      "appearance": "一个巨大、戴着高礼帽的圆形游乐园吉祥物，拥有小丑般的诡异笑脸。它的身体可以像球一样滚动，整体设计在卡通的可爱风格中透露出强烈的恐怖感和疯狂。",
+      "background": "废弃游乐园'史林皮亚'的吉祥物。传说它会在夜晚将崇拜它的访客们变成表演的一部分。是一个充满未知与怪异现象的存在。",
+      "attributes": {
+        "armor_type": "特殊装甲",
+        "attack_type": "神秘",
+        "location": "室外/室内切换"
+      },
+      "combat_flow": {
+        "summary": "考验玩家的范围伤害处理能力和快速识别真身的能力。",
+        "phases": [
+          {
+            "phase_number": 1,
+            "trigger": "战斗开始 (高生命值阶段)",
+            "description": "GOZ与大量'史林皮亚恶徒'一同出战。场地上的电车轨道会周期性地对路径上的学生造成眩晕。",
+            "mechanics": ["Boss会使用多种范围攻击。", "场地上的电车会对我方单位造成控制效果。"]
+          },
+          {
+            "phase_number": 2,
+            "trigger": "HP降低到一定程度后转场 (低生命值阶段)",
+            "description": "GOZ使用'Now You See Us'技能，召唤多个分身和'戏法之球'。",
+            "mechanics": ["玩家必须在众多分身中找出并攻击GOZ的真身。", "攻击错误的目标会受到惩罚。"]
+          }
+        ],
+        "groggy_condition": "根据难度变化：在LUNATIC及以下难度，需要通过特殊机制'Three Light Mice'填充；在TORMENT难度，则需要通过ATG技能累积。"
+      }
+    }

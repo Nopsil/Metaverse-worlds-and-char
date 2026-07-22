@@ -1,0 +1,42 @@
+{
+  "projectName": "MetaverseLobby",
+  "worldbookName": "MetaverseLobby",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {},
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件"
+    ]
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": "Infinity",
+    "地理": 0,
+    "角色": 0,
+    "NPC": 0,
+    "事件": 0
+  },
+  "partOrder": {},
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-07-21T06:06:15.603Z"
+}

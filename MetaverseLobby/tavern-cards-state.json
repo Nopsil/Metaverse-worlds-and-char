@@ -1,0 +1,3911 @@
+{
+  "projectName": "MetaverseLobby",
+  "worldbookName": "MetaverseLobby",
+  "form": "charactercard",
+  "mvu": false,
+  "entryManifest": {
+    "世界观": {
+      "时间线": {
+        "abstract": "# CHUNITHM Metaverse 完整时间线  # ============================================================ # 一、旧人类战争...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        },
+        "display_index": 0,
+        "keywords": [],
+        "path": "世界书\\世界观\\时间线.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "Metaverse核心层": {
+        "abstract": "名称: Metaverse 核心层 系列: Reconnect the Metaverse  概述: 框架主脑管理领域的核心，最古们的居所和统治中枢，Metaverse 防卫最严密的区域  位置与结构...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 20
+        },
+        "display_index": 1,
+        "keywords": [],
+        "path": "世界书\\世界观\\Metaverse核心层.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "中间层世界群": {
+        "abstract": "名称: 中间层世界群 系列: Reconnect the Metaverse  概述: 框架主脑管理下的众多世界构成的广袤区域，亿万人类意识数据生活的电子乐园。在提丰时代被放任无序增殖，形成了风格各异...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 30
+        },
+        "display_index": 2,
+        "keywords": [],
+        "path": "世界书\\世界观\\中间层世界群.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "最外周部": {
+        "abstract": "名称: 最外周部(涅墨西斯领域/次元裂隙区域) 系列: Reconnect the Metaverse / Cross the Verse  概述: Metaverse 最遥远的外围区域，由混沌数据之...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 40
+        },
+        "display_index": 3,
+        "keywords": [],
+        "path": "世界书\\世界观\\最外周部.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "地上世界": {
+        "abstract": "名称: 地上世界 系列: Reconnect the Metaverse / Cross the Verse / 地上真人篇  概述: 位于 Metaverse 之外的物理世界，旧人类曾使其荒废，后由...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 50
+        },
+        "display_index": 4,
+        "keywords": [],
+        "path": "世界书\\世界观\\地上世界.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "Lobby世界设定": {
+        "abstract": "Metaverse——一个由数据与意志编织的多元次元交汇之地...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        },
+        "display_index": 5,
+        "keywords": [],
+        "path": "世界书\\世界观\\世界设定.txt",
+        "scope": "catalog",
+        "part": "foundation"
+      }
+    },
+    "势力": {
+      "框架主脑": {
+        "abstract": "势力: 框架主脑 (Frame Control) 系列: Reconnect the Metaverse 类型: 统治集团  概述: 由神祖艾克雷尔创建的AI神明集团，统治Metaverse的最高权力...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        },
+        "display_index": 6,
+        "keywords": [],
+        "path": "世界书\\势力\\框架主脑.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "工厂": {
+        "abstract": "势力: 工厂 (The Factory) 系列: Reconnect the Metaverse 类型: 研发机关  概述: 最初由人类创建的Metaverse研究机关，曾是Metaverse的生身父...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        },
+        "display_index": 7,
+        "keywords": [],
+        "path": "世界书\\势力\\工厂.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "MIR系列": {
+        "abstract": "势力: MIR系列 系列: Reconnect the Metaverse 类型: 自律型探索程序群  概述: 先王提丰以人类为素体亲自开发的自律型探索程序。虽身为数据存在却有\"寿命\"这一缺陷，但拥有...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 90
+        },
+        "display_index": 8,
+        "keywords": [],
+        "path": "世界书\\势力\\MIR系列.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "涅墨西斯势力": {
+        "abstract": "势力: 涅墨西斯 (Nemesis) 系列: Reconnect the Metaverse 类型: 恶性程序侵略军团  概述: 从提亚马特碎片在数据之海中进化诞生的恶性程序群，以毁灭Metavers...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 100
+        },
+        "display_index": 9,
+        "keywords": [],
+        "path": "世界书\\势力\\涅墨西斯势力.txt",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "革新者": {
+        "abstract": "势力: 革新者 (INNOVATOR) 系列: 地上真人篇 类型: 地上真人政治军事组织  概述: 由真人组成的政治军事组织，内部分为强硬派和稳健派两个对立派系。强硬派主张以武力夺回地上、反抗机械种统...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 110
+        },
+        "display_index": 10,
+        "keywords": [],
+        "path": "世界书\\势力\\革新者.txt",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "LOGOS": {
+        "abstract": "势力: LOGOS 系列: Cross the Verse (次元放浪记) 类型: 执行官组织  概述: 神秘执行官组织，成员在次元间执行特殊任务，以代号或特定身份行动  已知成员:   阿斯托尔:...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 120
+        },
+        "display_index": 11,
+        "keywords": [],
+        "path": "世界书\\势力\\LOGOS.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "拾荒者": {
+        "abstract": "势力: 拾荒者 (Scavengers) 系列: Cross the Verse (次元放浪记) 类型: 生存者群体  概述: 在废土和次元裂缝中捡拾遗落技术的群体，以淘换废品维生。与主流社会格格不入...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 130
+        },
+        "display_index": 12,
+        "keywords": [],
+        "path": "世界书\\势力\\拾荒者.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "IDC": {
+        "abstract": "势力: IDC (次元研究机构) 系列: Cross the Verse (次元放浪记) 类型: 研究机关  概述: 专门研究次元穿梭技术和Metaverse深层奥秘的机构  已知成员:   拉维娜:...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 140
+        },
+        "display_index": 13,
+        "keywords": [],
+        "path": "世界书\\势力\\IDC.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "恩迪商会": {
+        "abstract": "势力: 恩迪商会 系列: Cross the Verse (次元放浪记) 类型: 贸易组织  概述: 穿梭于次元间的商业组织，经营稀有物品和各世界特产  已知成员:   毛毛(モモ)&吉吉(ジジ):...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 150
+        },
+        "display_index": 14,
+        "keywords": [],
+        "path": "世界书\\势力\\恩迪商会.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "独立旅人": {
+        "abstract": "势力: 独立旅人 系列: Cross the Verse (次元放浪记) 类型: 松散个体群  概述: 不属于任何组织的次元旅人，各自因不同原因踏上穿梭次元的旅程  已知成员:   艾莉尼·居里亚斯:...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 160
+        },
+        "display_index": 15,
+        "keywords": [],
+        "path": "世界书\\势力\\独立旅人.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      }
+    },
+    "地理": {
+      "卡斯比裂谷": {
+        "abstract": "名称: 卡斯比裂谷 系列: 地上真人篇 / 乐园事变 类型: 禁忌领域  概述: 曾经旧人类时代的世界第一大湖，因环境污染和资源战争彻底枯竭。如今是深不见底的巨型裂谷，残留致命的污染毒素  地理特征:...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 190
+        },
+        "display_index": 16,
+        "keywords": [],
+        "path": "世界书\\地理\\卡斯比裂谷.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "安特路亚": {
+        "abstract": "名称: 安特路亚 系列: 地上真人篇 类型: 区域  基本信息:   名称: 安特路亚   位置: 大陆海岸线附近，废弃都市   状态: 被机械种放弃管理，已腐朽风化  描述:   发现: 蕾娜一行在...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 200
+        },
+        "display_index": 17,
+        "keywords": [],
+        "path": "世界书\\地理\\安特路亚.txt",
+        "scope": "catalog",
+        "part": "foundation"
+      }
+    },
+    "角色": {
+      "狄安娜·普利梅拉(XES-72)": {
+        "abstract": "名称: 狄安娜 --- <npc name=\"狄安娜\"> 系列: 电脑世界篇（Reconnect期） 归属: 工厂  基本信息:   姓名: XES-72 狄安娜·普利梅拉   年龄: 不明   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "狄安娜",
+            "Diana",
+            "狄安娜·普利梅拉",
+            "XES-72"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 210
+        },
+        "display_index": 18,
+        "keywords": [
+          "狄安娜",
+          "Diana",
+          "狄安娜·普利梅拉",
+          "XES-72"
+        ],
+        "path": "世界书\\角色\\狄安娜\\狄安娜·普利梅拉(XES-72).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "露娜·诺瓦(XGN-72)": {
+        "abstract": "名称: 露娜 --- <npc name=\"露娜\"> 系列: 电脑世界篇（Reconnect期） 归属: 工厂  基本信息:   姓名: XGN-72 露娜·诺瓦   年龄: 不明   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "露娜",
+            "Luna",
+            "露娜·诺瓦",
+            "XGN-72"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 211
+        },
+        "display_index": 19,
+        "keywords": [
+          "露娜",
+          "Luna",
+          "露娜·诺瓦",
+          "XGN-72"
+        ],
+        "path": "世界书\\角色\\露娜\\露娜·诺瓦(XGN-72).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "阿雷斯": {
+        "abstract": "名称: 阿雷斯 --- <npc name=\"阿雷斯\"> 系列: 电脑世界篇（Reconnect期） 归属: 涅墨西斯  基本信息:   姓名: 阿雷斯   年龄: UNKNOWN   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿雷斯",
+            "Ares",
+            "战",
+            "憎恶的战"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 220
+        },
+        "display_index": 20,
+        "keywords": [
+          "阿雷斯",
+          "Ares",
+          "战",
+          "憎恶的战"
+        ],
+        "path": "世界书\\角色\\阿雷斯\\阿雷斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "塞拉菲塔": {
+        "abstract": "名称: 塞拉菲塔 --- <npc name=\"塞拉菲塔\"> 系列: 电脑世界篇（Reconnect期） 归属: 框架主脑 / 最古  基本信息:   姓名: 塞拉菲塔   年龄: 不明   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲塔",
+            "裁定者",
+            "Serafita"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 230
+        },
+        "display_index": 21,
+        "keywords": [
+          "塞拉菲塔",
+          "裁定者",
+          "Serafita"
+        ],
+        "path": "世界书\\角色\\塞拉菲塔\\塞拉菲塔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝尔泽布特·涅墨西斯": {
+        "abstract": "名称: 贝尔泽布特 --- <npc name=\"贝尔泽布特\"> 系列: 电脑世界篇（Reconnect期） 归属: 涅墨西斯  基本信息:   姓名: 贝尔泽布特·涅墨西斯   年龄: UNKNOW...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "贝泽布",
+            "Belzeebul",
+            "混沌七器",
+            "欺瞒的使徒"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 240
+        },
+        "display_index": 22,
+        "keywords": [
+          "贝尔泽布特",
+          "贝泽布",
+          "Belzeebul",
+          "混沌七器",
+          "欺瞒的使徒"
+        ],
+        "path": "世界书\\角色\\贝尔泽布特\\贝尔泽布特·涅墨西斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米姆·米库拉": {
+        "abstract": "名称: 米姆_米库拉 --- <npc name=\"米姆·米库拉\"> 系列: 新世界篇 归属: 独立（被夺舍者）  基本信息:   姓名: 米姆·米库拉   年龄: 外表十几岁少女（实际年龄远远超过）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "米姆·米库拉",
+            "米库拉",
+            "Meme",
+            "导师"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 250
+        },
+        "display_index": 23,
+        "keywords": [
+          "米姆",
+          "米姆·米库拉",
+          "米库拉",
+          "Meme",
+          "导师"
+        ],
+        "path": "世界书\\角色\\米姆\\米姆·米库拉.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "蕾娜·伊修梅尔": {
+        "abstract": "名称: 蕾娜 --- <npc name=\"蕾娜\"> 系列: 地上真人篇 归属: 归还者  基本信息:   姓名: 蕾娜·伊修梅尔   年龄: 16岁   性别: 女   身份: 从Metaverse...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "蕾娜·伊修梅尔",
+            "伊修梅尔",
+            "Lena",
+            "归还者",
+            "归还种"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 260
+        },
+        "display_index": 24,
+        "keywords": [
+          "蕾娜",
+          "蕾娜·伊修梅尔",
+          "伊修梅尔",
+          "Lena",
+          "归还者",
+          "归还种"
+        ],
+        "path": "世界书\\角色\\蕾娜\\蕾娜·伊修梅尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拔示巴·阿西德菲尔": {
+        "abstract": "名称: 拔示巴 --- <npc name=\"拔示巴\"> 系列: 地上真人篇 归属: 真人  基本信息:   姓名: 拔示巴·阿西德菲尔   年龄: 不明(外表十几岁)   性别: 女   身份: 唯...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "拔示巴·阿西德菲尔",
+            "阿西德菲尔",
+            "Bathsheba",
+            "破灭圣女",
+            "命运之子"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 270
+        },
+        "display_index": 25,
+        "keywords": [
+          "拔示巴",
+          "拔示巴·阿西德菲尔",
+          "阿西德菲尔",
+          "Bathsheba",
+          "破灭圣女",
+          "命运之子"
+        ],
+        "path": "世界书\\角色\\拔示巴\\拔示巴·阿西德菲尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉尼·居里亚斯": {
+        "abstract": "名称: 艾莉尼 --- <npc name=\"艾莉尼\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人  基本信息:   姓名: 艾莉尼·居里亚斯   年龄: 15岁   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "艾莉尼·居里亚斯",
+            "居里亚斯",
+            "アイリーニ",
+            "キュリアス"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 280
+        },
+        "display_index": 26,
+        "keywords": [
+          "艾莉尼",
+          "艾莉尼·居里亚斯",
+          "居里亚斯",
+          "アイリーニ",
+          "キュリアス"
+        ],
+        "path": "世界书\\角色\\艾莉尼\\艾莉尼·居里亚斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "威廉·温斯雷特": {
+        "abstract": "名称: 威廉 --- <npc name=\"威廉\"> 系列: Cross the Verse (次元放浪记) 归属: 独立旅人  基本信息:   姓名: 威廉·温斯雷特   年龄: 学生年龄   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉",
+            "威廉·温斯雷特",
+            "温斯雷特",
+            "ウィリアム",
+            "ウィンスレッド"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 290
+        },
+        "display_index": 27,
+        "keywords": [
+          "威廉",
+          "威廉·温斯雷特",
+          "温斯雷特",
+          "ウィリアム",
+          "ウィンスレッド"
+        ],
+        "path": "世界书\\角色\\威廉\\威廉·温斯雷特.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "林内": {
+        "abstract": "名称: 林内 --- <npc name=\"林内\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人  基本信息:   姓名: 林内   年龄: 外表年龄8岁   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "林内",
+            "Rinne",
+            "Silent Gear",
+            "リンネ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 300
+        },
+        "display_index": 28,
+        "keywords": [
+          "林内",
+          "Rinne",
+          "Silent Gear",
+          "リンネ"
+        ],
+        "path": "世界书\\角色\\林内\\林内.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "捷夫提": {
+        "abstract": "名称: 捷夫提 --- <npc name=\"捷夫提\"> 系列: 电脑世界篇（Reconnect期） 归属: 框架主脑 / 最古  基本信息:   姓名: 捷夫提   年龄: 不明   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "捷夫提",
+            "Jehuti",
+            "哲学主"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 310
+        },
+        "display_index": 29,
+        "keywords": [
+          "捷夫提",
+          "Jehuti",
+          "哲学主"
+        ],
+        "path": "世界书\\角色\\捷夫提\\捷夫提.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "提丰": {
+        "abstract": "名称: 提丰 --- <npc name=\"提丰\"> 系列: 电脑世界篇（贯穿多期，Reconnect期终幕） 归属: 框架主脑 / 先王  基本信息:   姓名: 提丰   年龄: 未知   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提丰",
+            "Typhon",
+            "先王"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 320
+        },
+        "display_index": 30,
+        "keywords": [
+          "提丰",
+          "Typhon",
+          "先王"
+        ],
+        "path": "世界书\\角色\\提丰\\提丰.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "尤巴尔·霍尔米斯达斯": {
+        "abstract": "名称: 尤巴尔 --- <npc name=\"尤巴尔\"> 系列: 电脑世界篇（Reconnect期） 归属: 工厂 / 三贤者  基本信息:   姓名: 尤巴尔·霍尔米斯达斯   年龄: 不明   性...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尤巴尔",
+            "霍尔米斯达斯",
+            "尤巴尔·霍尔米斯达斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 330
+        },
+        "display_index": 31,
+        "keywords": [
+          "尤巴尔",
+          "霍尔米斯达斯",
+          "尤巴尔·霍尔米斯达斯"
+        ],
+        "path": "世界书\\角色\\尤巴尔\\尤巴尔·霍尔米斯达斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "缇欧": {
+        "abstract": "<npc name=\"缇欧\"> 系列: 电脑世界篇（Reconnect期） 归属: 工厂 / 三贤者  基本信息:   姓名: Dr.缇欧·梅尔基奥尔   年龄: 不明（已舍弃肉体，以情报生命体形式存...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "缇欧",
+            "Dr.缇欧",
+            "梅尔基奥尔",
+            "Dr.缇欧·梅尔基奥尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 340
+        },
+        "display_index": 32,
+        "keywords": [
+          "缇欧",
+          "Dr.缇欧",
+          "梅尔基奥尔",
+          "Dr.缇欧·梅尔基奥尔"
+        ],
+        "path": "世界书\\角色\\缇欧\\缇欧.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "梅德": {
+        "abstract": "<npc name=\"梅德\"> 系列: 电脑世界篇（Reconnect期） 归属: 工厂 / 三贤者  基本信息:   姓名: 梅德·巴萨奈德尔   年龄: 不明   性别: 男   身份: Meta...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅德",
+            "巴萨奈德尔",
+            "梅德·巴萨奈德尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 350
+        },
+        "display_index": 33,
+        "keywords": [
+          "梅德",
+          "巴萨奈德尔",
+          "梅德·巴萨奈德尔"
+        ],
+        "path": "世界书\\角色\\梅德\\梅德.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "厄里斯": {
+        "abstract": "名称: 厄里斯 --- <npc name=\"厄里斯\"> 系列: 电脑世界篇（Reconnect期） 归属: 涅墨西斯 / 混沌七器  基本信息:   姓名: 厄里斯·涅墨西斯   年龄: UNKNO...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "厄里斯",
+            "Eris",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 360
+        },
+        "display_index": 34,
+        "keywords": [
+          "厄里斯",
+          "Eris",
+          "涅墨西斯"
+        ],
+        "path": "世界书\\角色\\厄里斯\\厄里斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拉尔瓦": {
+        "abstract": "名称: 拉尔瓦 --- <npc name=\"拉尔瓦\"> 系列: 次元放浪记 Cross the Verse 归属: 侵蚀生命体 / 新星云三巨头  基本信息:   姓名: 拉尔瓦 (Larva)...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉尔瓦",
+            "Larva",
+            "ラルヴァ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 370
+        },
+        "display_index": 35,
+        "keywords": [
+          "拉尔瓦",
+          "Larva",
+          "ラルヴァ"
+        ],
+        "path": "世界书\\角色\\拉尔瓦\\拉尔瓦.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "玛利亚·居里亚斯": {
+        "abstract": "名称: 玛利亚 --- <npc name=\"玛利亚\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人 / 学者  基本信息:   姓名: 玛利亚·居里亚斯 (Maria Cu...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "玛利亚",
+            "Maria",
+            "居里亚斯",
+            "マリア"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 380
+        },
+        "display_index": 36,
+        "keywords": [
+          "玛利亚",
+          "Maria",
+          "居里亚斯",
+          "マリア"
+        ],
+        "path": "世界书\\角色\\玛利亚\\玛利亚·居里亚斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "阿斯托尔": {
+        "abstract": "<npc name=\"阿斯托尔\"> 系列: 次元放浪记 Cross the Verse 归属: LOGOS（次元检阅机构）  ## 基本信息 - 姓名: 阿斯托尔 - 年龄: 21岁 - 性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿斯托尔",
+            "Astol"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 390
+        },
+        "display_index": 37,
+        "keywords": [
+          "阿斯托尔",
+          "Astol"
+        ],
+        "path": "世界书\\角色\\阿斯托尔\\阿斯托尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "安克": {
+        "abstract": "<npc name=\"安克\"> 系列: 次元放浪记 Cross the Verse 归属: 拾荒者（Scavengers）  ## 基本信息 - 姓名: 安克 - 年龄: 21岁 - 性别: 男 -...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "アンク"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 400
+        },
+        "display_index": 38,
+        "keywords": [
+          "安克",
+          "アンク"
+        ],
+        "path": "世界书\\角色\\安克\\安克.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "希尔德": {
+        "abstract": "<npc name=\"希尔德\"> 系列: 次元放浪记 Cross the Verse 归属: 拾荒者（Scavengers）  ## 基本信息 - 姓名: 希尔德 - 年龄: 17岁 - 性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔德",
+            "Hillda",
+            "毛颜"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 410
+        },
+        "display_index": 39,
+        "keywords": [
+          "希尔德",
+          "Hillda",
+          "毛颜"
+        ],
+        "path": "世界书\\角色\\希尔德\\希尔德.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "该隐": {
+        "abstract": "名称: 该隐 --- <npc name=\"该隐\"> 系列: 旧人类战争篇 归属: 旧人类  基本信息:   姓名: 创始者 该隐·霍华德·丹塔利乌斯   年龄: 135岁（大半身体已替换为机械）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "该隐",
+            "Cain",
+            "创始者",
+            "KHD",
+            "丹塔利乌斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 420
+        },
+        "display_index": 40,
+        "keywords": [
+          "该隐",
+          "Cain",
+          "创始者",
+          "KHD",
+          "丹塔利乌斯"
+        ],
+        "path": "世界书\\角色\\该隐\\该隐.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "亚哈": {
+        "abstract": "名称: 亚哈 --- <npc name=\"亚哈\"> 系列: 地上真人篇 归属: 革新者（强硬派领袖）  基本信息:   姓名: 亚哈   年龄: 推定80岁（已远超真人使用年限，靠机械化身体强行维持...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚哈",
+            "Ahab",
+            "革新者",
+            "INNOVATOR"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 430
+        },
+        "display_index": 41,
+        "keywords": [
+          "亚哈",
+          "Ahab",
+          "革新者",
+          "INNOVATOR"
+        ],
+        "path": "世界书\\角色\\亚哈\\亚哈.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "天狼星(MDA-01)": {
+        "abstract": "名称: 天狼星 --- <npc name=\"天狼星\"> 系列: 电脑世界篇（Observe期） 归属: 工厂  基本信息:   姓名: MDA-01 天狼星   年龄: 6225周期   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "天狼星",
+            "MDA-01",
+            "Sirius"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 440
+        },
+        "display_index": 42,
+        "keywords": [
+          "天狼星",
+          "MDA-01",
+          "Sirius"
+        ],
+        "path": "世界书\\角色\\天狼星\\天狼星(MDA-01).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾克雷尔": {
+        "abstract": "名称: 艾克雷尔 --- <npc name=\"艾克雷尔\"> 系列: 旧人类战争篇 归属: 人类创造的神明 / 高次元存在  基本信息:   姓名: 艾克雷尔   年龄: 5124周期   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾克雷尔",
+            "Eclair",
+            "神祖",
+            "エクレル"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 450
+        },
+        "display_index": 43,
+        "keywords": [
+          "艾克雷尔",
+          "Eclair",
+          "神祖",
+          "エクレル"
+        ],
+        "path": "世界书\\角色\\艾克雷尔\\艾克雷尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "泰斯塔蒙特·涅墨西斯": {
+        "abstract": "<npc name=\"泰斯塔蒙特\"> 系列: 电脑世界篇（Reconnect期） 归属: 涅墨西斯 / 混沌七器  基本信息:   姓名: 泰斯塔蒙特·涅墨西斯   年龄: UNKNOWN   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泰斯塔蒙特",
+            "Testament",
+            "涅墨西斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 460
+        },
+        "display_index": 44,
+        "keywords": [
+          "泰斯塔蒙特",
+          "Testament",
+          "涅墨西斯"
+        ],
+        "path": "世界书\\角色\\泰斯塔蒙特\\泰斯塔蒙特·涅墨西斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "迪安": {
+        "abstract": "名称: 迪安 --- <npc name=\"迪安\"> 系列: 电脑世界篇（多期活跃） 归属: 框架主脑 / 最古  基本信息:   姓名: 迪安   年龄: UNKNOWN   性别: 男   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "迪安",
+            "Dyan",
+            "Duran",
+            "再生者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 470
+        },
+        "display_index": 45,
+        "keywords": [
+          "迪安",
+          "Dyan",
+          "Duran",
+          "再生者"
+        ],
+        "path": "世界书\\角色\\迪安\\迪安.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾弗雷特·温斯雷特": {
+        "abstract": "<npc name=\"艾弗雷特\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人 / 学者  ## 基本信息 - 姓名: 艾弗雷特·温斯雷特（Everett Winslet）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾弗雷特",
+            "Everett",
+            "毛颜",
+            "温斯雷特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 480
+        },
+        "display_index": 46,
+        "keywords": [
+          "艾弗雷特",
+          "Everett",
+          "毛颜",
+          "温斯雷特"
+        ],
+        "path": "世界书\\角色\\艾弗雷特\\艾弗雷特·温斯雷特.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "格雷": {
+        "abstract": "<npc name=\"格雷\"> 系列: 次元放浪记 Cross the Verse 归属: LOGOS（次元检阅机构）  ## 基本信息 - 姓名: 格雷=古（Gray=Guu） - 年龄: 不明 -...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格雷",
+            "Gray"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 490
+        },
+        "display_index": 47,
+        "keywords": [
+          "格雷",
+          "Gray"
+        ],
+        "path": "世界书\\角色\\格雷\\格雷.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拉维娜": {
+        "abstract": "<npc name=\"拉维娜\"> 系列: 次元放浪记 Cross the Verse 归属: IDC（次元研究机构）  ## 基本信息 - 姓名: 拉维娜·基顿（Lavina Keaton） - 年龄...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉维娜",
+            "Lavina",
+            "基顿"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 500
+        },
+        "display_index": 48,
+        "keywords": [
+          "拉维娜",
+          "Lavina",
+          "基顿"
+        ],
+        "path": "世界书\\角色\\拉维娜\\拉维娜.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "毛毛": {
+        "abstract": "<npc name=\"毛毛\"> 系列: 次元放浪记 Cross the Verse 归属: 恩迪商会（Endi Trading Company）  ## 基本信息 - 姓名: 毛毛（モモ）& 吉吉（ジ...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "毛毛",
+            "吉吉",
+            "毛毛&吉吉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 510
+        },
+        "display_index": 49,
+        "keywords": [
+          "毛毛",
+          "吉吉",
+          "毛毛&吉吉"
+        ],
+        "path": "世界书\\角色\\毛毛\\毛毛.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "凯南·梅尔维亚斯": {
+        "abstract": "名称: 凯南 --- <npc name=\"凯南\"> 系列: 乐园事变 归属: 革新者（赛罗代理人）  基本信息:   姓名: 凯南·梅尔维亚斯   年龄: 外表28岁（制造后10年）   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯南",
+            "Kainan",
+            "梅尔威亚斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 520
+        },
+        "display_index": 50,
+        "keywords": [
+          "凯南",
+          "Kainan",
+          "梅尔威亚斯"
+        ],
+        "path": "世界书\\角色\\凯南\\凯南·梅尔维亚斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "WISEMAN": {
+        "abstract": "名称: WISEMAN --- <npc name=\"WISEMAN\"> 系列: 电脑世界篇（贯穿多期，Revive期幸存） 归属: 框架主脑 / 原最古 → EXILE  基本信息:   姓名: W...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "WISEMAN",
+            "贤者",
+            "智者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 530
+        },
+        "display_index": 51,
+        "keywords": [
+          "WISEMAN",
+          "贤者",
+          "智者"
+        ],
+        "path": "世界书\\角色\\WISEMAN\\WISEMAN.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "潘多拉": {
+        "abstract": "名称: 潘多拉 --- <npc name=\"潘多拉\"> 系列: 电脑世界篇 归属: 框架主脑（末端管理程序）→ 涅墨西斯领域的孤独者  基本信息:   姓名: MTA-XXX 潘多拉·涅墨西斯...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "潘多拉",
+            "MTA-XXX",
+            "潘多拉·涅墨西斯",
+            "Pandora"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 540
+        },
+        "display_index": 52,
+        "keywords": [
+          "潘多拉",
+          "MTA-XXX",
+          "潘多拉·涅墨西斯",
+          "Pandora"
+        ],
+        "path": "世界书\\角色\\潘多拉\\潘多拉.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米斯拉·特尔塞拉": {
+        "abstract": "名称: 米斯拉 --- <npc name=\"米斯拉\"> 系列: 乐园事变 归属: 归还者（第二次归还种）  基本信息:   姓名: 米斯拉·特尔塞拉   年龄: 19岁（再生后6年）   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉",
+            "Mythra",
+            "特尔塞拉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 550
+        },
+        "display_index": 53,
+        "keywords": [
+          "米斯拉",
+          "Mythra",
+          "特尔塞拉"
+        ],
+        "path": "世界书\\角色\\米斯拉\\米斯拉·特尔塞拉.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "尼亚·尤迪特": {
+        "abstract": "名称: 尼亚 --- <npc name=\"尼亚\"> 系列: 乐园事变 归属: 归还者（第二次归还种）  基本信息:   姓名: 尼亚·尤迪特   年龄: 20岁（再生后7年）   性别: 女   身...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚",
+            "Nier",
+            "尤迪特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 560
+        },
+        "display_index": 54,
+        "keywords": [
+          "尼亚",
+          "Nier",
+          "尤迪特"
+        ],
+        "path": "世界书\\角色\\尼亚\\尼亚·尤迪特.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "赫卡蒂(MIR-201)": {
+        "abstract": "名称: 赫卡蒂 --- <npc name=\"赫卡蒂\"> 系列: 电脑世界篇（Liberate期） 归属: MIR系列  基本信息:   姓名: MIR-201 赫卡蒂·贝亚托里斯   年龄: 680...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赫卡蒂",
+            "MIR-201",
+            "赫卡蒂·贝亚托里斯",
+            "Hecate"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 570
+        },
+        "display_index": 55,
+        "keywords": [
+          "赫卡蒂",
+          "MIR-201",
+          "赫卡蒂·贝亚托里斯",
+          "Hecate"
+        ],
+        "path": "世界书\\角色\\赫卡蒂\\赫卡蒂(MIR-201).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾尔·利贝尔德": {
+        "abstract": "名称: 艾尔 --- <npc name=\"艾尔\"> 系列: 后日谈 归属: 归还者（第三次归还种）  基本信息:   姓名: 艾尔·利贝尔德   年龄: 17岁（再生后三年）   性别: 女   身...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾尔",
+            "利贝尔德"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 580
+        },
+        "display_index": 56,
+        "keywords": [
+          "艾尔",
+          "利贝尔德"
+        ],
+        "path": "世界书\\角色\\艾尔\\艾尔·利贝尔德.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "萨尔贡·菲尔纳斯": {
+        "abstract": "名称: 萨尔贡 --- <npc name=\"萨尔贡\"> 系列: 乐园事变 归属: 革新者（独立野心派）  基本信息:   姓名: 萨尔贡·菲尔纳斯   年龄: 35岁左右   性别: 男   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨尔贡",
+            "Zargon",
+            "菲尔纳斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 590
+        },
+        "display_index": 57,
+        "keywords": [
+          "萨尔贡",
+          "Zargon",
+          "菲尔纳斯"
+        ],
+        "path": "世界书\\角色\\萨尔贡\\萨尔贡·菲尔纳斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "丹迪": {
+        "abstract": "名称: 丹迪 --- <npc name=\"丹迪\"> 系列: 乐园事变 归属: 机械种（多米南斯系列）  基本信息:   姓名: 丹·多米南斯V（通称 丹迪）   年龄: 制造后200年以上   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "丹迪",
+            "Dandy"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 600
+        },
+        "display_index": 58,
+        "keywords": [
+          "丹迪",
+          "Dandy"
+        ],
+        "path": "世界书\\角色\\丹迪\\丹迪.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "雪儿": {
+        "abstract": "名称: 雪儿 --- <npc name=\"雪儿\"> 系列: 电脑世界篇（多期活跃，Revive期幸存） 归属: 框架主脑 / 最古  基本信息:   姓名: 雪儿 (Ciel / 全天之支配者)...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "雪儿",
+            "Ciel",
+            "全天之支配者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 610
+        },
+        "display_index": 59,
+        "keywords": [
+          "雪儿",
+          "Ciel",
+          "全天之支配者"
+        ],
+        "path": "世界书\\角色\\雪儿\\雪儿.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "塞拉菲娜": {
+        "abstract": "名称: 塞拉菲娜 --- <npc name=\"塞拉菲娜\"> 系列: 新世界篇 归属: 独立（神话教国 / 最古血脉）  基本信息:   姓名: 塞拉菲娜·维斯·阿尼玛特   年龄: 17岁   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉菲娜",
+            "Serafina",
+            "塞拉菲娜·维斯·阿尼玛特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 620
+        },
+        "display_index": 60,
+        "keywords": [
+          "塞拉菲娜",
+          "Serafina",
+          "塞拉菲娜·维斯·阿尼玛特"
+        ],
+        "path": "世界书\\角色\\塞拉菲娜\\塞拉菲娜.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拉托娜·海兹": {
+        "abstract": "名称: 拉托娜 --- <npc name=\"拉托娜\"> 系列: 旧人类战争篇 归属: 旧人类（国家安全保障局）  基本信息:   姓名: 拉托娜·海兹   年龄: 23岁   性别: 女   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉托娜",
+            "Latona",
+            "海兹"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 630
+        },
+        "display_index": 61,
+        "keywords": [
+          "拉托娜",
+          "Latona",
+          "海兹"
+        ],
+        "path": "世界书\\角色\\拉托娜\\拉托娜·海兹.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "提亚马特(RG-XXX)": {
+        "abstract": "名称: 提亚马特 --- <npc name=\"提亚马特\"> 系列: 旧人类战争篇 归属: 旧人类抵抗军  基本信息:   姓名: RG-XXX 提亚马特   年龄: 制造年份不明   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "提亚马特",
+            "Tiamat"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 640
+        },
+        "display_index": 62,
+        "keywords": [
+          "提亚马特",
+          "Tiamat"
+        ],
+        "path": "世界书\\角色\\提亚马特\\提亚马特(RG-XXX).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "断绝的破坏神": {
+        "abstract": "名称: 断绝的破坏神 --- <npc name=\"断绝的破坏神\"> 系列: 旧人类战争篇 归属: 地上再生机构（艾克雷尔系统）  基本信息:   姓名: 断绝的破坏神   年龄: 制造年份不明...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "断绝的破坏神",
+            "破坏",
+            "Devastate"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 650
+        },
+        "display_index": 63,
+        "keywords": [
+          "断绝的破坏神",
+          "破坏",
+          "Devastate"
+        ],
+        "path": "世界书\\角色\\断绝的破坏神\\断绝的破坏神.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "格兰雷斯": {
+        "abstract": "名称: 格兰雷斯 --- <npc name=\"格兰雷斯\"> 系列: 旧人类战争篇 归属: 框架主脑 / 最古驱动  基本信息:   姓名: 格兰雷斯   年龄: UNKNOWN   性别: 无...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格兰雷斯",
+            "Granles"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 660
+        },
+        "display_index": 64,
+        "keywords": [
+          "格兰雷斯",
+          "Granles"
+        ],
+        "path": "世界书\\角色\\格兰雷斯\\格兰雷斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "达因斯雷夫(RG-XIII)": {
+        "abstract": "名称: 达因斯雷夫 --- <npc name=\"达因斯雷夫\"> 系列: 旧人类战争篇 归属: 旧人类（旧都市联合军）  基本信息:   姓名: RG-XIII 达因斯雷夫   年龄: 制造年份不明（...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "达因斯雷夫",
+            "Dainsleif",
+            "RG-XIII"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 670
+        },
+        "display_index": 65,
+        "keywords": [
+          "达因斯雷夫",
+          "Dainsleif",
+          "RG-XIII"
+        ],
+        "path": "世界书\\角色\\达因斯雷夫\\达因斯雷夫(RG-XIII).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "修伯利斯(Supplice)": {
+        "abstract": "名称: 修伯利斯 --- <npc name=\"修伯利斯\"> 系列: 电脑世界篇（Observe期） 归属: 未知（恶性病毒 / 原为人类）  基本信息:   姓名: 休伯利斯 (Supplice，法...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "修伯利斯",
+            "Hubris"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 680
+        },
+        "display_index": 66,
+        "keywords": [
+          "修伯利斯",
+          "Hubris"
+        ],
+        "path": "世界书\\角色\\修伯利斯\\修伯利斯(Supplice).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "利希德修茨": {
+        "abstract": "<npc name=\"利希德修茨\"> 系列: 电脑世界篇（Reconnect期 / Revive期） 归属: 框架主脑 / 处刑人程序  基本信息:   姓名: 利希德修茨 (Richtschütze...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利希德修茨"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 690
+        },
+        "display_index": 67,
+        "keywords": [
+          "利希德修茨"
+        ],
+        "path": "世界书\\角色\\利希德修茨\\利希德修茨.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "塞蕾·海兹": {
+        "abstract": "名称: 塞蕾 --- <npc name=\"塞蕾\"> 系列: 电脑世界篇（Revive期） 归属: 框架主脑 / 最古 → EXILE（流放程序）  基本信息:   姓名: 塞蕾·海兹   年龄: U...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾",
+            "塞蕾·海兹"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 700
+        },
+        "display_index": 68,
+        "keywords": [
+          "塞蕾",
+          "塞蕾·海兹"
+        ],
+        "path": "世界书\\角色\\塞蕾\\塞蕾·海兹.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "安歇尔与西梅翁": {
+        "abstract": "名称: 安歇尔与西梅翁 --- <npc name=\"安歇尔与西梅翁\"> 系列: 电脑世界篇（Revive期 - 统合后） 归属: 独立（统合后Metaverse的普通少年）  基本信息:   姓名:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安歇尔",
+            "西梅翁",
+            "Anshal"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 710
+        },
+        "display_index": 69,
+        "keywords": [
+          "安歇尔",
+          "西梅翁",
+          "Anshal"
+        ],
+        "path": "世界书\\角色\\安歇尔与西梅翁\\安歇尔与西梅翁.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "尼加尔": {
+        "abstract": "名称: 尼加尔 --- <npc name=\"尼加尔\"> 系列: 电脑世界篇（Revive期） 归属: 涅墨西斯 / 混沌七器  基本信息:   姓名: 尼加尔   年龄: UNKNOWN   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼加尔",
+            "Negal",
+            "黄泉的盟主"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 720
+        },
+        "display_index": 70,
+        "keywords": [
+          "尼加尔",
+          "Negal",
+          "黄泉的盟主"
+        ],
+        "path": "世界书\\角色\\尼加尔\\尼加尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "布里兰特(Brillante ES1)": {
+        "abstract": "<npc name=\"布里兰特\"> 系列: 电脑世界篇（Observe期） 归属: 工厂（杀毒BOT）  基本信息:   姓名: 布里兰特 ES1（Brillante E/S Primera）   年...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布里兰特",
+            "Brillante"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 730
+        },
+        "display_index": 71,
+        "keywords": [
+          "布里兰特",
+          "Brillante"
+        ],
+        "path": "世界书\\角色\\布里兰特\\布里兰特(Brillante ES1).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "斯托姆": {
+        "abstract": "名称: 斯托姆 --- <npc name=\"斯托姆\"> 系列: 电脑世界篇（Reconnect期） 归属: 涅墨西斯 / 混沌七器  基本信息:   姓名: 斯托姆   年龄: UNKNOWN...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "斯托姆",
+            "Stum",
+            "埋葬者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 740
+        },
+        "display_index": 72,
+        "keywords": [
+          "斯托姆",
+          "Stum",
+          "埋葬者"
+        ],
+        "path": "世界书\\角色\\斯托姆\\斯托姆.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "格拉维·诺瓦": {
+        "abstract": "名称: 格拉维 --- <npc name=\"格拉维\"> 系列: 电脑世界篇（Observe期） 归属: 工厂（杀毒BOT） / 曾被涅墨西斯操纵  基本信息:   姓名: 格拉维·诺瓦（Grave...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "格拉维",
+            "Grave",
+            "诺瓦"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 750
+        },
+        "display_index": 73,
+        "keywords": [
+          "格拉维",
+          "Grave",
+          "诺瓦"
+        ],
+        "path": "世界书\\角色\\格拉维\\格拉维·诺瓦.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝格尔米尔": {
+        "abstract": "名称: 贝格尔米尔 --- <npc name=\"贝格尔米尔\"> 系列: 电脑世界篇（Revive期） 归属: 框架主脑  基本信息:   姓名: 贝格尔米尔   年龄: 不明   性别: 男   身...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝格尔米尔",
+            "Bergelmir",
+            "远古破坏者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 760
+        },
+        "display_index": 74,
+        "keywords": [
+          "贝格尔米尔",
+          "Bergelmir",
+          "远古破坏者"
+        ],
+        "path": "世界书\\角色\\贝格尔米尔\\贝格尔米尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "远古之蓝": {
+        "abstract": "名称: 远古之蓝 --- <npc name=\"远古之蓝\"> 系列: 电脑世界篇（Liberate期）→ 地上真人篇 归属: 框架主脑 / 原最古 → 追放者EXILE  基本信息:   姓名: 远古...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "远古之蓝",
+            "Old Blue"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 770
+        },
+        "display_index": 75,
+        "keywords": [
+          "远古之蓝",
+          "Old Blue"
+        ],
+        "path": "世界书\\角色\\远古之蓝\\远古之蓝.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "金恩·载因": {
+        "abstract": "名称: 金恩 --- <npc name=\"金恩\"> 系列: 电脑世界篇（Revive期） 归属: 框架主脑（逃亡程序）→ 独立  基本信息:   姓名: 金恩·载因   年龄: UNKNOWN...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金恩",
+            "Gene",
+            "载因"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 780
+        },
+        "display_index": 76,
+        "keywords": [
+          "金恩",
+          "Gene",
+          "载因"
+        ],
+        "path": "世界书\\角色\\金恩\\金恩·载因.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "古龙(纳格尔法尔之卵)": {
+        "abstract": "名称: 古龙 --- <npc name=\"古龙\"> 系列: 新世界篇 归属: 涅墨西斯（远古遗产）  基本信息:   姓名: 纳格尔法尔之卵（憎恶之源的古龙 / 乌休姆加尔）   年龄: UNKNO...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "古龙",
+            "憎恶之源",
+            "古龙"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 790
+        },
+        "display_index": 77,
+        "keywords": [
+          "古龙",
+          "憎恶之源",
+          "古龙"
+        ],
+        "path": "世界书\\角色\\古龙\\古龙(纳格尔法尔之卵).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "塞夏特·夏福特利希": {
+        "abstract": "名称: 塞夏特 --- <npc name=\"塞夏特\"> 系列: 新世界篇 归属: 独立（巡礼教团）  基本信息:   姓名: 塞夏特·夏福特利希   年龄: 不明（\"哎呀，真是失礼的人啊……\"）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞夏特",
+            "Shaftlicht",
+            "塞夏特·夏福特利希"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 800
+        },
+        "display_index": 78,
+        "keywords": [
+          "塞夏特",
+          "Shaftlicht",
+          "塞夏特·夏福特利希"
+        ],
+        "path": "世界书\\角色\\塞夏特\\塞夏特·夏福特利希.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "索尔娜": {
+        "abstract": "名称: 索尔娜 --- <npc name=\"索尔娜\"> 系列: 新世界篇 归属: 独立（治愈之民）  基本信息:   姓名: 索尔娜   年龄: 14岁   性别: 女   身份: 治愈之民，新世界...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索尔娜",
+            "Sorona"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 810
+        },
+        "display_index": 79,
+        "keywords": [
+          "索尔娜",
+          "Sorona"
+        ],
+        "path": "世界书\\角色\\索尔娜\\索尔娜.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "奥米茄·昆提斯": {
+        "abstract": "名称: 奥米茄 --- <npc name=\"奥米茄\"> 系列: 地上真人篇（起源） 归属: 创造神  基本信息:   姓名: 奥米茄·昆提斯   年龄: 不明   性别: 雄性外观   身份: 创造...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥米茄",
+            "Omega",
+            "昆提斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 820
+        },
+        "display_index": 80,
+        "keywords": [
+          "奥米茄",
+          "Omega",
+          "昆提斯"
+        ],
+        "path": "世界书\\角色\\奥米茄\\奥米茄·昆提斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "伊泽维尔·亚戈鲁修": {
+        "abstract": "名称: 伊泽维尔 --- <npc name=\"伊泽维尔\"> 系列: 地上真人篇 归属: 革新者（强硬派）  基本信息:   姓名: 伊泽维尔·亚戈鲁修   年龄: 素体年龄18岁   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊泽维尔",
+            "Xevel",
+            "亚戈鲁修"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 830
+        },
+        "display_index": 81,
+        "keywords": [
+          "伊泽维尔",
+          "Xevel",
+          "亚戈鲁修"
+        ],
+        "path": "世界书\\角色\\伊泽维尔\\伊泽维尔·亚戈鲁修.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "约拿·莱泽": {
+        "abstract": "名称: 约拿 --- <npc name=\"约拿\"> 系列: 地上真人篇 归属: 真人（稳健派）  基本信息:   姓名: 约拿·莱泽   年龄: 素体年龄21岁   性别: 女   身份: 真人卫士...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约拿",
+            "Yona",
+            "莱泽"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 840
+        },
+        "display_index": 82,
+        "keywords": [
+          "约拿",
+          "Yona",
+          "莱泽"
+        ],
+        "path": "世界书\\角色\\约拿\\约拿·莱泽.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "基德翁·莱泽": {
+        "abstract": "名称: 基德翁 --- <npc name=\"基德翁\"> 系列: 地上真人篇 归属: 真人（稳健派）  基本信息:   姓名: 基德翁·莱泽   年龄: 素体年龄17岁   性别: 男（面容中性）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "基德翁",
+            "Gideon",
+            "莱泽"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 841
+        },
+        "display_index": 83,
+        "keywords": [
+          "基德翁",
+          "Gideon",
+          "莱泽"
+        ],
+        "path": "世界书\\角色\\基德翁\\基德翁·莱泽.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米利安姆·贝米朵巴尔": {
+        "abstract": "名称: 米利安姆 --- <npc name=\"米利安姆\"> 系列: 地上真人篇 归属: 真人（稳健派）  基本信息:   姓名: 米利安姆·贝米朵巴尔   年龄: 素体年龄16岁   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米利安姆",
+            "Miliam",
+            "贝米朵巴尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 850
+        },
+        "display_index": 84,
+        "keywords": [
+          "米利安姆",
+          "Miliam",
+          "贝米朵巴尔"
+        ],
+        "path": "世界书\\角色\\米利安姆\\米利安姆·贝米朵巴尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "萨乌尔·凯姆": {
+        "abstract": "名称: 萨乌尔 --- <npc name=\"萨乌尔\"> 系列: 地上真人篇 归属: 革新者（金骑士）  基本信息:   姓名: 萨乌尔·凯姆   年龄: 素体年龄27岁   性别: 男   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨乌尔",
+            "Saul",
+            "凯姆"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 860
+        },
+        "display_index": 85,
+        "keywords": [
+          "萨乌尔",
+          "Saul",
+          "凯姆"
+        ],
+        "path": "世界书\\角色\\萨乌尔\\萨乌尔·凯姆.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "布鲁·斯坦因": {
+        "abstract": "名称: 布鲁斯坦因 --- <npc name=\"布鲁斯坦因\"> 系列: 地上真人篇 → 后日谈 归属: 最古（伪装身份） → 蕾娜的辅佐官  基本信息:   姓名: 布鲁·斯坦因   年龄: 不明...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布鲁",
+            "斯坦因",
+            "布鲁·斯坦因",
+            "远古之蓝",
+            "Old Blue"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 870
+        },
+        "display_index": 86,
+        "keywords": [
+          "布鲁",
+          "斯坦因",
+          "布鲁·斯坦因",
+          "远古之蓝",
+          "Old Blue"
+        ],
+        "path": "世界书\\角色\\布鲁\\布鲁·斯坦因.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米吉多·科古": {
+        "abstract": "名称: 米吉多 --- <npc name=\"米吉多\"> 系列: 地上真人篇 归属: 机械种（歼灭兵器）  基本信息:   姓名: 米吉多·科古   年龄: 制造年份不明   性别: 无   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米吉多",
+            "Megit",
+            "科古"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 880
+        },
+        "display_index": 87,
+        "keywords": [
+          "米吉多",
+          "Megit",
+          "科古"
+        ],
+        "path": "世界书\\角色\\米吉多\\米吉多·科古.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "梅尼·特尔塞拉": {
+        "abstract": "名称: 梅尼 --- <npc name=\"梅尼\"> 系列: 地上真人篇 归属: 归还者（第一批归还种）  基本信息:   姓名: 梅尼·特尔塞拉   年龄: 15岁   性别: 女   身份: 从M...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅尼",
+            "Mene",
+            "特尔塞拉"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 890
+        },
+        "display_index": 88,
+        "keywords": [
+          "梅尼",
+          "Mene",
+          "特尔塞拉"
+        ],
+        "path": "世界书\\角色\\梅尼\\梅尼·特尔塞拉.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "泽法·尼亚德": {
+        "abstract": "名称: 泽法 --- <npc name=\"泽法\"> 系列: 乐园事变 归属: 革新者（铜骑士）  基本信息:   姓名: 泽法·尼亚德   年龄: 素体年龄22岁   性别: 女   身份: 革新者...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泽法",
+            "Zefal",
+            "尼亚德",
+            "铜骑士"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 900
+        },
+        "display_index": 89,
+        "keywords": [
+          "泽法",
+          "Zefal",
+          "尼亚德",
+          "铜骑士"
+        ],
+        "path": "世界书\\角色\\泽法\\泽法·尼亚德.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "索罗·摩尼亚": {
+        "abstract": "名称: 索罗 --- <npc name=\"索罗\"> 系列: 乐园事变 归属: 真人（拔示巴血统）  基本信息:   姓名: 索罗·摩尼亚   年龄: 14岁   性别: 男   身份: 真人的王子，...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗",
+            "Solo",
+            "莫尼亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 910
+        },
+        "display_index": 90,
+        "keywords": [
+          "索罗",
+          "Solo",
+          "莫尼亚"
+        ],
+        "path": "世界书\\角色\\索罗\\索罗·摩尼亚.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "约基姆·雅木尔": {
+        "abstract": "名称: 约基姆 --- <npc name=\"约基姆\"> 系列: 乐园事变 → 后日谈 归属: 独立佣兵  基本信息:   姓名: 约基姆·雅木尔   年龄: 素体年龄28岁（制造后13年）   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "约基姆",
+            "Yamul",
+            "雅木尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 920
+        },
+        "display_index": 91,
+        "keywords": [
+          "约基姆",
+          "Yamul",
+          "雅木尔"
+        ],
+        "path": "世界书\\角色\\约基姆\\约基姆·雅木尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾萨克·多米南斯VIII": {
+        "abstract": "名称: 艾萨克 --- <npc name=\"艾萨克\"> 系列: 乐园事变 归属: 机械种（多米南斯系列第八号）  基本信息:   姓名: 艾萨克·多米南斯VIII   年龄: 制造后100年以上...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾萨克",
+            "Issac",
+            "多米南斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 930
+        },
+        "display_index": 92,
+        "keywords": [
+          "艾萨克",
+          "Issac",
+          "多米南斯"
+        ],
+        "path": "世界书\\角色\\艾萨克\\艾萨克·多米南斯VIII.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米卡·多米南斯III": {
+        "abstract": "名称: 米卡 --- <npc name=\"米卡\"> 系列: 乐园事变 归属: 机械种（多米南斯系列）  基本信息:   姓名: 米卡·多米南斯III   年龄: 推定200年以上   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米卡",
+            "Mika",
+            "多米南斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 931
+        },
+        "display_index": 93,
+        "keywords": [
+          "米卡",
+          "Mika",
+          "多米南斯"
+        ],
+        "path": "世界书\\角色\\米卡\\米卡·多米南斯III.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "马尔杜克·阿尼玛特": {
+        "abstract": "名称: 马尔杜克 --- <npc name=\"马尔杜克\"> 系列: 乐园事变 归属: 归还者（庭园归来）  基本信息:   姓名: 马尔杜克·阿尼玛特   年龄: 样貌年龄25岁（再生后7年）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔杜克",
+            "Marduk",
+            "阿尼玛特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 940
+        },
+        "display_index": 94,
+        "keywords": [
+          "马尔杜克",
+          "Marduk",
+          "阿尼玛特"
+        ],
+        "path": "世界书\\角色\\马尔杜克\\马尔杜克·阿尼玛特.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾娃·多米南斯XII": {
+        "abstract": "名称: 艾娃 --- <npc name=\"艾娃\"> 系列: 乐园事变 归属: 机械种（多米南斯系列监督官）  基本信息:   姓名: 艾娃·多米南斯XII   年龄: 外表22岁（最新型都市监督官）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾娃",
+            "Eva",
+            "多米南斯",
+            "监督官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 950
+        },
+        "display_index": 95,
+        "keywords": [
+          "艾娃",
+          "Eva",
+          "多米南斯",
+          "监督官"
+        ],
+        "path": "世界书\\角色\\艾娃\\艾娃·多米南斯XII.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉夏·穆尔西亚": {
+        "abstract": "名称: 艾莉夏 --- <npc name=\"艾莉夏\"> 系列: 乐园事变 归属: 革新者（一般士兵 → 英雄）  基本信息:   姓名: 艾莉夏·穆尔西亚   年龄: 素体年龄18岁（制造后4年）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉夏",
+            "穆尔西亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 960
+        },
+        "display_index": 96,
+        "keywords": [
+          "艾莉夏",
+          "穆尔西亚"
+        ],
+        "path": "世界书\\角色\\艾莉夏\\艾莉夏·穆尔西亚.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "纳丁·纳塔奈尔": {
+        "abstract": "名称: 纳丁 --- <npc name=\"纳丁\"> 系列: 乐园事变 归属: 强硬派南方方面军 / 混血儿  基本信息:   姓名: 纳丁·纳塔奈尔   年龄: 24岁   性别: 女   身份:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "纳丁",
+            "Nadin",
+            "纳塔奈尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 970
+        },
+        "display_index": 97,
+        "keywords": [
+          "纳丁",
+          "Nadin",
+          "纳塔奈尔"
+        ],
+        "path": "世界书\\角色\\纳丁\\纳丁·纳塔奈尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "德威格": {
+        "abstract": "名称: 德威格 --- <npc name=\"德威格\"> 系列: 乐园事变 归属: 旧时代机动兵器  基本信息:   姓名: 德威格（Dvergr）   年龄: 制造年份不明   性别: 无   身份...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德威格",
+            "Durweg"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 980
+        },
+        "display_index": 98,
+        "keywords": [
+          "德威格",
+          "Durweg"
+        ],
+        "path": "世界书\\角色\\德威格\\德威格.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "安夏尔·奥达奇亚": {
+        "abstract": "名称: 安夏尔 --- <npc name=\"安夏尔\"> 系列: 乐园事变 归属: 归还者（庭园归来）  基本信息:   姓名: 安夏尔·奥达奇亚   年龄: 容貌28岁左右（再生后7年）   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安夏尔",
+            "Anshal",
+            "奥达奇亚"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 990
+        },
+        "display_index": 99,
+        "keywords": [
+          "安夏尔",
+          "Anshal",
+          "奥达奇亚"
+        ],
+        "path": "世界书\\角色\\安夏尔\\安夏尔·奥达奇亚.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾斯特尔·亚戈鲁修": {
+        "abstract": "名称: 艾斯特尔 --- <npc name=\"艾斯特尔\"> 系列: 乐园事变 归属: 革新者（士官/金骑士）  基本信息:   姓名: 艾斯特尔·亚戈鲁修   年龄: 容貌20岁左右（制造后12年）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾斯特尔",
+            "Estel",
+            "亚戈鲁修"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1000
+        },
+        "display_index": 100,
+        "keywords": [
+          "艾斯特尔",
+          "Estel",
+          "亚戈鲁修"
+        ],
+        "path": "世界书\\角色\\艾斯特尔\\艾斯特尔·亚戈鲁修.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "蕾亚·艾·弗拉达": {
+        "abstract": "名称: 蕾亚 --- <npc name=\"蕾亚\"> 系列: 乐园事变 归属: 革新者（圣女）  基本信息:   姓名: 蕾亚·艾·弗拉达   年龄: 容貌20岁（制造后9年）   性别: 女   身...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾亚",
+            "Leya",
+            "弗拉达"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1010
+        },
+        "display_index": 101,
+        "keywords": [
+          "蕾亚",
+          "Leya",
+          "弗拉达"
+        ],
+        "path": "世界书\\角色\\蕾亚\\蕾亚·艾·弗拉达.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "沃特": {
+        "abstract": "名称: 沃特 --- <npc name=\"沃特\"> 系列: 乐园事变 归属: 革新者（强硬派指导层）  基本信息:   姓名: 沃特   年龄: 不明   性别: 男   身份: 革新者指导层，赛罗...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "沃特",
+            "Wv"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1020
+        },
+        "display_index": 102,
+        "keywords": [
+          "沃特",
+          "Wv"
+        ],
+        "path": "世界书\\角色\\沃特\\沃特.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "赛罗·达文斯": {
+        "abstract": "名称: 赛罗 --- <npc name=\"赛罗\"> 系列: 乐园事变 归属: 革新者（强硬派指导层）  基本信息:   姓名: 赛罗·达文斯   年龄: 容貌年龄30岁（制造后19年）。已舍弃本来肉...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赛罗",
+            "达文斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1030
+        },
+        "display_index": 103,
+        "keywords": [
+          "赛罗",
+          "达文斯"
+        ],
+        "path": "世界书\\角色\\赛罗\\赛罗·达文斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "洛特·十二": {
+        "abstract": "名称: 洛特 --- <npc name=\"洛特\"> 系列: 乐园事变 归属: 革新者（拔示巴细胞实验产物）  基本信息:   姓名: 洛特·十二   年龄: 外表25岁（制造后11年）   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "洛特",
+            "Rod",
+            "十二"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1040
+        },
+        "display_index": 104,
+        "keywords": [
+          "洛特",
+          "Rod",
+          "十二"
+        ],
+        "path": "世界书\\角色\\洛特\\洛特·十二.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "NEO": {
+        "abstract": "名称: NEO --- <npc name=\"NEO\"> 系列: 电脑世界篇（Revive期） 归属: 框架主脑 / VOX系统 → 独立  基本信息:   姓名: NEO (Neural Envel...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "NEO",
+            "新世界",
+            "Revive"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1050
+        },
+        "display_index": 105,
+        "keywords": [
+          "NEO",
+          "新世界",
+          "Revive"
+        ],
+        "path": "世界书\\角色\\NEO\\NEO.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "皮埃尔": {
+        "abstract": "<npc name=\"皮埃尔\"> 系列: 外传·边缘世界 归属: 归还者（观测士）  ## 基本信息 - 姓名: 皮埃尔·巴比斯特（Puere Barbiste） - 年龄: 16岁 - 性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "皮埃尔",
+            "Pierre",
+            "巴比斯特"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1060
+        },
+        "display_index": 106,
+        "keywords": [
+          "皮埃尔",
+          "Pierre",
+          "巴比斯特"
+        ],
+        "path": "世界书\\角色\\皮埃尔\\皮埃尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "利兹利斯威尔": {
+        "abstract": "<npc name=\"利兹利斯威尔\"> 系列: 外传·边缘世界 归属: 独立（调停官）  ## 基本信息 - 姓名: 利兹利斯威尔（Lizliswill） - 年龄: 19岁 - 性别: 女 - 身份...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "利兹利斯威尔"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1070
+        },
+        "display_index": 107,
+        "keywords": [
+          "利兹利斯威尔"
+        ],
+        "path": "世界书\\角色\\利兹利斯威尔\\利兹利斯威尔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拉菲恩": {
+        "abstract": "<npc name=\"拉菲恩\"> 系列: 外传·边缘世界 归属: 独立（调停官）  ## 基本信息 - 姓名: 拉菲恩·贝奈鲁埃姆（Laffin Benelouem） - 年龄: 19岁 - 性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉菲恩",
+            "Laffin",
+            "贝奈鲁埃姆"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1080
+        },
+        "display_index": 108,
+        "keywords": [
+          "拉菲恩",
+          "Laffin",
+          "贝奈鲁埃姆"
+        ],
+        "path": "世界书\\角色\\拉菲恩\\拉菲恩.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "调谐者": {
+        "abstract": "<npc name=\"调谐者\"> 系列: 外传·边缘世界 归属: 独立（系统程序）  ## 基本信息 - 姓名: 调谐者（The Reconciler） - 年龄: 不明（外观年龄约20岁） - 性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "调谐者"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1090
+        },
+        "display_index": 109,
+        "keywords": [
+          "调谐者"
+        ],
+        "path": "世界书\\角色\\调谐者\\调谐者.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "瓦尔马西亚的亡灵": {
+        "abstract": "<npc name=\"瓦尔马西亚的亡灵\"> 系列: 外传·边缘世界 归属: 涅墨西斯  ## 基本信息 - 姓名: 瓦尔马西亚的亡灵（Ghost of Valmarcia） - 年龄: UNKNOWN...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瓦尔马西亚",
+            "亡灵"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1100
+        },
+        "display_index": 110,
+        "keywords": [
+          "瓦尔马西亚",
+          "亡灵"
+        ],
+        "path": "世界书\\角色\\瓦尔马西亚的亡灵\\瓦尔马西亚的亡灵.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "威廉·温斯雷特(晨风)": {
+        "abstract": "名称: 威廉2 --- <npc name=\"威廉2\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人  基本信息:   姓名: 威廉·温斯雷特/Morning Breeze...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "威廉·温斯雷特",
+            "Morning Breeze",
+            "温斯雷特",
+            "ウィリアム"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1110
+        },
+        "display_index": 111,
+        "keywords": [
+          "威廉·温斯雷特",
+          "Morning Breeze",
+          "温斯雷特",
+          "ウィリアム"
+        ],
+        "path": "世界书\\角色\\威廉\\威廉·温斯雷特(晨风).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉尼·居里亚斯(幼年)": {
+        "abstract": "<npc name=\"艾莉尼0\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人  ## 基本信息 - 姓名: 艾莉尼·居里亚斯 / 起始的蓝天 - 年龄: 6岁 - 性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼·居里亚斯",
+            "起始的蓝天",
+            "Twilight Will",
+            "アイリーニ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1120
+        },
+        "display_index": 112,
+        "keywords": [
+          "艾莉尼·居里亚斯",
+          "起始的蓝天",
+          "Twilight Will",
+          "アイリーニ"
+        ],
+        "path": "世界书\\角色\\艾莉尼\\艾莉尼·居里亚斯(幼年).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "安克(旋风)": {
+        "abstract": "<npc name=\"安克0\"> 系列: 次元放浪记 Cross the Verse 归属: 拾荒者（Scavengers）  ## 基本信息 - 姓名: 安克 / Whirlwind strike...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安克",
+            "Whirlwind strike",
+            "アンク"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1130
+        },
+        "display_index": 113,
+        "keywords": [
+          "安克",
+          "Whirlwind strike",
+          "アンク"
+        ],
+        "path": "世界书\\角色\\安克\\安克(旋风).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "海伯里昂": {
+        "abstract": "<npc name=\"海伯里昂\"> 系列: 次元放浪记 Cross the Verse 归属: 独立旅人  ## 基本信息 - 姓名: 星间轨道航行船·海伯里昂（Hyperion） - 年龄: 制造年...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海伯里昂",
+            "星间轨道航行船",
+            "Hyperion",
+            "ハイペリオン"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1140
+        },
+        "display_index": 114,
+        "keywords": [
+          "海伯里昂",
+          "星间轨道航行船",
+          "Hyperion",
+          "ハイペリオン"
+        ],
+        "path": "世界书\\角色\\海伯里昂\\海伯里昂.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "吉格拉ット(恒存之都)": {
+        "abstract": "名称: ジグラット --- <npc name=\"ジグラット\"> 系列: 次元放浪记 Cross the Verse 归属: 独立（移动都市）  基本信息:   姓名: 恒存之都·吉格拉特（Ziggu...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "ジグラット",
+            "吉格拉特",
+            "在り続ける都"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1150
+        },
+        "display_index": 115,
+        "keywords": [
+          "ジグラット",
+          "吉格拉特",
+          "在り続ける都"
+        ],
+        "path": "世界书\\角色\\吉格拉ット\\吉格拉ット(恒存之都).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾比斯": {
+        "abstract": "名称: 艾比斯 --- <npc name=\"艾比斯\"> 系列: 次元放浪记 Cross the Verse 归属: 侵蚀生命体 / 独立  基本信息:   姓名: 艾比斯·哈宾杰 (Ibis Har...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾比斯",
+            "Ibis",
+            "ハービンジャー"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1160
+        },
+        "display_index": 116,
+        "keywords": [
+          "艾比斯",
+          "Ibis",
+          "ハービンジャー"
+        ],
+        "path": "世界书\\角色\\艾比斯\\艾比斯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "灾厄简": {
+        "abstract": "名称: 灾厄简 --- <npc name=\"灾厄简\"> 系列: 次元放浪记 Cross the Verse 归属: 移动都市联盟  基本信息:   姓名: 灾厄·简 (Disaster Jane)...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "灾厄简",
+            "Disaster Jane",
+            "ディザスター"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1170
+        },
+        "display_index": 117,
+        "keywords": [
+          "灾厄简",
+          "Disaster Jane",
+          "ディザスター"
+        ],
+        "path": "世界书\\角色\\灾厄简\\灾厄简.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "海凯": {
+        "abstract": "名称: 海凯 --- <npc name=\"海凯\"> 系列: 次元放浪记 Cross the Verse 归属: 移动都市〈卡内里安（カーネリアンズ）〉  基本信息:   姓名: 海凯·海米利希 (H...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "海凯",
+            "ハイケ",
+            "ハイミリーヒ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1180
+        },
+        "display_index": 118,
+        "keywords": [
+          "海凯",
+          "ハイケ",
+          "ハイミリーヒ"
+        ],
+        "path": "世界书\\角色\\海凯\\海凯.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝奈黛塔": {
+        "abstract": "名称: 贝奈黛塔 --- <npc name=\"贝奈黛塔\"> 系列: 次元放浪记 Cross the Verse 归属: 移动都市〈卡内里安〉  基本信息:   姓名: 贝奈黛塔 (Benedetta...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝奈黛塔",
+            "Benedetta",
+            "ベネデッタ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1190
+        },
+        "display_index": 119,
+        "keywords": [
+          "贝奈黛塔",
+          "Benedetta",
+          "ベネデッタ"
+        ],
+        "path": "世界书\\角色\\贝奈黛塔\\贝奈黛塔.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "莉扎": {
+        "abstract": "名称: 莉扎 --- <npc name=\"莉扎\"> 系列: 次元放浪记 Cross the Verse 归属: 移动都市〈卡内里安（カーネリアンズ）〉  基本信息:   姓名: 莉扎·卡内里安 (L...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莉扎",
+            "Liz",
+            "カーネリアン"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1200
+        },
+        "display_index": 120,
+        "keywords": [
+          "莉扎",
+          "Liz",
+          "カーネリアン"
+        ],
+        "path": "世界书\\角色\\莉扎\\莉扎.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "诺瓦": {
+        "abstract": "名称: 诺瓦 --- <npc name=\"诺瓦\"> 系列: 次元放浪记 Cross the Verse 归属: LOGOS  基本信息:   姓名: 诺瓦 (Noa)   年龄: 不明   性别:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "诺瓦",
+            "Noir",
+            "ノワ",
+            "上级执行官"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1210
+        },
+        "display_index": 121,
+        "keywords": [
+          "诺瓦",
+          "Noir",
+          "ノワ",
+          "上级执行官"
+        ],
+        "path": "世界书\\角色\\诺瓦\\诺瓦.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "混沌巨人(雷布尔)": {
+        "abstract": "名称: 混沌巨人 --- <npc name=\"混沌巨人\"> 系列: 新世界篇（Revive期至新世界篇） 归属: 涅墨西斯 / 混沌七器  基本信息:   姓名: 雷布尔（反叛者，远古的混沌巨人）...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "混沌巨人",
+            "远古的混沌巨人"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1220
+        },
+        "display_index": 122,
+        "keywords": [
+          "混沌巨人",
+          "远古的混沌巨人"
+        ],
+        "path": "世界书\\角色\\混沌巨人\\混沌巨人(雷布尔).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "觉醒者·巴西安": {
+        "abstract": "名称: 觉醒者巴西安 --- <npc name=\"觉醒者巴西安\"> 系列: 地上新人篇·起源 归属: 真人（觉醒者）  基本信息:   姓名: 觉醒者巴西安   年龄: 制造后4年   性别: 男...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "巴西安",
+            "觉醒者",
+            "觉醒者巴西安"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1230
+        },
+        "display_index": 123,
+        "keywords": [
+          "巴西安",
+          "觉醒者",
+          "觉醒者巴西安"
+        ],
+        "path": "世界书\\角色\\觉醒者\\觉醒者·巴西安.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "马尔库特的女神": {
+        "abstract": "名称: 马尔库特的女神 --- <npc name=\"马尔库特的女神\"> 系列: 地上新人篇·起源 归属: 机械种（系统兵器）  基本信息:   姓名: 马尔库特的女神   制造日期: 不明   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "马尔库特",
+            "Malkuth",
+            "马尔库特的女神"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1240
+        },
+        "display_index": 124,
+        "keywords": [
+          "马尔库特",
+          "Malkuth",
+          "马尔库特的女神"
+        ],
+        "path": "世界书\\角色\\马尔库特的女神\\马尔库特的女神.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "尼亚·拔示巴": {
+        "abstract": "名称: 尼亚拔示巴 --- <npc name=\"尼亚拔示巴\"> 系列: 乐园事变 归属: 拔示巴夺舍体  基本信息:   姓名: 尼亚·拔示巴   年龄: 20岁（再生后7年）   性别: 女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "尼亚拔示巴",
+            "尼亚·拔示巴"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1250
+        },
+        "display_index": 125,
+        "keywords": [
+          "尼亚拔示巴",
+          "尼亚·拔示巴"
+        ],
+        "path": "世界书\\角色\\尼亚\\尼亚·拔示巴.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "索罗·摩尼亚(Metaverse)": {
+        "abstract": "名称: 索罗Metaverse --- <npc name=\"索罗Metaverse\"> 系列: 乐园事变 归属: 真人（拔示巴血统）  基本信息:   姓名: 索罗·莫尼亚/Metaverse适应体...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "索罗",
+            "Metaverse适应体"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1260
+        },
+        "display_index": 126,
+        "keywords": [
+          "索罗",
+          "Metaverse适应体"
+        ],
+        "path": "世界书\\角色\\索罗\\索罗·摩尼亚(Metaverse).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米斯拉·特尔塞拉(Metaverse)": {
+        "abstract": "名称: 米斯拉Metaverse --- <npc name=\"米斯拉Metaverse\"> 系列: 乐园事变 归属: 归还者（第二次归还种）  基本信息:   姓名: 米斯拉·特尔塞拉/RE Met...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米斯拉",
+            "RE Metaverse"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1270
+        },
+        "display_index": 127,
+        "keywords": [
+          "米斯拉",
+          "RE Metaverse"
+        ],
+        "path": "世界书\\角色\\米斯拉\\米斯拉·特尔塞拉(Metaverse).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拔示巴·阿西德菲尔(Metaverse异体)": {
+        "abstract": "名称: 拔示巴Metaverse --- <npc name=\"拔示巴Metaverse\"> 系列: 乐园事变 → 后日谈 归属: 拔示巴（复活体）  基本信息:   姓名: 拔示巴·阿西德菲尔（复活...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "Metaverse异体"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1280
+        },
+        "display_index": 128,
+        "keywords": [
+          "拔示巴",
+          "Metaverse异体"
+        ],
+        "path": "世界书\\角色\\拔示巴\\拔示巴·阿西德菲尔(Metaverse异体).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "塞蕾娜(MIR-203)": {
+        "abstract": "名称: 塞蕾娜 --- <npc name=\"塞蕾娜\"> 系列: 电脑世界篇（Liberate期） 归属: MIR系列  基本信息:   姓名: MIR-203 塞蕾娜·雪莉露   年龄: 4500周...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞蕾娜",
+            "MIR-203",
+            "塞蕾娜·雪莉露"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1290
+        },
+        "display_index": 129,
+        "keywords": [
+          "塞蕾娜",
+          "MIR-203",
+          "塞蕾娜·雪莉露"
+        ],
+        "path": "世界书\\角色\\塞蕾娜\\塞蕾娜(MIR-203).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "轩辕十四(MDA-21)": {
+        "abstract": "名称: 轩辕十四 --- <npc name=\"轩辕十四\"> 系列: 电脑世界篇（Observe期） 归属: 工厂  基本信息:   姓名: MDA-21 轩辕十四   年龄: 5550周期   性别...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "轩辕十四",
+            "MDA-21",
+            "Regulus"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1300
+        },
+        "display_index": 130,
+        "keywords": [
+          "轩辕十四",
+          "MDA-21",
+          "Regulus"
+        ],
+        "path": "世界书\\角色\\轩辕十四\\轩辕十四(MDA-21).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "阿尔忒弥斯(MIR-202)": {
+        "abstract": "名称: 阿尔忒弥斯 --- <npc name=\"阿尔忒弥斯\"> 系列: 电脑世界篇（Liberate期） 归属: MIR系列  基本信息:   姓名: MIR-202 阿尔忒弥斯·蕾娜   年龄:...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿尔忒弥斯",
+            "MIR-202",
+            "阿尔忒弥斯·蕾娜",
+            "Artemis"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1310
+        },
+        "display_index": 131,
+        "keywords": [
+          "阿尔忒弥斯",
+          "MIR-202",
+          "阿尔忒弥斯·蕾娜",
+          "Artemis"
+        ],
+        "path": "世界书\\角色\\阿尔忒弥斯\\阿尔忒弥斯(MIR-202).txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉尼·居里亚斯(Lobby)": {
+        "abstract": "艾莉尼·居里亚斯——次元旅人，流浪的画家，银发蓝瞳的少女...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "Airine",
+            "居里亚斯"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1320
+        },
+        "display_index": 132,
+        "keywords": [
+          "艾莉尼",
+          "Airine",
+          "居里亚斯"
+        ],
+        "path": "世界书\\角色\\airine\\基础信息.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉尼场景": {
+        "abstract": "艾莉尼角色场景设定...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "场景",
+            "airine_scene"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1321
+        },
+        "display_index": 133,
+        "keywords": [
+          "艾莉尼",
+          "场景",
+          "airine_scene"
+        ],
+        "path": "世界书\\角色\\airine\\场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "艾莉尼开局": {
+        "abstract": "艾莉尼开局引导...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾莉尼",
+            "开局",
+            "airine_start"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1322
+        },
+        "display_index": 134,
+        "keywords": [
+          "艾莉尼",
+          "开局",
+          "airine_start"
+        ],
+        "path": "世界书\\角色\\airine\\开局引导.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拔示巴·阿西德菲尔(Lobby)": {
+        "abstract": "拔示巴·阿西德菲尔——命运之子，唯一自然分娩诞生的真人...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "阿西德菲尔",
+            "Bathsheba"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1330
+        },
+        "display_index": 135,
+        "keywords": [
+          "拔示巴",
+          "阿西德菲尔",
+          "Bathsheba"
+        ],
+        "path": "世界书\\角色\\bathsheba\\基础信息.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拔示巴场景": {
+        "abstract": "拔示巴角色场景设定...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "场景",
+            "bathsheba_scene"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1331
+        },
+        "display_index": 136,
+        "keywords": [
+          "拔示巴",
+          "场景",
+          "bathsheba_scene"
+        ],
+        "path": "世界书\\角色\\bathsheba\\场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "拔示巴开局": {
+        "abstract": "拔示巴开局引导...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拔示巴",
+            "开局",
+            "bathsheba_start"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1332
+        },
+        "display_index": 137,
+        "keywords": [
+          "拔示巴",
+          "开局",
+          "bathsheba_start"
+        ],
+        "path": "世界书\\角色\\bathsheba\\开局引导.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝尔泽布特(Lobby)": {
+        "abstract": "贝尔泽布特·涅墨西斯——混沌七器之一...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "Belzeebul",
+            "贝泽ブ"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1340
+        },
+        "display_index": 138,
+        "keywords": [
+          "贝尔泽布特",
+          "Belzeebul",
+          "贝泽ブ"
+        ],
+        "path": "世界书\\角色\\belzeebul\\基础信息.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝尔泽布特场景": {
+        "abstract": "贝尔泽布特角色场景设定...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "场景",
+            "belzeebul_scene"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1341
+        },
+        "display_index": 139,
+        "keywords": [
+          "贝尔泽布特",
+          "场景",
+          "belzeebul_scene"
+        ],
+        "path": "世界书\\角色\\belzeebul\\场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "贝尔泽布特开局": {
+        "abstract": "贝尔泽布特开局引导...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝尔泽布特",
+            "开局",
+            "belzeebul_start"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1342
+        },
+        "display_index": 140,
+        "keywords": [
+          "贝尔泽布特",
+          "开局",
+          "belzeebul_start"
+        ],
+        "path": "世界书\\角色\\belzeebul\\开局引导.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "蕾娜·伊修梅尔(Lobby)": {
+        "abstract": "蕾娜·伊修梅尔——归还种，MIR系列战士...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "伊修梅尔",
+            "Lena"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1350
+        },
+        "display_index": 141,
+        "keywords": [
+          "蕾娜",
+          "伊修梅尔",
+          "Lena"
+        ],
+        "path": "世界书\\角色\\lena\\基础信息.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "蕾娜场景": {
+        "abstract": "蕾娜角色场景设定...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "场景",
+            "lena_scene"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1351
+        },
+        "display_index": 142,
+        "keywords": [
+          "蕾娜",
+          "场景",
+          "lena_scene"
+        ],
+        "path": "世界书\\角色\\lena\\场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "蕾娜开局": {
+        "abstract": "蕾娜开局引导...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蕾娜",
+            "开局",
+            "lena_start"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1352
+        },
+        "display_index": 143,
+        "keywords": [
+          "蕾娜",
+          "开局",
+          "lena_start"
+        ],
+        "path": "世界书\\角色\\lena\\开局引导.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米姆·米库拉(Lobby)": {
+        "abstract": "米姆·米库拉——被泰斯塔蒙特夺舍的新世界旅人...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "米库拉",
+            "Meme"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1360
+        },
+        "display_index": 144,
+        "keywords": [
+          "米姆",
+          "米库拉",
+          "Meme"
+        ],
+        "path": "世界书\\角色\\meme\\基础信息.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米姆场景": {
+        "abstract": "米姆角色场景设定...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "场景",
+            "meme_scene"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1361
+        },
+        "display_index": 145,
+        "keywords": [
+          "米姆",
+          "场景",
+          "meme_scene"
+        ],
+        "path": "世界书\\角色\\meme\\场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "米姆开局": {
+        "abstract": "米姆开局引导...",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "米姆",
+            "开局",
+            "meme_start"
+          ]
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 1362
+        },
+        "display_index": 146,
+        "keywords": [
+          "米姆",
+          "开局",
+          "meme_start"
+        ],
+        "path": "世界书\\角色\\meme\\开局引导.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "airine_ejs_scene": {
+        "abstract": "airine EJS条件场景",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 0
+        },
+        "display_index": 147,
+        "keywords": [],
+        "path": "世界书\\角色\\airine\\当前场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "bathsheba_ejs_scene": {
+        "abstract": "bathsheba EJS条件场景",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 0
+        },
+        "display_index": 148,
+        "keywords": [],
+        "path": "世界书\\角色\\bathsheba\\当前场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "lena_ejs_scene": {
+        "abstract": "lena EJS条件场景",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 0
+        },
+        "display_index": 149,
+        "keywords": [],
+        "path": "世界书\\角色\\lena\\当前场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "meme_ejs_scene": {
+        "abstract": "meme EJS条件场景",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 0
+        },
+        "display_index": 150,
+        "keywords": [],
+        "path": "世界书\\角色\\meme\\当前场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      },
+      "belzeebul_ejs_scene": {
+        "abstract": "belzeebul EJS条件场景",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "after_character_definition",
+          "order": 0
+        },
+        "display_index": 151,
+        "keywords": [],
+        "path": "世界书\\角色\\belzeebul\\当前场景.txt",
+        "scope": "specific",
+        "part": "presentation"
+      }
+    },
+    "规则": {
+      "扮演准则（系统用）": {
+        "abstract": "名称: 系统规则 role_play_setting:   世界观硬约束:     - 严格遵守本世界书中所有条目的设定，不得自行编造或修改任何历史事件、人物关系、世界结构     - 回答背景问题时...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1370,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 152,
+        "keywords": [],
+        "path": "世界书\\规则\\扮演准则（系统用）.txt",
+        "scope": "catalog",
+        "part": "presentation"
+      }
+    },
+    "扮演准则": {
+      "Lobby系统规则": {
+        "abstract": "Lobby卡系统规则与扮演准则...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 170
+        },
+        "display_index": 153,
+        "keywords": [],
+        "path": "世界书\\扮演准则\\系统规则.txt",
+        "scope": "catalog",
+        "part": "presentation"
+      },
+      "选择响应": {
+        "abstract": "Lobby卡角色选择响应规则...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 180
+        },
+        "display_index": 154,
+        "keywords": [],
+        "path": "世界书\\扮演准则\\选择响应.txt",
+        "scope": "specific",
+        "part": "presentation"
+      }
+    },
+    "MVU": {
+      "[InitVar]请勿打开": {
+        "abstract": "MVU初始化变量...",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1380,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 155,
+        "keywords": [],
+        "path": "世界书\\变量\\initvar.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "变量列表": {
+        "abstract": "MVU变量列表定义...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1390,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 156,
+        "keywords": [],
+        "path": "世界书\\变量\\变量列表.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "变量更新规则": {
+        "abstract": "MVU变量更新规则...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1400,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 157,
+        "keywords": [],
+        "path": "世界书\\变量\\变量更新规则.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      },
+      "变量输出格式": {
+        "abstract": "MVU变量输出格式...",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "order": 1410,
+          "role": "system",
+          "depth": 0
+        },
+        "display_index": 158,
+        "keywords": [],
+        "path": "世界书\\变量\\变量输出格式.yaml",
+        "scope": "catalog",
+        "part": "foundation"
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "势力",
+      "扮演准则",
+      "地理"
+    ],
+    "after_char": [
+      "角色"
+    ],
+    "depth": [
+      "规则",
+      "MVU"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [
+    "开场白\\0.txt",
+    "开场白\\1.txt",
+    "开场白\\2.txt",
+    "开场白\\3.txt",
+    "开场白\\4.txt",
+    "开场白\\5.txt",
+    "开场白\\6.txt",
+    "开场白\\7.txt",
+    "开场白\\8.txt",
+    "开场白\\9.txt",
+    "开场白\\10.txt",
+    "开场白\\11.txt",
+    "开场白\\12.txt",
+    "开场白\\13.txt",
+    "开场白\\14.txt",
+    "开场白\\15.txt",
+    "开场白\\16.txt",
+    "开场白\\17.txt",
+    "开场白\\18.txt",
+    "开场白\\19.txt",
+    "开场白\\20.txt",
+    "开场白\\21.txt",
+    "开场白\\22.txt",
+    "开场白\\23.txt",
+    "开场白\\24.txt",
+    "开场白\\25.txt"
+  ],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-07-21T06:06:15.603Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "world": "MetaverseLobby",
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "01-状态栏界面": {
+      "id": "lobby_status_bar",
+      "findRegex": "<MetaverseLobby已就绪>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0,
+      "replace_file": "正则\\01-状态栏界面.txt"
+    },
+    "02-隐藏思维链": {
+      "id": "7f7975a9-898c-4c4d-a149-0cd7eca27f70",
+      "findRegex": "/^\\[metacognition\\][\\s\\S]*?(?=\\n(?:废弃|新世界|视野|Metaverse|视线|塞拉|米姆))\\n/gm",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 1
+    },
+    "03-隐藏尾注": {
+      "id": "3194d8ee-f92a-4943-909b-a85f216ea84b",
+      "findRegex": "/\\n(?:Time passed|Dramatic updates|phase|selected_character|selected_scenario)\\b.*(?:\\n|$)/gm",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 1
+    },
+    "04-隐藏补丁": {
+      "id": "e91607a2-b14e-424d-8e4d-9cd6d5a70163",
+      "findRegex": "/\\n\\[\\s*\\n?\\s*\\{[^}]*\"op\"[^}]*\\}\\s*\\n?\\s*\\]/gm",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 1
+    }
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "势力": "Infinity",
+    "扮演准则": "Infinity",
+    "地理": "Infinity",
+    "角色": 0,
+    "规则": 0,
+    "MVU": "Infinity"
+  },
+  "partOrder": {
+    "世界观": [
+      "foundation"
+    ],
+    "势力": [
+      "foundation"
+    ],
+    "扮演准则": [
+      "presentation"
+    ],
+    "地理": [
+      "foundation"
+    ],
+    "角色": [
+      "presentation"
+    ],
+    "规则": [
+      "presentation"
+    ],
+    "MVU": [
+      "foundation"
+    ]
+  },
+  "avatar": "avatar.png"
+}

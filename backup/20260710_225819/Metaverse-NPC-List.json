@@ -1,0 +1,56 @@
+{
+    "version": 2,
+    "name": "Metaverse-NPC-List",
+    "disableSend": false,
+    "placeBeforeInput": false,
+    "injectInput": false,
+    "color": "rgba(15, 52, 96, 0.3)",
+    "onlyBorderColor": true,
+    "qrList": [
+        {
+            "id": 1, "showLabel": true, "label": "旧人类战争篇 (7人)",
+            "message": "/echo 艾克雷尔 / 该隐 / 达因斯雷夫 / 断绝的破坏神 / 提亚马特 / 拉托娜 / 格兰雷斯",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 2, "showLabel": true, "label": "电脑世界篇 Liberate (8人)",
+            "message": "/echo MIR三姐妹(赫卡蒂/阿尔忒弥斯/塞蕾娜) / 远古之蓝 / 利希德修茨 / 提丰 / WISEMAN / 潘多拉",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 3, "showLabel": true, "label": "电脑世界篇 Observe (7人)",
+            "message": "/echo 天狼星 / 轩辕十四 / 休伯利斯 / 厄里斯 / 布里兰特 / 格拉维 / 马尔库特女神",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 4, "showLabel": true, "label": "电脑世界篇 Reconnect (10人)",
+            "message": "/echo 狄安娜 / 露娜 / 塞拉菲塔 / 阿雷斯 / 捷夫提 / 尤巴尔 / 梅德 / 缇欧 / 泰斯塔蒙特 / 贝尔泽布特",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 5, "showLabel": true, "label": "电脑世界篇 Revive (13人)",
+            "message": "/echo 安歇尔&西梅翁 / NEO / 金恩 / 塞蕾 / 雪儿 / 斯托姆 / 迪安 / 尼加尔 / 贝格尔米尔 / 巴西安 / 雷布尔",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 6, "showLabel": true, "label": "新世界篇 (6人)",
+            "message": "/echo 索尔娜 / 塞拉菲娜 / 塞夏特 / 古龙 / 混沌巨人-雷布尔 / 米姆·米库拉",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 7, "showLabel": true, "label": "地上真人篇 (12人)",
+            "message": "/echo 奥米茄 / 伊泽维尔 / 约拿 / 蕾娜 / 基德翁 / 米利安姆 / 萨乌尔 / 布鲁(远古之蓝) / 米吉多 / 亚哈 / 拔示巴 / 梅尼",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 8, "showLabel": true, "label": "乐园事变 / 后日谈 (26人)",
+            "message": "/echo 索罗(王子) / 约基姆 / 米斯拉 / 尼亚 / 艾萨克 / 米卡 / 丹迪 / 洛特 / 马尔杜克 / 萨尔贡 / 凯南 / 艾娃 / 艾莉夏 / 纳丁 / 德威格 / 安夏尔 / 艾斯特尔 / 蕾亚 / 沃特 / 赛罗 / 泽法 / 艾尔 / 尼亚拔示巴 / 索罗Metaverse / 米斯拉Metaverse / 拔示巴Metaverse",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        },
+        {
+            "id": 9, "showLabel": true, "label": "次元放浪记 (23人)",
+            "message": "/echo 威廉 / 艾莉尼 / 玛利亚 / 毛毛&吉吉 / 林内 / 拉维娜 / 阿斯托尔 / 艾弗雷特 / 格雷 / 希尔德 / 安克 / 海伯里昂 / 吉格拉特 / 灾厄简 / 海凯 / 贝奈黛塔 / 莉扎 / 艾比斯 / 拉尔瓦 / 诺瓦",
+            "contextList": [], "preventAutoExecute": false, "isHidden": false
+        }
+    ]
+}

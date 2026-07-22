@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHUNITHM Metaverse 世界书</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0;display:flex;height:100vh}
+.sidebar{width:260px;background:#16213e;overflow-y:auto;padding:12px;border-right:1px solid #0f3460;flex-shrink:0}
+.sidebar h2{color:#e94560;font-size:16px;margin-bottom:8px}
+.search{width:100%;padding:8px 12px;font-size:13px;background:#0f3460;border:none;border-radius:4px;color:#fff;margin-bottom:12px;outline:none}
+.search::placeholder{color:#888}
+.era{margin-bottom:4px}
+.era-title{font-weight:bold;color:#ddd;font-size:13px;cursor:pointer;padding:4px 6px;border-radius:3px;display:flex;justify-content:space-between}
+.era-title:hover{background:#0f3460}
+.era-title .count{color:#888;font-size:11px}
+.char{padding:3px 16px;font-size:12px;cursor:pointer;color:#aaa}
+.char:hover{color:#fff;background:#0f3460;border-radius:3px}
+.char.active{color:#e94560;font-weight:bold}
+.main{flex:1;overflow-y:auto;padding:24px}
+.card{background:#16213e;border-radius:8px;padding:24px;border-left:3px solid #e94560;max-width:720px}
+.card h1{font-size:22px;color:#e94560;margin-bottom:2px}
+.card .era-tag{display:inline-block;background:#e94560;color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;margin-bottom:12px}
+.card .meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;color:#aaa;font-size:12px}
+.card .meta span{background:#0f3460;padding:2px 8px;border-radius:4px}
+.card .section{margin-top:16px;border-top:1px solid #0f3460;padding-top:12px}
+.card .section-title{color:#e94560;font-weight:bold;font-size:14px;margin-bottom:8px}
+.card p,.card li{color:#ccc;font-size:13px;line-height:1.6}
+.card ul{padding-left:16px;list-style:none}
+.card li::before{content:'- ';color:#e94560}
+.no-result{text-align:center;color:#666;margin-top:40px;font-size:14px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+  <h2>Metaverse 世界书</h2>
+  <input class="search" id="search" placeholder="搜索角色..." oninput="filter()">
+  <div id="era-list">加载中...</div>
+</div>
+
+<div class="main" id="main">
+  <div class="no-result">← 从左侧选择角色</div>
+</div>
+
+<script>
+let allData = [];
+
+fetch('worldbook_data.json')
+.then(r => r.json())
+.then(data => {
+  allData = data;
+  buildSidebar(data);
+});
+
+function buildSidebar(data) {
+  let eras = {};
+  for (let d of data) {
+    let e = d.era || '其他';
+    if (!eras[e]) eras[e] = [];
+    eras[e].push(d);
+  }
+  
+  let order = ['旧人类战争篇','地上新人篇·起源','电脑世界篇','新世界篇','地上真人篇','乐园事变','后日谈','外传·边缘世界','次元放浪记'];
+  let html = '';
+  for (let era of order) {
+    let chars = eras[era];
+    if (!chars) continue;
+    html += `<div class="era"><div class="era-title">${era} <span class="count">${chars.length}</span></div>`;
+    for (let c of chars) {
+      html += `<div class="char" data-name="${escHtml(c.name)}" onclick="showChar('${escHtml(c.name)}')">${c.name}</div>`;
+    }
+    html += '</div>';
+  }
+  // Add any remaining eras
+  for (let era in eras) {
+    if (order.includes(era)) continue;
+    html += `<div class="era"><div class="era-title">${era} <span class="count">${eras[era].length}</span></div>`;
+    for (let c of eras[era]) {
+      html += `<div class="char" data-name="${escHtml(c.name)}" onclick="showChar('${escHtml(c.name)}')">${c.name}</div>`;
+    }
+    html += '</div>';
+  }
+  document.getElementById('era-list').innerHTML = html;
+}
+
+function showChar(name) {
+  document.querySelectorAll('.char').forEach(c => c.classList.remove('active'));
+  let el = document.querySelector(`.char[data-name="${CSS.escape(name)}"]`);
+  if (el) el.classList.add('active');
+  
+  let d = allData.find(c => c.name === name);
+  if (!d) { document.getElementById('main').innerHTML = '<div class="no-result">未找到</div>'; return; }
+  
+  let bg = (d.background || '').replace(/\n/g, '<br>').replace(/- /g, '<li>').replace(/<li>/g, '</li><li>').replace(/^<\/li>/,'');
+  let full = (d.full || '').replace(/\n/g, '<br>');
+  
+  let html = `<div class="card">
+    <h1>${d.name}</h1>
+    <div class="era-tag">${d.era}</div>
+    <div class="meta">
+      ${d.age ? `<span>年龄: ${d.age}</span>` : ''}
+      ${d.gender ? `<span>性别: ${d.gender}</span>` : ''}
+      ${d.faction ? `<span>${d.faction}</span>` : ''}
+      ${d.series ? `<span>${d.series}</span>` : ''}
+    </div>`;
+  
+  if (d.identity || d.appearance || d.feature) {
+    html += `<div class="section">
+      <div class="section-title">基本信息</div>`;
+    if (d.identity) html += `<p><b>身份:</b> ${d.identity}</p>`;
+    if (d.appearance) html += `<p><b>外貌:</b> ${d.appearance}</p>`;
+    if (d.feature) html += `<p><b>特征:</b> ${d.feature}</p>`;
+    html += `</div>`;
+  }
+  
+  if (bg && bg.trim()) {
+    html += `<div class="section">
+      <div class="section-title">背景设定</div>
+      <p>${bg}</p>
+    </div>`;
+  }
+  
+  html += '</div>';
+  document.getElementById('main').innerHTML = html;
+}
+
+function filter() {
+  let q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.char').forEach(c => {
+    let name = (c.dataset.name || '').toLowerCase();
+    c.classList.toggle('hidden', q && !name.includes(q));
+  });
+}
+
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+CSS.escape = CSS.escape || function(v) { return v.replace(/([^\w-])/g, '\\$1'); };
+</script>
+</body>
+</html>

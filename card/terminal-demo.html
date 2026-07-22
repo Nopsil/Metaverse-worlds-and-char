@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHUNITHM Metaverse Terminal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+:root {
+  --bg-deep: rgba(7,11,18,0.95);
+  --cyan: #00FFCC;
+  --yellow: #E5F500;
+  --pink: #E94560;
+  --panel-bg: rgba(7,11,18,0.85);
+  --border-glow: 0 0 15px #00FFCC, inset 0 0 10px rgba(0,255,204,0.5);
+  --text-glow: 0 0 8px #00FFCC;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body {
+  background: radial-gradient(ellipse at center, #0a1628 0%, #050a12 70%);
+  color: #c0e0e0;
+  font-family: 'Noto Sans SC', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-grid {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background-image: linear-gradient(rgba(0,255,204,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,204,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-scan {
+  position: fixed; top:0; left:0; width:100%; height:2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: scan 4s linear infinite;
+  pointer-events: none; z-index: 0;
+  opacity: 0.3;
+}
+@keyframes scan { 0%{top:0} 100%{top:100%} }
+
+.container {
+  max-width: 1100px; margin: 0 auto; padding: 20px;
+  position: relative; z-index: 1;
+}
+
+.header {
+  text-align: center; padding: 30px 0;
+  position: relative;
+}
+.header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2em; font-weight: 900;
+  color: var(--cyan);
+  text-shadow: 0 0 20px var(--cyan), 0 0 40px rgba(0,255,204,0.5);
+  letter-spacing: 4px;
+  margin-bottom: 6px;
+}
+.header .sub {
+  font-size: 13px; color: var(--yellow);
+  letter-spacing: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Accordion */
+.accordion { margin: 10px 0; }
+.acc-header {
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,255,204,0.2);
+  border-left: 3px solid var(--cyan);
+  padding: 14px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--cyan);
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 0 8px rgba(0,255,204,0.15);
+}
+.acc-header:hover {
+  box-shadow: var(--border-glow);
+  border-left-color: var(--yellow);
+  color: var(--yellow);
+}
+.acc-header::after {
+  content: '▼';
+  position: absolute; right: 20px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  transition: transform 0.3s;
+}
+.acc-header.open::after { transform: translateY(-50%) rotate(180deg); }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.acc-body.open { max-height: 4000px; }
+.acc-content {
+  background: rgba(7,11,18,0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,255,204,0.1);
+  border-top: none;
+  padding: 16px 20px;
+  color: #a0c8c8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Skewed tabs */
+.tab-bar {
+  display: flex; gap: 4px; margin: 16px 0;
+  flex-wrap: wrap;
+}
+.tab {
+  background: rgba(7,11,18,0.8);
+  border: 1px solid rgba(0,255,204,0.2);
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #8ab8b8;
+  transform: skewX(-12deg);
+  transition: all 0.25s;
+}
+.tab span { display: block; transform: skewX(12deg); }
+.tab:hover, .tab.active {
+  background: rgba(0,255,204,0.1);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 12px rgba(0,255,204,0.3);
+}
+
+/* NPC Grid */
+.npc-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+@media(max-width:768px){ .npc-grid{ grid-template-columns:1fr; } }
+
+.npc-list {
+  max-height: 500px; overflow-y: auto;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,255,204,0.1);
+}
+.npc-search {
+  width: 100%; padding: 8px 12px; font-size: 12px;
+  background: rgba(0,255,204,0.05); border: none; border-bottom: 1px solid rgba(0,255,204,0.2);
+  color: #fff; outline: none;
+}
+.npc-search::placeholder { color: #506868; }
+.npc-item {
+  padding: 8px 12px; cursor: pointer;
+  font-size: 13px; color: #8ab8b8;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+  word-break: keep-all;
+}
+.npc-item:hover, .npc-item.active {
+  color: var(--cyan);
+  border-left-color: var(--cyan);
+  background: rgba(0,255,204,0.05);
+  text-shadow: var(--text-glow);
+}
+
+.npc-card {
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,255,204,0.2);
+  padding: 20px;
+  box-shadow: var(--border-glow);
+  max-height: 500px; overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.npc-card h3 {
+  color: var(--cyan);
+  text-shadow: var(--text-glow);
+  font-size: 18px; margin-bottom: 4px;
+}
+.npc-card .era-tag {
+  display: inline-block;
+  background: rgba(229,245,0,0.15);
+  color: var(--yellow);
+  font-size: 10px; padding: 2px 8px;
+  margin-bottom: 10px;
+}
+.npc-card .meta {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.npc-card .meta span {
+  background: rgba(0,255,204,0.08);
+  border: 1px solid rgba(0,255,204,0.15);
+  font-size: 11px; padding: 2px 6px;
+}
+.npc-card img {
+  max-width: 100%; max-height: 300px; border-radius: 6px;
+  margin: 12px 0; display: block;
+  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+}
+
+/* Era command block */
+.cmd-block {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(229,245,0,0.3);
+  border-left: 3px solid var(--yellow);
+  padding: 12px 16px;
+  margin-top: 10px;
+  font-size: 11px; color: var(--yellow);
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+@keyframes breathe {
+  0%,100% { text-shadow: 0 0 5px var(--cyan), 0 0 10px rgba(0,255,204,0.5); }
+  50% { text-shadow: 0 0 15px var(--cyan), 0 0 30px rgba(0,255,204,0.8); }
+}
+.breathe { animation: breathe 2s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(0,255,204,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(0,255,204,0.2); border-radius: 2px; }
+.char-hint { color: #506868; font-size: 11px; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-scan"></div>
+
+<div class="container">
+  <div class="header">
+    <h1>CHUNITHM METAVERSE</h1>
+    <div class="sub">TERMINAL v2.0 // CROSS THE VERSE</div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">🧭 世界总览 — SYSTEM OVERVIEW</div>
+    <div class="acc-body"><div class="acc-content">
+      <p style="margin-bottom:8px"><b style="color:var(--cyan)">CHUNITHM Metaverse</b> — 旧人类创造的巨型电脑乐园与现实废土并存的末世体系。</p>
+      <p>🌍 <b style="color:var(--yellow)">地上世界</b>：被污染后由机械种重建的废土。真人从人工子宫中诞生修复大地，寿命有限。太阳已消失，头顶是人工光源。</p>
+      <p>💻 <b style="color:var(--yellow)">Metaverse</b>：人类意识上传的巨型虚拟乐园。由框架主脑和十二最古管理。涅墨西斯正在入侵。</p>
+      <p>⚔️ <b style="color:var(--pink)">核心冲突</b>：真人反抗神明 / 涅墨西斯 vs 框架主脑 / 归还者穿梭两界</p>
+    </div></div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">🔰 新手开局 — NEW PLAYER GUIDE</div>
+    <div class="acc-body"><div class="acc-content">
+      <p style="color:var(--yellow);margin-bottom:8px">🎭 你对这个世界一无所知是完全合理的。大胆提问！</p>
+      <p>1️⃣ <b>误入废土的穿越者</b> — 来自现代地球，对真人社会毫无概念</p>
+      <p>2️⃣ <b>空白归还者</b> — 刚从 Metaverse 出来，记忆模糊</p>
+      <p>3️⃣ <b>废弃殖民地拾荒者</b> — 在废墟中长大，被过往战争遗迹包围</p>
+    </div></div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header open" onclick="toggleAcc(this)">👤 核心NPC检索 — CHARACTER DATABASE (<span id="npc-count">114</span>)</div>
+    <div class="acc-body open"><div class="acc-content">
+      <div class="tab-bar" id="era-tabs"></div>
+      <div class="npc-grid">
+        <div class="npc-list" id="npc-list-wrap">
+          <input class="npc-search" id="npc-search" placeholder="🔍 搜索角色..." oninput="filterNPCs()">
+          <div id="npc-list" style="max-height:450px;overflow-y:auto"></div>
+        </div>
+        <div class="npc-card" id="npc-card">
+          <p style="color:#506868;text-align:center;padding:60px 20px">选择左侧角色查看全息档案</p>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">🗺️ 时代篇章 — ERA SWITCH</div>
+    <div class="acc-body"><div class="acc-content">
+      <div class="tab-bar" id="era-switch-tabs">
+        <div class="tab active" onclick="switchEra('oldwar', this)"><span>🏛️ 旧人类战争</span></div>
+        <div class="tab" onclick="switchEra('liberate', this)"><span>🔓 Liberate</span></div>
+        <div class="tab" onclick="switchEra('observe', this)"><span>🔍 Observe</span></div>
+        <div class="tab" onclick="switchEra('reconnect', this)"><span>🔗 Reconnect</span></div>
+        <div class="tab" onclick="switchEra('revive', this)"><span>🔄 Revive</span></div>
+        <div class="tab" onclick="switchEra('new', this)"><span>🌟 新世界</span></div>
+        <div class="tab" onclick="switchEra('ground', this)"><span>🏜️ 地上真人</span></div>
+        <div class="tab" onclick="switchEra('rakuen', this)"><span>⚔️ 乐园事变</span></div>
+        <div class="tab" onclick="switchEra('cross', this)"><span>🌌 次元放浪</span></div>
+      </div>
+      <div id="era-content"></div>
+    </div></div>
+  </div>
+
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">📖 扮演准则 — RP DIRECTIVES</div>
+    <div class="acc-body"><div class="acc-content">
+      <p>1. 严格遵守世界书条目设定，不编造历史事件</p>
+      <p>2. 角色只知道自己时代的信息</p>
+      <p>3. 禁止跨时代联想：塞雷基亚 ≠ 塞拉菲娜</p>
+      <p>4. 每次只传达1-2个新概念</p>
+    </div></div>
+  </div>
+</div>
+
+<script src="npc_data.js"></script>
+<script>
+// Group by era
+const NPC_DATA = {};
+ALL_NPCS.forEach(n => {
+  if (!NPC_DATA[n.e]) NPC_DATA[n.e] = [];
+  NPC_DATA[n.e].push(n);
+});
+
+const ERA_ORDER = ['旧人类战争篇','地上新人篇·起源','电脑世界篇','新世界篇','地上真人篇','乐园事变','后日谈','外传·边缘世界','次元放浪记'];
+let currentEra = null;
+let currentFilter = '';
+
+const ERA_CONTENT = {
+  oldwar: { echo:'🏛️ 旧人类战争篇\n• 该隐创立KHD → 艾克雷尔诞生\n• 人类逃离地表 → 艾克雷尔雷电清洗\n• 达因斯雷夫vs艾克雷尔 → 同归于尽\n• 断绝破坏神屠杀 → 提亚马特诞生\n• 拉托娜 → 格兰雷斯巨神', sys:'/sys ---\n【旧人类战争篇】\n人类走到了时代的尽头。\n资源枯竭，天地污染。\n艾克雷尔被创造，又被毁灭。\n这是Metaverse诞生前的时代。\n---' },
+  liberate: { echo:'🔓 Liberate the Metaverse\n• 十二最古合议制管理Metaverse\n• 提丰篡位 → 吸收其他最古\n• MIR三姐妹诞生 → 联手弑神\n• 远古之蓝摇篮交易\n• WISEMAN逃亡', sys:'/sys ---\n【Liberate the Metaverse】\n提丰的暴政时代。\nMIR三姐妹崛起。\n最古间的权力游戏。\n---' },
+  observe: { echo:'🔍 Observe the Metaverse\n• 天狼星/轩辕十四活跃\n• 休伯利斯寄生轩辕十四\n• 厄里斯情报战\n• 布里兰特/格拉维杀毒BOT', sys:'/sys ---\n【Observe the Metaverse】\n框架主脑与涅墨西斯的暗战期。\n工厂的防卫体系建立。\n厄里斯开始情报收集。\n---' },
+  reconnect: { echo:'🔗 Reconnect the Metaverse\n• 混沌七器集结 → 大侵攻\n• ES计划启动 → 狄安娜和露娜\n• 贝尔泽布特袭击前哨\n• FREQ回光冲天击重创阿雷斯\n• 姐妹因后遗症离世', sys:'/sys ---\n【Reconnect the Metaverse】\n涅墨西斯全面入侵。\n狄安娜和露娜的故事。\n塞拉菲塔的守护。\n---' },
+  revive: { echo:'🔄 Revive the Metaverse\n• 迪安实验金恩 → 制造塞蕾\n• 潘多拉vsMIR姐妹\n• 塞蕾杀死斯托姆\n• 尼加尔提议和解 → 战争落幕\n• 贝格尔米尔守卫大门', sys:'/sys ---\n【Revive the Metaverse】\n迪安的阴谋。\n塞蕾与金恩。\n尼加尔终结战争。\n---' },
+  new: { echo:'🌟 新世界篇\n• 最古与混沌七器和解\n• 众多世界统合\n• 塞拉菲娜继承神统奏鸣剑\n• 泰斯塔蒙特夺舍米姆\n• 终结雷布尔 → 约定完成', sys:'/sys ---\n【新世界篇】\n战后统合的世界。\n圣遗物时代。\n米姆与塞拉菲娜。\n---' },
+  ground: { echo:'🏜️ 地上真人篇\n• 机械种制造真人 → 98%灭绝计划\n• 亚哈组建革新者\n• 拔示巴诞生 → 母体改造\n• 12归还种降临 → 仅蕾娜幸存\n• 蕾娜射杀亚哈 → 拔示巴夺权', sys:'/sys ---\n【地上真人篇】\n废土世界。真人反抗神明。\n归还者降临。\n蕾娜与亚哈的决战。\n---' },
+  rakuen: { echo:'⚔️ 乐园事变\n• 赛罗制造复制体 → 合议制\n• 索罗在各势力中长大\n• 拔示巴以尼亚身体夺舍复活\n• 索罗进入Metaverse轰杀赛罗\n• 蕾娜与蕾亚和平会谈', sys:'/sys ---\n【乐园事变】\n拔示巴遗产战争。\n索罗的成长与抉择。\n和平的曙光。\n---' },
+  cross: { echo:'🌌 次元放浪记\n• 太阳消失 → 人类驱逐地下\n• 艾莉尼被母亲送入次元\n• 新星云三巨头\n• 艾比斯→拉尔瓦\n• LOGOS/拾荒者/IDC', sys:'/sys ---\n【次元放浪记】\n太阳消失后的韦斯托兰废土。\n次元旅人穿梭各界。\nLOGOS、拾荒者、移动都市。\n---' }
+};
+
+// Build era tabs
+(function init() {
+  let html = '';
+  ERA_ORDER.forEach(e => {
+    if (NPC_DATA[e] && NPC_DATA[e].length > 0) {
+      html += `<div class="tab${!currentEra?' active':''}" onclick="selectEra('${e}', this)"><span>${e} (${NPC_DATA[e].length})</span></div>`;
+      if (!currentEra) currentEra = e;
+    }
+  });
+  document.getElementById('era-tabs').innerHTML = html;
+  if (currentEra) selectEra(currentEra, document.querySelector('#era-tabs .tab'));
+  document.getElementById('npc-count').textContent = ALL_NPCS.length;
+  switchEra('oldwar', document.querySelector('#era-switch-tabs .tab'));
+})();
+
+function selectEra(era, el) {
+  currentEra = era;
+  document.querySelectorAll('#era-tabs .tab').forEach(t => t.classList.remove('active'));
+  if (el) el.classList.add('active');
+  renderNPCList();
+}
+
+function renderNPCList() {
+  let chars = NPC_DATA[currentEra] || [];
+  if (currentFilter) {
+    let q = currentFilter.toLowerCase();
+    chars = chars.filter(n => n.n.toLowerCase().includes(q));
+  }
+  let html = chars.map(n =>
+    `<div class="npc-item" data-name="${escAttr(n.n)}" onclick="showNPC('${escAttr(n.n)}')">${escHtml(n.n)}</div>`
+  ).join('');
+  document.getElementById('npc-list').innerHTML = html || '<div class="char-hint">无匹配角色</div>';
+  if (chars.length > 0) showNPC(chars[0].n);
+}
+
+function filterNPCs() {
+  currentFilter = document.getElementById('npc-search').value;
+  renderNPCList();
+}
+
+function showNPC(name) {
+  document.querySelectorAll('.npc-item').forEach(i => i.classList.remove('active'));
+  let el = document.querySelector(`.npc-item[data-name="${CSS.escape(name)}"]`);
+  if (el) el.classList.add('active');
+  
+  let d = ALL_NPCS.find(n => n.n === name);
+  if (!d) return;
+  
+  let currentImg = d.img;
+  let hasEvo = d.evo_img && d.evo_img.length > 0;
+  let imgId = 'npc-img-' + Date.now();
+  let imgTag = d.img ? `<img id="${imgId}" src="${d.img}" onerror="this.style.display='none'" loading="lazy">` : '';
+  
+  let evoBtn = hasEvo ? `
+    <div class="tab" onclick="toggleEvo('${imgId}', '${escAttr(d.img)}', '${escAttr(d.evo_img)}')" style="margin-top:8px;display:inline-block">
+      <span>⚡ 限界突破 / FORM CHANGE</span>
+    </div>` : '';
+  
+  let bgLines = (d.bg || '').split('\n').filter(l => l.trim());
+  let bgHTML = bgLines.map(l => l.startsWith('- ') ? `<li>${l.substring(2)}</li>` : `<p>${l}</p>`).join('');
+  
+  document.getElementById('npc-card').innerHTML = `
+    <div id="img-wrap-${imgId}">${imgTag}</div>
+    ${evoBtn}
+    <h3 class="breathe">${escHtml(d.n)}</h3>
+    <div class="era-tag">${d.e}</div>
+    <div class="meta">
+      ${d.a ? `<span>年龄: ${d.a}</span>` : ''}
+      ${d.g ? `<span>性别: ${d.g}</span>` : ''}
+      ${d.fc ? `<span>${d.fc}</span>` : ''}
+    </div>
+    ${d.id ? `<p style="color:var(--yellow);font-size:12px;margin-bottom:6px"><b>${escHtml(d.id)}</b></p>` : ''}
+    ${d.ap ? `<p style="color:#a0c8c8;font-size:12px;margin-bottom:6px"><b>外貌:</b> ${escHtml(d.ap)}</p>` : ''}
+    ${d.ft ? `<p style="color:#8ab8b8;font-size:12px;margin-bottom:6px">${escHtml(d.ft)}</p>` : ''}
+    ${d.bg ? `<div style="color:#789898;font-size:12px;line-height:1.8;margin-top:8px;border-top:1px solid rgba(0,255,204,0.15);padding-top:8px"><b>背景设定:</b><br>${bgHTML}</div>` : ''}
+  `;
+}
+
+let evoStates = {};
+function toggleEvo(imgId, baseImg, evoImg) {
+  let img = document.getElementById(imgId);
+  if (!img) return;
+  let key = imgId;
+  if (!evoStates[key]) evoStates[key] = false;
+  evoStates[key] = !evoStates[key];
+  img.src = evoStates[key] ? evoImg : baseImg;
+  img.style.animation = 'fadeIn 0.3s ease';
+  img.style.animation = 'none';
+  img.offsetHeight;
+  img.style.animation = 'fadeIn 0.3s ease';
+}
+
+function switchEra(era, el) {
+  document.querySelectorAll('#era-switch-tabs .tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  let c = ERA_CONTENT[era];
+  document.getElementById('era-content').innerHTML = `
+    <div class="cmd-block">${c.echo}</div>
+    <div class="cmd-block" style="margin-top:8px;border-left-color:var(--cyan);color:var(--cyan)">${c.sys}</div>
+  `;
+}
+
+function toggleAcc(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+
+function escAttr(s) { return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+if (!CSS.escape) {
+  CSS.escape = function(v) { return v.replace(/([^\w-])/g, '\\$1'); };
+}
+</script>
+</body>
+</html>

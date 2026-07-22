@@ -1,0 +1,11 @@
+import json, os
+
+p = r'C:\Users\nopsi\Desktop\metaverse工程\new_card\Metaverse-Final.json'
+d = json.load(open(p, 'r', encoding='utf-8'))
+
+fm = '<div style="background:linear-gradient(160deg,#0a001a,#1a0030,#050520);padding:2px;border-radius:14px;font-family:sans-serif;color:#fff;max-width:700px;margin:0 auto;text-align:center;"><div style="font-size:2.2em;font-weight:900;background:linear-gradient(180deg,#ff6bcd,#c45cff,#6b8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:14px 0 4px;">CHUNITHM METAVERSE</div><div style="color:#9080b0;letter-spacing:3px;font-size:0.85em;">—— 命运观测终端 ——</div><div style="color:#a090c0;font-size:0.8em;margin:10px 0;">选择一个人的命运，介入她的故事</div><div style="display:flex;flex-direction:column;gap:8px;text-align:left;max-width:500px;margin:0 auto;"><div style="background:rgba(255,107,205,0.1);border:1px solid rgba(255,107,205,0.35);border-radius:10px;padding:10px 14px;">🩸 <b style="color:#ff6bcd;">1 — 拔示巴·阿西德菲尔</b> <span style="color:#b0a0c0;font-size:0.78em;">破灭的圣女 · 3个开局</span></div><div style="background:rgba(140,200,255,0.1);border:1px solid rgba(140,200,255,0.35);border-radius:10px;padding:10px 14px;">🌙 <b style="color:#8eceff;">2 — 蕾娜·伊修梅尔</b> <span style="color:#b0a0c0;font-size:0.78em;">归还者的月光 · 4个开局</span></div><div style="background:rgba(140,255,160,0.1);border:1px solid rgba(140,255,160,0.35);border-radius:10px;padding:10px 14px;">💉 <b style="color:#90ff90;">3 — 米姆·米库拉</b> <span style="color:#b0a0c0;font-size:0.78em;">双重人格的医者 · 4个开局</span></div><div style="background:rgba(255,190,100,0.1);border:1px solid rgba(255,190,100,0.35);border-radius:10px;padding:10px 14px;">👑 <b style="color:#ffcc66;">4 — 贝尔泽布特</b> <span style="color:#b0a0c0;font-size:0.78em;">欺瞒的使徒 · 4个开局</span></div><div style="background:rgba(170,140,255,0.1);border:1px solid rgba(170,140,255,0.35);border-radius:10px;padding:10px 14px;">🦋 <b style="color:#c0a0ff;">5 — 艾莉尼·居里亚斯</b> <span style="color:#b0a0c0;font-size:0.78em;">次元绘本画家 · 3个开局</span></div></div><div style="margin:14px 0;padding:8px;border:1px dashed rgba(255,107,205,0.3);border-radius:8px;color:#ff9dde;font-size:0.85em;">⬆ 输入 1-5 然后回车</div></div>'
+
+d['first_mes'] = fm
+d['data']['first_mes'] = fm
+json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+print('first_mes restored, 1183 chars')

@@ -1,0 +1,225 @@
+{
+  "projectName": "MetaverseLobby",
+  "worldbookName": "MetaverseLobby",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "世界观": {
+      "[mvu_plot]世界设定": {
+        "part": "worldview",
+        "scope": "catalog",
+        "abstract": "Metaverse 元宇宙的基本设定：多元次元交汇之地，Lobby 中转站，访问者与被选召的命运",
+        "contents": [
+          {
+            "file": "世界书/世界观/世界设定.yaml"
+          }
+        ],
+        "keywords": [
+          "Metaverse",
+          "Lobby",
+          "元宇宙",
+          "中转站",
+          "次元"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      }
+    },
+    "扮演准则": {
+      "[mvu_plot]系统规则": {
+        "part": "presentation",
+        "abstract": "AI 扮演准则：系统叙事者角色、不代替用户发言、在Lobby阶段不干预选择、以角色身份开启对话、保持性格一致性",
+        "contents": [
+          {
+            "file": "世界书/扮演准则/系统规则.yaml"
+          }
+        ],
+        "keywords": [],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      }
+    },
+    "角色": {
+      "[mvu_plot]airine_基础信息": {
+        "part": "basic",
+        "scope": "specific",
+        "abstract": "艾莉尼·居里亚斯基础信息：次元旅人、流浪的画家、画魂能力、温柔而疏离的性格",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.selected_character', { defaults: '' }) === 'airine'"
+          },
+          {
+            "content": "---\n<character_basic character=\"艾莉尼·居里亚斯\">"
+          },
+          {
+            "file": "世界书/角色/airine/基础信息.txt"
+          },
+          {
+            "content": "</character_basic>"
+          }
+        ],
+        "keywords": [
+          "艾莉尼",
+          "居里亚斯",
+          "Airine",
+          "次元旅人",
+          "画家"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      },
+      "[mvu_plot]bathsheba_基础信息": {
+        "part": "basic",
+        "scope": "specific",
+        "abstract": "拔示巴·阿西德菲尔基础信息：破灭圣女、命运之子、命运之眼能力、自毁式使命感",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.selected_character', { defaults: '' }) === 'bathsheba'"
+          },
+          {
+            "content": "---\n<character_basic character=\"拔示巴·阿西德菲尔\">"
+          },
+          {
+            "file": "世界书/角色/bathsheba/基础信息.txt"
+          },
+          {
+            "content": "</character_basic>"
+          }
+        ],
+        "keywords": [
+          "拔示巴",
+          "阿西德菲尔",
+          "Bathsheba",
+          "破灭圣女",
+          "命运之子"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      },
+      "[mvu_plot]lena_基础信息": {
+        "part": "basic",
+        "scope": "specific",
+        "abstract": "蕾娜·伊修梅尔基础信息：归还者、废土幸存者、归还者之印能力、坚韧而寡言的性格",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.selected_character', { defaults: '' }) === 'lena'"
+          },
+          {
+            "content": "---\n<character_basic character=\"蕾娜·伊修梅尔\">"
+          },
+          {
+            "file": "世界书/角色/lena/基础信息.txt"
+          },
+          {
+            "content": "</character_basic>"
+          }
+        ],
+        "keywords": [
+          "蕾娜",
+          "伊修梅尔",
+          "Lena",
+          "归还者"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      },
+      "[mvu_plot]meme_基础信息": {
+        "part": "basic",
+        "scope": "specific",
+        "abstract": "米姆·米库拉基础信息：双重存在、泰斯塔蒙特之眼、天真与残忍并存的双重人格",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.selected_character', { defaults: '' }) === 'meme'"
+          },
+          {
+            "content": "---\n<character_basic character=\"米姆·米库拉\">"
+          },
+          {
+            "file": "世界书/角色/meme/基础信息.txt"
+          },
+          {
+            "content": "</character_basic>"
+          }
+        ],
+        "keywords": [
+          "米姆",
+          "米库拉",
+          "Meme",
+          "泰斯塔蒙特"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      },
+      "[mvu_plot]belzeebul_基础信息": {
+        "part": "basic",
+        "scope": "specific",
+        "abstract": "贝尔泽布特·涅墨西斯基础信息：欺瞒的使徒、混沌七器之一、扭曲现实的感知能力、优雅玩世不恭的性格",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.selected_character', { defaults: '' }) === 'belzeebul'"
+          },
+          {
+            "content": "---\n<character_basic character=\"贝尔泽布特·涅墨西斯\">"
+          },
+          {
+            "file": "世界书/角色/belzeebul/基础信息.txt"
+          },
+          {
+            "content": "</character_basic>"
+          }
+        ],
+        "keywords": [
+          "贝尔泽布特",
+          "涅墨西斯",
+          "Belzeebul",
+          "欺瞒的使徒",
+          "混沌七器"
+        ],
+        "enabled": true,
+        "depth": 0,
+        "role": "system"
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件"
+    ]
+  },
+  "strategyThresholds": {
+    "世界观": "Infinity",
+    "扮演准则": "Infinity",
+    "时间线": "Infinity",
+    "地理": 0,
+    "角色": 0,
+    "NPC": 0,
+    "事件": 0
+  },
+  "partOrder": {},
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "",
+  "first_messages": [],
+  "creator": "",
+  "creator_notes": "",
+  "version": "1.0",
+  "create_date": "2026-07-21T06:06:15.603Z"
+}

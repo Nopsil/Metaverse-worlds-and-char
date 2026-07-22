@@ -1,0 +1,75 @@
+<%_
+;(() => {
+  const __era_rule_message = getMessageVar('stat_data', { defaults: {} }) || {};
+  const __era_rule_local = getvar('stat_data', { scope: 'local', clone: true }) || {};
+  const __era_rule_data = !_.isEmpty(__era_rule_message) ? __era_rule_message : __era_rule_local;
+  const __era_rule_hide = _.get(__era_rule_data, 'story_manager.enabled', true) === false;
+  if (!__era_rule_hide) {
+_%>
+---
+【最高优先级规则】
+如果 story_manager.enabled 为 false，代表暂停剧情管理，不自动更新story_manager路径下除了enabled以外的剧情模式、当前进度、已完成章节变量
+
+剧情变量更新规则:
+  story_manager:
+    enabled:
+      type: boolean
+      default: true
+      check:
+        - 控制剧情管理是否启用，true时正常更新剧情变量，false时不自动更新story_manager路径下除enabled外的字段
+    mode:
+      type: '"日常" | "特殊"'
+      check:
+        - 日常表示自由互动，特殊表示正在推进主线剧情
+        - 仅当{{user}}明确表达推进主线意图时，才可由日常切换为特殊
+        - 当前Chapter演绎完毕后，切回日常
+        - mode切回日常时，应同步清空current下的进行中进度
+    current:
+      vol:
+        type: '"" | Vol0 | Vol1 | Vol2 | Vol3 | Vol4 | Vol5 | VolF | Vol6 | VolEX'
+        check:
+          - 仅在mode为特殊时填写，mode为日常时必须为空字符串
+          - 表示当前正在推进的Vol
+          - 切换到新Vol时才更新
+      chapter:
+        type: '"" | Ch1 | Ch2 | Ch3 | Ch4'
+        check:
+          - 仅在mode为特殊时填写，mode为日常时必须为空字符串
+          - 表示当前正在推进的Chapter
+          - 同一Vol内按顺序推进，不回退到已完成Chapter
+      seq:
+        type: number
+        check:
+          - mode为日常时必须为0
+          - 开启新Chapter时重置为1
+          - 仅当当前Seq全部演绎完毕后，才推进到下一个Seq
+          - Seq严格递增推进，不回退
+    completed_chapters:
+      type: "{Vol0:str[];Vol1:str[];Vol2:str[];Vol3:str[];Vol4:str[];Vol5:str[];VolF:str[];Vol6:str[];VolEX:str[]}"
+      check:
+        - 仅在当前Chapter最后一个Seq的最后一个Scene演绎完毕后，才写入对应完成记录
+        - 同一Vol内按顺序记录已完成章节
+        - 已完成Chapter不删除、不回退、不重复写入
+        - 作为是否可重演、是否满足前置条件的依据
+      Vol0:
+        type: "str[]"
+      Vol1:
+        type: "str[]"
+      Vol2:
+        type: "str[]"
+      Vol3:
+        type: "str[]"
+      Vol4:
+        type: "str[]"
+      Vol5:
+        type: "str[]"
+      VolF:
+        type: "str[]"
+      Vol6:
+        type: "str[]"
+      VolEX:
+        type: "str[]"
+<%_
+  }
+})();
+_%>

@@ -1,0 +1,92 @@
+{
+  "米斯拉": {
+    "uid": 52,
+    "key_in_json": "53",
+    "char_count": 320
+  },
+  "尼亚": {
+    "uid": 53,
+    "key_in_json": "54",
+    "char_count": 305
+  },
+  "泽法": {
+    "uid": 88,
+    "key_in_json": "89",
+    "char_count": 338
+  },
+  "约基姆": {
+    "uid": 90,
+    "key_in_json": "91",
+    "char_count": 277
+  },
+  "艾萨克": {
+    "uid": 91,
+    "key_in_json": "92",
+    "char_count": 415
+  },
+  "马尔杜克": {
+    "uid": 93,
+    "key_in_json": "94",
+    "char_count": 402
+  },
+  "艾莉夏": {
+    "uid": 95,
+    "key_in_json": "96",
+    "char_count": 333
+  },
+  "纳丁": {
+    "uid": 96,
+    "key_in_json": "97",
+    "char_count": 346
+  },
+  "德威格": {
+    "uid": 97,
+    "key_in_json": "98",
+    "char_count": 196
+  },
+  "安夏尔": {
+    "uid": 98,
+    "key_in_json": "99",
+    "char_count": 356
+  },
+  "艾斯特尔": {
+    "uid": 99,
+    "key_in_json": "100",
+    "char_count": 237
+  },
+  "蕾亚": {
+    "uid": 100,
+    "key_in_json": "101",
+    "char_count": 340
+  },
+  "觉醒者巴西安": {
+    "uid": 122,
+    "key_in_json": "123",
+    "char_count": 238
+  },
+  "马尔库特的女神": {
+    "uid": 123,
+    "key_in_json": "124",
+    "char_count": 279
+  },
+  "尼亚拔示巴": {
+    "uid": 124,
+    "key_in_json": "125",
+    "char_count": 160
+  },
+  "索罗Metaverse": {
+    "uid": 125,
+    "key_in_json": "126",
+    "char_count": 125
+  },
+  "米斯拉Metaverse": {
+    "uid": 126,
+    "key_in_json": "127",
+    "char_count": 113
+  },
+  "拔示巴Metaverse": {
+    "uid": 127,
+    "key_in_json": "128",
+    "char_count": 320
+  }
+}

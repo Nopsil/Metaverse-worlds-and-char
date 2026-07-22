@@ -1,0 +1,4498 @@
+```text
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碧蓝档案 - 基沃托斯</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=EB+Garamond:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root,
+    body[data-theme="warm-white"] {
+      --bg-color: #fdfbf7;
+      --paper-color: #fffef9;
+      --text-main: #2c2c2c;
+      --text-muted: #6b5d4a;
+      --border-color: #d4caba;
+      --accent-color: #8a1c1c;
+      --font-main: 'Noto Serif SC', serif;
+      --shadow-color: rgba(0, 0, 0, 0.05);
+      --container-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --header-bg: rgba(253, 251, 247, 0.95);
+      --bg: #fdfbf7;
+      --paper: #fffef9;
+      --ink: #2c2c2c;
+      --muted: #6b5d4a;
+      --line: #d4caba;
+      --grid: rgba(212, 202, 186, 0.2);
+      --tab-active: #8c7b6a;
+      --primary-accent: #D4A574;
+      --secondary-accent: #8B6F47;
+      --content-bg: rgba(255, 255, 255, 0.6);
+    }
+
+    body[data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --paper-color: #252526;
+      --text-main: rgba(255, 251, 247, 0.84);
+      --text-muted: rgba(255, 255, 255, 0.56);
+      --border-color: #333333;
+      --accent-color: #4b4b4b;
+      --font-main: 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --container-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
+      --header-bg: rgba(37, 37, 38, 0.96);
+      --bg: #1e1e1e;
+      --paper: #252526;
+      --ink: rgba(255, 251, 247, 0.84);
+      --muted: rgba(255, 255, 255, 0.56);
+      --line: #333333;
+      --grid: rgba(61, 54, 42, 0.3);
+      --tab-active: #c8b49d;
+      --primary-accent: #a8c0ff;
+      --secondary-accent: #adc4ff;
+      --content-bg: rgba(15, 23, 42, 0.9);
+    }
+
+    body[data-theme="green"] {
+      --bg-color: #f0f5f0;
+      --paper-color: #fcfefc;
+      --text-main: #2a3a2a;
+      --text-muted: #556b55;
+      --border-color: #c8d8c8;
+      --accent-color: #556b55;
+      --shadow-color: rgba(0, 0, 0, 0.05);
+      --container-shadow: 0 5px 15px rgba(45, 60, 45, 0.05);
+      --header-bg: rgba(240, 245, 240, 0.95);
+      --bg: #f0f5f0;
+      --paper: #fcfefc;
+      --ink: #2a3a2a;
+      --muted: #556b55;
+      --line: #c8d8c8;
+      --grid: rgba(140, 170, 140, 0.15);
+      --tab-active: #8CAA8C;
+      --primary-accent: #8CAA8C;
+      --secondary-accent: #556b55;
+      --content-bg: rgba(252, 254, 252, 0.8);
+    }
+
+    body[data-theme="classic-dark"],
+    body[data-theme="beige"] {
+      --bg-color: #1a1a1a;
+      --paper-color: #262626;
+      --text-main: #d4c5b0;
+      --text-muted: #8b7d96;
+      --border-color: #3a3a3a;
+      --accent-color: #c2a878;
+      --font-main: 'Noto Serif SC', serif;
+      --shadow-color: rgba(0, 0, 0, 0.25);
+      --container-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      --header-bg: rgba(26, 26, 26, 0.95);
+      --bg: #1a1a1a;
+      --paper: #262626;
+      --ink: #d4c5b0;
+      --muted: #8b7d96;
+      --line: #3a3a3a;
+      --grid: rgba(61, 54, 42, 0.3);
+      --tab-active: #c2a878;
+      --primary-accent: #c2a878;
+      --secondary-accent: #c2a878;
+      --content-bg: rgba(38, 38, 38, 0.88);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      width: 100%
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      font-weight: 400;
+      line-height: 2;
+      font-size: 18px;
+      letter-spacing: 0.01em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 0;
+    }
+
+    body.theme-preload *,
+    body.theme-preload *::before,
+    body.theme-preload *::after {
+      transition: none !important;
+    }
+
+    body.render-pending .reading-content {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    body.render-ready .reading-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.24s ease, transform 0.24s ease;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      margin: 121px auto 40px;
+      background: transparent;
+      box-shadow: none;
+      padding: 10px 20px 30px 20px;
+      position: relative;
+      min-height: 500px;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 120px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 0 40px;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+
+    .header::after {
+      display: none;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .header h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .header .subtitle {
+      font-family: 'EB Garamond', serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+
+    .theme-controls {
+      display: flex !important;
+      gap: 10px;
+      margin-left: auto !important;
+      align-items: center;
+      flex: 1 1 auto;
+      min-width: 0;
+      justify-content: flex-end;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+    }
+
+    .theme-controls::-webkit-scrollbar {
+      display: none;
+    }
+
+    .theme-btn,
+    .settings-btn {
+      width: 60px;
+      height: 60px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--paper-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background 0.2s, transform 0.2s;
+      flex: 0 0 auto;
+      color: var(--text-main);
+      box-shadow: none;
+      position: relative;
+    }
+
+    .theme-btn:hover,
+    .settings-btn:hover {
+      background: var(--border-color);
+      transform: translateY(-1px);
+      border-color: var(--border-color);
+      box-shadow: none;
+    }
+
+    .theme-btn.active {
+      background: var(--border-color);
+      color: var(--text-main);
+      transform: none;
+      border-color: var(--border-color);
+      box-shadow: none;
+    }
+
+    .divider {
+      width: 1px;
+      height: 30px;
+      background: var(--border-color);
+      margin: 0 5px;
+      flex: 0 0 auto;
+    }
+
+    .settings-panel {
+      position: fixed;
+      top: 130px;
+      right: 40px;
+      z-index: 999;
+      background: #ffffff;
+      color: #333333;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      min-width: 250px;
+      display: none;
+      animation: slideInDown 0.3s ease-out;
+    }
+
+    .settings-panel.active {
+      display: block
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    body[data-theme="dark"] .settings-panel,
+    body[data-theme="classic-dark"] .settings-panel,
+    body[data-theme="beige"] .settings-panel {
+      background: #252526;
+      border-color: #333333;
+      color: #d4d4d4;
+    }
+
+    .settings-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary-accent);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .settings-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body[data-theme="dark"] .settings-option,
+    body[data-theme="classic-dark"] .settings-option,
+    body[data-theme="beige"] .settings-option {
+      background: #2d2d30;
+    }
+
+    .settings-option:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    body[data-theme="dark"] .settings-option:hover,
+    body[data-theme="classic-dark"] .settings-option:hover,
+    body[data-theme="beige"] .settings-option:hover {
+      background: #333337;
+    }
+
+    .settings-label {
+      font-size: 14px;
+      color: #333333 !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    body[data-theme="dark"] .settings-label,
+    body[data-theme="classic-dark"] .settings-label,
+    body[data-theme="beige"] .settings-label {
+      color: #d4d4d4 !important;
+    }
+
+    .settings-select {
+      min-width: 124px;
+      padding: 6px 30px 6px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--paper-color);
+      color: var(--text-main);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .settings-select:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(138, 28, 28, 0.12);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease
+    }
+
+    .toggle-switch.active {
+      background: var(--primary-accent)
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+    }
+
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(24px)
+    }
+
+    .status-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      padding: 0 20px
+    }
+
+    .status-tabs button {
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 0.95em;
+      color: var(--muted);
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -1px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      font-family: 'Noto Sans SC', sans-serif;
+      transition: all 0.2s
+    }
+
+    .status-tabs button.active {
+      color: var(--ink);
+      border-bottom-color: var(--tab-active);
+      font-weight: 700
+    }
+
+    .status-tabs button:hover {
+      color: var(--ink)
+    }
+
+    .status-tab-content-area {
+      overflow: visible
+    }
+
+    .status-tab-content {
+      display: none;
+      padding: 20px;
+      line-height: 1.6;
+      font-size: 0.95em
+    }
+
+    .status-tab-content.active {
+      display: block
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.2s
+    }
+
+    .btn:hover {
+      background: var(--line);
+      transform: translateY(-1px)
+    }
+
+    .ascii-map {
+      margin: 15px 0;
+      padding: 16px;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.4;
+      white-space: pre;
+      overflow: auto;
+      font-family: 'Sarasa Mono SC', 'Sarasa Gothic', 'Cascadia Code', 'Cascadia Mono', 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 13px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05)
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+      padding: 15px;
+      background: var(--bg);
+      border-radius: 6px;
+      font-size: 13px
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .legend-emoji {
+      font-size: 1.3em
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 12px;
+      background: var(--bg);
+      border-left: 3px solid var(--muted);
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1.5
+    }
+
+    #content_team {
+      background: transparent;
+      padding: 20px !important
+    }
+
+    body[data-theme="warm-white"] #content_team {
+      background: rgba(237, 244, 250, 0.5)
+    }
+
+    body[data-theme="dark"] #content_team {
+      background: transparent
+    }
+
+    body[data-theme="beige"] #content_team {
+      background: rgba(237, 244, 250, 0.3)
+    }
+
+    body[data-theme="green"] #content_team {
+      background: rgba(237, 244, 250, 0.3)
+    }
+
+    .team-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 24px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+    }
+
+    body[data-theme="dark"] .team-section {
+      background: rgba(15, 23, 42, 0.6)
+    }
+
+    body[data-theme="beige"] .team-section {
+      background: rgba(255, 255, 255, 0.8)
+    }
+
+    body[data-theme="green"] .team-section {
+      background: rgba(255, 255, 255, 0.8)
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2C3E50;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #EDF4FA
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 290px)) !important;
+      gap: 16px;
+      justify-content: start
+    }
+
+    .student-slot {
+      background: #F8FBFD;
+      border: 1px solid #E1EBF4;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s
+    }
+
+    .student-slot:hover {
+      border-color: #5BA4E5;
+      box-shadow: 0 2px 8px rgba(91, 164, 229, 0.15);
+      transform: translateY(-2px)
+    }
+
+    .student-slot.empty {
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-style: dashed;
+      border-color: #D5E5F2;
+      background: white
+    }
+
+    .empty-icon {
+      font-size: 32px;
+      color: #B8CDE3;
+      margin-bottom: 8px
+    }
+
+    .empty-text {
+      font-size: 13px;
+      color: #8FA8C2;
+      font-weight: 500
+    }
+
+    .character-preview {
+      height: 350px;
+      background: linear-gradient(to bottom, #D9EAFC, #EDF4FA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative
+    }
+
+    .character-icon {
+      font-size: 120px
+    }
+
+    .character-level {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(44, 62, 80, 0.85);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .character-rarity {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      color: #FFB84D;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .character-info {
+      padding: 14px
+    }
+
+    .character-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2C3E50;
+      margin-bottom: 6px
+    }
+
+    .character-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px
+    }
+
+    .role-tag {
+      background: #EDF4FA;
+      color: #5BA4E5;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .weapon-type {
+      font-size: 11px;
+      color: #8FA8C2;
+      font-weight: 500
+    }
+
+    .stats-row {
+      margin-bottom: 8px
+    }
+
+    .stat-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #8FA8C2;
+      margin-bottom: 3px;
+      font-weight: 500
+    }
+
+    .reading-content {
+      background: transparent;
+      padding: 30px 30px;
+      margin: 0;
+      transition: none;
+      position: relative;
+      overflow: visible;
+      min-height: auto !important;
+      height: auto !important;
+      contain: layout style;
+      font-size: 18px
+    }
+
+    .reading-content p {
+      text-indent: 2em;
+      margin-bottom: 1.5em;
+      font-size: inherit;
+      line-height: 2.2;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      position: relative;
+      z-index: 1;
+      opacity: 1
+    }
+
+    .reading-content p:nth-child(-n+5) {
+      opacity: 0;
+      animation: fadeInParagraph 0.4s ease-out forwards
+    }
+
+    .reading-content p:nth-child(1) {
+      animation-delay: 0.05s
+    }
+
+    .reading-content p:nth-child(2) {
+      animation-delay: 0.1s
+    }
+
+    .reading-content p:nth-child(3) {
+      animation-delay: 0.15s
+    }
+
+    .reading-content p:nth-child(4) {
+      animation-delay: 0.2s
+    }
+
+    .reading-content p:nth-child(5) {
+      animation-delay: 0.25s
+    }
+
+    body[data-theme="dark"] .reading-content,
+    body[data-theme="dark"] .reading-content p,
+    body[data-theme="dark"] .bubble-text {
+      text-shadow: 0 0 1px rgba(255, 245, 235, 0.045);
+    }
+
+    .dialogue-container {
+      margin: 30px 0;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 180px;
+    }
+
+    .dialogue-bubble {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .avatar-side {
+      flex-shrink: 0;
+      width: 90px;
+      height: 90px;
+    }
+
+    .character-avatar {
+      width: 90px;
+      height: 90px;
+      max-width: 90px;
+      max-height: 90px;
+      min-width: 90px;
+      min-height: 90px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
+    }
+
+    .character-avatar-placeholder {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body[data-theme="dark"] .character-avatar-placeholder {
+      background: #3c3c3c;
+      color: #d5e2ff;
+    }
+
+    .content-side {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 0;
+    }
+
+    .character-name {
+      font-size: 16px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .name-normal {
+      font-size: 1em;
+      font-weight: normal;
+      color: inherit;
+    }
+
+    .name-main {
+      font-weight: bold;
+    }
+
+    .name-initial {
+      display: inline-block;
+      font-weight: 900;
+      font-size: 1.15em;
+      margin-right: 0.01em;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+
+    .name-initial-enlarge {
+      font-weight: 900;
+      font-size: 1.5em;
+      line-height: 0.85;
+      vertical-align: -0.08em;
+      margin-right: 0.01em;
+      display: inline-block;
+    }
+
+    .bubble-text {
+      color: var(--ink);
+      padding-left: 12px;
+      border-left: 2px solid var(--border-color);
+      min-height: 40px;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .inline-dialogue-quote {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      color: #9f5f37;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .inline-dialogue-quote .quote-mark {
+      color: #c17847;
+      font-weight: 620;
+      opacity: 0.9;
+    }
+
+    body[data-theme="dark"] .inline-dialogue-quote {
+      background: none;
+      color: #d7ba7d;
+      font-weight: 500;
+    }
+
+    body[data-theme="dark"] .inline-dialogue-quote .quote-mark {
+      color: #d7ba7d;
+      opacity: 0.85;
+    }
+
+    body[data-theme="green"] .inline-dialogue-quote {
+      background: none;
+      color: #8f7b52;
+      font-weight: 500;
+    }
+
+    body[data-theme="green"] .inline-dialogue-quote .quote-mark {
+      color: #a08b61;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .bilingual-dialogue {
+      display: block;
+      line-height: 1.6;
+    }
+
+    .bilingual-dialogue .primary-text {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .bilingual-dialogue .dialogue-divider {
+      display: block;
+      width: 90%;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.15);
+      margin: 10px auto;
+    }
+
+    .bilingual-dialogue .secondary-text {
+      display: block;
+      font-size: 0.92em;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    body[data-theme="dark"] .bilingual-dialogue .dialogue-divider {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    body[data-theme="dark"] .bilingual-dialogue .secondary-text {
+      color: #a0a0a0;
+    }
+
+    body.unified-dialogue-font .bubble-text {
+      font-size: inherit;
+    }
+
+    .custom-char-section {
+      margin-top: 14px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+    }
+
+    .custom-char-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .custom-char-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .custom-char-tab {
+      flex: 1;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 6px 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .custom-char-tab.active {
+      color: var(--ink);
+      border-color: var(--primary-accent);
+      background: rgba(212, 165, 116, 0.16);
+      font-weight: 700;
+    }
+
+    body[data-theme="dark"] .custom-char-tab {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .custom-char-tab-content {
+      display: none;
+    }
+
+    .custom-char-tab-content.active {
+      display: block;
+    }
+
+    .custom-char-hint {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .custom-char-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .custom-char-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.45);
+      transition: background 0.2s ease;
+    }
+
+    .custom-char-item:hover {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    body[data-theme="dark"] .custom-char-item {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    body[data-theme="dark"] .custom-char-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .custom-char-avatar-small,
+    .custom-char-avatar-placeholder-small {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .custom-char-avatar-small {
+      object-fit: cover;
+      display: block;
+    }
+
+    .custom-char-avatar-placeholder-small {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.12);
+      font-size: 14px;
+    }
+
+    body[data-theme="dark"] .custom-char-avatar-placeholder-small {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-char-name {
+      flex: 1;
+      font-size: 13px;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .custom-char-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-char-builtin {
+      font-size: 10px;
+      color: var(--muted);
+      padding: 1px 5px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .custom-char-action-btn {
+      padding: 2px 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 10px;
+      font-family: inherit;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .custom-char-action-btn:hover {
+      border-color: var(--primary-accent);
+      color: var(--ink);
+    }
+
+    .custom-char-action-btn.active-in-chat {
+      color: #2a6e3f;
+      border-color: #2a6e3f;
+    }
+
+    .custom-char-delete {
+      width: 22px;
+      height: 22px;
+      border: none;
+      background: transparent;
+      color: #c44;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .custom-char-delete:hover {
+      background: rgba(204, 68, 68, 0.15);
+    }
+
+    .custom-char-add-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      margin-top: 6px;
+    }
+
+    body[data-theme="dark"] .custom-char-add-form {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .custom-char-add-form input[type="text"] {
+      padding: 6px 8px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .custom-char-avatar-upload {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .custom-char-avatar-preview {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+      display: none;
+    }
+
+    .custom-char-upload-btn {
+      padding: 4px 10px;
+      border: 1px dashed var(--border-color);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-family: inherit;
+    }
+
+    .custom-char-color-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .custom-char-color-row label {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .custom-char-color-row input[type="color"] {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .custom-char-form-actions {
+      display: flex;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .custom-char-form-actions button {
+      padding: 4px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .custom-char-btn-confirm {
+      background: var(--primary-accent);
+      color: white;
+      border-color: var(--primary-accent) !important;
+    }
+
+    .custom-char-btn-cancel {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .custom-char-add-trigger {
+      width: 100%;
+      padding: 6px;
+      border: 1px dashed var(--border-color);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    @keyframes fadeInParagraph {
+      from {
+        opacity: 0;
+        transform: translateX(-10px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    .log-collapsible {
+      margin: 1.2em 0;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.05);
+      transition: border-color 0.3s ease;
+      display: block;
+      contain: layout
+    }
+
+    body[data-theme="dark"] .log-collapsible {
+      background: rgba(255, 255, 255, 0.05)
+    }
+
+    .log-header {
+      display: flex;
+      align-items: center;
+      padding: 14px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.03);
+      min-height: 48px
+    }
+
+    body[data-theme="dark"] .log-header {
+      background: rgba(255, 255, 255, 0.03)
+    }
+
+    .log-header:hover {
+      background: var(--primary-accent);
+      color: white
+    }
+
+    .log-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 6px 10px;
+      border-color: transparent transparent transparent currentColor;
+      margin-right: 12px;
+      transition: transform 0.3s ease
+    }
+
+    .log-collapsible.expanded .log-arrow {
+      transform: rotate(90deg)
+    }
+
+    .log-title {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.5px
+    }
+
+    .log-content {
+      display: none;
+      padding: 15px 20px;
+      overflow: visible;
+      max-height: none;
+      transition: all 0.3s ease;
+      flex: 0 0 auto;
+      height: auto;
+      min-height: auto
+    }
+
+    .log-collapsible.expanded .log-content {
+      display: block;
+      height: auto;
+      min-height: auto
+    }
+
+    .log-collapsible:not(.expanded) {
+      height: fit-content !important;
+      min-height: auto !important
+    }
+
+    .log-collapsible:not(.expanded) .log-content {
+      display: none !important;
+      height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important
+    }
+
+    .log-collapsible.expanded {
+      height: auto !important;
+      min-height: auto !important
+    }
+
+    .log-content p {
+      text-indent: 0 !important;
+      margin-bottom: 0.5em;
+      font-size: 0.9em;
+      line-height: 1.6;
+      opacity: 0.9
+    }
+
+    .log-content p:last-child {
+      margin-bottom: 0
+    }
+
+    .log-collapsible.quest-log {
+      border-color: #d4a055
+    }
+
+    .log-collapsible.quest-log .log-header {
+      background: rgba(212, 160, 85, 0.1)
+    }
+
+    .log-collapsible.quest-log .log-header:hover {
+      background: #d4a055
+    }
+
+    .log-collapsible.quest-log .log-title::before {
+      content: '📜 ';
+      margin-right: 4px
+    }
+
+    body[data-theme="dark"] .log-collapsible.quest-log .log-header {
+      background: rgba(212, 160, 85, 0.15)
+    }
+
+    .log-collapsible.combat-log {
+      border-color: #5BA4E5
+    }
+
+    .log-collapsible.combat-log .log-header {
+      background: rgba(91, 164, 229, 0.12)
+    }
+
+    .log-collapsible.combat-log .log-header:hover {
+      background: #5BA4E5
+    }
+
+    .log-collapsible.combat-log .log-title::before {
+      content: '⚔️ ';
+      margin-right: 4px
+    }
+
+    body[data-theme="dark"] .log-collapsible.combat-log .log-header {
+      background: rgba(91, 164, 229, 0.18)
+    }
+
+    .log-collapsible.dice-log .log-title::before {
+      content: '🎲 ';
+      margin-right: 4px
+    }
+
+    .log-collapsible.exp-log .log-title::before {
+      content: '⭐ ';
+      margin-right: 4px
+    }
+
+    .log-collapsible.loot-log {
+      border-color: #f59e0b
+    }
+
+    .log-collapsible.loot-log .log-header {
+      background: rgba(245, 158, 11, 0.1)
+    }
+
+    .log-collapsible.loot-log .log-header:hover {
+      background: #f59e0b
+    }
+
+    .log-collapsible.loot-log .log-title::before {
+      content: '💰 ';
+      margin-right: 4px
+    }
+
+    body[data-theme="dark"] .log-collapsible.loot-log .log-header {
+      background: rgba(245, 158, 11, 0.15)
+    }
+
+    .content-section {
+      margin-bottom: 24px
+    }
+
+    .content-section h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--line)
+    }
+
+    .content-section h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 16px 0 8px
+    }
+
+    .content-section p {
+      margin-bottom: 12px;
+      line-height: 1.8
+    }
+
+    .content-section ul {
+      margin: 12px 0;
+      padding-left: 24px
+    }
+
+    .content-section li {
+      margin-bottom: 8px;
+      line-height: 1.8
+    }
+
+    .emoji {
+      margin-right: 8px
+    }
+
+    .log-content::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .log-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 4px
+    }
+
+    .log-content::-webkit-scrollbar-thumb {
+      background: var(--primary-accent);
+      border-radius: 4px;
+      transition: background 0.3s
+    }
+
+    .log-content::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-accent)
+    }
+
+    .image-container {
+      margin: 1.5em 0;
+      text-align: center
+    }
+
+    .image-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden
+    }
+
+    .image-toggle-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease, height 0.3s ease
+    }
+
+    .image-toggle-btn:hover::before {
+      width: 200px;
+      height: 200px
+    }
+
+    .image-toggle-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25)
+    }
+
+    .image-toggle-btn:active {
+      transform: translateY(0)
+    }
+
+    .image-toggle-icon {
+      font-size: 16px;
+      transition: transform 0.3s ease
+    }
+
+    .image-toggle-btn.expanded .image-toggle-icon {
+      transform: rotate(180deg)
+    }
+
+    body[data-theme="dark"] .image-toggle-btn {
+      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(168, 192, 255, 0.2)
+    }
+
+    .image-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.3s ease;
+      opacity: 0
+    }
+
+    .image-content.expanded {
+      max-height: 2000px;
+      opacity: 1;
+      margin-top: 15px
+    }
+
+    .reading-content img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      will-change: transform
+    }
+
+    body[data-theme="dark"] .reading-content img {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 192, 255, 0.2)
+    }
+
+    .reading-content img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25)
+    }
+
+    body[data-theme="dark"] .reading-content img:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 192, 255, 0.4)
+    }
+
+    .image-caption {
+      font-size: 14px;
+      color: var(--secondary-accent);
+      margin-top: 8px;
+      font-style: italic;
+      opacity: 0.85
+    }
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+      cursor: zoom-out
+    }
+
+    .image-modal.active {
+      display: flex
+    }
+
+    .image-modal img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+      cursor: zoom-out;
+      animation: zoomIn 0.3s ease
+    }
+
+    .image-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10000;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%
+    }
+
+    .image-modal-close:hover {
+      transform: rotate(90deg);
+      background: rgba(255, 255, 255, 0.2)
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .battle-container {
+      padding: 20px
+    }
+
+    .battle-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+    }
+
+    body[data-theme="dark"] .battle-section {
+      background: rgba(15, 23, 42, 0.7)
+    }
+
+    body[data-theme="beige"] .battle-section,
+    body[data-theme="green"] .battle-section {
+      background: rgba(255, 255, 255, 0.85)
+    }
+
+    .resource-section .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .resource-display {
+      max-width: 500px;
+      margin: 0 auto
+    }
+
+    .cost-bar {
+      padding: 16px;
+      background: #F8FBFD;
+      border-radius: 8px;
+      border: 2px solid #E1EBF4
+    }
+
+    body[data-theme="dark"] .cost-bar {
+      background: rgba(42, 52, 90, 0.5);
+      border-color: var(--border-color)
+    }
+
+    .cost-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink)
+    }
+
+    .cost-value {
+      color: #5BA4E5;
+      font-size: 20px
+    }
+
+    .cost-bar-track {
+      height: 24px;
+      background: #E1EBF4;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 8px;
+      position: relative
+    }
+
+    body[data-theme="dark"] .cost-bar-track {
+      background: rgba(0, 0, 0, 0.3)
+    }
+
+    .cost-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #5BA4E5, #4A8FD0);
+      border-radius: 12px;
+      transition: width 0.5s ease;
+      box-shadow: 0 0 10px rgba(91, 164, 229, 0.5)
+    }
+
+    .cost-recovery {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500
+    }
+
+    .enemies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .enemy-slot {
+      background: #FFF5F5;
+      border: 2px solid #FFB8B8;
+      border-radius: 8px;
+      padding: 16px;
+      transition: all 0.3s ease
+    }
+
+    body[data-theme="dark"] .enemy-slot {
+      background: rgba(80, 30, 30, 0.5);
+      border-color: rgba(255, 100, 100, 0.5)
+    }
+
+    .enemy-slot:not(.empty):hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(255, 100, 100, 0.3);
+      border-color: #FF6B6B
+    }
+
+    .enemy-slot.empty {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-style: dashed;
+      background: rgba(255, 255, 255, 0.5)
+    }
+
+    .enemy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px
+    }
+
+    .enemy-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #DC3545;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    body[data-theme="dark"] .enemy-name {
+      color: #FF6B6B
+    }
+
+    .enemy-level {
+      background: rgba(220, 53, 69, 0.1);
+      color: #DC3545;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600
+    }
+
+    body[data-theme="dark"] .enemy-level {
+      background: rgba(255, 100, 100, 0.2);
+      color: #FF6B6B
+    }
+
+    .enemy-type-badge {
+      display: inline-block;
+      background: #FFD93D;
+      color: #8B4513;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 4px
+    }
+
+    .enemy-hp-bar {
+      margin: 12px 0
+    }
+
+    .enemy-hp-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    .enemy-hp-track {
+      height: 8px;
+      background: #FFE5E5;
+      border-radius: 4px;
+      overflow: hidden
+    }
+
+    body[data-theme="dark"] .enemy-hp-track {
+      background: rgba(0, 0, 0, 0.3)
+    }
+
+    .enemy-hp-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FF6B6B, #DC3545);
+      border-radius: 4px;
+      transition: width 0.5s ease
+    }
+
+    .enemy-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      font-size: 11px;
+      margin-top: 12px
+    }
+
+    .enemy-stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 4px
+    }
+
+    body[data-theme="dark"] .enemy-stat-item {
+      background: rgba(255, 255, 255, 0.05)
+    }
+
+    .enemy-stat-label {
+      color: var(--muted);
+      font-weight: 500
+    }
+
+    .enemy-stat-value {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .team-battle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .student-battle-card {
+      background: #F0F8FF;
+      border: 2px solid #B8D4F1;
+      border-radius: 8px;
+      padding: 16px;
+      transition: all 0.3s ease
+    }
+
+    body[data-theme="dark"] .student-battle-card {
+      background: rgba(30, 50, 80, 0.5);
+      border-color: rgba(100, 150, 200, 0.5)
+    }
+
+    .student-battle-card:not(.empty):hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(91, 164, 229, 0.3);
+      border-color: #5BA4E5
+    }
+
+    .student-battle-card.empty {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-style: dashed;
+      background: rgba(255, 255, 255, 0.5)
+    }
+
+    .student-battle-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px
+    }
+
+    .student-battle-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2C3E50
+    }
+
+    body[data-theme="dark"] .student-battle-name {
+      color: var(--ink)
+    }
+
+    .student-battle-level {
+      background: rgba(91, 164, 229, 0.15);
+      color: #5BA4E5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .student-hp-bar {
+      margin: 12px 0
+    }
+
+    .student-hp-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    .student-hp-track {
+      height: 8px;
+      background: #E1EBF4;
+      border-radius: 4px;
+      overflow: hidden
+    }
+
+    body[data-theme="dark"] .student-hp-track {
+      background: rgba(0, 0, 0, 0.3)
+    }
+
+    .student-hp-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FF6B6B, #DC3545);
+      border-radius: 4px;
+      transition: width 0.5s ease
+    }
+
+    .student-hp-fill.high {
+      background: linear-gradient(90deg, #4CAF50, #45A049)
+    }
+
+    .student-hp-fill.medium {
+      background: linear-gradient(90deg, #FFB84D, #FF9800)
+    }
+
+    .student-ammo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px 0;
+      padding: 6px 10px;
+      background: rgba(91, 164, 229, 0.1);
+      border-radius: 4px;
+      font-size: 11px
+    }
+
+    body[data-theme="dark"] .student-ammo {
+      background: rgba(91, 164, 229, 0.15)
+    }
+
+    .ammo-label {
+      color: var(--muted);
+      font-weight: 500
+    }
+
+    .ammo-value {
+      color: #5BA4E5;
+      font-weight: 600
+    }
+
+    .student-buffs {
+      margin-top: 12px
+    }
+
+    .buffs-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 6px
+    }
+
+    .buff-tag {
+      display: inline-block;
+      background: #D4EDDA;
+      color: #155724;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      margin-right: 4px;
+      margin-bottom: 4px
+    }
+
+    .debuff-tag {
+      display: inline-block;
+      background: #F8D7DA;
+      color: #721C24;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      margin-right: 4px;
+      margin-bottom: 4px
+    }
+
+    body[data-theme="dark"] .buff-tag {
+      background: rgba(100, 200, 100, 0.3);
+      color: #90EE90
+    }
+
+    body[data-theme="dark"] .debuff-tag {
+      background: rgba(200, 100, 100, 0.3);
+      color: #FFB8B8
+    }
+
+    .student-detail-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+      overflow-y: auto;
+      padding: 20px
+    }
+
+    .student-detail-modal.active {
+      display: flex
+    }
+
+    .student-detail-content {
+      background: var(--paper);
+      border-radius: 16px;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: slideInUp 0.3s ease
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    body[data-theme="dark"] .student-detail-content {
+      background: rgba(15, 23, 42, 0.98)
+    }
+
+    .student-detail-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 32px;
+      color: var(--muted);
+      cursor: pointer;
+      z-index: 10001;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease
+    }
+
+    .student-detail-close:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: var(--ink);
+      transform: rotate(90deg)
+    }
+
+    body[data-theme="dark"] .student-detail-close:hover {
+      background: rgba(255, 255, 255, 0.1)
+    }
+
+    .student-detail-body {
+      padding: 60px 30px 30px
+    }
+
+    .detail-header {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--line)
+    }
+
+    .detail-avatar {
+      flex-shrink: 0;
+      width: 200px;
+      height: 280px;
+      background: linear-gradient(to bottom, #D9EAFC, #EDF4FA);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    }
+
+    .detail-avatar-rarity {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: #FFB84D;
+      font-size: 18px;
+      font-weight: 600
+    }
+
+    .detail-avatar-level {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(44, 62, 80, 0.9);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .detail-basic-info {
+      flex: 1
+    }
+
+    .detail-student-name {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px
+    }
+
+    .detail-student-meta {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap
+    }
+
+    .detail-meta-tag {
+      background: #EDF4FA;
+      color: #5BA4E5;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    body[data-theme="dark"] .detail-meta-tag {
+      background: rgba(91, 164, 229, 0.2)
+    }
+
+    .detail-exp-bar {
+      margin-top: 16px
+    }
+
+    .detail-exp-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px
+    }
+
+    .detail-exp-track {
+      height: 12px;
+      background: #E1EBF4;
+      border-radius: 6px;
+      overflow: hidden
+    }
+
+    body[data-theme="dark"] .detail-exp-track {
+      background: rgba(0, 0, 0, 0.3)
+    }
+
+    .detail-exp-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FFB84D, #FF9800);
+      border-radius: 6px;
+      transition: width 0.5s ease
+    }
+
+    .detail-section {
+      margin-bottom: 30px
+    }
+
+    .detail-section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+      padding-left: 12px;
+      border-left: 4px solid var(--primary-accent)
+    }
+
+    .detail-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px
+    }
+
+    .detail-stat-card {
+      background: rgba(91, 164, 229, 0.05);
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(91, 164, 229, 0.2)
+    }
+
+    body[data-theme="dark"] .detail-stat-card {
+      background: rgba(91, 164, 229, 0.1)
+    }
+
+    .detail-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    .detail-stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #5BA4E5
+    }
+
+    .detail-equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px
+    }
+
+    .detail-equipment-slot {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 16px;
+      border-radius: 8px;
+      border: 2px solid var(--line);
+      transition: all 0.3s ease
+    }
+
+    body[data-theme="dark"] .detail-equipment-slot {
+      background: rgba(255, 255, 255, 0.05)
+    }
+
+    .detail-equipment-slot.equipped {
+      border-color: #5BA4E5;
+      background: rgba(91, 164, 229, 0.1)
+    }
+
+    .detail-equipment-slot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    }
+
+    .detail-equipment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .detail-equipment-type {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted)
+    }
+
+    .detail-equipment-tier {
+      background: #FFB84D;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .detail-equipment-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px
+    }
+
+    .detail-equipment-name.empty {
+      color: var(--muted);
+      font-style: italic
+    }
+
+    .detail-equipment-bonus {
+      font-size: 12px;
+      color: #4CAF50;
+      margin-top: 4px
+    }
+
+    .detail-skill-card {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid var(--line);
+      margin-bottom: 16px
+    }
+
+    body[data-theme="dark"] .detail-skill-card {
+      background: rgba(255, 255, 255, 0.05)
+    }
+
+    .detail-skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px
+    }
+
+    .detail-skill-type {
+      font-size: 16px;
+      font-weight: 600;
+      color: #5BA4E5
+    }
+
+    .detail-skill-cost {
+      background: #5BA4E5;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .detail-skill-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px
+    }
+
+    .detail-skill-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    @media (max-width:1200px) {
+      .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 300px))
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .enemies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+      }
+
+      .team-battle-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+      }
+    }
+
+    @media (max-width:768px) {
+      body {
+        padding: 5px
+      }
+
+      .header {
+        height: 70px !important;
+        padding: 5px 15px !important;
+        gap: 10px
+      }
+
+      .header h1 {
+        font-size: 18px;
+        letter-spacing: 3px
+      }
+
+      .theme-controls {
+        gap: 6px;
+        justify-content: flex-end
+      }
+
+      .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px
+      }
+
+      .settings-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px
+      }
+
+      .divider {
+        height: 26px
+      }
+
+      .settings-panel {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        width: auto
+      }
+
+      .ascii-map {
+        font-size: 10px;
+        padding: 12px
+      }
+
+      .status-tab-content {
+        padding: 15px 10px
+      }
+
+      #content_team {
+        padding: 10px !important
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr
+      }
+
+      .team-section {
+        padding: 16px
+      }
+
+      .status-tabs {
+        padding: 0 10px
+      }
+
+      .status-tabs button {
+        padding: 10px 12px;
+        font-size: 0.9em
+      }
+
+      .container {
+        margin-top: 80px;
+        padding: 5px 10px 20px;
+      }
+
+      .reading-content {
+        padding: 15px 10px;
+        font-size: 16px
+      }
+
+      .reading-content p {
+        text-indent: 1.5em;
+        margin-bottom: 1em;
+        line-height: 1.9
+      }
+
+      .log-header {
+        padding: 12px 16px;
+        min-height: 44px
+      }
+
+      .log-title {
+        font-size: 14px
+      }
+
+      .image-modal img {
+        max-width: 98%;
+        max-height: 98%
+      }
+
+      .image-modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px
+      }
+
+      .image-toggle-btn {
+        padding: 8px 16px;
+        font-size: 13px
+      }
+
+      .image-toggle-icon {
+        font-size: 14px
+      }
+
+      .image-refresh-btn {
+        padding: 6px 10px;
+        font-size: 16px;
+        background: var(--primary-accent);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 32px;
+        height: 32px;
+        opacity: 0.85
+      }
+
+      .image-refresh-btn:hover {
+        background: var(--secondary-accent);
+        opacity: 1;
+        transform: scale(1.1)
+      }
+
+      .image-refresh-btn:active {
+        transform: scale(0.9)
+      }
+
+      .battle-container {
+        padding: 10px
+      }
+
+      .battle-section {
+        padding: 16px
+      }
+
+      .enemies-grid {
+        grid-template-columns: 1fr
+      }
+
+      .team-battle-grid {
+        grid-template-columns: 1fr
+      }
+
+      .student-detail-content {
+        max-height: 95vh;
+        margin: 10px
+      }
+
+      .student-detail-body {
+        padding: 50px 20px 20px
+      }
+
+      .detail-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .detail-avatar {
+        width: 160px;
+        height: 220px
+      }
+
+      .detail-student-name {
+        font-size: 24px
+      }
+
+      .detail-stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .detail-equipment-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .list-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.2s ease;
+      list-style: none
+    }
+
+    .list-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .list-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2d3748
+    }
+
+    .list-item-desc {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5
+    }
+
+    .relationship-item:hover {
+      background: #fef3f2 !important;
+      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15) !important;
+      transform: translateY(-1px)
+    }
+
+    .relationship-item:active {
+      transform: translateY(0)
+    }
+
+    .team-student-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(91, 164, 229, 0.2)
+    }
+
+    .team-student-item:active {
+      transform: translateY(0)
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 12px
+    }
+
+    .equipment-card {
+      background: white;
+      border-radius: 12px;
+      border: 3px solid #E1EBF4;
+      overflow: hidden;
+      transition: all 0.3s ease
+    }
+
+    body[data-theme="dark"] .equipment-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1)
+    }
+
+    body[data-theme="dark"] .equipment-card.equipped {
+      background: rgba(255, 255, 255, 0.1)
+    }
+
+    .equipment-card.equipped {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    }
+
+    .equipment-card.equipped:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15)
+    }
+
+    .equipment-card.empty {
+      opacity: 0.6;
+      border-style: dashed
+    }
+
+    .equipment-card-header {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.05)
+    }
+
+    .equipment-icon {
+      margin-bottom: 4px
+    }
+
+    .equipment-type {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px
+    }
+
+    .equipment-card-body {
+      padding: 12px;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .equipment-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      text-align: center
+    }
+
+    .equipment-tier {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+      text-align: center
+    }
+
+    .equipment-effect {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 6px;
+      line-height: 1.4;
+      text-align: center
+    }
+
+    .equipment-bonus {
+      font-size: 11px;
+      color: #10b981;
+      font-weight: 600;
+      margin-top: 6px;
+      text-align: center
+    }
+
+    .equipment-empty {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center
+    }
+
+    @media (max-width:768px) {
+      .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px
+      }
+    }
+
+    @media (max-width:480px) {
+      .header {
+        height: 60px !important;
+        padding: 5px 10px !important;
+      }
+
+      .header h1 {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      .header .subtitle {
+        font-size: 7px;
+        letter-spacing: 1px;
+      }
+
+      .theme-btn,
+      .settings-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+      }
+
+      .theme-controls {
+        gap: 4px;
+      }
+
+      .container {
+        margin-top: 70px;
+        padding: 5px 8px 15px;
+      }
+
+      .reading-content {
+        padding: 10px 8px;
+        font-size: 15px;
+      }
+
+      .settings-panel {
+        top: 70px;
+      }
+
+      .equipment-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="warm-white">
+  <div class="container">
+    <!-- 页眉 -->
+    <div class="header">
+      <div class="header-left">
+        <h1>🗺️ 基沃托斯</h1>
+        <div class="subtitle">Kivotos - Blue Archive</div>
+      </div>
+
+      <!-- 主题切换按钮 -->
+      <div class="theme-controls">
+        <button class="theme-btn active" data-theme="warm-white" title="纯净暖白">☁️</button>
+        <button class="theme-btn" data-theme="classic-dark" title="古典夜色">🌾</button>
+        <button class="theme-btn" data-theme="green" title="淡青护眼">🍃</button>
+        <button class="theme-btn" data-theme="dark" title="夜间模式">🌙</button>
+        <div class="divider"></div>
+        <button class="settings-btn" id="settingsBtn" title="设置">⚙️</button>
+      </div>
+    </div>
+
+    <!-- 设置面板 -->
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-title">
+        <span>⚙️</span>
+        <span>阅读设置</span>
+      </div>
+      <div class="settings-option">
+        <div class="settings-label">
+          <span>🖼️</span>
+          <span>默认展开插画</span>
+        </div>
+        <div class="toggle-switch" id="imageToggle">
+          <div class="toggle-slider"></div>
+        </div>
+      </div>
+      <div class="settings-option">
+        <div class="settings-label">
+          <span>📝</span>
+          <span>正文字体大小</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" style="padding: 4px 12px; font-size: 12px;" onclick="adjustReadingFontSize(-1)">−</button>
+          <button class="btn" style="padding: 4px 12px; font-size: 12px;" onclick="adjustReadingFontSize(1)">+</button>
+        </div>
+      </div>
+      <div class="settings-option">
+        <div class="settings-label">
+          <span>🔤</span>
+          <span>正文字体</span>
+        </div>
+        <select class="settings-select" id="readingFontSelect">
+          <option value="theme-default">跟随主题</option>
+          <option value="noto-serif">思源宋体</option>
+          <option value="yahei">微软雅黑</option>
+          <option value="heiti">黑体</option>
+          <option value="songti">宋体</option>
+          <option value="kaiti">楷体</option>
+          <option value="fangsong">仿宋</option>
+        </select>
+      </div>
+      <div class="settings-option">
+        <div class="settings-label">
+          <span>🖼️</span>
+          <span>插画显示大小</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn" style="padding: 4px 12px; font-size: 12px;" onclick="adjustImageSize(-10)">−</button>
+          <button class="btn" style="padding: 4px 12px; font-size: 12px;" onclick="adjustImageSize(10)">+</button>
+        </div>
+      </div>
+      <div class="settings-option">
+        <div class="settings-label">
+          <span>💬</span>
+          <span>统一对白字体大小</span>
+        </div>
+        <div class="toggle-switch" id="dialogueFontToggle">
+          <div class="toggle-slider"></div>
+        </div>
+      </div>
+      <div class="custom-char-section">
+        <div class="custom-char-title">🎭 对白美化角色</div>
+        <div class="custom-char-tabs">
+          <button class="custom-char-tab active" onclick="switchCharTab('cache')">📦 缓存库</button>
+          <button class="custom-char-tab" onclick="switchCharTab('chat')">💬 当前聊天</button>
+        </div>
+        <div class="custom-char-tab-content active" id="tabCache">
+          <div class="custom-char-hint">缓存库角色保存在浏览器中，跨聊天可用。点击“写入”添加到当前聊天。</div>
+          <div class="custom-char-list" id="cacheCharList"></div>
+          <div id="customCharAddForm" style="display:none;">
+            <div class="custom-char-add-form">
+              <input type="text" id="customCharNameInput" placeholder="角色名称" maxlength="20">
+              <div class="custom-char-avatar-upload">
+                <img class="custom-char-avatar-preview" id="customCharAvatarPreview">
+                <button class="custom-char-upload-btn" id="customCharUploadBtn">📷 上传头像</button>
+                <input type="file" id="customCharFileInput" accept="image/*" style="display:none;">
+              </div>
+              <div class="custom-char-color-row">
+                <label>首字染色</label>
+                <input type="color" id="customCharColorInput" value="#4f7aa8">
+              </div>
+              <div class="custom-char-form-actions">
+                <button class="custom-char-btn-cancel" onclick="cancelAddCustomChar()">取消</button>
+                <button class="custom-char-btn-confirm" onclick="confirmAddCustomChar()">添加到缓存</button>
+              </div>
+            </div>
+          </div>
+          <button class="custom-char-add-trigger" id="customCharAddBtn" onclick="showAddCustomCharForm()">+
+            新建自定义角色</button>
+        </div>
+        <div class="custom-char-tab-content" id="tabChat">
+          <div class="custom-char-hint">以下角色已写入当前聊天的MVU变量，仅在此聊天中生效。</div>
+          <div class="custom-char-list" id="chatCharList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 正文内容区域 -->
+    <div class="reading-content" id="readingContent">
+      $1
+    </div>
+  </div>
+
+  <!-- 图片预览弹窗 -->
+  <div class="image-modal" id="imageModal">
+    <span class="image-modal-close" id="modalClose">&times;</span>
+    <img id="modalImage" src="" alt="预览图片">
+  </div>
+  <script>
+    // CG收集缓存 - 记录已解锁的NSFW图片
+    window.recordCGUnlock = function (imgSrc) {
+      console.log('[CG收集] recordCGUnlock被调用，图片URL:', imgSrc);
+      try {
+        // 解析URL: .../NSFW/角色名/场景类型+编号.webp
+        const parts = imgSrc.split('/');
+        const nsfwIndex = parts.findIndex(p => p === 'NSFW');
+        if (nsfwIndex === -1 || nsfwIndex + 2 >= parts.length) {
+          console.log('[CG收集] URL格式不正确，未找到NSFW路径:', imgSrc);
+          return;
+        }
+
+        const character = decodeURIComponent(parts[nsfwIndex + 1]);
+        const fileNameWithExt = decodeURIComponent(parts[nsfwIndex + 2]);
+        const fileName = fileNameWithExt.replace(/\.webp$/, '');
+
+        // 提取场景类型（去掉末尾数字）
+        const match = fileName.match(/^(.+?)(\d+)$/);
+        if (!match) {
+          console.log('[CG收集] 文件名格式不匹配:', fileName);
+          return;
+        }
+
+        const sceneType = match[1];
+        const maxCount = IMAGE_LISTS.NSFW?.[character]?.[sceneType];
+
+        console.log('[CG收集] 解析结果:', { character, sceneType, maxCount, fileName });
+
+        if (!maxCount) {
+          console.log('[CG收集] 未在IMAGE_LISTS中找到角色或场景:', character, sceneType);
+          console.log('[CG收集] IMAGE_LISTS.NSFW中的角色列表:', Object.keys(IMAGE_LISTS.NSFW || {}));
+          if (IMAGE_LISTS.NSFW?.[character]) {
+            console.log('[CG收集] 该角色的场景列表:', Object.keys(IMAGE_LISTS.NSFW[character]));
+          }
+          return;
+        }
+
+        // 读取现有缓存
+        let unlocked = {};
+        try {
+          const data = localStorage.getItem('unlocked_cg');
+          if (data) unlocked = JSON.parse(data);
+        } catch (e) { }
+
+        // 检查是否已存在
+        if (!unlocked[character]) unlocked[character] = {};
+        if (unlocked[character][sceneType]) {
+          console.log('[CG收集] 该CG已解锁，跳过:', character, sceneType);
+          return; // 已存在，不重复写入
+        }
+
+        // 写入缓存
+        unlocked[character][sceneType] = maxCount;
+        localStorage.setItem('unlocked_cg', JSON.stringify(unlocked));
+        console.log('[CG收集] ✓ 成功解锁CG:', character, sceneType, '共', maxCount, '张');
+      } catch (e) {
+        console.error('[CG收集] 记录CG解锁失败:', e);
+      }
+    };
+
+    // 图片列表数据
+    const IMAGE_LISTS = {
+      "NSFW": {
+        "丹花伊吹": { "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 3, "从背后摸奶扣穴": 3, "后入做爱": 3, "环抱做爱": 3, "接吻": 4, "口交": 5, "女上位做爱": 4, "吮吸乳头": 3, "正面摸胸": 3, "正面视角准备插入肉棒": 3, "正面坐位做爱": 3, "做爱事后": 3, "做爱预备": 3, "默认": 3 },
+        "调月莉音": { "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 5, "从背后摸奶扣穴": 3, "后入做爱": 3, "接吻": 4, "口交": 5, "女上位做爱": 3, "乳交": 3, "吮吸乳头": 3, "脱裤袜": 2, "站姿后入做爱": 3, "正面摸胸": 3, "足交": 2, "做爱事后": 3, "做爱预备": 2, "默认": 6 },
+        "飞鸟马时": { "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 3, "从背后摸奶扣穴": 3, "后入做爱": 3, "环抱做爱": 3, "接吻": 5, "口交": 5, "女上位做爱": 3, "吮吸乳头": 3, "正面摸胸": 3, "正面视角准备插入肉棒": 3, "正面坐位做爱": 3, "做爱事后": 3, "做爱预备": 3, "默认": 3 },
+        "狐坂若藻": { "背后视角掰穴": 3, "背后视角暴露小穴": 3, "背后视角解开衣服": 2, "背后坐位做爱": 4, "边舔脚边做爱": 4, "传教士体位做爱": 4, "从背后摸奶扣穴": 3, "后入做爱": 3, "环抱做爱": 4, "接吻": 3, "口交": 7, "女上位做爱": 3, "吮吸乳头": 3, "涂防晒乳液": 4, "站姿做爱": 4, "正面摸胸": 3, "正面视角准备插入肉棒": 4, "正面坐位做爱": 3, "做爱事后": 3, "做爱预备": 3, "默认": 6 },
+        "空崎日奈": { "背后视角掰穴": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 3, "从背后摸奶扣穴": 3, "后入做爱": 3, "环抱做爱": 4, "接吻": 4, "口交": 6, "女上位做爱": 4, "吮吸乳头": 3, "正面摸胸": 3, "正面视角准备插入肉棒": 3, "正面坐位做爱": 3, "做爱事后": 3, "做爱预备": 3, "默认": 2 },
+        "龙华妃咲": { "背后视角暴露小穴": 4, "背后坐位做爱": 2, "边舔脚边做爱": 3, "传教士体位做爱": 3, "肛交": 3, "后入做爱": 3, "环抱做爱": 3, "接吻": 4, "口交": 4, "女上位做爱": 3, "吮吸乳头": 3, "站姿后入做爱": 3, "正面摸胸": 3, "正面视角准备插入肉棒": 2, "正面坐位做爱": 2, "做爱事后": 4, "做爱预备": 3, "默认": 5 },
+        "圣园未花": { "背后视角掰穴": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 5, "从背后摸奶扣穴": 3, "后入做爱": 4, "环抱做爱": 3, "接吻": 4, "口交": 5, "女上位做爱": 3, "吮吸乳头": 4, "站姿做爱": 4, "正面摸胸": 3, "正面视角准备插入肉棒": 4, "正面坐位做爱": 4, "做爱事后": 3, "做爱预备": 3, "默认": 6 },
+        "伊落玛丽": { "背后视角掰穴": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 4, "从背后摸奶扣穴": 3, "后入做爱": 3, "环抱做爱": 3, "接吻": 4, "口交": 6, "女上位做爱": 3, "吮吸乳头": 3, "站姿做爱": 3, "正面摸胸": 4, "正面视角准备插入肉棒": 3, "正面坐位做爱": 3, "做爱事后": 4, "做爱预备": 3, "默认": 7 },
+        "早濑优香": { "背后视角掰穴": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 3, "从背后摸奶扣穴": 4, "后入做爱": 3, "环抱做爱": 3, "接吻": 4, "口交": 7, "女上位做爱": 4, "吮吸乳头": 3, "站姿做爱": 4, "正面摸胸": 3, "正面视角准备插入肉棒": 4, "正面坐位做爱": 3, "做爱事后": 3, "做爱预备": 3, "默认": 8 },
+        "星野": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 2, "边舔脚边做爱": 3, "传教士体位做爱": 3, "肛交做爱": 3, "后入做爱": 3, "火车便当做爱": 3, "环抱做爱": 3, "激烈做爱": 6, "接吻": 4, "口交": 6, "摸胸": 5, "女上位做爱": 4, "乳交": 4, "睡奸做爱": 6, "素股": 3, "吮吸乳头": 3, "卧姿抬腿做爱": 3, "站姿抬腿做爱": 2, "站姿后入做爱": 5, "正面视角准备插入肉棒": 3, "掰开小穴": 3, "自慰": 2, "足交": 3, "做爱事后": 7, "默认": 4 },
+        "普拉娜": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 4, "肛交做爱": 3, "后入做爱": 3, "火车便当做爱": 3, "环抱做爱": 3, "激烈做爱": 6, "接吻": 4, "口交": 8, "摸胸": 4, "女上位做爱": 3, "乳交": 3, "素股": 3, "吮吸乳头": 3, "卧姿抱腿做爱": 3, "卧姿抬腿做爱": 3, "站姿抬腿做爱": 3, "站姿后入做爱": 3, "正面视角准备插入肉棒": 3, "掰开小穴": 3, "自慰": 3, "足交": 3, "做爱事后": 7, "默认": 5 },
+        "诺亚": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 4, "肛交做爱": 3, "后入做爱": 3, "环抱做爱": 3, "激烈做爱": 5, "接吻": 5, "口交": 8, "女上位做爱": 4, "乳交": 3, "吮吸乳头": 2, "卧姿抱腿做爱": 3, "站姿后入做爱": 4, "正面视角准备插入肉棒": 4, "掰开小穴": 3, "自慰": 3, "做爱事后": 6, "默认": 6 },
+        "砂狼白子": { "69式做爱": 4, "背后视角暴露小穴": 3, "背后坐位做爱": 4, "背后抱着亲吻": 3, "背后摸胸": 3, "边舔脚边做爱": 3, "传教士体位做爱": 5, "肛交做爱": 2, "后入做爱": 5, "激烈做爱": 5, "接吻": 5, "口交": 7, "口交射精": 3, "女上位做爱": 3, "乳交": 3, "吮吸乳头": 3, "腿交": 3, "卧姿抱腿做爱": 4, "一起洗澡摸胸": 3, "抱着做爱": 5, "掰开小穴": 3, "站姿后入做爱": 3, "正面摸胸": 3, "正面视角准备插入肉棒": 4, "自慰": 2, "做爱事后": 6, "默认": 6 },
+        "橘光": { "69式做爱": 3, "背后视角暴露小穴": 4, "边舔脚边做爱": 2, "传教士体位做爱": 3, "后入做爱": 3, "火车便当做爱": 2, "激烈做爱": 4, "接吻": 4, "口交": 6, "两个人一起与老师做爱": 7, "摸胸": 3, "女上位做爱": 3, "吮吸乳头": 2, "卧姿抱腿做爱": 3, "抱着做爱": 3, "掰开小穴": 3, "站姿后入做爱": 3, "站姿抬腿做爱": 3, "正面视角准备插入肉棒": 3, "自慰": 3, "足交": 3, "做爱事后": 4, "默认": 5 },
+        "橘望": { "69式做爱": 3, "背后视角暴露小穴": 4, "背后坐位做爱": 2, "传教士体位做爱": 4, "后入做爱": 4, "火车便当做爱": 3, "激烈做爱": 6, "接吻": 4, "口交": 5, "摸胸": 3, "女上位做爱": 3, "吮吸乳头": 3, "卧姿抱腿做爱": 3, "抱着做爱": 3, "掰开小穴": 3, "站姿后入做爱": 4, "站姿抬腿做爱": 3, "正面视角准备插入肉棒": 4, "自慰": 3, "足交": 3, "做爱事后": 5, "默认": 7 },
+        "宫子": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 4, "后入做爱": 3, "火车便当做爱": 2, "接吻": 6, "口交": 7, "摸大腿": 3, "摸胸": 4, "女上位做爱": 3, "抱起来做爱": 3, "素股": 3, "吮吸乳头": 3, "卧姿抱腿做爱": 2, "掰开小穴": 3, "站姿后入做爱": 3, "准备插入肉棒": 3, "自慰": 3, "舔小穴": 3, "足交": 3, "做爱事后": 5, "默认": 7 },
+        "爱丽丝": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 4, "边舔脚边做爱": 3, "传教士体位做爱": 4, "后入做爱": 4, "火车便当做爱": 3, "激烈做爱": 4, "接吻": 5, "口交": 6, "摸大腿": 2, "摸屁股": 3, "摸胸": 5, "女上位做爱": 3, "抱起来做爱": 3, "素股": 4, "吮吸乳头": 3, "卧姿抱腿做爱": 3, "卧姿抬腿做爱": 3, "掰开小穴": 3, "站姿后入做爱": 3, "准备插入肉棒": 3, "自慰": 3, "舔小穴": 3, "足交": 3, "做爱事后": 6, "默认": 5 },
+        "圣娅": { "69式做爱": 4, "背后视角暴露小穴": 5, "背后坐位做爱": 4, "边舔脚边做爱": 3, "传教士体位做爱": 5, "后入做爱": 3, "火车便当做爱": 2, "接吻": 6, "口交": 7, "摸胸": 4, "女上位做爱": 4, "抱起来做爱": 4, "素股": 2, "吮吸乳头": 2, "卧姿抱腿做爱": 2, "掰开小穴": 3, "站姿后入做爱": 6, "准备插入肉棒": 2, "自慰": 4, "舔小穴": 3, "足交": 4, "做爱事后": 8, "默认": 0 },
+        "渚": { "背后视角暴露小穴": 3, "背后坐位做爱": 4, "边舔脚边做爱": 3, "传教士体位做爱": 3, "后入做爱": 4, "火车便当做爱": 2, "接吻": 4, "口交": 10, "摸大腿": 2, "摸胸": 4, "女上位做爱": 3, "抱起来做爱": 3, "素股": 3, "吮吸乳头": 3, "卧姿抱腿做爱": 2, "掰开小穴": 3, "站姿后入做爱": 3, "准备插入肉棒": 3, "自慰": 3, "舔小穴": 3, "足交": 4, "做爱事后": 7, "默认": 3 },
+        "黑子": { "69式做爱": 1, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "边舔脚边做爱": 3, "传教士体位做爱": 3, "后入做爱": 3, "接吻": 5, "口交": 5, "摸胸": 4, "女上位做爱": 3, "抱起来做爱": 2, "素股": 3, "卧姿抱腿做爱": 3, "掰开小穴": 3, "站姿后入做爱": 3, "准备插入肉棒": 3, "自慰": 3, "舔小穴": 2, "足交": 3, "做爱事后": 6, "默认": 9 },
+        "妮可": { "69式做爱": 3, "背后视角暴露小穴": 3, "背后坐位做爱": 3, "卧姿抱腿做爱": 2, "口交": 6, "后入做爱": 3, "吮吸乳头": 2, "女上位做爱": 3, "抱起来做爱": 3, "接吻": 4, "掰开小穴": 3, "摸胸": 2, "火车便当做爱": 2, "站姿后入做爱": 3, "准备插入肉棒": 2, "自慰": 3, "舔小穴": 3, "足交": 3, "做爱事后": 4, "默认": 4 },
+        "明日奈": { "乳交": 3, "传教士体位做爱": 3, "做爱事后": 4, "做爱预备": 3, "准备插入肉棒": 3, "卧姿抱腿做爱": 2, "口交": 4, "后入做爱": 3, "女上位做爱": 3, "抱起来做爱": 3, "接吻": 4, "掰开小穴": 3, "摸胸": 3, "暴露小穴": 3, "正面坐位做爱": 3, "站姿后入做爱": 3, "自慰": 3, "舔小穴": 3, "边舔脚边做爱": 2, "默认": 3 },
+        "伊织": { "传教士体位做爱": 3, "做爱事后": 5, "准备插入肉棒": 3, "卧姿抱腿做爱": 2, "口交": 4, "后入做爱": 3, "吮吸乳头": 3, "女上位做爱": 3, "抱起来做爱": 3, "接吻": 4, "掰开小穴": 3, "摸胸": 3, "暴露小穴": 3, "站姿后入做爱": 3, "自慰": 3, "舔小穴": 3, "足交": 3, "边舔脚边做爱": 3, "默认": 3 },
+        "笑面教授": { "69式做爱": 2, "传教士体位做爱": 3, "做爱事后": 6, "准备插入肉棒": 2, "卧姿抱腿做爱": 2, "口交": 5, "后入做爱": 3, "吮吸乳头": 2, "女上位做爱": 3, "抱起来做爱": 3, "接吻": 5, "掰开小穴": 3, "摸胸": 4, "火车便当做爱": 3, "站姿后入做爱": 3, "站姿抬腿做爱": 3, "素股": 2, "背后坐位做爱": 3, "背后视角暴露小穴": 3, "自慰": 3, "舔小穴": 3, "足交": 3, "边舔脚边做爱": 3 }
+      },
+      "SFW": {
+        "丹花伊吹": { "害羞": 3, "惊慌": 2, "哭": 3, "默认": 4 },
+        "调月莉音": { "惊慌": 2, "哭": 2, "笑": 2, "默认": 6 },
+        "飞鸟马时": { "哭": 3, "笑": 2, "默认": 5 },
+        "狐坂若藻": { "病娇脸": 3, "害羞": 3, "惊慌": 3, "哭": 3, "捏脸": 3, "日常": 8, "战斗": 3, "默认": 8 },
+        "空崎日奈": { "害羞": 3, "惊慌": 3, "哭": 3, "默认": 6 },
+        "龙华妃咲": { "害羞": 3, "惊慌": 3, "哭": 3, "捏脸": 1, "笑": 2, "默认": 6 },
+        "圣园未花": { "害羞": 3, "惊慌": 3, "哭": 3, "捏脸": 3, "默认": 6 },
+        "伊落玛丽": { "害羞": 3, "惊慌": 3, "哭": 2, "捏脸": 3, "默认": 5 },
+        "早濑优香": { "害羞": 3, "惊慌": 3, "哭": 3, "捏脸": 2, "默认": 5 },
+        "星野": { "打哈欠": 4, "害羞": 3, "惊慌": 3, "哭": 2, "悠闲": 2, "默认": 5 },
+        "普拉娜": { "惊慌": 2, "笑": 3, "默认": 6 },
+        "诺亚": { "哭": 3, "害羞": 3, "工作": 3, "笑": 3, "赌气": 3, "默认": 5 },
+        "砂狼白子": { "惊慌": 3, "哭": 3, "笑": 3, "默认": 4 },
+        "橘光": { "害羞": 2, "惊慌": 3, "哭": 3, "笑": 3, "默认": 4 },
+        "橘望": { "害羞": 2, "惊慌": 2, "哭": 3, "默认": 3 },
+        "宫子": { "哭": 3, "害羞": 3, "惊慌": 2, "笑": 3, "默认": 6 },
+        "爱丽丝": { "哭": 3, "害羞": 3, "惊慌": 3, "笑": 4, "默认": 7 },
+        "渚": { "哭": 2, "害羞": 2, "惊慌": 3, "笑": 3, "默认": 5 },
+        "圣娅": { "哭": 3, "害羞": 3, "笑": 3, "默认": 5 },
+        "黑子": { "哭": 3, "害羞": 3, "惊慌": 2, "默认": 5 },
+        "妮可": { "哭": 2, "害羞": 3, "惊慌": 3, "笑": 3, "默认": 3 },
+        "明日奈": { "哭": 2, "害羞": 3, "惊慌": 3, "默认": 3 },
+        "伊织": { "哭": 3, "害羞": 3, "惊慌": 3, "默认": 3 },
+        "笑面教授": { "害羞": 3, "惊慌": 3, "笑": 3, "默认": 3 }
+      }
+    };
+
+    // 安全解码URL函数
+    function safeDecodeURIComponent(str) {
+      try {
+        return decodeURIComponent(str);
+      } catch (e) {
+        // 如果解码失败，尝试用另一种方式或返回原字符串
+        try {
+          return decodeURI(str);
+        } catch (e2) {
+          return str;
+        }
+      }
+    }
+
+    // 刷新图片函数
+    window.refreshImage = function (imageId, event) {
+      const imageContent = document.getElementById(imageId);
+      const img = imageContent.querySelector('img');
+      if (!img) return;
+
+      // 获取刷新按钮并添加旋转动画
+      const button = event ? event.target.closest('.image-refresh-btn') : null;
+      if (button) {
+        button.style.transform = 'rotate(360deg)';
+        button.style.transition = 'transform 0.5s ease';
+        setTimeout(() => {
+          button.style.transform = '';
+        }, 500);
+      }
+
+      // 添加加载状态视觉反馈
+      img.style.opacity = '0.5';
+      img.style.transition = 'opacity 0.3s ease';
+
+      const currentSrc = img.src;
+
+      try {
+        // 按/分割URL路径，找到NSFW/SFW之后的部分
+        const parts = currentSrc.split('/');
+        const nsfwIndex = parts.findIndex(p => p === 'NSFW' || p === 'SFW');
+
+        if (nsfwIndex === -1 || nsfwIndex + 2 >= parts.length) {
+          console.log('URL格式不正确:', currentSrc);
+          return;
+        }
+
+        const category = parts[nsfwIndex]; // NSFW 或 SFW
+        const characterEncoded = parts[nsfwIndex + 1]; // 角色名（编码）
+        const fileNameEncoded = parts[nsfwIndex + 2]; // 文件名（编码），如 %E9%BB%98%E8%AE%A46.webp
+
+        // 对每个路径段分别解码
+        const character = safeDecodeURIComponent(characterEncoded);
+        const fileNameWithExt = safeDecodeURIComponent(fileNameEncoded); // 如：默认6.webp
+
+        // 去掉 .webp 扩展名
+        const fileName = fileNameWithExt.replace(/\.webp$/, ''); // 如：默认6
+
+        // 从文件名中分离类型和编号
+        const fileMatch = fileName.match(/^(.+?)(\d+)$/);
+        if (!fileMatch) {
+          console.log('文件名格式错误:', fileName);
+          return;
+        }
+
+        const type = fileMatch[1]; // 如：默认
+        const currentNumber = fileMatch[2]; // 如：6
+
+        // 从图片列表获取最大编号
+        const categoryData = IMAGE_LISTS[category];
+        if (!categoryData) {
+          console.log('未找到分类:', category);
+          return;
+        }
+
+        // 尝试精确匹配角色名，如果失败则尝试规范化匹配
+        let characterData = categoryData[character];
+        if (!characterData) {
+          // 规范化字符串（去除空格、统一编码）
+          const normalizedChar = character.trim().normalize('NFC');
+          characterData = categoryData[normalizedChar];
+
+          if (!characterData) {
+            // 尝试匹配所有角色名（忽略空格）
+            const availableChars = Object.keys(categoryData);
+            const matched = availableChars.find(c =>
+              c.trim().normalize('NFC') === normalizedChar ||
+              c.replace(/\s/g, '') === character.replace(/\s/g, '')
+            );
+
+            if (matched) {
+              characterData = categoryData[matched];
+            } else {
+              return; // 未找到角色，静默失败
+            }
+          }
+        }
+
+        // 尝试精确匹配图片类型，如果失败则尝试规范化匹配
+        let maxNumber = characterData[type];
+        if (!maxNumber) {
+          const normalizedType = type.trim().normalize('NFC');
+          maxNumber = characterData[normalizedType];
+
+          if (!maxNumber) {
+            // 尝试匹配所有类型名
+            const availableTypes = Object.keys(characterData);
+            const matched = availableTypes.find(t =>
+              t.trim().normalize('NFC') === normalizedType ||
+              t.replace(/\s/g, '') === type.replace(/\s/g, '')
+            );
+
+            if (matched) {
+              maxNumber = characterData[matched];
+            } else {
+              return; // 未找到类型，静默失败
+            }
+          }
+        }
+
+        // 生成随机编号（1到maxNumber之间），确保不与当前编号相同
+        let newNumber;
+        if (maxNumber === 1) {
+          // 如果只有1张图，则保持不变
+          newNumber = 1;
+        } else {
+          // 生成不同于当前编号的随机数
+          do {
+            newNumber = Math.floor(Math.random() * maxNumber) + 1;
+          } while (newNumber === parseInt(currentNumber));
+        }
+
+        // 重新构建URL，保持URL编码格式
+        // 将新的类型+编号组合进行编码
+        const newFileName = type + newNumber + '.webp';
+        const newFileNameEncoded = encodeURIComponent(newFileName);
+
+        // 重新构建完整URL（替换最后一个路径段）
+        parts[nsfwIndex + 2] = newFileNameEncoded;
+        const newSrc = parts.join('/');
+
+        // 更新图片，并在加载完成后恢复透明度
+        img.onload = function () {
+          img.style.opacity = '1';
+          // 应用当前图片大小设置
+          img.style.width = imageSize + '%';
+          img.style.maxWidth = imageSize + '%';
+        };
+        img.onerror = function () {
+          img.style.opacity = '1'; // 即使加载失败也恢复透明度
+        };
+        img.src = newSrc;
+      } catch (e) {
+        console.error('刷新图片失败:', e);
+      }
+    };
+
+    document.addEventListener('click', function (e) {
+      const header = e.target.closest('.log-header');
+      if (!header) return;
+      const parent = header.parentElement;
+      parent.classList.toggle('expanded');
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.tagName === 'IMG' && e.target.closest('.reading-content')) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+
+        const imgRect = e.target.getBoundingClientRect();
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const imgTopAbs = imgRect.top + scrollY;
+        const imgCenterAbs = imgTopAbs + imgRect.height / 2;
+
+        modalImage.src = e.target.src;
+        modalImage.alt = e.target.alt;
+
+        const estimatedH = Math.min(imgRect.height * 1.5, window.innerHeight * 0.8);
+        let modalTop = imgCenterAbs - estimatedH / 2;
+        if (modalTop < 0) modalTop = 0;
+
+        modal.style.top = modalTop + 'px';
+        modal.style.height = Math.max(estimatedH, 400) + 'px';
+        modal.classList.add('active');
+
+        const adjustPosition = () => {
+          const actualH = Math.max(modalImage.offsetHeight + 40, 400);
+          let adjustedTop = imgCenterAbs - actualH / 2;
+          if (adjustedTop < 0) adjustedTop = 0;
+          modal.style.top = adjustedTop + 'px';
+          modal.style.height = actualH + 'px';
+        };
+
+        if (modalImage.complete && modalImage.naturalHeight > 0) {
+          requestAnimationFrame(adjustPosition);
+        } else {
+          modalImage.onload = adjustPosition;
+        }
+      }
+    });
+    const closeModal = () => {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      modal.style.top = '';
+      modal.style.height = '';
+    };
+    document.getElementById('modalClose')?.addEventListener('click', closeModal);
+    document.getElementById('imageModal')?.addEventListener('click', function (e) {
+      if (e.target === this || e.target.id === 'modalImage') closeModal();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+    const READING_FONT_PRESETS = {
+      'theme-default': { label: '跟随主题', family: '' },
+      'noto-serif': { label: '思源宋体', family: "'Noto Serif SC', serif" },
+      'yahei': { label: '微软雅黑', family: "'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif" },
+      'heiti': { label: "'黑体'", family: "'SimHei', 'Heiti SC', sans-serif" },
+      'songti': { label: '宋体', family: "'SimSun', 'Songti SC', serif" },
+      'kaiti': { label: '楷体', family: "'KaiTi', 'Kaiti SC', serif" },
+      'fangsong': { label: '仿宋', family: "'FangSong', 'STFangsong', serif" }
+    };
+
+    const DIALOGUE_COLOR_PALETTE = ['#4f7aa8', '#a35c76', '#7f6aa8', '#3b8b7a', '#b87933', '#a05454', '#5f7c54', '#7a62b3'];
+    const AVATAR_BASE_URL = 'https://r2-proxy.saugrodep.workers.dev/b/bluearchive/%E5%A4%B4%E5%83%8F/';
+    const BUILTIN_CHARACTER_SPECS = {
+      '一之濑明日奈': { file: '一之濑明日奈', color: '#d6a854', aliases: ['明日奈'] },
+      '七度雪乃': { file: '七度雪乃', color: '#6b8ebb', aliases: ['雪乃'] },
+      '七神凛': { file: '七神凛', color: '#5873a4', aliases: ['凛'] },
+      '下江小春': { file: '下江小春', color: '#d66b82', aliases: ['小春'] },
+      '不知火花耶': { file: '不知火花耶', color: '#cca0c9', aliases: ['花耶'] },
+      '不破莲华': { file: '不破莲华', color: '#b54d52', aliases: ['莲华'] },
+      '丹花伊吹': { file: '丹花伊吹', color: '#c98851', aliases: ['伊吹'] },
+      '久田泉奈': { file: '久田泉奈', color: '#aa66a4', aliases: ['泉奈'] },
+      '仲正一花': { file: '仲正一花', color: '#7c598c', aliases: ['一花'] },
+      '伊原木喜美': { file: '伊原木喜美', color: '#d16b81', aliases: ['喜美'] },
+      '伊落玛丽': { file: '伊落玛丽', color: '#ba7c45', aliases: ['玛丽'] },
+      '冰室濑名': { file: '冰室濑名', color: '#86a3c9', aliases: ['濑名'] },
+      '勘解由小路缘里': { file: '勘解由小路缘里', color: '#c18ac9', aliases: ['缘里'] },
+      '十六夜野宫': { file: '十六夜野宫', color: '#91ad5c', aliases: ['野宫'] },
+      '和乐千世': { file: '和乐千世', color: '#5c9fc2', aliases: ['千世'] },
+      '圣园未花': { file: '圣园未花', color: '#df86ac', aliases: ['未花'] },
+      '夜樱绮罗罗': { file: '夜樱绮罗罗', color: '#de7e80', aliases: ['绮罗罗'] },
+      '天地妮娅': { file: '天地妮娅', color: '#c76c4e', aliases: ['尼娅'] },
+      '天童凯伊': { file: '天童凯伊', color: '#9e6060', aliases: ['凯伊'] },
+      '天童爱丽丝': { file: '天童爱丽丝', color: '#509ddb', aliases: ['爱丽丝'] },
+      '天雨亚子': { file: '天雨亚子', color: '#866ab8', aliases: ['亚子'] },
+      '奥空绫音': { file: '奥空绫音', color: '#46a382', aliases: ['绫音'] },
+      '妮可': { file: '妮可', color: '#cc9f70' },
+      '小涂真纪': { file: '小涂真纪', color: '#db5a4d', aliases: ['真纪'] },
+      '小空': { file: '小空', color: '#6ea0c4' },
+      '小鸟游星野': { file: '小鸟游星野', color: '#e8788e', aliases: ['星野'] },
+      '尾刃康娜': { file: '尾刃康娜', color: '#c29b4e', aliases: ['康娜'] },
+      '御稜名草': { file: '御稜名草', color: '#b088cc', aliases: ['名草'] },
+      '戒野美咲': { file: '戒野美咲', color: '#bc7785', aliases: ['美咲'] },
+      '扇喜葵': { file: '扇喜葵', color: '#6c9aba', aliases: ['葵'] },
+      '才羽桃井': { file: '才羽桃井', color: '#d96674', aliases: ['桃井'] },
+      '才羽绿': { file: '才羽绿', color: '#6cac6c', aliases: ['绿'] },
+      '早濑优香': { file: '早濑优香', color: '#6a76c7', aliases: ['优香'] },
+      '明星日鞠': { file: '明星日鞠', color: '#9a99cc', aliases: ['日鞠'] },
+      '春原心奈': { file: '春原心奈', color: '#5ca189', aliases: ['心奈'] },
+      '春原旬': { file: '春原旬', color: '#3a8c76', aliases: ['旬'] },
+      '普拉娜': { file: '普拉娜', color: '#4e657a' },
+      '月雪宫子': { file: '月雪宫子', color: '#6c9cb5', aliases: ['宫子'] },
+      '杏山和纱': { file: '杏山和纱', color: '#c98799', aliases: ['和纱'] },
+      '枣伊吕波': { file: '枣伊吕波', color: '#b54854', aliases: ['伊吕波'] },
+      '柚鸟夏': { file: '柚鸟夏', color: '#d4a36a', aliases: ['夏'] },
+      '栗村爱莉': { file: '栗村爱莉', color: '#76af8b', aliases: ['爱莉'] },
+      '桐生桔梗': { file: '桐生桔梗', color: '#685b82', aliases: ['桔梗'] },
+      '桐藤渚': { file: '桐藤渚', color: '#c9a96b', aliases: ['渚'] },
+      '槌永日和': { file: '槌永日和', color: '#a1ab62', aliases: ['日和'] },
+      '橘光': { file: '橘光', color: '#7da87d', aliases: ['光'] },
+      '橘望': { file: '橘望', color: '#558f5a', aliases: ['望'] },
+      '歌住樱子': { file: '歌住樱子', color: '#5a6264', aliases: ['樱子'] },
+      '河和静子': { file: '河和静子', color: '#c28453', aliases: ['静子'] },
+      '浅黄睦月': { file: '浅黄睦月', color: '#c7545e', aliases: ['睦月'] },
+      '浦和花子': { file: '浦和花子', color: '#db8dbd', aliases: ['花子'] },
+      '爱清枫香': { file: '爱清枫香', color: '#ba7254', aliases: ['枫香'] },
+      '狐坂若藻': { file: '狐坂若藻', color: '#c14168', aliases: ['若藻'] },
+      '猫冢响': { file: '猫冢响', color: '#c77f4e', aliases: ['响'] },
+      '生盐诺亚': { file: '生盐诺亚', color: '#6bb0b5', aliases: ['诺亚'] },
+      '白洲梓': { file: '白洲梓', color: '#9e9ccd', aliases: ['梓'] },
+      '百合园圣娅': { file: '百合园圣娅', color: '#d19852', aliases: ['圣娅'] },
+      '砂狼白子': { file: '砂狼白子', color: '#518ab5', aliases: ['白子'] },
+      '秤亚津子': { file: '秤亚津子', color: '#9573aa', aliases: ['亚津子'] },
+      '空井咲': { file: '空井咲', color: '#85915d', aliases: ['咲'] },
+      '空崎日奈': { file: '空崎日奈', color: '#a16bc0', aliases: ['日奈'] },
+      '笑面教授': { file: '笑面教授', color: '#b8ab72' },
+      '美甘妮禄': { file: '美甘妮禄', color: '#cd4f3c', aliases: ['妮禄'] },
+      '羽川莲见': { file: '羽川莲见', color: '#45415e', aliases: ['莲见'] },
+      '花冈柚子': { file: '花冈柚子', color: '#c4865c', aliases: ['柚子'] },
+      '苍森美弥': { file: '苍森美弥', color: '#5095b5', aliases: ['美弥'] },
+      '若叶日向': { file: '若叶日向', color: '#ab9c60', aliases: ['日向'] },
+      '角楯花凛': { file: '角楯花凛', color: '#41556e', aliases: ['花凛'] },
+      '调月莉音': { file: '调月莉音', color: '#7a4d53', aliases: ['莉音'] },
+      '连河切里诺': { file: '连河切里诺', color: '#8eb1c2', aliases: ['切里诺'] },
+      '银镜伊织': { file: '银镜伊织', color: '#8a7d84', aliases: ['伊织'] },
+      '锭前纱织': { file: '锭前纱织', color: '#495a82', aliases: ['纱织'] },
+      '间宵时雨': { file: '间宵时雨', color: '#608c76', aliases: ['时雨'] },
+      '阿慈谷日富美': { file: '阿慈谷日富美', color: '#c9ad69', aliases: ['日富美'] },
+      '阿罗娜': { file: '阿罗娜', color: '#5d91d6' },
+      '陆八魔阿露': { file: '陆八魔阿露', color: '#cd4a61', aliases: ['阿露'] },
+      '霞泽美游': { file: '霞泽美游', color: '#8e9464', aliases: ['美游'] },
+      '音葵': { file: '音葵', color: '#66a1a6' },
+      '风仓萌绘': { file: '风仓萌绘', color: '#ad81ae', aliases: ['萌绘'] },
+      '飞鸟马时': { file: '飞鸟马时', color: '#6c9cb8', aliases: ['时'] },
+      '高仓胡桃': { file: '高仓胡桃', color: '#c48f64', aliases: ['胡桃'] },
+      '鬼方佳代子': { file: '鬼方佳代子', color: '#50505e', aliases: ['佳代子'] },
+      '鹫见芹奈': { file: '鹫见芹奈', color: '#c993b9', aliases: ['芹奈'] },
+      '黑子': { file: '黑子', color: '#3b485e' },
+      '黑见芹香': { file: '黑见芹香', color: '#d25666', aliases: ['芹香'] },
+      '黑馆晴奈': { file: '黑馆晴奈', color: '#5aa2bd', aliases: ['晴奈'] },
+      '龙华妃咲': { file: '龙华妃咲', color: '#3e706c', aliases: ['妃咲'] },
+      '黑崎小雪': { file: '黑崎小雪', color: '#e580bc', aliases: ['小雪'] },
+      '内海青叶': { file: '内海青叶', color: '#8c9eb3', aliases: ['青叶'] },
+      '三善贵音': { file: '三善贵音', color: '#c43345', aliases: ['贵音'] }
+    };
+    const CHARACTER_CONFIG = Object.fromEntries(
+      Object.entries(BUILTIN_CHARACTER_SPECS).map(([name, spec]) => [name, {
+        color: spec.color,
+        avatar: `${AVATAR_BASE_URL}${encodeURIComponent(spec.file)}.webp`,
+        aliases: spec.aliases || [name],
+        given_name: name
+      }])
+    );
+    const BUILTIN_CHAR_NAMES = Object.keys(CHARACTER_CONFIG);
+
+    const mvuState = {
+      ready: false,
+      mvu: null,
+      check: () => {
+        const win = window.parent || window;
+        if (typeof win.Mvu === 'undefined') {
+          mvuState.ready = false;
+          mvuState.mvu = null;
+          return false;
+        }
+        if (typeof win.Mvu.getMvuData !== 'function' || typeof win.Mvu.replaceMvuData !== 'function') {
+          mvuState.ready = false;
+          mvuState.mvu = null;
+          return false;
+        }
+        mvuState.ready = true;
+        mvuState.mvu = win.Mvu;
+        return true;
+      }
+    };
+
+    function fetchLatestMvuData() {
+      try {
+        if (mvuState.ready || mvuState.check()) {
+          const mvuData = mvuState.mvu.getMvuData({ type: 'message', message_id: 'latest' });
+          if (mvuData?.stat_data && Object.keys(mvuData.stat_data).length > 0) {
+            return mvuData.stat_data;
+          }
+        }
+      } catch (e) {
+        console.warn('[碧蓝档案正文美化] MVU读取失败:', e);
+      }
+      return {};
+    }
+
+    function applyMvuPatches(patches) {
+      try {
+        if (!mvuState.ready && !mvuState.check()) return false;
+        const mvuData = mvuState.mvu.getMvuData({ type: 'message', message_id: 'latest' });
+        if (!mvuData?.stat_data) return false;
+        patches.forEach(patch => {
+          const parts = String(patch.path || '').split('/').filter(Boolean);
+          if (patch.op === 'replace' || patch.op === 'add') {
+            let obj = mvuData.stat_data;
+            for (let i = 0; i < parts.length - 1; i++) {
+              if (!obj[parts[i]]) obj[parts[i]] = {};
+              obj = obj[parts[i]];
+            }
+            obj[parts[parts.length - 1]] = patch.value;
+          } else if (patch.op === 'remove') {
+            let obj = mvuData.stat_data;
+            for (let i = 0; i < parts.length - 1; i++) {
+              if (!obj[parts[i]]) return;
+              obj = obj[parts[i]];
+            }
+            delete obj[parts[parts.length - 1]];
+          }
+        });
+        mvuState.mvu.replaceMvuData(mvuData, { type: 'message', message_id: 'latest' });
+        return true;
+      } catch (e) {
+        console.warn('[碧蓝档案正文美化] MVU patch失败:', e);
+        return false;
+      }
+    }
+
+    function hashNameToColor(name) {
+      let hash = 0;
+      const input = String(name || '');
+      for (let i = 0; i < input.length; i++) {
+        hash = ((hash << 5) - hash) + input.charCodeAt(i);
+        hash |= 0;
+      }
+      return DIALOGUE_COLOR_PALETTE[Math.abs(hash) % DIALOGUE_COLOR_PALETTE.length];
+    }
+
+    function injectCharacterColor(name, color) {
+      const styleId = `dialogue-char-style-${name}`;
+      const oldStyle = document.getElementById(styleId);
+      if (oldStyle) oldStyle.remove();
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = `
+        .char-${CSS.escape(name)} .character-name .name-main,
+        .name-initial-${CSS.escape(name)} {
+          color: ${color};
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    function loadDialogueBeautifyConfig() {
+      const data = fetchLatestMvuData();
+      const systemConfig = data && data['系统配置'] ? data['系统配置'] : null;
+      const list = systemConfig && Array.isArray(systemConfig['对白美化']) ? systemConfig['对白美化'] : [];
+      list.forEach(name => {
+        if (!name) return;
+        const normalizedName = normalizeDisplayName(name);
+        const config = CHARACTER_CONFIG[normalizedName];
+        if (config && config.color) {
+          injectCustomCharCSS(normalizedName, config.color);
+        }
+      });
+    }
+
+    const AVATAR_CACHE_PREFIX = 'custom_char_avatar_';
+    const CHAR_CACHE_KEY = 'custom_char_cache';
+
+    function getAllCachedChars() {
+      try {
+        const raw = localStorage.getItem(CHAR_CACHE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) { return {}; }
+    }
+
+    function saveCachedChars(chars) {
+      try { localStorage.setItem(CHAR_CACHE_KEY, JSON.stringify(chars)); } catch (e) { console.warn('缓存写入失败:', e); }
+    }
+
+    function saveAvatarToCache(charName, dataUrl) {
+      try { localStorage.setItem(AVATAR_CACHE_PREFIX + charName, dataUrl); } catch (e) { console.warn('头像缓存写入失败:', e); }
+    }
+
+    function getAvatarFromCache(charName) {
+      try { return localStorage.getItem(AVATAR_CACHE_PREFIX + charName) || ''; } catch (e) { return ''; }
+    }
+
+    function removeAvatarFromCache(charName) {
+      try { localStorage.removeItem(AVATAR_CACHE_PREFIX + charName); } catch (e) { }
+    }
+
+    function getDialogueBeautifyList() {
+      try {
+        const data = fetchLatestMvuData();
+        const systemConfig = data && data['系统配置'] ? data['系统配置'] : null;
+        const list = systemConfig && Array.isArray(systemConfig['对白美化']) ? systemConfig['对白美化'] : [];
+        if (Array.isArray(list)) return list;
+      } catch (e) { }
+      return [];
+    }
+
+    function setDialogueBeautifyList(list) {
+      return applyMvuPatches([{ op: 'replace', path: '/系统配置/对白美化', value: list }]);
+    }
+
+    function lightenColor(hex, amount) {
+      const num = parseInt(String(hex || '').replace('#', ''), 16);
+      if (!Number.isFinite(num)) return hex;
+      let r = Math.min(255, (num >> 16) + amount);
+      let g = Math.min(255, ((num >> 8) & 0xff) + amount);
+      let b = Math.min(255, (num & 0xff) + amount);
+      return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
+    function injectCustomCharCSS(name, color) {
+      if (!color) return;
+      const styleId = 'custom-char-css-' + name;
+      const oldStyle = document.getElementById(styleId);
+      if (oldStyle) oldStyle.remove();
+      const style = document.createElement('style');
+      style.id = styleId;
+      const darkColor = lightenColor(color, 50);
+      style.textContent = `.char-${CSS.escape(name)} .character-name .name-main { color: ${color}; }
+.name-initial-${CSS.escape(name)} { color: ${color}; }
+body[data-theme="dark"] .char-${CSS.escape(name)} .character-name .name-main { color: ${darkColor}; }
+body[data-theme="dark"] .name-initial-${CSS.escape(name)} { color: ${darkColor}; }`;
+      document.head.appendChild(style);
+    }
+
+    function loadCustomCharsIntoConfig() {
+      const mvuList = getDialogueBeautifyList();
+      const cachedChars = getAllCachedChars();
+      mvuList.forEach(name => {
+        if (BUILTIN_CHAR_NAMES.includes(name)) return;
+        if (CHARACTER_CONFIG[name]) return;
+        const cached = cachedChars[name];
+        const avatar = getAvatarFromCache(name);
+        const color = cached?.color || hashNameToColor(name);
+        CHARACTER_CONFIG[name] = {
+          avatar,
+          aliases: [name],
+          given_name: name,
+          color: color || undefined,
+          _custom: true
+        };
+        if (color) injectCustomCharCSS(name, color);
+      });
+    }
+
+    function injectBuiltinCharacterStyles() {
+      Object.entries(CHARACTER_CONFIG).forEach(([name, config]) => {
+        if (config && config.color) {
+          injectCustomCharCSS(name, config.color);
+        }
+      });
+    }
+
+    window.switchCharTab = function (tab) {
+      document.querySelectorAll('.custom-char-tab').forEach((el, i) => {
+        el.classList.toggle('active', (tab === 'cache' && i === 0) || (tab === 'chat' && i === 1));
+      });
+      document.getElementById('tabCache')?.classList.toggle('active', tab === 'cache');
+      document.getElementById('tabChat')?.classList.toggle('active', tab === 'chat');
+      if (tab === 'cache') renderCacheCharList();
+      else renderChatCharList();
+    };
+
+    function renderCacheCharList() {
+      const listEl = document.getElementById('cacheCharList');
+      if (!listEl) return;
+      const cachedChars = getAllCachedChars();
+      const mvuList = getDialogueBeautifyList();
+      const names = Object.keys(cachedChars);
+      if (names.length === 0) {
+        listEl.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:12px;padding:8px;">缓存库为空，点击下方新建角色</div>';
+        return;
+      }
+      let html = '';
+      names.forEach(name => {
+        const info = cachedChars[name];
+        const avatarSrc = getAvatarFromCache(name);
+        const avatarHtml = avatarSrc
+          ? `<img class="custom-char-avatar-small" src="${avatarSrc}" alt="${name}">`
+          : `<div class="custom-char-avatar-placeholder-small">👤</div>`;
+        const colorDot = info.color ? `<span class="custom-char-color-dot" style="background:${info.color}"></span>` : '';
+        const inMvu = mvuList.includes(name);
+        const writeBtn = inMvu
+          ? `<span class="custom-char-action-btn active-in-chat" style="cursor:default;">已写入</span>`
+          : `<button class="custom-char-action-btn" onclick="writeCacheCharToChat('${name.replace(/'/g, "\\'")}')">写入</button>`;
+        html += `<div class="custom-char-item">
+          ${avatarHtml} ${colorDot}
+          <span class="custom-char-name">${name}</span>
+          ${writeBtn}
+          <button class="custom-char-delete" onclick="deleteCacheChar('${name.replace(/'/g, "\\'")}')" title="从缓存删除">✕</button>
+        </div>`;
+      });
+      listEl.innerHTML = html;
+    }
+
+    function renderChatCharList() {
+      const listEl = document.getElementById('chatCharList');
+      if (!listEl) return;
+      const mvuList = getDialogueBeautifyList();
+      if (mvuList.length === 0) {
+        listEl.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:12px;padding:8px;">当前聊天无美化角色</div>';
+        return;
+      }
+      let html = '';
+      mvuList.forEach(name => {
+        const isBuiltin = BUILTIN_CHAR_NAMES.includes(name);
+        const config = CHARACTER_CONFIG[name];
+        const avatarSrc = config?.avatar || getAvatarFromCache(name);
+        const avatarHtml = avatarSrc
+          ? `<img class="custom-char-avatar-small" src="${avatarSrc}" alt="${name}">`
+          : `<div class="custom-char-avatar-placeholder-small">👤</div>`;
+        const nameColor = isBuiltin && config?.color ? `color:${config.color}` : '';
+        const colorDot = !isBuiltin && config?.color ? `<span class="custom-char-color-dot" style="background:${config.color}"></span>` : '';
+        html += `<div class="custom-char-item">
+          ${avatarHtml} ${colorDot}
+          <span class="custom-char-name" style="${nameColor}">${name}</span>
+          ${isBuiltin ? '<span class="custom-char-builtin">内置</span>' : `<button class="custom-char-delete" onclick="removeChatChar('${name.replace(/'/g, "\\'")}')" title="从当前聊天移除">✕</button>`}
+        </div>`;
+      });
+      listEl.innerHTML = html;
+    }
+
+    function renderCustomCharList() {
+      const activeTab = document.querySelector('.custom-char-tab-content.active');
+      if (activeTab?.id === 'tabChat') renderChatCharList();
+      else renderCacheCharList();
+    }
+
+    let _pendingAvatarData = '';
+
+    window.showAddCustomCharForm = function () {
+      document.getElementById('customCharAddForm').style.display = 'block';
+      document.getElementById('customCharAddBtn').style.display = 'none';
+      document.getElementById('customCharNameInput').value = '';
+      document.getElementById('customCharAvatarPreview').style.display = 'none';
+      document.getElementById('customCharColorInput').value = '#4f7aa8';
+      _pendingAvatarData = '';
+    };
+
+    window.cancelAddCustomChar = function () {
+      document.getElementById('customCharAddForm').style.display = 'none';
+      document.getElementById('customCharAddBtn').style.display = 'block';
+      _pendingAvatarData = '';
+      const uploadBtn = document.getElementById('customCharUploadBtn');
+      if (uploadBtn) uploadBtn.textContent = '📷 上传头像';
+    };
+
+    window.confirmAddCustomChar = function () {
+      const name = document.getElementById('customCharNameInput').value.trim();
+      if (!name) { showSettingsMessage('请输入角色名称'); return; }
+      if (BUILTIN_CHAR_NAMES.includes(name)) { showSettingsMessage('不能与内置角色同名'); return; }
+      const cachedChars = getAllCachedChars();
+      if (cachedChars[name]) { showSettingsMessage('缓存中已存在该角色'); return; }
+      if (!_pendingAvatarData) { showSettingsMessage('请上传头像图片'); return; }
+
+      const color = document.getElementById('customCharColorInput').value || '';
+      saveAvatarToCache(name, _pendingAvatarData);
+      cachedChars[name] = { color };
+      saveCachedChars(cachedChars);
+      renderCacheCharList();
+      cancelAddCustomChar();
+      showSettingsMessage(`已保存「${name}」到缓存库`);
+    };
+
+    window.writeCacheCharToChat = function (name) {
+      const cachedChars = getAllCachedChars();
+      const info = cachedChars[name];
+      if (!info) { showSettingsMessage('缓存中未找到该角色'); return; }
+      const avatar = getAvatarFromCache(name);
+      const color = info.color || '';
+      CHARACTER_CONFIG[name] = {
+        avatar,
+        aliases: [name],
+        given_name: name,
+        color: color || undefined,
+        _custom: true
+      };
+      if (color) injectCustomCharCSS(name, color);
+
+      const list = getDialogueBeautifyList();
+      if (!list.includes(name)) {
+        list.push(name);
+        const ok = setDialogueBeautifyList(list);
+        if (!ok) { showSettingsMessage('MVU写入失败'); return; }
+      }
+      renderCacheCharList();
+      renderChatCharList();
+      showSettingsMessage(`已将「${name}」写入当前聊天`);
+    };
+
+    window.deleteCacheChar = function (name) {
+      if (BUILTIN_CHAR_NAMES.includes(name)) return;
+      const cachedChars = getAllCachedChars();
+      delete cachedChars[name];
+      saveCachedChars(cachedChars);
+      removeAvatarFromCache(name);
+      const list = getDialogueBeautifyList();
+      if (list.includes(name)) {
+        setDialogueBeautifyList(list.filter(n => n !== name));
+      }
+      delete CHARACTER_CONFIG[name];
+      const styleEl = document.getElementById('custom-char-css-' + name);
+      if (styleEl) styleEl.remove();
+      renderCacheCharList();
+      renderChatCharList();
+      showSettingsMessage(`已从缓存删除「${name}」`);
+    };
+
+    window.removeChatChar = function (name) {
+      if (BUILTIN_CHAR_NAMES.includes(name)) { showSettingsMessage('内置角色不可移除'); return; }
+      const list = getDialogueBeautifyList().filter(n => n !== name);
+      setDialogueBeautifyList(list);
+      delete CHARACTER_CONFIG[name];
+      const styleEl = document.getElementById('custom-char-css-' + name);
+      if (styleEl) styleEl.remove();
+      renderChatCharList();
+      renderCacheCharList();
+      showSettingsMessage(`已从当前聊天移除「${name}」`);
+    };
+
+    const AVATAR_UPLOAD_MAX_BYTES = 5 * 1024 * 1024;
+    const AVATAR_STORAGE_TARGET_BYTES = 900 * 1024;
+    const AVATAR_MAX_DIMENSION = 1024;
+    const AVATAR_MIN_DIMENSION = 256;
+
+    function estimateDataUrlBytes(dataUrl) {
+      const commaIndex = dataUrl.indexOf(',');
+      if (commaIndex < 0) return 0;
+      const base64 = dataUrl.slice(commaIndex + 1);
+      const padding = (base64.match(/=+$/) || [''])[0].length;
+      return Math.floor(base64.length * 3 / 4) - padding;
+    }
+
+    function encodeAvatarDataUrl(img) {
+      const srcMaxSide = Math.max(img.width, img.height);
+      let scale = srcMaxSide > AVATAR_MAX_DIMENSION ? AVATAR_MAX_DIMENSION / srcMaxSide : 1;
+      let fallbackDataUrl = '';
+      while (scale > 0) {
+        const w = Math.max(1, Math.round(img.width * scale));
+        const h = Math.max(1, Math.round(img.height * scale));
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) break;
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(img, 0, 0, w, h);
+        const qualitySteps = [0.98, 0.95, 0.92, 0.88, 0.84, 0.8];
+        let bestAtThisScale = '';
+        for (const q of qualitySteps) {
+          const candidate = canvas.toDataURL('image/webp', q);
+          bestAtThisScale = candidate;
+          if (estimateDataUrlBytes(candidate) <= AVATAR_STORAGE_TARGET_BYTES) {
+            return candidate;
+          }
+        }
+        fallbackDataUrl = bestAtThisScale;
+        if (Math.max(w, h) <= AVATAR_MIN_DIMENSION) break;
+        scale *= 0.85;
+      }
+      return fallbackDataUrl;
+    }
+
+    function initAvatarUpload() {
+      const uploadBtn = document.getElementById('customCharUploadBtn');
+      const fileInput = document.getElementById('customCharFileInput');
+      const preview = document.getElementById('customCharAvatarPreview');
+      if (!uploadBtn || !fileInput) return;
+      uploadBtn.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', function () {
+        const file = this.files && this.files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) { showSettingsMessage('请选择图片文件'); this.value = ''; return; }
+        if (file.size > AVATAR_UPLOAD_MAX_BYTES) { showSettingsMessage('图片不能超过5MB'); this.value = ''; return; }
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            const originalDataUrl = String(e.target?.result || '');
+            const needTranscode = file.size > AVATAR_STORAGE_TARGET_BYTES || Math.max(img.width, img.height) > AVATAR_MAX_DIMENSION;
+            _pendingAvatarData = needTranscode ? encodeAvatarDataUrl(img) : originalDataUrl;
+            if (!_pendingAvatarData) {
+              showSettingsMessage('头像处理失败，请换一张图片');
+              fileInput.value = '';
+              return;
+            }
+            preview.src = _pendingAvatarData;
+            preview.style.display = 'block';
+            uploadBtn.textContent = '✅ 已选择';
+          };
+          img.onerror = function () {
+            showSettingsMessage('无法读取图片，请换一张');
+            fileInput.value = '';
+          };
+          img.src = String(e.target?.result || '');
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function normalizeDisplayName(name) {
+      const raw = String(name || '').trim();
+      if (!raw) return '';
+      const exact = Object.keys(CHARACTER_CONFIG).find(key => key === raw);
+      if (exact) return exact;
+      const aliasMatch = Object.entries(CHARACTER_CONFIG).find(([, config]) =>
+        Array.isArray(config.aliases) && config.aliases.includes(raw)
+      );
+      return aliasMatch ? aliasMatch[0] : raw;
+    }
+
+    function escapeHtmlText(text) {
+      const div = document.createElement('div');
+      div.textContent = String(text ?? '');
+      return div.innerHTML;
+    }
+
+    function decodeHtmlEntities(text) {
+      const textarea = document.createElement('textarea');
+      textarea.innerHTML = String(text ?? '');
+      return textarea.value;
+    }
+
+    function generateStyledNameHtml(config, normalizedName) {
+      if (!config) {
+        return `<span class="name-main">${normalizedName}</span>`;
+      }
+
+      const initialClass = `name-initial name-initial-${normalizedName}`;
+      const isEnlarge = config.enlargeInitial === true;
+
+      if (config.family_name) {
+        const fName = config.family_name;
+        const gName = config.given_name;
+        if (isEnlarge) {
+          let html = `<span class="${initialClass} name-initial-enlarge">${fName[0]}</span>`;
+          if (fName.length > 1) html += `<span class="name-normal">${fName.slice(1)}</span>`;
+          html += `<span class="name-initial-enlarge" style="font-weight:900">${gName[0]}</span>`;
+          if (gName.length > 1) html += `<span class="name-normal">${gName.slice(1)}</span>`;
+          return html;
+        } else {
+          let html = `<span class="${initialClass}">${fName[0]}</span>`;
+          if (fName.length > 1) html += `<span class="name-normal">${fName.slice(1)}</span>`;
+          html += `<span class="name-normal">${gName}</span>`;
+          return html;
+        }
+      } else if (config.given_name) {
+        const gName = config.given_name;
+        let html = `<span class="${initialClass}">${gName[0]}</span>`;
+        if (gName.length > 1) html += `<span class="name-normal">${gName.slice(1)}</span>`;
+        return html;
+      } else {
+        if (normalizedName.length > 0) {
+          return `<span class="${initialClass}">${normalizedName[0]}</span><span class="name-normal">${normalizedName.slice(1)}</span>`;
+        }
+        return `<span class="name-main">${normalizedName}</span>`;
+      }
+    }
+
+    function processDialogueContent(dialogue) {
+      dialogue = String(dialogue || '').replace(/\{[^}]+\}/g, '').trim();
+      const patterns = [
+        /「([^」]+)」（([^）]+)）/g,
+        /「([^」]+)」\(([^)]+)\)/g,
+        /『([^』]+)』（([^）]+)）/g,
+        /【([^】]+)】（([^）]+)）/g
+      ];
+      let result = dialogue;
+      patterns.forEach((regex) => {
+        result = result.replace(regex, (match, text1, text2) => {
+          return `<div class="bilingual-dialogue"><div class="primary-text">「${escapeHtmlText(text1)}」</div><div class="dialogue-divider"></div><div class="secondary-text">（${escapeHtmlText(text2)}）</div></div>`;
+        });
+      });
+      if (result === dialogue && !/[「『【“"]/.test(dialogue)) {
+        result = `「${escapeHtmlText(dialogue)}」`;
+      }
+      return result;
+    }
+
+    function wrapInlineDialogueQuote(segment) {
+      if (!segment) return '';
+      const pairs = { '「': '」', '『': '』', '【': '】', '“': '”', '"': '"' };
+      const open = segment[0];
+      const close = segment[segment.length - 1];
+      if (pairs[open] !== close) return escapeHtmlText(segment);
+      const inner = segment.slice(1, -1);
+      return `<span class="inline-dialogue-quote"><span class="quote-mark">${escapeHtmlText(open)}</span>${escapeHtmlText(inner)}<span class="quote-mark">${escapeHtmlText(close)}</span></span>`;
+    }
+
+    function highlightInlineDialogueQuotes(text) {
+      const source = decodeHtmlEntities(String(text || ''));
+      const quoteRegex = /「[^」\n]+」|『[^』\n]+』|【[^】\n]+】|“[^”\n]+”|"[^"\n]+"/g;
+      let result = '';
+      let lastIndex = 0;
+      let match;
+      while ((match = quoteRegex.exec(source)) !== null) {
+        result += escapeHtmlText(source.slice(lastIndex, match.index));
+        result += wrapInlineDialogueQuote(match[0]);
+        lastIndex = match.index + match[0].length;
+      }
+      result += escapeHtmlText(source.slice(lastIndex));
+      return result;
+    }
+
+    function createDialogueElement(name, dialogue) {
+      const normalizedName = normalizeDisplayName(name);
+      const config = CHARACTER_CONFIG[normalizedName];
+      const avatarHtml = config && config.avatar
+        ? `<img class="character-avatar" src="${config.avatar}" alt="${escapeHtmlText(normalizedName)}">`
+        : `<div class="character-avatar-placeholder">👤</div>`;
+      const nameHtml = generateStyledNameHtml(config, normalizedName);
+      const processedDialogue = processDialogueContent(dialogue);
+      return `<div class="dialogue-container char-${normalizedName}">
+        <div class="dialogue-bubble">
+          <div class="avatar-side">${avatarHtml}</div>
+          <div class="content-side">
+            <div class="character-name">${nameHtml}</div>
+            <div class="bubble-text">${processedDialogue}</div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    function applyReadingFont(fontKey, options = {}) {
+      const normalizedKey = Object.prototype.hasOwnProperty.call(READING_FONT_PRESETS, fontKey) ? fontKey : 'theme-default';
+      const preset = READING_FONT_PRESETS[normalizedKey];
+      if (document.body) {
+        if (preset.family) {
+          document.body.style.setProperty('--font-main', preset.family);
+        } else {
+          document.body.style.removeProperty('--font-main');
+        }
+      }
+      const readingFontSelect = document.getElementById('readingFontSelect');
+      if (readingFontSelect && readingFontSelect.value !== normalizedKey) {
+        readingFontSelect.value = normalizedKey;
+      }
+      if (!options.skipPersist) {
+        localStorage.setItem('reading-font-family', normalizedKey);
+      }
+      return normalizedKey;
+    }
+
+    function processTextContent() {
+      const contentDiv = document.getElementById('readingContent');
+      if (!contentDiv) return;
+
+      const initialHtml = contentDiv.innerHTML.trim();
+      if (!initialHtml) return;
+
+      const workDiv = document.createElement('div');
+      workDiv.innerHTML = initialHtml;
+      contentDiv.setAttribute('aria-busy', 'true');
+
+      const preservedBlocks = [];
+      let preservedBlockIndex = 0;
+      const standaloneHtmlBlockSelector = [
+        ':scope > div[style]',
+        ':scope > div[class]',
+        ':scope > div[data-preserve-html]',
+        ':scope > section[style]',
+        ':scope > section[class]',
+        ':scope > section[data-preserve-html]',
+        ':scope > article[style]',
+        ':scope > article[class]',
+        ':scope > article[data-preserve-html]',
+        ':scope > blockquote[style]',
+        ':scope > blockquote[class]',
+        ':scope > blockquote[data-preserve-html]',
+        ':scope > figure[style]',
+        ':scope > figure[class]',
+        ':scope > figure[data-preserve-html]',
+        ':scope > table[style]',
+        ':scope > table[class]',
+        ':scope > table[data-preserve-html]',
+        ':scope > button',
+        ':scope > a',
+        ':scope > input',
+        ':scope > textarea',
+        ':scope > select'
+      ].join(', ');
+
+      Array.from(workDiv.querySelectorAll(standaloneHtmlBlockSelector)).forEach(blockEl => {
+        if (blockEl.parentNode !== workDiv) return;
+        const ph = '\n___HTMLBLOCK_' + (preservedBlockIndex++) + '___\n';
+        const hasImage = !!blockEl.querySelector('img');
+        workDiv.insertBefore(document.createTextNode(ph), blockEl);
+        workDiv.removeChild(blockEl);
+        preservedBlocks.push(
+          hasImage && !blockEl.classList.contains('image-container')
+            ? { ph: ph.trim(), html: createInteractiveImageContainer(blockEl.outerHTML) }
+            : { ph: ph.trim(), wrapper: blockEl }
+        );
+      });
+
+      let rawText = workDiv.innerHTML.trim();
+      if (!rawText) {
+        contentDiv.removeAttribute('aria-busy');
+        return;
+      }
+
+      const tagPatterns = [
+        {
+          regex: /<DiceEvent>([\s\S]*?)<\/DiceEvent>/gi,
+          title: '判定日志',
+          type: 'dice-log'
+        },
+        {
+          regex: /<Experience[-_]?Log>([\s\S]*?)<\/Experience[-_]?Log>/gi,
+          title: '经验日志',
+          type: 'exp-log'
+        },
+        {
+          regex: /<QuestContract>([\s\S]*?)<\/QuestContract>/gi,
+          title: '任务日志',
+          type: 'quest-log'
+        },
+        {
+          regex: /<CombatLog>([\s\S]*?)<\/CombatLog>/gi,
+          title: '战斗日志',
+          type: 'combat-log'
+        },
+        {
+          regex: /<LootLog>([\s\S]*?)<\/LootLog>/gi,
+          title: '战利品日志',
+          type: 'loot-log'
+        },
+        {
+          regex: /<Image>([\s\S]*?)<\/Image>/gi,
+          title: '',
+          type: 'image-tag'
+        }
+      ];
+      const matches = [];
+      tagPatterns.forEach(config => {
+        let match;
+        config.regex.lastIndex = 0;
+        while ((match = config.regex.exec(rawText)) !== null) {
+          matches.push({
+            index: match.index,
+            length: match[0].length,
+            content: match[1].trim(),
+            title: config.title,
+            type: config.type
+          });
+        }
+      });
+      matches.sort((a, b) => a.index - b.index);
+      const htmlParts = [];
+      let lastIndex = 0;
+      matches.forEach(match => {
+        const beforeText = rawText.substring(lastIndex, match.index);
+        if (beforeText.trim()) {
+          htmlParts.push(processParagraphs(beforeText));
+        }
+        if (match.type === 'image-tag') {
+          htmlParts.push(createImageElement(match.content));
+        } else {
+          htmlParts.push(createLogCollapsible(match.content, match.title, match.type));
+        }
+        lastIndex = match.index + match.length;
+      });
+      const remainingText = rawText.substring(lastIndex);
+      if (remainingText.trim()) {
+        htmlParts.push(processParagraphs(remainingText));
+      }
+      workDiv.innerHTML = htmlParts.join('');
+
+      if (preservedBlocks.length > 0) {
+        const walker = document.createTreeWalker(workDiv, NodeFilter.SHOW_TEXT, null, false);
+        const textNodes = [];
+        let node;
+        while ((node = walker.nextNode())) textNodes.push(node);
+
+        for (const block of preservedBlocks) {
+          for (const tn of textNodes) {
+            if (!tn.textContent.includes(block.ph)) continue;
+            const parent = tn.parentNode;
+            const trimmedContent = tn.textContent.replace(block.ph, '').trim();
+            const fragment = document.createDocumentFragment();
+            if (block.html) {
+              const temp = document.createElement('div');
+              temp.innerHTML = block.html;
+              while (temp.firstChild) fragment.appendChild(temp.firstChild);
+            } else {
+              fragment.appendChild(block.wrapper);
+            }
+
+            if (parent.tagName === 'P' && !trimmedContent) {
+              parent.parentNode.insertBefore(fragment, parent);
+              parent.parentNode.removeChild(parent);
+            } else {
+              const parts = tn.textContent.split(block.ph);
+              if (parts[0]) parent.insertBefore(document.createTextNode(parts[0]), tn);
+              parent.insertBefore(fragment, tn);
+              if (parts[1]) parent.insertBefore(document.createTextNode(parts[1]), tn);
+              parent.removeChild(tn);
+            }
+            break;
+          }
+        }
+      }
+
+      contentDiv.replaceChildren(...Array.from(workDiv.childNodes));
+      contentDiv.removeAttribute('aria-busy');
+    }
+    function processParagraphs(text) {
+      let cleanText = text.replace(/<\/?(?:DiceEvent|Experience[-_]?Log|QuestContract|Image)(?!\s)>/gi, '');
+      const paragraphs = cleanText.split(/\n+/).filter(p => p.trim().length > 0);
+      return paragraphs.map(p => processLineWithImages(p.trim())).join('');
+    }
+    function processLineWithImages(line) {
+      const htmlLine = decodeHtmlEntities(line);
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = htmlLine;
+      const decodedLine = tempDiv.textContent || tempDiv.innerText || htmlLine;
+
+      const braceNamePattern = /^[\s]*\{([^}]+)\}[\s]*(.+)$/;
+      const braceMatch = decodedLine.match(braceNamePattern);
+      if (braceMatch) {
+        const rawName = braceMatch[1].trim();
+        const normalizedName = normalizeDisplayName(rawName);
+        const config = CHARACTER_CONFIG[normalizedName];
+        if (config) {
+          return createDialogueElement(rawName, braceMatch[2].trim());
+        }
+        return `<p>${highlightInlineDialogueQuotes(braceMatch[2].trim())}</p>`;
+      }
+
+      const imgRegex = /<img[^>]*>/i;
+      if (imgRegex.test(htmlLine)) {
+        const div = document.createElement('div');
+        div.innerHTML = htmlLine;
+        let imgHtml = div.innerHTML;
+        const uniqueId = 'img-' + Math.random().toString(36).substr(2, 9);
+        const autoExpand = localStorage.getItem('image-auto-expand') === 'true';
+        const expandedClass = autoExpand ? ' expanded' : '';
+        const buttonClass = autoExpand ? ' expanded' : '';
+        const buttonText = autoExpand ? '收起插画' : '查看插画';
+        const buttonIcon = autoExpand ? '📷' : '🖼️';
+        // 为NSFW图片添加onload事件，记录到CG收集缓存
+        if (imgHtml.includes('/NSFW/')) {
+          imgHtml = imgHtml.replace(/<img\s/i, '<img onload="recordCGUnlock(this.src)" ');
+        }
+        return `
+<div class="image-container">
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+<button class="image-toggle-btn${buttonClass}" onclick="toggleImage('${uniqueId}')">
+<span class="image-toggle-icon">${buttonIcon}</span>
+<span class="image-toggle-text">${buttonText}</span>
+</button>
+<button class="image-refresh-btn" onclick="refreshImage('${uniqueId}', event)" title="随机切换图片">🔄</button>
+</div>
+<div class="image-content${expandedClass}" id="${uniqueId}" style="text-align: center;">
+${imgHtml}
+</div>
+</div>
+`;
+      } else {
+        return `<p>${highlightInlineDialogueQuotes(decodedLine)}</p>`;
+      }
+    }
+    function createInteractiveImageContainer(imgContent, forceExpand) {
+      const uniqueId = 'img-' + Math.random().toString(36).substr(2, 9);
+      const autoExpand = forceExpand === true || localStorage.getItem('image-auto-expand') === 'true';
+      const expandedClass = autoExpand ? ' expanded' : '';
+      const buttonClass = autoExpand ? ' expanded' : '';
+      const buttonText = autoExpand ? '收起插画' : '查看插画';
+      const buttonIcon = autoExpand ? '📷' : '🖼️';
+      let finalContent = String(imgContent || '');
+
+      if ((finalContent.includes('/NSFW/') || finalContent.includes('/SFW/')) && /<img\b/i.test(finalContent)) {
+        finalContent = finalContent.replace(/<img\s(?![^>]*\bonload=)/i, '<img onload="recordCGUnlock(this.src)" ');
+      }
+
+      return `
+<div class="image-container">
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+<button class="image-toggle-btn${buttonClass}" onclick="toggleImage('${uniqueId}')">
+<span class="image-toggle-icon">${buttonIcon}</span>
+<span class="image-toggle-text">${buttonText}</span>
+</button>
+<button class="image-refresh-btn" onclick="refreshImage('${uniqueId}', event)" title="随机切换图片">🔄</button>
+</div>
+<div class="image-content${expandedClass}" id="${uniqueId}" style="text-align: center;">
+${finalContent}
+</div>
+</div>
+`;
+    }
+    function createImageElement(imageUrl) {
+      const trimmedUrl = imageUrl.trim();
+      if (!trimmedUrl) return '';
+      const uniqueId = 'img-' + Math.random().toString(36).substr(2, 9);
+      const autoExpand = localStorage.getItem('image-auto-expand') === 'true';
+      const expandedClass = autoExpand ? ' expanded' : '';
+      const buttonClass = autoExpand ? ' expanded' : '';
+      const buttonText = autoExpand ? '收起插画' : '查看插画';
+      const buttonIcon = autoExpand ? '📷' : '🖼️';
+      // 为NSFW图片添加onload事件，记录到CG收集缓存
+      const onloadAttr = trimmedUrl.includes('/NSFW/') ? ' onload="recordCGUnlock(this.src)"' : '';
+      return `
+<div class="image-container">
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+<button class="image-toggle-btn${buttonClass}" onclick="toggleImage('${uniqueId}')">
+<span class="image-toggle-icon">${buttonIcon}</span>
+<span class="image-toggle-text">${buttonText}</span>
+</button>
+<button class="image-refresh-btn" onclick="refreshImage('${uniqueId}', event)" title="随机切换图片">🔄</button>
+</div>
+<div class="image-content${expandedClass}" id="${uniqueId}">
+<img src="${escapeHtml(trimmedUrl)}" alt="图片" loading="lazy"${onloadAttr}>
+</div>
+</div>
+`;
+    }
+    function createLogCollapsible(content, title, type = '') {
+      const paragraphs = processParagraphs(content);
+      const typeClass = type ? ` ${type}` : '';
+      return `
+<div class="log-collapsible${typeClass}">
+<div class="log-header">
+<span class="log-arrow"></span>
+<span class="log-title">${title}</span>
+</div>
+<div class="log-content">
+${paragraphs}
+</div>
+</div>
+`;
+    }
+    function escapeHtml(text) {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = text;
+      const decodedText = tempDiv.textContent || tempDiv.innerText || '';
+      const div = document.createElement('div');
+      div.textContent = decodedText;
+      return div.innerHTML;
+    }
+    window.toggleImage = function (imageId) {
+      const imageContent = document.getElementById(imageId);
+      const button = imageContent.previousElementSibling;
+      const textSpan = button.querySelector('.image-toggle-text');
+      const iconSpan = button.querySelector('.image-toggle-icon');
+      if (imageContent.classList.contains('expanded')) {
+        imageContent.classList.remove('expanded');
+        button.classList.remove('expanded');
+        textSpan.textContent = '查看插画';
+        iconSpan.textContent = '🖼️';
+      } else {
+        imageContent.classList.add('expanded');
+        button.classList.add('expanded');
+        textSpan.textContent = '收起插画';
+        iconSpan.textContent = '📷';
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      injectBuiltinCharacterStyles();
+      loadDialogueBeautifyConfig();
+      loadCustomCharsIntoConfig();
+      processTextContent();
+      requestAnimationFrame(() => {
+        initThemeSwitcher();
+        initSettings();
+        initAvatarUpload();
+        renderCustomCharList();
+        const savedReadingFontSize = localStorage.getItem('readingFontSize');
+        if (savedReadingFontSize) {
+          readingFontSize = parseInt(savedReadingFontSize);
+        } else {
+          readingFontSize = 18;
+        }
+        const readingContent = document.querySelector('.reading-content');
+        if (readingContent) {
+          readingContent.style.fontSize = readingFontSize + 'px';
+        }
+        applyReadingFont(localStorage.getItem('reading-font-family') || 'theme-default', { skipPersist: true });
+        const savedImageSize = localStorage.getItem('imageSize');
+        if (savedImageSize) {
+          imageSize = parseInt(savedImageSize);
+        } else {
+          imageSize = 100;
+        }
+        applyImageSize();
+      });
+    });
+    function initThemeSwitcher() {
+      const themeControls = document.querySelector('.theme-controls');
+      const body = document.body;
+      if (!themeControls) return;
+      let savedTheme = localStorage.getItem('kivotos-theme') || 'warm-white';
+      if (savedTheme === 'beige') savedTheme = 'classic-dark';
+      body.setAttribute('data-theme', savedTheme);
+      const themeButtons = themeControls.querySelectorAll('.theme-btn');
+      themeButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+      });
+      themeControls.addEventListener('click', function (e) {
+        const btn = e.target.closest('.theme-btn');
+        if (!btn || !btn.dataset.theme) return;
+        const theme = btn.dataset.theme;
+        requestAnimationFrame(() => {
+          body.setAttribute('data-theme', theme);
+          localStorage.setItem('kivotos-theme', theme);
+          themeButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          window.dispatchEvent(new StorageEvent('storage', {
+            key: 'kivotos-theme',
+            newValue: theme,
+            url: window.location.href
+          }));
+        });
+      });
+    }
+    function initSettings() {
+      const settingsBtn = document.getElementById('settingsBtn');
+      const settingsPanel = document.getElementById('settingsPanel');
+      const imageToggle = document.getElementById('imageToggle');
+      const dialogueFontToggle = document.getElementById('dialogueFontToggle');
+      const readingFontSelect = document.getElementById('readingFontSelect');
+      if (!settingsBtn || !settingsPanel || !imageToggle) return;
+      const imageExpanded = localStorage.getItem('image-auto-expand') === 'true';
+      if (imageExpanded) {
+        imageToggle.classList.add('active');
+      }
+      const isMobile = window.innerWidth <= 768;
+      const savedDialogueFont = localStorage.getItem('unified-dialogue-font');
+      const dialogueFontEnabled = savedDialogueFont !== null ? savedDialogueFont === 'true' : !isMobile;
+      if (dialogueFontEnabled && dialogueFontToggle) {
+        dialogueFontToggle.classList.add('active');
+        document.body.classList.add('unified-dialogue-font');
+      }
+      const initialReadingFont = applyReadingFont(localStorage.getItem('reading-font-family') || 'theme-default', { skipPersist: true });
+      if (readingFontSelect) readingFontSelect.value = initialReadingFont;
+      settingsBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        settingsPanel.classList.toggle('active');
+      });
+      imageToggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const isActive = this.classList.contains('active');
+        localStorage.setItem('image-auto-expand', isActive);
+        showSettingsMessage(isActive ? '已开启默认展开插画' : '已关闭默认展开插画');
+        const imageContainers = document.querySelectorAll('.image-container');
+        imageContainers.forEach(container => {
+          if (isActive) {
+            container.classList.add('expanded');
+          } else {
+            container.classList.remove('expanded');
+          }
+        });
+      });
+      dialogueFontToggle?.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const isActive = this.classList.contains('active');
+        localStorage.setItem('unified-dialogue-font', isActive);
+        document.body.classList.toggle('unified-dialogue-font', isActive);
+        showSettingsMessage(isActive ? '已统一对白与正文字体大小' : '已恢复对白独立字体大小');
+      });
+      readingFontSelect?.addEventListener('change', function () {
+        const fontKey = applyReadingFont(this.value);
+        showSettingsMessage(`已切换为${READING_FONT_PRESETS[fontKey].label}`);
+      });
+      document.addEventListener('click', function (e) {
+        if (!settingsPanel.contains(e.target) && !settingsBtn.contains(e.target)) {
+          settingsPanel.classList.remove('active');
+        }
+      });
+    }
+    function showSettingsMessage(message) {
+      const messageDiv = document.createElement('div');
+      messageDiv.style.cssText = `
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+background: var(--primary-accent);
+color: white;
+padding: 12px 24px;
+border-radius: 8px;
+font-size: 14px;
+z-index: 3001;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+animation: fadeInOut 2s ease;
+`;
+      messageDiv.textContent = message;
+      const style = document.createElement('style');
+      style.textContent = `
+@keyframes fadeInOut {
+0% { opacity: 0; transform: translate(-50%, -10px); }
+15% { opacity: 1; transform: translate(-50%, 0); }
+85% { opacity: 1; transform: translate(-50%, 0); }
+100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+`;
+      document.head.appendChild(style);
+      document.body.appendChild(messageDiv);
+      setTimeout(() => {
+        if (document.body.contains(messageDiv)) {
+          document.body.removeChild(messageDiv);
+        }
+        if (document.head.contains(style)) {
+          document.head.removeChild(style);
+        }
+      }, 2000);
+    }
+    let readingFontSize = 18;
+    function adjustReadingFontSize(delta) {
+      const readingContent = document.querySelector('.reading-content');
+      readingFontSize += delta;
+      readingFontSize = Math.max(12, Math.min(28, readingFontSize));
+      if (readingContent) {
+        readingContent.style.fontSize = readingFontSize + 'px';
+      }
+      localStorage.setItem('readingFontSize', readingFontSize);
+    }
+    let imageSize = 100;
+    function adjustImageSize(delta) {
+      imageSize += delta;
+      imageSize = Math.max(30, Math.min(200, imageSize));
+      applyImageSize();
+      localStorage.setItem('imageSize', imageSize);
+      showSettingsMessage(`插画大小: ${imageSize}%`);
+    }
+    function applyImageSize() {
+      const images = document.querySelectorAll('.image-content img');
+      images.forEach(img => {
+        img.style.width = imageSize + '%';
+        img.style.maxWidth = imageSize + '%';
+      });
+    }</script>
+</body>
+
+</html>
+```

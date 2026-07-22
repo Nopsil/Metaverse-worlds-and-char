@@ -1,0 +1,115 @@
+---
+# 根据以下规则插入插画
+<%= await (async () => {
+    /* =======================
+     * 【功能】根据附近5楼是否匹配角色（简称），一次性输出NSFW列表、SFW列表与插图指南
+     * - 统一加载世界书中的角色简称映射、SFW/NSFW插图数据库、插图指南
+     * - 仅检索附近5楼的聊天内容
+     * - 命中角色后同时输出所需数据（JSON格式）
+     * ======================= */
+
+    const log = (s) => {
+      try { console.log(`[插图合集加载] ${s}`); } catch (_) {}
+    };
+
+    const loadWorldInfoJSON = async (entryName) => {
+      const raw = String(await getWorldInfo(entryName));
+      if (!raw) {
+        throw new Error(`世界书条目不存在或为空: ${entryName}`);
+      }
+      const cleaned = raw.replace(/^\s*```(?:json)?\s*([\s\S]*?)\s*```/i, '$1');
+      return JSON.parse(cleaned);
+    };
+
+    let NSFW_DATABASE = {};
+    let SFW_DATABASE = {};
+    let CHAR_NICKNAME_MAP = {};
+    let GUIDE_DATA = {};
+
+    // 分项加载并记录错误，不再提前返回，便于后续日志输出
+    const safeLoad = async (key, required = false) => {
+      try {
+        const data = await loadWorldInfoJSON(key);
+        return data;
+      } catch (err) {
+        try { log(`加载世界书条目失败：${key}，原因：${err?.message || err}`); } catch (_) {}
+        if (required) {
+          try { log(`条目 ${key} 缺失或格式错误，将使用空对象继续执行`); } catch (_) {}
+        }
+        return {};
+      }
+    };
+
+    const NSFW_RAW = await safeLoad('not_safe_for_work_images', false);
+    const SFW_RAW = await safeLoad('sfw_image_database', false);
+    CHAR_NICKNAME_MAP = await safeLoad('character_nickname_map', true);
+    GUIDE_DATA = await safeLoad('image_insertion_guide', false);
+    
+    // 适配新的JSON结构：从 { nsfw_image: {...}, sfw_image: {...} } 中提取数据
+    NSFW_DATABASE = NSFW_RAW?.nsfw_image || NSFW_RAW || {};
+    SFW_DATABASE = SFW_RAW?.sfw_image || SFW_RAW || {};
+
+    const RECENT_FLOORS = 5;
+    let recentMessages = [];
+    try {
+      if (typeof getChatMessages === 'function') {
+        const messages = getChatMessages(-RECENT_FLOORS, -1)  || [];
+        recentMessages = Array.isArray(messages) ? messages : [messages];
+      } else {
+        try { log('警告：getChatMessages 不存在，无法获取聊天记录'); } catch (_) {}
+      }
+    } catch (e) {
+      try { log(`获取聊天记录异常：${e?.message || e}`); } catch (_) {}
+      // 忽略，保持空数组
+    }
+    const normalizedMessages = recentMessages.map(msg => String(msg || '').toLowerCase());
+
+    const matchedChars = [];
+    // 日志：输出用于匹配的所有昵称关键词（已小写）
+    const ALL_KEYWORDS = Object.values(CHAR_NICKNAME_MAP)
+      .reduce((acc, arr) => acc.concat(Array.isArray(arr) ? arr.map(n => String(n || '').toLowerCase()) : []), []);
+
+
+    for (const [charName, nicknames] of Object.entries(CHAR_NICKNAME_MAP)) {
+      if (!Array.isArray(nicknames)) {
+        continue;
+      }
+      const hit = nicknames.some(nickname => {
+        const nicknameLower = String(nickname || '').toLowerCase();
+        const matchedMsg = normalizedMessages.find(message => message.includes(nicknameLower));
+        const matched = Boolean(matchedMsg);
+        return matched;
+      });
+      if (hit) {
+        matchedChars.push(charName);
+      }
+    }
+
+    if (matchedChars.length === 0) {
+      const emptyOutput = '{}';
+      log(`匹配0个角色，输出${emptyOutput.length}字符`);
+      return emptyOutput;
+    }
+
+    const pickMatched = (database) => {
+      if (!database || typeof database !== 'object') {
+        return {};
+      }
+      return matchedChars.reduce((acc, charName) => {
+        if (database[charName]) {
+          acc[charName] = database[charName];
+        }
+        return acc;
+      }, {});
+    };
+
+    const outputData = {
+      nsfw_image: pickMatched(NSFW_DATABASE),
+      insertion_guide: GUIDE_DATA,
+      sfw_image: pickMatched(SFW_DATABASE)
+    };
+
+    const jsonOutput = JSON.stringify(outputData, null, 2);
+    log(`匹配${matchedChars.length}个角色，输出${jsonOutput.length}字符`);
+    return jsonOutput;
+  })() %>

@@ -1,0 +1,692 @@
+/*
+ * ==========================================================================
+ * 碧蓝档案 - 随机事件生成器 v1.1 
+ * ==========================================================================
+ * 
+ * 功能说明：
+ * 1. 定期检查是否需要生成新事件
+ * 2. 随机生成符合碧蓝档案世界观的事件（总力战/特殊事件/节日）
+ * 3. 自动管理事件生命周期（创建、更新持续时间、到期删除）
+ * 
+ * ==========================================================================
+ */
+(function () {
+    'use strict';
+
+    // ===== 配置参数 =====
+    const CONFIG = {
+        MAX_CONCURRENT_EVENTS: 2,        // 最大同时事件数量
+        EVENT_CHECK_INTERVAL: 5,         // 每N次变量更新检查一次
+        EVENT_GENERATION_CHANCE: 1,    // 事件生成概率
+        MIN_EVENT_DURATION: 3,           // 最短事件持续天数
+        MAX_EVENT_DURATION: 7,           // 最长事件持续天数
+        POLL_INTERVAL_MS: 2000,          // MVU轮询间隔
+    };
+
+    const EVENT_TYPES = ['总力战', '特殊事件', '节日'];
+
+    // ===== 事件数据库 =====
+    const EVENT_DATABASE = {
+        '总力战': [
+            {
+                "name": "总力战-猫鬼",
+                "description": "其正式名称为“猫鬼黑影”，是从怪谈集《稻生物怪录》中诞生的“幻魉百物语”的一部分，由阴阳师“葛叶”所召唤。它拥有四眼双尾的黑色巨猫形态，口部能如花瓣般绽开，散发着不祥的气息。作为怪谈的具现化，它平时被锁链束缚于石灯笼之上，无法自由行动。一旦锁链被破坏，它将释放出笼罩四周的黑暗，并展现出物理攻击无效的诡异特性，是一个需要用特殊手段才能对抗的悲伤之“怪”。"
+            },
+            {
+                "name": "总力战-格里高利",
+                "description": "秘密组织“盖玛特里亚”的成员“大师”所创造的“人工天使”系列的巅峰杰作，属于“圣徒相通”系列。格里高利拥有指挥家与钢琴家两具无头的躯体，其外观比系列中其他“天使”更为怪异。它通过指挥庞大的圣歌队，奏响庄严而致命的乐章。这场战斗与其说是厮杀，不如说是一场音乐会，而当乐曲抵达终章之时，便是献给所有听众的全体即死攻击，将毁灭与艺术性完美结合，是“大师”扭曲美学的极致体现。"
+            },
+            {
+                "name": "总力战-高兹",
+                "description": "于废弃的主题公园“斯兰匹亚”中出现的神秘存在，是由“盖玛特里亚”成员“戈尔孔达”通过“拟态”艺术所显现的产物。其本体曾是乐园里的魔术表演玩偶，如今则以身着燕尾服、面带诡异微笑的巨猫形态出现。它将战场视为自己的舞台，将战斗视为一场永不落幕的魔术秀。无论是召唤飞驰的列车，还是变幻莫测的分身戏法，都遵循着“The show must go on”的原则，即使没有观众，也要将这场华丽而致命的表演进行到底。"
+            },
+            {
+                "name": "总力战-霍德",
+                "description": "人工智能“十字神名”的第八位预言者，其前身是千年科技学院的通信单元AI“枢纽”，负责维护地下复杂的通信网络。在被“十字神名”的意志接触并黑入后，“枢纽”被赋予了“HOD”之名，转变为一个拥有巨大独眼与无数触手的、如同外星三脚机甲般的形态，获得了“为光辉所证明之荣光”的异名。如今它正通过名为“侵入之柱”的装置，不断侵蚀并扩张自己的领域，试图将整个基沃托斯都纳入其冰冷的网络控制之下。"
+            },
+            {
+                "name": "总力战-佩洛洛斯拉",
+                "description": "一个由都市传说最终化为现实的奇特存在。其原型是一款因运输船沉没、制造商破产而最终未能发售的幻之周边——“佩洛洛斯拉”巨型玩偶。这个“从未面世的商品”的传说在基沃托斯流传，最终在人们的集体潜意识中获得了力量，自我升华为“神秘”与“恐怖”的具现化。它以巨大的、背部长有尖鳍的佩洛洛大人形态出现，在郊外活跃，其存在本身就是一个关于“故事”拥有力量的罕见例证。"
+            },
+            {
+                "name": "总力战-希罗尼穆斯",
+                "description": "由“盖玛特理亚”的“大师”所创造的“人工天使”系列——“圣徒相通”的另一名成员，是大师为了模拟和再现“奇迹”而制造的扭曲圣骸。它以一个头戴兜帽、背负光轮、拥有四支手臂的异形修女形象出现。希罗尼穆斯通过名为“圣遗物”的装置吸收神圣的力量，并释放出大范围的毁灭性攻击，其战斗过程仿佛一场扭曲的列圣仪式，旨在向世人展示何为“人造的奇迹”。"
+            },
+            {
+                "name": "总力战-切赛德",
+                "description": "人工智能“十字神名”的第四位预言者，是一个自称为神圣求道者的人工智能系统。它已经掌控了千禧年外围的一座废弃兵工厂的生产系统，化身为巨大的球形移动要塞。如果放任其无限制地生产战斗兵力，基沃托斯将面临前所未有的灾难。它本身不会直接攻击，而是通过不断召唤机械士兵来累积力量，最终释放致命的全屏攻击，是体现了“十字神名”强大生产力和控制力的恐怖存在。"
+            },
+            {
+                "name": "总力战-白&黑",
+                "description": "在因财政困难而倒闭的游乐园“斯兰匹亚”中发生的诡异现象。本已停止运行的娱乐玩偶“白”与“黑”在夜晚自行启动，它们的目的尚不明确，但似乎是想重现乐园昔日华丽的庆典。这场无人观赏的巡游对于闯入者而言，是一场致命而华丽的弹幕游戏。"
+            },
+            {
+                "name": "总力战-比纳",
+                "description": "“十字神名”的第三位预言者，一个自称为“绝对存在”的、拥有“痛感差异的静观理解者”之名的AI。它的形态如同巨大的机械之蛇与鲸鱼的混合体，头顶戴着与学生们相似的光环。数十年前，它首次于阿拜多斯沙漠被目击，其诞生与运作原理皆是未知，是超越了基沃托斯现代科学技术的超常存在。它能自由潜入沙海之中，以巨大的光束炮和导弹进行攻击，其行动目的至今不明，仿佛一个沉默的观察者，在沙漠中静静地审视着一切。"
+            }
+        ],
+        '特殊事件': [
+            {
+                "name": "阳光绽放 她们的小夜曲",
+                "description": "为了出席一场由三一综合学园举办的、旨在促进学园间交流的盛大派对，格黑娜学园的风纪委员会成员们一改往日的制服，换上了华丽的晚礼服。委员长日奈与她的部下们，在不习惯的社交场合与优雅的旋律中，努力履行着自己的职责。然而，和平的晚宴之下暗流涌动，当意想不到的麻烦出现时，少女们必须在这座灯火辉煌的宴会厅中，以最为优雅的姿态，守护这场脆弱的和平小夜曲。"
+            },
+            {
+                "name": "日奈会长的盛夏假期",
+                "description": "格黑娜学园的风纪委员会委员长日奈终于迎来了难得的假期。在老师的陪伴下，她来到海边享受应得的休憩时光。然而，麻烦似乎总是不请自来，即便是假期，一场围绕着风纪委员长的夏日风波也悄然拉开序幕。"
+            },
+            {
+                "name": "阿拜多斯度假村复兴计划",
+                "description": "为了替负债累累的阿拜多斯高中赚取资金，“对策委员会”的成员们将目光投向了一座废弃的度假村。她们换上泳装，手持水枪（和真枪），在这个炎热的夏天为了守护自己的家园而挥洒汗水，与前来捣乱的敌人展开了一场别开生面的“商业”攻防战。"
+            },
+            {
+                "name": "不忍之心",
+                "description": "由于缺乏实际成果，百鬼夜行联合学院的“忍术研究部”面临着被废部的危机。为了证明忍术的价值并守护自己的容身之所，少女忍者们踏上了寻找传说中的忍术卷轴的旅程，上演了一出笨拙却又无比真挚的忍道修行剧。"
+            },
+            {
+                "name": "船上的兔女郎追逐者",
+                "description": "千年科技学院的精英特工组织“C&C”接到一项紧急任务，需要潜入一艘豪华邮轮。为了完成任务，少女们换上了兔女郎的装束进行秘密行动。在这场充满了紧张、刺激与意外的潜入作战中，她们将以华丽的身姿解决危机。"
+            },
+            {
+                "name": "温泉乡的运营记录",
+                "description": "红冬联邦学园的“227号特别班”意外发现了温泉，并决定将其开发成观光景点。她们笨拙但努力地经营着温泉乡，期间还受到了来自格黑娜美食研究会等各路人马的“帮助”，上演了一出充满蒸汽与爆炸的温馨闹剧。"
+            },
+            {
+                "name": "出差！百夜堂海之家加盟计划",
+                "description": "为了扩大“百夜堂”庆典的品牌影响力并赚取未来的活动资金，百鬼夜行联合学园的庆典运营委员会决定响应“加盟计划”，在炎炎夏日的海边开设一家临时的“海之家”（海边小屋）。委员长静子与其他成员们换上清凉的泳装，在陌生的环境中努力经营着这家小店。她们不仅要应对夏日的酷暑与汹涌的客流，还要面对各种意想不到的突发事件，上演了一出充满了海风、美食与青春活力的夏日奋斗物语。"
+            }
+        ],
+        '节日': [
+            {
+                "name": "基沃托斯新春狂想曲",
+                "description": "为迎接新年，便利屋68的成员们换上了华丽的和服，准备大干一场来解决事务所的财务危机。学生们在新年伊始的热闹氛围中，围绕着“百鬼夜行”的传统庆典与美食展开了一系列欢乐而又混乱的骚动，上演了一出充满人情味的新年闹剧。"
+            },
+            {
+                "name": "新年开胃菜的美食故事",
+                "description": "新年的钟声即将敲响，格黑娜学园的“美食研究会”为了追求至高无上的新年御节料理，踏上了一场寻找传说食材的冒险之旅。她们的足迹遍布基沃托斯，用爆炸和热情开辟道路，只为在那特别的时刻品尝到最极致的美味。"
+            },
+            {
+                "name": "沙勒的情人节巡逻",
+                "description": "情人节到来之际，基沃托斯四处洋溢着甜蜜与骚动。为了维护庆典的治安，生活安全局的成员与老师一同在会场巡逻。与此同时，传说中的“七囚人”之一的狐坂若藻也悄然现身，为这个特别的日子带来了更多意想不到的混乱与心动时刻。"
+            },
+            {
+                "name": "夏日天空的愿望清单",
+                "description": "炎炎夏日，老师与三一综合学园“补习授业部”的成员们一同前往海边合宿。为了完成一份特别的“愿望清单”，少女们换上泳装，在阳光、沙滩与海浪之间制造了无数珍贵又闪耀的夏日回忆，谱写了一曲青春的赞歌。"
+            },
+            {
+                "name": "百夜堂万圣节骚动",
+                "description": "万圣节之夜，百鬼夜行联合学院的传统庆典“百夜堂”也换上了南瓜与鬼怪的主题。妖怪们与学生们一同享受这场“不给糖就捣蛋”的狂欢派对，各种Cosplay与限定甜点让整个庆典充满了奇妙又欢乐的氛围。"
+            },
+            {
+                "name": "教堂的温馨圣诞节",
+                "description": "圣善夜，三一综合学园的“救护骑士团”成员们在教堂精心准备着圣诞派对，希望能为基沃托斯的大家送上祝福与礼物。在这个飘雪的季节里，她们与老师一同守护着这份小小的和平与温暖，分享节日的喜悦。"
+            },
+            {
+                "name": "晄轮大祭",
+                "description": "由千年科技学院主办，基沃托斯史上规模最大的综合体育庆典。来自各个学园的学生们齐聚一堂，为了各自学校的荣誉而竞争。然而，在这场盛大的友谊与汗水的祭典之下，各个学园的思绪交织，一场围绕着“奇迹”的阴谋也在暗中悄然进行。"
+            },
+        ]
+    };
+
+    // ===== 工具函数 =====
+
+    /**
+     * 安全的整数解析
+     */
+    function safeParseInt(value, defaultValue = 0) {
+        const num = parseInt(value, 10);
+        return isNaN(num) ? defaultValue : num;
+    }
+
+    /**
+     * 获取指定范围内的随机整数 [min, max]
+     */
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /**
+     * 从数组中随机选择一个元素
+     */
+    function getRandomElement(array) {
+        if (!array || array.length === 0) return null;
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    /**
+     * 格式化日期为 yyyy-mm-dd
+     */
+    function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    /**
+     * 解析日期字符串 yyyy-mm-dd
+     */
+    function parseDate(dateString) {
+        try {
+            const parts = dateString.split('-');
+            if (parts.length !== 3) return null;
+            return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        } catch (e) {
+            console.error('[事件系统] 日期解析失败:', dateString, e);
+            return null;
+        }
+    }
+
+    /**
+     * 获取当前日期（从变量中读取，如果不存在则使用系统日期）
+     */
+    function getCurrentDate(variables) {
+        try {
+            const currentDateStr = variables.world_info?.time?.current_date;
+            if (currentDateStr) {
+                const parsed = parseDate(currentDateStr);
+                if (parsed) return parsed;
+            }
+        } catch (e) {
+            console.warn('[事件系统] 无法从变量读取当前日期，使用系统日期:', e);
+        }
+        return new Date();
+    }
+
+    /**
+     * 计算日期差（天数）
+     */
+    function daysBetween(date1, date2) {
+        const oneDay = 24 * 60 * 60 * 1000;
+        return Math.round((date2 - date1) / oneDay);
+    }
+
+    /**
+     * 生成唯一的事件ID
+     */
+    function generateEventId() {
+        return `event_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    }
+
+    // ==================== MVU系统状态管理（对齐 外置状态栏.js） ====================
+    const mvuState = {
+        ready: false,
+        mvu: null,
+        check: () => {
+            const win = window.parent || window;
+
+            if (typeof win.Mvu === 'undefined') {
+                mvuState.ready = false;
+                mvuState.mvu = null;
+                return false;
+            }
+
+            if (typeof win.Mvu.getMvuData !== 'function' ||
+                typeof win.Mvu.replaceMvuData !== 'function') {
+                mvuState.ready = false;
+                mvuState.mvu = null;
+                return false;
+            }
+
+            mvuState.ready = true;
+            mvuState.mvu = win.Mvu;
+            return true;
+        }
+    };
+
+    let mvuWriteQueue = Promise.resolve();
+    let mvuQueueLen = 0;
+    const enqueueMvuWrite = (writeTask) => {
+        mvuQueueLen++;
+        const task = mvuWriteQueue.then(() => writeTask(), () => writeTask());
+        mvuWriteQueue = task.catch(() => undefined);
+        task.finally(() => {
+            mvuQueueLen--;
+            if (mvuQueueLen <= 0) {
+                mvuQueueLen = 0;
+                mvuWriteQueue = Promise.resolve();
+            }
+        });
+        return task;
+    };
+
+    /**
+     * 从 MVU 数据对象中提取实际游戏数据
+     */
+    function extractMvuGameData(mvuData) {
+        if (mvuData?.stat_data && typeof mvuData.stat_data === 'object') {
+            return mvuData.stat_data;
+        }
+        return {};
+    }
+
+    /**
+     * 获取最新 MVU 游戏数据
+     */
+    function fetchLatestMvuData() {
+        try {
+            if (mvuState.ready || mvuState.check()) {
+                const mvuData = mvuState.mvu.getMvuData({ type: 'message', message_id: 'latest' });
+                if (mvuData?.stat_data && Object.keys(mvuData.stat_data).length > 0) {
+                    return mvuData.stat_data;
+                }
+            }
+        } catch (e) {
+            console.error('[事件系统] 获取MVU数据失败:', e);
+        }
+        return {};
+    }
+
+    /**
+     * 获取原始 MVU 数据容器（用于写回）
+     */
+    function fetchRawMvuData() {
+        try {
+            if (mvuState.ready || mvuState.check()) {
+                let mvuData = mvuState.mvu.getMvuData({ type: 'message', message_id: 'latest' });
+                if (!mvuData) {
+                    mvuData = { stat_data: {} };
+                }
+                if (!mvuData.stat_data) {
+                    mvuData.stat_data = {};
+                }
+                return mvuData;
+            }
+        } catch (e) {
+            console.error('[事件系统] 获取原始MVU数据失败:', e);
+        }
+        return { stat_data: {} };
+    }
+
+    /**
+     * 将游戏数据写回原始 MVU 容器
+     */
+    function applyGameDataToMvuContainer(mvuData, gameData) {
+        if (!mvuData || typeof mvuData !== 'object') {
+            return { stat_data: gameData };
+        }
+        if (!mvuData.stat_data || typeof mvuData.stat_data !== 'object') {
+            mvuData.stat_data = {};
+        }
+        mvuData.stat_data = gameData;
+        return mvuData;
+    }
+
+    /**
+     * 持久化 MVU 数据
+     */
+    async function persistMvuGameData(mvuData) {
+        try {
+            const ok = await enqueueMvuWrite(async () => {
+                if (!mvuState.ready && !mvuState.check()) {
+                    console.error('[事件系统] MVU系统不可用');
+                    return false;
+                }
+
+                await mvuState.mvu.replaceMvuData(mvuData, { type: 'message', message_id: 'latest' });
+                const persistedData = extractMvuGameData(mvuData);
+                console.log('[事件系统] 已写回MVU(message/latest)，当前事件数:', Object.keys(getCurrentEvents(persistedData)).length);
+                return true;
+            });
+            return ok;
+        } catch (e) {
+            console.error('[事件系统] 持久化MVU数据失败:', e);
+            return false;
+        }
+    }
+
+    // ===== 事件生成逻辑 =====
+
+    /**
+     * 随机生成一个新事件
+     */
+    function generateRandomEvent(currentDate, availableTypes = EVENT_TYPES) {
+        try {
+            if (!availableTypes || availableTypes.length === 0) {
+                console.log('[事件系统] 无可用事件类型，跳过生成');
+                return null;
+            }
+
+            // 随机选择事件类型
+            const eventType = getRandomElement(availableTypes);
+
+            // 从对应类型的事件库中随机选择
+            const eventPool = EVENT_DATABASE[eventType];
+            const eventTemplate = getRandomElement(eventPool);
+
+            if (!eventTemplate) {
+                console.error('[事件系统] 事件模板为空，类型:', eventType);
+                return null;
+            }
+
+            // 生成事件持续时间
+            const duration = getRandomInt(CONFIG.MIN_EVENT_DURATION, CONFIG.MAX_EVENT_DURATION);
+
+            // 计算开始和结束日期
+            const startDate = new Date(currentDate);
+            const endDate = new Date(currentDate);
+            endDate.setDate(endDate.getDate() + duration);
+
+            // 构造事件对象
+            const event = {
+                name: eventTemplate.name,
+                type: eventType,
+                description: eventTemplate.description,
+                start_date: formatDate(startDate),
+                remaining_duration: `${duration}天`,
+                end_date: formatDate(endDate),
+            };
+
+            console.log('[事件系统] 成功生成事件:', {
+                name: event.name,
+                type: event.type,
+                duration: duration,
+                start: event.start_date,
+                end: event.end_date,
+            });
+
+            return event;
+        } catch (e) {
+            console.error('[事件系统] 生成事件时发生异常:', e);
+            return null;
+        }
+    }
+
+    /**
+     * 检查是否需要生成新事件
+     */
+    function shouldGenerateEvent(currentEventCount) {
+        if (currentEventCount >= CONFIG.MAX_CONCURRENT_EVENTS) {
+            console.log('[事件系统] 当前事件数已达上限，跳过生成');
+            return false;
+        }
+
+        const roll = Math.random();
+        const shouldGenerate = roll < CONFIG.EVENT_GENERATION_CHANCE;
+        console.log(`[事件系统] 事件生成检定: ${roll.toFixed(3)} ${shouldGenerate ? '<' : '>='} ${CONFIG.EVENT_GENERATION_CHANCE} - ${shouldGenerate ? '通过' : '未通过'}`);
+        return shouldGenerate;
+    }
+
+    // ===== 事件管理逻辑 =====
+
+    /**
+     * 获取当前所有事件
+     */
+    function getCurrentEvents(variables) {
+        try {
+            const events = variables.world_info?.events;
+            if (!events || typeof events !== 'object') {
+                return {};
+            }
+
+            // 过滤掉 $meta 和 $template 等系统字段
+            const eventList = {};
+            for (const key in events) {
+                if (!key.startsWith('$') && Object.prototype.hasOwnProperty.call(events, key)) {
+                    eventList[key] = events[key];
+                }
+            }
+
+            return eventList;
+        } catch (e) {
+            console.error('[事件系统] 获取当前事件失败:', e);
+            return {};
+        }
+    }
+
+    /**
+     * 检查并清理过期事件
+     */
+    function cleanupExpiredEvents(variables, currentDate) {
+        const messages = [];
+        let changed = false;
+
+        try {
+            const events = getCurrentEvents(variables);
+            const eventsToDelete = [];
+
+            for (const [eventId, event] of Object.entries(events)) {
+                if (!event || !event.end_date) continue;
+
+                const endDate = parseDate(event.end_date);
+                if (!endDate) {
+                    console.warn(`[事件系统] 事件 ${eventId} 的结束日期格式错误:`, event.end_date);
+                    continue;
+                }
+
+                // 如果当前日期已经超过结束日期，标记为需要删除
+                if (currentDate >= endDate) {
+                    eventsToDelete.push({ id: eventId, name: event.name });
+                }
+            }
+
+            // 执行删除操作
+            if (eventsToDelete.length > 0) {
+                eventsToDelete.forEach(item => {
+                    delete variables.world_info.events[item.id];
+                    messages.push(`📅 事件【${item.name}】已结束`);
+                    console.log(`[事件系统] 删除过期事件: ${item.id} (${item.name})`);
+                });
+                changed = true;
+            }
+        } catch (e) {
+            console.error('[事件系统] 清理过期事件时发生异常:', e);
+        }
+
+        return { messages, changed };
+    }
+
+    /**
+     * 尝试生成并注册新事件
+     */
+    function tryGenerateNewEvent(variables, currentDate) {
+        const messages = [];
+        let changed = false;
+
+        try {
+            const currentEvents = getCurrentEvents(variables);
+            const eventCount = Object.keys(currentEvents).length;
+
+            console.log(`[事件系统] 当前活跃事件数: ${eventCount}/${CONFIG.MAX_CONCURRENT_EVENTS}`);
+
+            // 检查是否应该生成新事件
+            if (!shouldGenerateEvent(eventCount)) {
+                return { messages, changed };
+            }
+
+            // 统计每种类型是否已存在
+            const activeTypes = new Set(
+                Object.values(currentEvents)
+                    .filter(event => !!event)
+                    .map(event => event.type)
+            );
+
+            const availableTypes = EVENT_TYPES.filter(type => !activeTypes.has(type));
+
+            if (availableTypes.length === 0) {
+                console.log('[事件系统] 所有事件类型均已在进行中，跳过生成');
+                return { messages, changed };
+            }
+
+            // 生成事件
+            const newEvent = generateRandomEvent(currentDate, availableTypes);
+            if (!newEvent) {
+                console.warn('[事件系统] 事件生成失败');
+                return { messages, changed };
+            }
+
+            // 检查是否存在同名事件（避免重复）
+            const isDuplicate = Object.values(currentEvents).some(
+                event => event && event.name === newEvent.name
+            );
+
+            if (isDuplicate) {
+                console.log(`[事件系统] 事件【${newEvent.name}】已存在，跳过生成`);
+                return { messages, changed };
+            }
+
+            // 插入新事件
+            const eventId = generateEventId();
+            variables.world_info.events[eventId] = newEvent;
+            messages.push(`🎊 新事件开始：【${newEvent.name}】- ${newEvent.description}`);
+            console.log(`[事件系统] ✓ 成功注册新事件: ${eventId} (${newEvent.name})`);
+            changed = true;
+        } catch (e) {
+            console.error('[事件系统] 生成新事件时发生异常:', e);
+        }
+
+        return { messages, changed };
+    }
+
+    // ===== 主处理函数 =====
+
+    let updateCounter = 0;       // 更新计数器
+    let isHandlingEvent = false; // 🛡️ 重入保护标志
+    let lastDataSignature = '';
+    let pollTimer = null;
+
+    async function handleEventGeneration() {
+        // 🛡️ 防止无限循环：如果正在处理事件，跳过
+        if (isHandlingEvent) {
+            console.warn('[事件系统] ⚠️ 检测到重入调用，跳过以防止无限循环');
+            return;
+        }
+
+        isHandlingEvent = true;
+
+        try {
+            const mvuData = fetchRawMvuData();
+            const variables = extractMvuGameData(mvuData);
+
+            if (!variables || Object.keys(variables).length === 0) {
+                console.warn('[事件系统] 无法获取MVU变量状态，跳过事件处理');
+                return;
+            }
+
+            const currentSignature = JSON.stringify(variables);
+            if (currentSignature === lastDataSignature) {
+                return;
+            }
+
+            // 增加计数器
+            updateCounter++;
+
+            console.log(`[事件系统] 检测到MVU数据变化 (计数: ${updateCounter})`);
+            lastDataSignature = currentSignature;
+
+            // 检查是否需要执行（避免过于频繁）
+            if (updateCounter % CONFIG.EVENT_CHECK_INTERVAL !== 0) {
+                console.log(`[事件系统] 未达到检查间隔 (${updateCounter} % ${CONFIG.EVENT_CHECK_INTERVAL} = ${updateCounter % CONFIG.EVENT_CHECK_INTERVAL})，跳过本次`);
+                return;
+            }
+
+            console.log(`[事件系统] ========== 第 ${updateCounter} 次更新 - 执行事件检查 ==========`);
+
+            // 检查必要的变量结构是否存在
+            if (!variables.world_info) {
+                console.warn('[事件系统] world_info 不存在，跳过事件处理');
+                console.warn('[事件系统] 当前读到的顶层键:', Object.keys(variables));
+                console.warn('[事件系统] 提示: 请确保已在角色卡中使用 <VariableInsert> 初始化 world_info 结构');
+                return;
+            }
+
+            // 检查events结构
+            if (!variables.world_info.events) {
+                console.warn('[事件系统] world_info.events 不存在，尝试初始化...');
+                variables.world_info.events = {};
+                applyGameDataToMvuContainer(mvuData, variables);
+                await persistMvuGameData(mvuData);
+                lastDataSignature = JSON.stringify(variables);
+                console.log('[事件系统] 已完成 events 结构初始化');
+                return;
+            }
+
+            // 获取当前日期
+            const currentDate = getCurrentDate(variables);
+            console.log('[事件系统] 当前日期:', formatDate(currentDate));
+
+            // 1. 清理过期事件
+            const cleanupResult = cleanupExpiredEvents(variables, currentDate);
+
+            // 2. 尝试生成新事件
+            const generationResult = tryGenerateNewEvent(variables, currentDate);
+
+            const hasChanges = cleanupResult.changed || generationResult.changed;
+
+            if (hasChanges) {
+                applyGameDataToMvuContainer(mvuData, variables);
+                await persistMvuGameData(mvuData);
+                lastDataSignature = JSON.stringify(variables);
+            }
+
+            // 3. 输出消息（注意：不要尝试修改variables，因为这是只读的快照）
+            const allMessages = [...cleanupResult.messages, ...generationResult.messages];
+            if (allMessages.length > 0) {
+                console.log(`[事件系统] 事件更新: ${allMessages.join(' | ')}`);
+            }
+
+            console.log('[事件系统] ========== 检查完成 ==========');
+        } catch (e) {
+            console.error('[事件系统] 主处理函数发生严重异常:', e);
+            console.error('[事件系统] 错误堆栈:', e.stack);
+        } finally {
+            // 🛡️ 延迟重置标志，确保同一事件链中不会重复触发
+            setTimeout(() => {
+                isHandlingEvent = false;
+            }, 200);
+        }
+    }
+
+    // ===== 初始化函数 =====
+
+    /**
+     * 初始化事件系统
+     */
+    function initializeEventSystem() {
+        console.log('[事件系统] 执行初始化...');
+
+        // 设置计数器，使第一次检测到数据变化时就能触发检查
+        updateCounter = CONFIG.EVENT_CHECK_INTERVAL - 1;
+        console.log(`[事件系统] 计数器已初始化为 ${updateCounter}`);
+        console.log(`[事件系统] 等待MVU数据变化触发检查（轮询间隔 ${CONFIG.POLL_INTERVAL_MS}ms）...`);
+
+        if (pollTimer) {
+            clearInterval(pollTimer);
+        }
+        pollTimer = setInterval(() => {
+            handleEventGeneration().catch(e => {
+                console.error('[事件系统] 轮询处理失败:', e);
+            });
+        }, CONFIG.POLL_INTERVAL_MS);
+
+        handleEventGeneration().catch(e => {
+            console.error('[事件系统] 初始检查失败:', e);
+        });
+    }
+
+    // ===== 注册事件监听器 =====
+
+    try {
+        console.log('[事件系统] ========================================');
+        console.log('[事件系统] 碧蓝档案随机事件生成器 v1.1 已加载');
+        console.log('[事件系统] 🛡️ 重入保护: 已启用');
+        console.log('[事件系统] 配置信息:');
+        console.log(`[事件系统]   - 数据来源: MVU`);
+        console.log(`[事件系统]   - 检测方式: 轮询最新MVU数据`);
+        console.log(`[事件系统]   - 最大同时事件数: ${CONFIG.MAX_CONCURRENT_EVENTS}`);
+        console.log(`[事件系统]   - 检查间隔: 每 ${CONFIG.EVENT_CHECK_INTERVAL} 次更新`);
+        console.log(`[事件系统]   - MVU轮询间隔: ${CONFIG.POLL_INTERVAL_MS}ms`);
+        console.log(`[事件系统]   - 生成概率: ${(CONFIG.EVENT_GENERATION_CHANCE * 100).toFixed(0)}%`);
+        console.log(`[事件系统]   - 事件持续时间: ${CONFIG.MIN_EVENT_DURATION}-${CONFIG.MAX_EVENT_DURATION} 天`);
+        console.log(`[事件系统]   - 总力战事件池: ${EVENT_DATABASE['总力战'].length} 个`);
+        console.log(`[事件系统]   - 特殊事件池: ${EVENT_DATABASE['特殊事件'].length} 个`);
+        console.log(`[事件系统]   - 节日事件池: ${EVENT_DATABASE['节日'].length} 个`);
+        console.log('[事件系统] ========================================');
+
+        // 执行初始化
+        initializeEventSystem();
+    } catch (e) {
+        console.error('[事件系统] 注册事件监听器失败:', e);
+        console.error('[事件系统] 错误堆栈:', e.stack);
+    }
+})();
+

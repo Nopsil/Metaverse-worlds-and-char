@@ -1,0 +1,3 @@
+<div class="cg-container">
+    <img class="cg-image" src="https://r2-proxy.saugrodep.workers.dev/b/bluearchive/$1.webp" alt="$1" width=60% />
+</div>

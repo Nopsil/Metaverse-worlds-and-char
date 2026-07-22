@@ -1,0 +1,326 @@
+/*
+ * ==========================================================================
+ * 剧情章节管理器
+ * ==========================================================================
+ *
+ * 功能：
+ * - 根据 story_manager 的当前进度自动启用对应章节世界书
+ * - 世界书条目命名规则：Vol1Ch1、Vol1Ch2、VolFCh4 ...
+ * - 当剧情模式为“日常”或剧情管理被禁用时，自动关闭所有受管剧情条目
+ *
+ * 说明：
+ * - 该脚本不会处理章内 seq 推进，只负责“当前章节条目”的世界书开关
+ * - 若你的世界书命名规则变化，请修改 buildEntryName()
+ * ==========================================================================
+ */
+(async function() {
+    'use strict';
+
+    const LOG_PREFIX = '[剧情章节管理器]';
+    const MAX_WAIT_TIME = 30000;
+    const CHECK_INTERVAL = 100;
+
+    const STORY_STRUCTURE = {
+        Vol0: ['Ch1'],
+        Vol1: ['Ch1', 'Ch2', 'Ch3'],
+        Vol2: ['Ch1', 'Ch2'],
+        Vol3: ['Ch1', 'Ch2', 'Ch3', 'Ch4'],
+        Vol4: ['Ch1', 'Ch2'],
+        Vol5: ['Ch1', 'Ch2'],
+        VolF: ['Ch1', 'Ch2', 'Ch3', 'Ch4'],
+        Vol6: ['Ch1', 'Ch2', 'Ch3'],
+        VolEX: ['Ch1', 'Ch2', 'Ch3']
+    };
+
+    const MANAGED_ENTRY_NAMES = Object.entries(STORY_STRUCTURE).flatMap(
+        ([vol, chapters]) => chapters.map(chapter => `${vol}${chapter}`)
+    );
+    const MANAGED_ENTRY_SET = new Set(MANAGED_ENTRY_NAMES);
+
+    let worldbookNames = null;
+    let lastSyncSignature = null;
+    let lastMissingEntry = null;
+
+    async function waitForDependencies() {
+        const startTime = Date.now();
+
+        while (Date.now() - startTime < MAX_WAIT_TIME) {
+            const hasWaitGlobal = typeof waitGlobalInitialized === 'function';
+            const hasEventOn = typeof eventOn === 'function';
+            const hasGetButtonEvent = typeof getButtonEvent === 'function';
+            const hasGetCharWorldbook = typeof getCharWorldbookNames === 'function';
+            const hasUpdateWorldbook = typeof updateWorldbookWith === 'function';
+            const hasToastr = typeof toastr !== 'undefined';
+
+            if (hasWaitGlobal && hasEventOn && hasGetButtonEvent &&
+                hasGetCharWorldbook && hasUpdateWorldbook && hasToastr) {
+                console.log(`${LOG_PREFIX} 基础依赖已就绪`);
+                return true;
+            }
+
+            await new Promise(resolve => setTimeout(resolve, CHECK_INTERVAL));
+        }
+
+        console.error(`${LOG_PREFIX} 等待依赖超时`);
+        return false;
+    }
+
+    function buildEntryName(vol, chapter) {
+        return `${vol}${chapter}`;
+    }
+
+    function getManagedWorldbookNames() {
+        if (worldbookNames) return worldbookNames;
+
+        const charWorldbooks = getCharWorldbookNames('current') || {};
+        worldbookNames = _.uniq([
+            charWorldbooks.primary,
+            ...(Array.isArray(charWorldbooks.additional) ? charWorldbooks.additional : [])
+        ].filter(Boolean));
+
+        console.log(`${LOG_PREFIX} 世界书初始化:`, worldbookNames);
+        return worldbookNames;
+    }
+
+    function getStoryManager(variables) {
+        return variables?.story_manager || variables?.stat_data?.story_manager || null;
+    }
+
+    function isStoryManagerEnabled(storyManager) {
+        return !!storyManager && storyManager.enabled !== false;
+    }
+
+    function getCurrentActiveEntry(storyManager) {
+        if (!storyManager) return null;
+        if (!isStoryManagerEnabled(storyManager)) return null;
+        if (storyManager.mode !== '特殊') return null;
+
+        const vol = storyManager.current?.vol || '';
+        const chapter = storyManager.current?.chapter || '';
+        if (!vol || !chapter) return null;
+
+        const entryName = buildEntryName(vol, chapter);
+        return MANAGED_ENTRY_SET.has(entryName) ? entryName : null;
+    }
+
+    function buildSyncSignature(storyManager, activeEntry) {
+        const enabledState = isStoryManagerEnabled(storyManager) ? 'enabled' : 'disabled';
+        const mode = storyManager?.mode || '__NO_MODE__';
+        return `${enabledState}:${mode}:${activeEntry || '__NONE__'}`;
+    }
+
+    async function syncWorldbooksByEntry(storyManager, activeEntry, { force = false } = {}) {
+        const signature = buildSyncSignature(storyManager, activeEntry);
+        if (!force && signature === lastSyncSignature) return;
+
+        const targets = getManagedWorldbookNames();
+        if (!targets.length) {
+            console.warn(`${LOG_PREFIX} 未找到可用世界书`);
+            return;
+        }
+
+        let foundActiveEntry = false;
+
+        for (const worldbookName of targets) {
+            await updateWorldbookWith(worldbookName, worldbook => {
+                let localFound = false;
+
+                const updated = worldbook.map(entry => {
+                    if (!MANAGED_ENTRY_SET.has(entry.name)) return entry;
+
+                    const shouldEnable = !!activeEntry && entry.name === activeEntry;
+                    if (shouldEnable) localFound = true;
+                    if (entry.enabled === shouldEnable) return entry;
+
+                    console.log(`${LOG_PREFIX} ${worldbookName} / ${entry.name} -> ${shouldEnable ? '启用' : '禁用'}`);
+                    return { ...entry, enabled: shouldEnable };
+                });
+
+                if (localFound) foundActiveEntry = true;
+                return updated;
+            });
+        }
+
+        if (activeEntry && !foundActiveEntry && lastMissingEntry !== activeEntry) {
+            lastMissingEntry = activeEntry;
+            console.warn(`${LOG_PREFIX} 未在世界书中找到条目: ${activeEntry}`);
+            toastr.warning(`未找到剧情世界书条目：${activeEntry}`, '剧情章节管理器');
+        } else if (!activeEntry || foundActiveEntry) {
+            lastMissingEntry = null;
+        }
+
+        lastSyncSignature = signature;
+    }
+
+    async function handleStoryUpdate(variables) {
+        const storyManager = getStoryManager(variables);
+        if (!storyManager) return;
+
+        if (!isStoryManagerEnabled(storyManager)) {
+            await syncWorldbooksByEntry(storyManager, null);
+            return;
+        }
+
+        const activeEntry = getCurrentActiveEntry(storyManager);
+        await syncWorldbooksByEntry(storyManager, activeEntry);
+    }
+
+    function registerExternalSyncListener() {
+        window.addEventListener('era-story-manager-sync', async event => {
+            try {
+                const variables = event?.detail;
+                if (!variables) return;
+                await handleStoryUpdate(variables);
+            } catch (error) {
+                console.error(`${LOG_PREFIX} 外部剧情同步失败:`, error);
+            }
+        });
+    }
+
+    function getLatestMvuDataFromChat() {
+        const chat = SillyTavern?.chat;
+        if (!chat || chat.length === 0) return null;
+
+        for (let i = chat.length - 1; i >= 0; i--) {
+            const msg = chat[i];
+            const swipeId = msg.swipe_id ?? 0;
+            const variables = _.get(msg, ['variables', swipeId]);
+            if (!variables) continue;
+
+            if (_.has(variables, 'story_manager') || _.has(variables, 'stat_data.story_manager')) {
+                return variables;
+            }
+        }
+
+        return null;
+    }
+
+    function formatCompletedForVol(storyManager, vol) {
+        const completed = storyManager?.completed_chapters?.[vol];
+        if (!Array.isArray(completed) || completed.length === 0) return '无';
+        return completed.join('、');
+    }
+
+    function getMutableStoryManager(mvuData) {
+        if (mvuData?.story_manager) return mvuData.story_manager;
+        if (mvuData?.stat_data?.story_manager) return mvuData.stat_data.story_manager;
+        return null;
+    }
+
+    function registerEvents() {
+        eventOn(Mvu.events.VARIABLE_UPDATE_ENDED, handleStoryUpdate);
+
+        eventOn(getButtonEvent('显示剧情信息'), async () => {
+            try {
+                let mvuData = getLatestMvuDataFromChat();
+                if (!mvuData && typeof Mvu?.getMvuData === 'function') {
+                    mvuData = Mvu.getMvuData({ type: 'message', message_id: 'latest' });
+                }
+
+                const storyManager = getStoryManager(mvuData);
+                if (!storyManager) {
+                    toastr.warning('未找到 story_manager');
+                    return;
+                }
+
+                const vol = storyManager.current?.vol || '无';
+                const chapter = storyManager.current?.chapter || '无';
+                const seq = Number(storyManager.current?.seq) || 0;
+                const activeEntry = getCurrentActiveEntry(storyManager) || '无';
+                const completedCurrentVol = storyManager.current?.vol
+                    ? formatCompletedForVol(storyManager, storyManager.current.vol)
+                    : '无';
+
+                const message = [
+                    `管理器: ${storyManager.enabled === false ? '暂停' : '启用'}`,
+                    `模式: ${storyManager.mode || '日常'}`,
+                    `当前卷: ${vol}`,
+                    `当前章: ${chapter}`,
+                    `当前Seq: ${seq}`,
+                    `激活条目: ${activeEntry}`,
+                    `当前卷已完成章节: ${completedCurrentVol}`
+                ].join('\n');
+
+                toastr.info(message, '剧情信息');
+            } catch (error) {
+                console.error(`${LOG_PREFIX} 显示剧情信息失败:`, error);
+                toastr.error('显示剧情信息失败');
+            }
+        });
+
+        eventOn(getButtonEvent('重同步剧情世界书'), async () => {
+            try {
+                let mvuData = getLatestMvuDataFromChat();
+                if (!mvuData && typeof Mvu?.getMvuData === 'function') {
+                    mvuData = Mvu.getMvuData({ type: 'message', message_id: 'latest' });
+                }
+
+                const storyManager = getStoryManager(mvuData);
+                if (!storyManager) {
+                    toastr.warning('未找到 story_manager');
+                    return;
+                }
+
+                lastSyncSignature = null;
+                await syncWorldbooksByEntry(storyManager, getCurrentActiveEntry(storyManager), { force: true });
+                toastr.success('剧情世界书已重同步');
+            } catch (error) {
+                console.error(`${LOG_PREFIX} 重同步剧情世界书失败:`, error);
+                toastr.error('重同步失败');
+            }
+        });
+
+        eventOn(getButtonEvent('切回日常'), async () => {
+            try {
+                if (typeof Mvu?.getMvuData !== 'function' || typeof Mvu?.replaceMvuData !== 'function') {
+                    toastr.error('MVU API 不可用');
+                    return;
+                }
+
+                const mvuData = Mvu.getMvuData({ type: 'message', message_id: 'latest' });
+                const storyManager = getMutableStoryManager(mvuData);
+                if (!storyManager) {
+                    toastr.warning('未找到 story_manager');
+                    return;
+                }
+
+                storyManager.mode = '日常';
+                storyManager.current.vol = '';
+                storyManager.current.chapter = '';
+                storyManager.current.seq = 0;
+
+                await Mvu.replaceMvuData(mvuData, { type: 'message', message_id: 'latest' });
+                lastSyncSignature = null;
+                await syncWorldbooksByEntry(storyManager, null, { force: true });
+                toastr.success('已切回日常模式');
+            } catch (error) {
+                console.error(`${LOG_PREFIX} 切回日常失败:`, error);
+                toastr.error('切回日常失败');
+            }
+        });
+    }
+
+    try {
+        const depsReady = await waitForDependencies();
+        if (!depsReady) return;
+
+        await waitGlobalInitialized('Mvu');
+        console.log(`${LOG_PREFIX} MVU 框架已就绪`);
+
+        registerEvents();
+        registerExternalSyncListener();
+
+        const initialData = getLatestMvuDataFromChat()
+            || (typeof Mvu?.getMvuData === 'function'
+                ? Mvu.getMvuData({ type: 'message', message_id: 'latest' })
+                : null);
+
+        if (initialData) {
+            await handleStoryUpdate(initialData);
+        }
+
+        console.log(`${LOG_PREFIX} 已加载`);
+    } catch (error) {
+        console.error(`${LOG_PREFIX} 初始化失败:`, error);
+    }
+})();
