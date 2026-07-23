@@ -86,12 +86,27 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
     }catch(e){}
     return null;
   }
-  var sd=findStatData();
-  if(sd){
-    sc=sd.selected_character||sc;
-    var cs=sd.characters||{};var cd=cs[sc]||{};
-    cname=nameMap[sc]||cd.name||sc;
-    render({name:cname,affection:cd.affection,relationship:cd.relationship,mood:cd.mood,clothing:cd.clothing,inner_thought:cd.inner_thought});
+
+  // Poll for MVU data — data arrives AFTER iframe loads
+  var attempts=0;
+  function tryUpdate(){
+    var sd=findStatData();
+    if(sd){
+      sc=sd.selected_character||sc;
+      var cs=sd.characters||{};var cd=cs[sc]||{};
+      cname=nameMap[sc]||cd.name||sc;
+      render({name:cname,affection:cd.affection,relationship:cd.relationship,mood:cd.mood,clothing:cd.clothing,inner_thought:cd.inner_thought});
+      return true;
+    }
+    return false;
+  }
+
+  // Try immediately, then poll every 1s up to 30 times
+  if(!tryUpdate()){
+    var timer=setInterval(function(){
+      attempts++;
+      if(tryUpdate()||attempts>=30) clearInterval(timer);
+    },1000);
   }
 })();
 </script>
