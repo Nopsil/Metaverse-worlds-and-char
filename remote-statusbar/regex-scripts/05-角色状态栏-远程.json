@@ -1,8 +1,8 @@
 {
   "id": "91c19919-9640-4394-9f04-d54e66f3ed2d",
   "scriptName": "05-角色状态栏-远程",
-  "findRegex": "<StatusPlaceHolderImpl/>",
-  "replaceString": "```\n<body>\n<script>$('body').load('https://cdn.jsdelivr.net/gh/Nopsil/Metaverse-worlds-and-char@master/remote-statusbar/dist/char-status.html');</script>\n</body>\n```",
+  "findRegex": "/<StatusPlaceHolderImpl\\s*\\/?>/gi",
+  "replaceString": "```\n<body>\n<script>$'body'.load('https://cdn.jsdelivr.net/gh/Nopsil/Metaverse-worlds-and-char@master/remote-statusbar/dist/char-status.html');</script>\n</body>\n```",
   "trimStrings": [],
   "placement": [
     1,
@@ -12,5 +12,5 @@
   "markdownOnly": true,
   "promptOnly": false,
   "runOnEdit": true,
-  "substituteRegex": 0
+  "substituteRegex": 1
 }
