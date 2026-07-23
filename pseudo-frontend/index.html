@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Metaverse Lobby v0.4</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
-
 :root {
   --cyan: #00e5ff; --pink: #ff2d95; --gold: #ffd700;
   --white: #f0f0ff;
@@ -23,7 +21,7 @@
     /* 中央高光爆散 */
     radial-gradient(circle at 50% 35%, rgba(255,255,255,0.15) 0%, rgba(0,150,255,0.1) 40%, transparent 80%),
     /* 官方纹理叠加 */
-    url('https://chunithm.sega.com/assets/img/common/bg/bg.jpg'),
+    url('assets/bg.jpg'),
     /* 通透的暗蓝到深紫渐变（不沉闷） */
     linear-gradient(180deg, #092040 0%, #0d122b 50%, #050714 100%);
   background-blend-mode: overlay, normal, soft-light, normal;
@@ -35,7 +33,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 35%;
-  background: url('https://chunithm.sega.com/assets/img/common/bg/verse_town_pc.png') bottom center/contain no-repeat;
+  background: url('assets/verse_town_pc.png') bottom center/contain no-repeat;
   pointer-events: none;
   opacity: 0.5;
 }
@@ -63,8 +61,8 @@
   position: fixed; z-index: 0; pointer-events: none;
   top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 500px; height: 500px;
-  background: url('https://chunithm.sega.com/assets/img/common/bg/globe_center.png') center/contain no-repeat;
-  opacity: 0.08;
+  background: url('assets/globe_center.png') center/contain no-repeat;
+  opacity: 0.06;
   animation: globeSpin 60s linear infinite;
 }
 @keyframes globeSpin{ to{ transform: translate(-50%,-50%) rotate(360deg) } }
