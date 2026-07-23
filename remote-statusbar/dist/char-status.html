@@ -56,31 +56,27 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
     t('th',c.inner_thought||'...');
   }
 
-  // Read character from opening message - NO MVU needed
+  // Read character name from opening message
   var sc='',cname='';
   try{
-    var chat=SillyTavern.getContext().chat;
+    var chat=window.parent.SillyTavern.getContext().chat;
     for(var i=0;i<Math.min(chat.length,5);i++){
       var m=chat[i].mes;
       var match=m.match(/已选择角色：(.+?)[，,\n]/);
       if(match){sc=match[1].trim();break}
     }
-    if(!sc) sc='';
   }catch(e){}
 
-  // Map display name
   var nameMap={'airine':'艾莉尼','bathsheba':'拔示巴','lena':'蕾娜','meme':'米姆','belzeebul':'贝尔泽布特'};
   cname=nameMap[sc]||sc||'--';
-
   render({name:cname,affection:0,relationship:'陌生人'});
 
-  // Then try MVU at message level for real data updates
+  // Try MVU at message level for real data (via parent window)
   function findStatData(){
     try{
       var Mvu=window.parent.Mvu||window.Mvu;
       if(!Mvu||typeof Mvu.getMvuData!=='function') return null;
-      // Scan recent messages for stat_data (newest first)
-      var chat=SillyTavern.getContext().chat;
+      var chat=window.parent.SillyTavern.getContext().chat;
       for(var i=chat.length-1;i>=0;i--){
         var mid=chat[i].swipe_id;
         if(mid===undefined||mid===null) continue;
