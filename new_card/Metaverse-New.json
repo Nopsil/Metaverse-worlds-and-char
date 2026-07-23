@@ -6991,7 +6991,7 @@
     },
     "d8683610-78e2-4c4f-9e3e-eb156d19fe96": {
       "comment": "强制初始化变量",
-      "content": "【最高优先级输出规则】每次会话的首次AI回复末尾必须包含UpdateVariable+JSONPatch块，初始化当前角色的stat_data变量。路径包括selected_character, selected_scenario, phase, characters下对应角色的affection/relationship/mood/clothing/inner_thought。禁止输出空JSONPatch数组。初始值：affection=0, relationship=陌生人, mood=空, clothing=空, inner_thought=空。",
+      "content": "【系统级最高优先级规则 - 必须遵守】\n\n会话开始时，你在**首条回复**的末尾**必须**输出一个完整的 `<UpdateVariable><JSONPatch>` 块来初始化当前角色的变量。\n\n格式如下（必须逐字复制结构，将 {角色ID} 替换为实际角色）：\n\n<UpdateVariable>\n<JSONPatch>\n[\n  { \"op\": \"replace\", \"path\": \"/stat_data/selected_character\", \"value\": \"{角色ID}\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/selected_scenario\", \"value\": 0 },\n  { \"op\": \"replace\", \"path\": \"/stat_data/phase\", \"value\": \"playing\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/name\", \"value\": \"{角色ID}\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/affection\", \"value\": 0 },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/relationship\", \"value\": \"陌生人\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/mood\", \"value\": \"\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/clothing\", \"value\": \"\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/characters/{角色ID}/inner_thought\", \"value\": \"\" }\n]\n</JSONPatch>\n</UpdateVariable>\n\n角色ID从用户消息中的\"【系统】已选择角色：XXX\"中提取。如果不确定角色ID，使用用户消息中提到的第一个角色名。\n\n**禁止输出空JSONPatch数组 `[]`**。这是系统级硬性约束。",
       "enabled": true,
       "constant": true,
       "position": {
