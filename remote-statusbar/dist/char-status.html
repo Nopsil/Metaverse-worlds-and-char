@@ -74,17 +74,28 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
 
   render({name:cname,affection:0,relationship:'陌生人'});
 
-  // Then try MVU for real data updates
-  if(typeof getAllVariables==='function'){
+  // Then try MVU at message level for real data updates
+  function findStatData(){
     try{
-      var ad=getAllVariables();
-      if(ad&&ad.stat_data){
-        var sd=ad.stat_data;sc=sd.selected_character||sc;
-        var cs=sd.characters||{};var cd=cs[sc]||{};
-        cname=nameMap[sc]||cd.name||sc;
-        render({name:cname,affection:cd.affection,relationship:cd.relationship,mood:cd.mood,clothing:cd.clothing,inner_thought:cd.inner_thought});
+      var Mvu=window.parent.Mvu||window.Mvu;
+      if(!Mvu||typeof Mvu.getMvuData!=='function') return null;
+      // Scan recent messages for stat_data (newest first)
+      var chat=SillyTavern.getContext().chat;
+      for(var i=chat.length-1;i>=0;i--){
+        var mid=chat[i].message_id||chat[i].id;
+        if(!mid) continue;
+        var d=Mvu.getMvuData({type:'message',message_id:mid});
+        if(d&&d.stat_data&&d.stat_data.selected_character) return d.stat_data;
       }
     }catch(e){}
+    return null;
+  }
+  var sd=findStatData();
+  if(sd){
+    sc=sd.selected_character||sc;
+    var cs=sd.characters||{};var cd=cs[sc]||{};
+    cname=nameMap[sc]||cd.name||sc;
+    render({name:cname,affection:cd.affection,relationship:cd.relationship,mood:cd.mood,clothing:cd.clothing,inner_thought:cd.inner_thought});
   }
 })();
 </script>

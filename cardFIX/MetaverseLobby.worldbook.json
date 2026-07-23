@@ -799,7 +799,7 @@
       "display_name": "卡斯比裂谷"
     },
     "17": {
-      "uid": 132,
+      "uid": 17,
       "key": [
         "安特路亚",
         "废弃都市",
@@ -851,7 +851,7 @@
       "display_name": "安特路亚"
     },
     "18": {
-      "uid": 17,
+      "uid": 18,
       "key": [
         "XES-72",
         "狄安娜",
@@ -904,7 +904,7 @@
       "display_name": "狄安娜·普利梅拉(XES-72)"
     },
     "19": {
-      "uid": 18,
+      "uid": 19,
       "key": [
         "XGN-72",
         "露娜",
@@ -956,7 +956,7 @@
       "display_name": "露娜·诺瓦(XGN-72)"
     },
     "20": {
-      "uid": 19,
+      "uid": 20,
       "key": [
         "阿雷斯",
         "混沌七器",
@@ -1009,7 +1009,7 @@
       "display_name": "阿雷斯"
     },
     "21": {
-      "uid": 20,
+      "uid": 21,
       "key": [
         "塞拉菲塔",
         "裁定者",
@@ -1063,7 +1063,7 @@
       "display_name": "塞拉菲塔"
     },
     "22": {
-      "uid": 21,
+      "uid": 22,
       "key": [
         "阿雷斯",
         "厄里斯",
@@ -1115,7 +1115,7 @@
       "display_name": "贝尔泽布特·涅墨西斯"
     },
     "23": {
-      "uid": 22,
+      "uid": 23,
       "key": [
         "塞拉菲娜",
         "雷布尔",
@@ -1164,7 +1164,7 @@
       "display_name": "米姆·米库拉"
     },
     "24": {
-      "uid": 23,
+      "uid": 24,
       "key": [
         "基德翁",
         "约拿",
@@ -1215,7 +1215,7 @@
       "display_name": "蕾娜·伊修梅尔"
     },
     "25": {
-      "uid": 24,
+      "uid": 25,
       "key": [
         "亚哈",
         "伊泽维尔",
@@ -1265,7 +1265,7 @@
       "display_name": "拔示巴·阿西德菲尔"
     },
     "26": {
-      "uid": 25,
+      "uid": 26,
       "key": [
         "威廉",
         "安克",
@@ -1315,7 +1315,7 @@
       "display_name": "艾莉尼·居里亚斯"
     },
     "27": {
-      "uid": 26,
+      "uid": 27,
       "key": [
         "温斯雷特",
         "Morning",
@@ -1367,7 +1367,7 @@
       "display_name": "威廉·温斯雷特"
     },
     "28": {
-      "uid": 27,
+      "uid": 28,
       "key": [
         "触手少女",
         "Silent",
@@ -1416,7 +1416,7 @@
       "display_name": "林内"
     },
     "29": {
-      "uid": 28,
+      "uid": 29,
       "key": [
         "音叉",
         "捷夫提",
@@ -1466,7 +1466,7 @@
       "display_name": "捷夫提"
     },
     "30": {
-      "uid": 29,
+      "uid": 30,
       "key": [
         "框架主脑",
         "先王",
@@ -1522,7 +1522,7 @@
       "display_name": "提丰"
     },
     "31": {
-      "uid": 30,
+      "uid": 31,
       "key": [
         "三贤者",
         "博士",
@@ -1574,7 +1574,7 @@
       "display_name": "尤巴尔·霍尔米斯达斯"
     },
     "32": {
-      "uid": 31,
+      "uid": 32,
       "key": [
         "三贤者",
         "缇欧",
@@ -1625,7 +1625,7 @@
       "display_name": "缇欧"
     },
     "33": {
-      "uid": 32,
+      "uid": 33,
       "key": [
         "三贤者",
         "工厂",
@@ -1676,7 +1676,7 @@
       "display_name": "梅德"
     },
     "34": {
-      "uid": 33,
+      "uid": 34,
       "key": [
         "涅墨西斯",
         "混沌七器",
@@ -1732,7 +1732,7 @@
       "display_name": "厄里斯"
     },
     "35": {
-      "uid": 34,
+      "uid": 35,
       "key": [
         "拉尔",
         "侵蚀",
@@ -1781,7 +1781,7 @@
       "display_name": "拉尔瓦"
     },
     "36": {
-      "uid": 35,
+      "uid": 36,
       "key": [
         "居里亚斯",
         "科学家",
@@ -1830,7 +1830,7 @@
       "display_name": "玛利亚·居里亚斯"
     },
     "37": {
-      "uid": 36,
+      "uid": 37,
       "key": [
         "阿斯托尔",
         "LOGOS执行官"
@@ -1878,7 +1878,7 @@
       "display_name": "阿斯托尔"
     },
     "38": {
-      "uid": 37,
+      "uid": 38,
       "key": [
         "安克0",
         "拾荒者",
@@ -1929,7 +1929,7 @@
       "display_name": "安克"
     },
     "39": {
-      "uid": 38,
+      "uid": 39,
       "key": [
         "拾荒者",
         "护目镜",
@@ -1978,7 +1978,7 @@
       "display_name": "希尔德"
     },
     "40": {
-      "uid": 39,
+      "uid": 40,
       "key": [
         "该隐",
         "KHD",
@@ -2028,7 +2028,7 @@
       "display_name": "该隐"
     },
     "41": {
-      "uid": 40,
+      "uid": 41,
       "key": [
         "亚哈",
         "革新者",
@@ -2081,7 +2081,7 @@
       "display_name": "亚哈"
     },
     "42": {
-      "uid": 41,
+      "uid": 42,
       "key": [
         "MDA01",
         "BOT",
@@ -2131,7 +2131,7 @@
       "display_name": "天狼星(MDA-01)"
     },
     "43": {
-      "uid": 42,
+      "uid": 43,
       "key": [
         "创造者",
         "神祖",
@@ -2181,7 +2181,7 @@
       "display_name": "艾克雷尔"
     },
     "44": {
-      "uid": 43,
+      "uid": 44,
       "key": [
         "泰斯塔蒙特",
         "混沌七器",
@@ -2239,7 +2239,7 @@
       "display_name": "泰斯塔蒙特·涅墨西斯"
     },
     "45": {
-      "uid": 44,
+      "uid": 45,
       "key": [
         "最古",
         "迪安",
@@ -2288,7 +2288,7 @@
       "display_name": "迪安"
     },
     "46": {
-      "uid": 45,
+      "uid": 46,
       "key": [
         "艾弗雷特",
         "温斯雷特",
@@ -2338,7 +2338,7 @@
       "display_name": "艾弗雷特·温斯雷特"
     },
     "47": {
-      "uid": 46,
+      "uid": 47,
       "key": [
         "LOGOS上级执行官",
         "格雷"
@@ -2386,7 +2386,7 @@
       "display_name": "格雷"
     },
     "48": {
-      "uid": 47,
+      "uid": 48,
       "key": [
         "拉维娜",
         "IDC",
@@ -2436,7 +2436,7 @@
       "display_name": "拉维娜"
     },
     "49": {
-      "uid": 48,
+      "uid": 49,
       "key": [
         "恩迪商会",
         "吉吉",
@@ -2485,7 +2485,7 @@
       "display_name": "毛毛"
     },
     "50": {
-      "uid": 49,
+      "uid": 50,
       "key": [
         "指导者",
         "革新者",
@@ -2537,7 +2537,7 @@
       "display_name": "凯南·梅尔维亚斯"
     },
     "51": {
-      "uid": 50,
+      "uid": 51,
       "key": [
         "EXILE",
         "WISEMAN",
@@ -2588,7 +2588,7 @@
       "display_name": "WISEMAN"
     },
     "52": {
-      "uid": 51,
+      "uid": 52,
       "key": [
         "MTA",
         "潘多拉",
@@ -2640,7 +2640,7 @@
       "display_name": "潘多拉"
     },
     "53": {
-      "uid": 52,
+      "uid": 53,
       "key": [
         "米斯拉",
         "归还种",
@@ -2690,7 +2690,7 @@
       "display_name": "米斯拉·特尔塞拉"
     },
     "54": {
-      "uid": 53,
+      "uid": 54,
       "key": [
         "尼亚",
         "归还种",
@@ -2740,7 +2740,7 @@
       "display_name": "尼亚·尤迪特"
     },
     "55": {
-      "uid": 54,
+      "uid": 55,
       "key": [
         "赫卡蒂",
         "探索型",
@@ -2793,7 +2793,7 @@
       "display_name": "赫卡蒂(MIR-201)"
     },
     "56": {
-      "uid": 55,
+      "uid": 56,
       "key": [
         "艾尔",
         "归还种",
@@ -2843,7 +2843,7 @@
       "display_name": "艾尔·利贝尔德"
     },
     "57": {
-      "uid": 56,
+      "uid": 57,
       "key": [
         "指导者",
         "萨尔贡",
@@ -2892,7 +2892,7 @@
       "display_name": "萨尔贡·菲尔纳斯"
     },
     "58": {
-      "uid": 57,
+      "uid": 58,
       "key": [
         "支配者",
         "丹迪",
@@ -2941,7 +2941,7 @@
       "display_name": "丹迪"
     },
     "59": {
-      "uid": 58,
+      "uid": 59,
       "key": [
         "全天",
         "Ciel",
@@ -2992,7 +2992,7 @@
       "display_name": "雪儿"
     },
     "60": {
-      "uid": 59,
+      "uid": 60,
       "key": [
         "巫女",
         "塞拉菲娜",
@@ -3044,7 +3044,7 @@
       "display_name": "塞拉菲娜"
     },
     "61": {
-      "uid": 60,
+      "uid": 61,
       "key": [
         "拉托娜"
       ],
@@ -3091,7 +3091,7 @@
       "display_name": "拉托娜·海兹"
     },
     "62": {
-      "uid": 61,
+      "uid": 62,
       "key": [
         "提亚马特"
       ],
@@ -3138,7 +3138,7 @@
       "display_name": "提亚马特(RG-XXX)"
     },
     "63": {
-      "uid": 62,
+      "uid": 63,
       "key": [
         "断绝的破坏神"
       ],
@@ -3185,7 +3185,7 @@
       "display_name": "断绝的破坏神"
     },
     "64": {
-      "uid": 63,
+      "uid": 64,
       "key": [
         "格兰雷斯"
       ],
@@ -3232,7 +3232,7 @@
       "display_name": "格兰雷斯"
     },
     "65": {
-      "uid": 64,
+      "uid": 65,
       "key": [
         "达因斯雷夫"
       ],
@@ -3279,7 +3279,7 @@
       "display_name": "达因斯雷夫(RG-XIII)"
     },
     "66": {
-      "uid": 65,
+      "uid": 66,
       "key": [
         "修伯利斯"
       ],
@@ -3326,7 +3326,7 @@
       "display_name": "修伯利斯(Supplice)"
     },
     "67": {
-      "uid": 66,
+      "uid": 67,
       "key": [
         "利希德修茨"
       ],
@@ -3373,7 +3373,7 @@
       "display_name": "利希德修茨"
     },
     "68": {
-      "uid": 67,
+      "uid": 68,
       "key": [
         "塞蕾",
         "安歇尔",
@@ -3423,7 +3423,7 @@
       "display_name": "塞蕾·海兹"
     },
     "69": {
-      "uid": 68,
+      "uid": 69,
       "key": [
         "西梅翁",
         "安歇尔",
@@ -3473,7 +3473,7 @@
       "display_name": "安歇尔与西梅翁"
     },
     "70": {
-      "uid": 69,
+      "uid": 70,
       "key": [
         "尼加尔",
         "贝尔泽ブト",
@@ -3526,7 +3526,7 @@
       "display_name": "尼加尔"
     },
     "71": {
-      "uid": 70,
+      "uid": 71,
       "key": [
         "布里兰特"
       ],
@@ -3573,7 +3573,7 @@
       "display_name": "布里兰特(Brillante ES1)"
     },
     "72": {
-      "uid": 71,
+      "uid": 72,
       "key": [
         "斯托姆",
         "贝尔泽ブト",
@@ -3626,7 +3626,7 @@
       "display_name": "斯托姆"
     },
     "73": {
-      "uid": 72,
+      "uid": 73,
       "key": [
         "格拉维"
       ],
@@ -3673,7 +3673,7 @@
       "display_name": "格拉维·诺瓦"
     },
     "74": {
-      "uid": 73,
+      "uid": 74,
       "key": [
         "贝格尔米尔"
       ],
@@ -3720,7 +3720,7 @@
       "display_name": "贝格尔米尔"
     },
     "75": {
-      "uid": 74,
+      "uid": 75,
       "key": [
         "远古之蓝",
         "赫卡蒂",
@@ -3773,7 +3773,7 @@
       "display_name": "远古之蓝"
     },
     "76": {
-      "uid": 75,
+      "uid": 76,
       "key": [
         "金恩"
       ],
@@ -3820,7 +3820,7 @@
       "display_name": "金恩·载因"
     },
     "77": {
-      "uid": 76,
+      "uid": 77,
       "key": [
         "古龙",
         "塞夏特",
@@ -3870,7 +3870,7 @@
       "display_name": "古龙(纳格尔法尔之卵)"
     },
     "78": {
-      "uid": 77,
+      "uid": 78,
       "key": [
         "塞夏特",
         "古龙"
@@ -3918,7 +3918,7 @@
       "display_name": "塞夏特·夏福特利希"
     },
     "79": {
-      "uid": 78,
+      "uid": 79,
       "key": [
         "索尔娜"
       ],
@@ -3965,7 +3965,7 @@
       "display_name": "索尔娜"
     },
     "80": {
-      "uid": 79,
+      "uid": 80,
       "key": [
         "奥米茄"
       ],
@@ -4012,7 +4012,7 @@
       "display_name": "奥米茄·昆提斯"
     },
     "81": {
-      "uid": 80,
+      "uid": 81,
       "key": [
         "伊泽维尔",
         "亚哈",
@@ -4063,7 +4063,7 @@
       "display_name": "伊泽维尔·亚戈鲁修"
     },
     "82": {
-      "uid": 81,
+      "uid": 82,
       "key": [
         "约拿",
         "蕾娜",
@@ -4113,7 +4113,7 @@
       "display_name": "约拿·莱泽"
     },
     "83": {
-      "uid": 82,
+      "uid": 83,
       "key": [
         "基德翁",
         "蕾娜",
@@ -4162,7 +4162,7 @@
       "display_name": "基德翁·莱泽"
     },
     "84": {
-      "uid": 83,
+      "uid": 84,
       "key": [
         "米利安姆",
         "蕾娜",
@@ -4211,7 +4211,7 @@
       "display_name": "米利安姆·贝米朵巴尔"
     },
     "85": {
-      "uid": 84,
+      "uid": 85,
       "key": [
         "萨乌尔",
         "亚哈",
@@ -4260,7 +4260,7 @@
       "display_name": "萨乌尔·凯姆"
     },
     "86": {
-      "uid": 85,
+      "uid": 86,
       "key": [
         "布鲁斯坦因",
         "蕾娜",
@@ -4311,7 +4311,7 @@
       "display_name": "布鲁·斯坦因"
     },
     "87": {
-      "uid": 86,
+      "uid": 87,
       "key": [
         "米吉多"
       ],
@@ -4358,7 +4358,7 @@
       "display_name": "米吉多·科古"
     },
     "88": {
-      "uid": 87,
+      "uid": 88,
       "key": [
         "梅尼",
         "蕾娜",
@@ -4407,7 +4407,7 @@
       "display_name": "梅尼·特尔塞拉"
     },
     "89": {
-      "uid": 88,
+      "uid": 89,
       "key": [
         "泽法",
         "拔示巴",
@@ -4456,7 +4456,7 @@
       "display_name": "泽法·尼亚德"
     },
     "90": {
-      "uid": 89,
+      "uid": 90,
       "key": [
         "索罗",
         "王子"
@@ -4504,7 +4504,7 @@
       "display_name": "索罗·摩尼亚"
     },
     "91": {
-      "uid": 90,
+      "uid": 91,
       "key": [
         "约基姆"
       ],
@@ -4551,7 +4551,7 @@
       "display_name": "约基姆·雅木尔"
     },
     "92": {
-      "uid": 91,
+      "uid": 92,
       "key": [
         "艾萨克"
       ],
@@ -4598,7 +4598,7 @@
       "display_name": "艾萨克·多米南斯VIII"
     },
     "93": {
-      "uid": 92,
+      "uid": 93,
       "key": [
         "米卡"
       ],
@@ -4645,7 +4645,7 @@
       "display_name": "米卡·多米南斯III"
     },
     "94": {
-      "uid": 93,
+      "uid": 94,
       "key": [
         "马尔杜克"
       ],
@@ -4692,7 +4692,7 @@
       "display_name": "马尔杜克·阿尼玛特"
     },
     "95": {
-      "uid": 94,
+      "uid": 95,
       "key": [
         "艾娃"
       ],
@@ -4739,7 +4739,7 @@
       "display_name": "艾娃·多米南斯XII"
     },
     "96": {
-      "uid": 95,
+      "uid": 96,
       "key": [
         "艾莉夏"
       ],
@@ -4786,7 +4786,7 @@
       "display_name": "艾莉夏·穆尔西亚"
     },
     "97": {
-      "uid": 96,
+      "uid": 97,
       "key": [
         "纳丁"
       ],
@@ -4833,7 +4833,7 @@
       "display_name": "纳丁·纳塔奈尔"
     },
     "98": {
-      "uid": 97,
+      "uid": 98,
       "key": [
         "德威格"
       ],
@@ -4880,7 +4880,7 @@
       "display_name": "德威格"
     },
     "99": {
-      "uid": 98,
+      "uid": 99,
       "key": [
         "安夏尔"
       ],
@@ -4927,7 +4927,7 @@
       "display_name": "安夏尔·奥达奇亚"
     },
     "100": {
-      "uid": 99,
+      "uid": 100,
       "key": [
         "艾斯特尔"
       ],
@@ -4974,7 +4974,7 @@
       "display_name": "艾斯特尔·亚戈鲁修"
     },
     "101": {
-      "uid": 100,
+      "uid": 101,
       "key": [
         "蕾亚"
       ],
@@ -5021,7 +5021,7 @@
       "display_name": "蕾亚·艾·弗拉达"
     },
     "102": {
-      "uid": 101,
+      "uid": 102,
       "key": [
         "沃特"
       ],
@@ -5068,7 +5068,7 @@
       "display_name": "沃特"
     },
     "103": {
-      "uid": 102,
+      "uid": 103,
       "key": [
         "赛罗",
         "拔示巴",
@@ -5117,7 +5117,7 @@
       "display_name": "赛罗·达文斯"
     },
     "104": {
-      "uid": 103,
+      "uid": 104,
       "key": [
         "十二",
         "洛特"
@@ -5165,7 +5165,7 @@
       "display_name": "洛特·十二"
     },
     "105": {
-      "uid": 104,
+      "uid": 105,
       "key": [
         "VOX",
         "NEO"
@@ -5213,7 +5213,7 @@
       "display_name": "NEO"
     },
     "106": {
-      "uid": 105,
+      "uid": 106,
       "key": [
         "皮埃尔",
         "观测士"
@@ -5261,7 +5261,7 @@
       "display_name": "皮埃尔"
     },
     "107": {
-      "uid": 106,
+      "uid": 107,
       "key": [
         "利兹利斯威尔",
         "调停官"
@@ -5309,7 +5309,7 @@
       "display_name": "利兹利斯威尔"
     },
     "108": {
-      "uid": 107,
+      "uid": 108,
       "key": [
         "调停官",
         "拉菲恩"
@@ -5357,7 +5357,7 @@
       "display_name": "拉菲恩"
     },
     "109": {
-      "uid": 108,
+      "uid": 109,
       "key": [
         "调谐者"
       ],
@@ -5404,7 +5404,7 @@
       "display_name": "调谐者"
     },
     "110": {
-      "uid": 109,
+      "uid": 110,
       "key": [
         "瓦尔马西亚",
         "亡灵",
@@ -5453,7 +5453,7 @@
       "display_name": "瓦尔马西亚的亡灵"
     },
     "111": {
-      "uid": 110,
+      "uid": 111,
       "key": [
         "Breeze",
         "Morning",
@@ -5504,7 +5504,7 @@
       "display_name": "威廉·温斯雷特(晨风)"
     },
     "112": {
-      "uid": 111,
+      "uid": 112,
       "key": [
         "蓝天",
         "起始",
@@ -5557,7 +5557,7 @@
       "display_name": "艾莉尼·居里亚斯(幼年)"
     },
     "113": {
-      "uid": 112,
+      "uid": 113,
       "key": [
         "Whirlwind",
         "安克",
@@ -5607,7 +5607,7 @@
       "display_name": "安克(旋风)"
     },
     "114": {
-      "uid": 113,
+      "uid": 114,
       "key": [
         "海伯里昂",
         "航行船"
@@ -5655,7 +5655,7 @@
       "display_name": "海伯里昂"
     },
     "115": {
-      "uid": 114,
+      "uid": 115,
       "key": [
         "吉格拉ット",
         "恒存之都",
@@ -5705,7 +5705,7 @@
       "display_name": "吉格拉ット(恒存之都)"
     },
     "116": {
-      "uid": 115,
+      "uid": 116,
       "key": [
         "哈宾杰",
         "艾比斯",
@@ -5754,7 +5754,7 @@
       "display_name": "艾比斯"
     },
     "117": {
-      "uid": 116,
+      "uid": 117,
       "key": [
         "Disaster",
         "女代表",
@@ -5803,7 +5803,7 @@
       "display_name": "灾厄简"
     },
     "118": {
-      "uid": 117,
+      "uid": 118,
       "key": [
         "海米利希",
         "海凯",
@@ -5852,7 +5852,7 @@
       "display_name": "海凯"
     },
     "119": {
-      "uid": 118,
+      "uid": 119,
       "key": [
         "机关长",
         "贝奈黛塔"
@@ -5900,7 +5900,7 @@
       "display_name": "贝奈黛塔"
     },
     "120": {
-      "uid": 119,
+      "uid": 120,
       "key": [
         "驾驶员",
         "莉扎"
@@ -5948,7 +5948,7 @@
       "display_name": "莉扎"
     },
     "121": {
-      "uid": 120,
+      "uid": 121,
       "key": [
         "诺瓦",
         "LOGOS"
@@ -5996,7 +5996,7 @@
       "display_name": "诺瓦"
     },
     "122": {
-      "uid": 121,
+      "uid": 122,
       "key": [
         "混沌巨人"
       ],
@@ -6043,7 +6043,7 @@
       "display_name": "混沌巨人(雷布尔)"
     },
     "123": {
-      "uid": 122,
+      "uid": 123,
       "key": [
         "觉醒者巴西安"
       ],
@@ -6090,7 +6090,7 @@
       "display_name": "觉醒者·巴西安"
     },
     "124": {
-      "uid": 123,
+      "uid": 124,
       "key": [
         "马尔库特的女神"
       ],
@@ -6137,7 +6137,7 @@
       "display_name": "马尔库特的女神"
     },
     "125": {
-      "uid": 124,
+      "uid": 125,
       "key": [
         "尼亚",
         "尼亚拔示巴",
@@ -6189,7 +6189,7 @@
       "display_name": "尼亚·拔示巴"
     },
     "126": {
-      "uid": 125,
+      "uid": 126,
       "key": [
         "索罗",
         "索罗Metaverse"
@@ -6237,7 +6237,7 @@
       "display_name": "索罗·摩尼亚(Metaverse)"
     },
     "127": {
-      "uid": 126,
+      "uid": 127,
       "key": [
         "米斯拉",
         "米斯拉Metaverse"
@@ -6285,7 +6285,7 @@
       "display_name": "米斯拉·特尔塞拉(Metaverse)"
     },
     "128": {
-      "uid": 127,
+      "uid": 128,
       "key": [
         "拔示巴",
         "异体",
@@ -6338,7 +6338,7 @@
       "display_name": "拔示巴·阿西德菲尔(Metaverse异体)"
     },
     "129": {
-      "uid": 128,
+      "uid": 129,
       "key": [
         "塞蕾娜",
         "MIR-203",
@@ -6396,7 +6396,7 @@
       "display_name": "塞蕾娜(MIR-203)"
     },
     "130": {
-      "uid": 129,
+      "uid": 130,
       "key": [
         "轩辕十四",
         "BOT",
@@ -6445,7 +6445,7 @@
       "display_name": "轩辕十四(MDA-21)"
     },
     "131": {
-      "uid": 130,
+      "uid": 131,
       "key": [
         "Artemis",
         "MIR-202",
@@ -6498,7 +6498,7 @@
       "display_name": "阿尔忒弥斯(MIR-202)"
     },
     "132": {
-      "uid": 131,
+      "uid": 132,
       "key": [],
       "keysecondary": [],
       "comment": "系统规则",
@@ -6946,7 +6946,7 @@
       "display_name": "纳荷姆"
     },
     "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
-      "comment": "变量输出格式",
+      "comment": "[mvu_update]变量输出格式",
       "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"delta\", \"path\": \"/stat_data/characters/bathsheba/affection\", \"value\": 5 }\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
       "enabled": true,
       "keys": [],
@@ -6954,21 +6954,28 @@
       "order": 201,
       "position": 0,
       "preventRecursion": true,
-      "excludeRecursion": true
+      "excludeRecursion": true,
+      "display_name": "[mvu_update]变量输出格式",
+      "constant": true,
+      "uid": "fbc1d25b-eaeb-471f-9ccb-933e82eba112"
     },
     "36f572b3-59e5-4003-96dd-62177de5e7aa": {
-      "comment": "变量列表",
-      "content": "<status_current_variable>\n{{format_message_variable::stat_data}}\n</status_current_variable>",
+      "comment": "读取变量/当前变量stat_data",
+      "content": "@@private\n当前变量状态：\n{{get_message_variable::stat_data}}",
       "enabled": true,
       "keys": [],
       "depth": 0,
-      "order": 202,
+      "order": 50,
       "position": 0,
       "preventRecursion": true,
-      "excludeRecursion": true
+      "excludeRecursion": true,
+      "display_name": "读取变量/当前变量stat_data",
+      "constant": true,
+      "disable": false,
+      "uid": "36f572b3-59e5-4003-96dd-62177de5e7aa"
     },
     "9705fcd0-e961-479c-bda8-bcb1a3198b52": {
-      "comment": "变量更新规则",
+      "comment": "[mvu_update]变量更新规则",
       "content": "变量更新规则:\n  selected_character:\n    type: string\n    check: 根据当前交互的角色设置，仅在选择角色时更新\n  selected_scenario:\n    type: number  \n    check: 根据选择的场景编号设置\n  phase:\n    type: string\n    check: 根据游戏阶段设置：lobby（选角阶段）、playing（游戏进行中）\n  characters:\n    type: object\n    好感度:\n      type: number\n      range: 0~100\n      check: 根据玩家互动进行微调，每次变化幅度 ±1~5。正面互动增加，负面减少。好感度不代表爱情——可能只是信任或兴趣。\n      好感度阶段定义:\n        - 0~20: 陌生人/敌意\n        - 21~40: 警惕但愿意交流\n        - 41~60: 熟悉/初步信任\n        - 61~80: 好感/信赖\n        - 81~90: 深厚情感\n        - 91~100: 无条件信任或极致情感\n    关系阶段:\n      type: string\n      check: 根据好感度和剧情进展更新（陌生人→熟悉→信赖→亲密→灵魂伴侣/宿敌）\n    心情:\n      type: string\n      check: 根据上一轮互动实时更新，需具体描述并附括号说明原因\n    穿着:\n      type: string\n      check: 仅在服装变化时更新\n    当前想法:\n      type: string\n      check: 用第一人称或引语格式表达角色此刻的真实想法。需与角色表面表现形成对比或补充。仅在产生新想法时更新。\n    身体状态:\n      type: string\n      check: 仅在NSFW场景或身体状态发生显著变化时更新（正常/兴奋/疲劳/受伤等）\n    穿着完整度:\n      type: string\n      check: 仅在NSFW场景中服装状态变化时更新（整齐/凌乱/部分脱落/全裸等）\n    姿势:\n      type: string\n      check: 仅在NSFW场景中姿势发生显著变化时更新",
       "enabled": true,
       "keys": [],
@@ -6976,47 +6983,284 @@
       "order": 203,
       "position": 0,
       "preventRecursion": true,
-      "excludeRecursion": true
+      "excludeRecursion": true,
+      "display_name": "[mvu_update]变量更新规则",
+      "constant": true,
+      "uid": "9705fcd0-e961-479c-bda8-bcb1a3198b52"
     },
     "dd7ec724-9e39-4bde-b314-bb825991a5c6": {
-      "comment": "变量路径速查",
+      "comment": "[mvu_update]变量路径速查",
       "content": "stat_data变量路径表:\n/stat_data/selected_character - 当前角色ID(airine|bathsheba|lena|meme|belzeebul)\n/stat_data/phase - 阶段(lobby|playing)\n/stat_data/selected_scenario - 开局编号(0-4)\n/stat_data/characters/{角色}/affection - 好感度(0-100)\n/stat_data/characters/{角色}/relationship - 关系阶段\n/stat_data/characters/{角色}/mood - 心情\n/stat_data/characters/{角色}/clothing - 穿着\n/stat_data/characters/{角色}/inner_thought - 心声\n/stat_data/characters/{角色}/body_state - 身体状态(正常/...)\n/stat_data/characters/{角色}/clothing_integrity - 衣着完整度(整齐/...)\n/stat_data/characters/{角色}/pose - 姿势(站立/...)",
       "enabled": true,
       "constant": true,
-      "position": {
-        "depth": 0,
-        "order": 5
-      }
+      "position": 0,
+      "depth": 0,
+      "order": 5,
+      "key": [],
+      "keysecondary": [],
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "disable": false,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 0,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[mvu_update]变量路径速查",
+      "uid": "dd7ec724-9e39-4bde-b314-bb825991a5c6"
     },
     "22bc4917-af15-490d-bebf-4021a242efaa": {
-      "comment": "变量更新触发条件",
+      "comment": "[mvu_update]变量更新触发条件",
       "content": "变量更新触发规则:\n1. 角色好感变化时→更新/stat_data/characters/{角色}/affection(用delta操作)\n2. 角色心情明显变化时→更新/stat_data/characters/{角色}/mood\n3. 角色换装时→更新/stat_data/characters/{角色}/clothing\n4. 角色有强烈内心活动时→更新/stat_data/characters/{角色}/inner_thought\n5. 初次进入NSFW场景时→更新body_state,clothing_integrity,pose\n6. 无需更新时→JSONPatch为空数组[]即可\n每次回复都必须输出UpdateVariable块。",
       "enabled": true,
       "constant": true,
-      "position": {
-        "depth": 0,
-        "order": 10
-      }
+      "position": 0,
+      "depth": 0,
+      "order": 10,
+      "key": [],
+      "keysecondary": [],
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "disable": false,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 0,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[mvu_update]变量更新触发条件",
+      "uid": "22bc4917-af15-490d-bebf-4021a242efaa"
     },
     "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb": {
-      "comment": "变量操作示例",
+      "comment": "[mvu_update]变量操作示例",
       "content": "JSONPatch操作示例(使用/stat_data/前缀):\n替换: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n增加: {\"op\":\"delta\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":3}\n注意: op=delta仅用于数值字段(affection)。首次初始化用op=replace设置所有字段。",
       "enabled": true,
       "constant": true,
-      "position": {
-        "depth": 0,
-        "order": 15
-      }
+      "position": 0,
+      "depth": 0,
+      "order": 15,
+      "key": [],
+      "keysecondary": [],
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "disable": false,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 0,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[mvu_update]变量操作示例",
+      "uid": "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb"
     },
     "eda985d0-42aa-407d-a9eb-84a7d2778121": {
-      "comment": "首次回复初始化强制",
+      "comment": "[mvu_update]首次回复初始化",
       "content": "每次新会话的首条回复中，必须初始化stat_data。通过JSONPatch的replace操作设置:selected_character(从用户消息\"已选择角色\"提取),phase=\"playing\",characters下该角色的affection=0,relationship=\"陌生人\",mood=\"\",clothing=\"\",inner_thought=\"\"。这是系统级硬性要求——不可跳过。",
       "enabled": true,
       "constant": true,
-      "position": {
-        "depth": 0,
-        "order": 2
-      }
+      "position": 0,
+      "depth": 0,
+      "order": 1,
+      "key": [],
+      "keysecondary": [],
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "disable": false,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 0,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[mvu_update]首次回复初始化",
+      "uid": "eda985d0-42aa-407d-a9eb-84a7d2778121"
+    },
+    "initvar-0001-metaverse-baseline": {
+      "uid": "initvar-0001-metaverse-baseline",
+      "key": [],
+      "keysecondary": [],
+      "comment": "[InitVar]变量初始化勿开",
+      "content": "stat_data:\n  selected_character: \"\"\n  selected_scenario: null\n  phase: \"lobby\"\n  characters:\n    airine:\n      affection: 0\n      relationship: \"陌生人\"\n      mood: \"\"\n      clothing: \"\"\n      inner_thought: \"\"\n      body_state: \"正常\"\n      clothing_integrity: \"整齐\"\n      pose: \"站立\"\n    bathsheba:\n      affection: 0\n      relationship: \"陌生人\"\n      mood: \"\"\n      clothing: \"\"\n      inner_thought: \"\"\n      body_state: \"正常\"\n      clothing_integrity: \"整齐\"\n      pose: \"站立\"\n    lena:\n      affection: 0\n      relationship: \"陌生人\"\n      mood: \"\"\n      clothing: \"\"\n      inner_thought: \"\"\n      body_state: \"正常\"\n      clothing_integrity: \"整齐\"\n      pose: \"站立\"\n    meme:\n      affection: 0\n      relationship: \"陌生人\"\n      mood: \"\"\n      clothing: \"\"\n      inner_thought: \"\"\n      body_state: \"正常\"\n      clothing_integrity: \"整齐\"\n      pose: \"站立\"\n    belzeebul:\n      affection: 0\n      relationship: \"陌生人\"\n      mood: \"\"\n      clothing: \"\"\n      inner_thought: \"\"\n      body_state: \"正常\"\n      clothing_integrity: \"整齐\"\n      pose: \"站立\"\n    _uid_counters:\n      items: 0\n      locations: 0\n      factions: 0",
+      "constant": false,
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "order": 0,
+      "position": 0,
+      "disable": true,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 0,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 150,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[InitVar]变量初始化勿开"
+    },
+    "selectbar-0001-output-format": {
+      "uid": "selectbar-0001-output-format",
+      "key": [],
+      "keysecondary": [],
+      "comment": "[mvu_plot]选择栏/输出末尾格式",
+      "content": "输出末尾格式规则:\n  1. 每次回复末尾输出 <UpdateVariable> 标签块，包含 Analysis + JSONPatch\n  2. 如果有选择栏（选择），在 <UpdateVariable> 之前插入选择栏：\n     <Choice>\n     <p>\n       <Choice>\n         <ChoiceInfo>\n           <選択肢A>$$描述选项A</選択肢A>\n         </ChoiceInfo>\n         <ChoiceInfo>\n           <選択肢B>$$描述选项B</選択肢B>\n         </ChoiceInfo>\n       </Choice>\n     </p>\n     </Choice>\n  3. 不要在任何标签块中放入换行的未闭合注释\n  4. JSONPatch 必须是合法 JSON，空更新用 []\n  5. 操作类型: replace, delta(仅数值), remove, insert\n  6. 路径始终以 /stat_data/ 开头",
+      "constant": true,
+      "selective": false,
+      "vectorized": false,
+      "selectiveLogic": 0,
+      "addMemo": false,
+      "order": 9999,
+      "position": 0,
+      "disable": false,
+      "ignoreBudget": false,
+      "excludeRecursion": true,
+      "preventRecursion": true,
+      "delayUntilRecursion": false,
+      "probability": 100,
+      "useProbability": true,
+      "depth": 0,
+      "outletName": "",
+      "role": 0,
+      "group": "",
+      "groupOverride": false,
+      "groupWeight": 100,
+      "scanDepth": null,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "useGroupScoring": false,
+      "automationId": "",
+      "displayIndex": 151,
+      "sticky": null,
+      "cooldown": null,
+      "delay": null,
+      "matchPersonaDescription": false,
+      "matchCharacterDescription": false,
+      "matchCharacterPersonality": false,
+      "matchCharacterDepthPrompt": false,
+      "matchScenario": false,
+      "matchCreatorNotes": false,
+      "triggers": [],
+      "characterFilter": [],
+      "display_name": "[mvu_plot]选择栏/输出末尾格式"
     }
   }
 }
