@@ -1,111 +1,96 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
+<head><meta charset="UTF-8">
 <style>
 :root{--bg:#0a0a14;--surface:#12122a;--border:#1e1e3a;--cyan:#7c8aff;--pink:#ff7eb3;--gold:#ffd700;--text:#d0d0e8;--muted:#7070a0}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft YaHei',sans-serif;padding:10px 12px;font-size:12px;min-width:200px;max-width:300px;border:1px solid var(--border);border-radius:8px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft YaHei',sans-serif;padding:10px 12px;font-size:12px;min-width:200px;max-width:300px;border:1px solid var(--border);border-radius:8px;margin:0}
 .h{font-size:14px;font-weight:700;color:var(--cyan);margin-bottom:8px;text-align:center}
 .r{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .l{color:var(--muted);font-size:11px}
 .v{color:var(--text);text-align:right;max-width:65%}
-.bar{height:4px;background:rgba(255,255,255,0.06);border-radius:2px}
+.bar{height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin:2px 0}
 .fill{height:100%;border-radius:2px;transition:width .4s}
-.al{font-size:10px;color:var(--muted);margin-top:2px}
+.al{font-size:10px;color:var(--muted)}
 .thought{margin-top:6px;padding:6px 8px;background:var(--surface);border-radius:4px;font-style:italic;color:var(--muted);font-size:11px;line-height:1.4;border-left:2px solid var(--border)}
-.present{margin-top:6px;font-size:10px;color:var(--muted);text-align:center}
-.nsfw-block{margin-top:4px;display:none}.nsfw-block.on{display:block}
-.nsfw-tag{font-size:9px;color:var(--pink);text-align:center;margin-bottom:2px;font-weight:600}
-</style>
-</head>
+</style></head>
 <body>
-<div class="h" id="n">--</div>
-<div class="aff-row">
-  <div class="r"><span class="l">好感度</span><span class="v" id="av">0/100</span></div>
-  <div class="bar"><div class="fill" id="ab" style="width:0;background:var(--muted)"></div></div>
-  <div class="al" id="al">陌生人</div>
-</div>
-<div class="r"><span class="l">关系</span><span class="v" id="rl">--</span></div>
-<div class="r"><span class="l">心情</span><span class="v" id="mo">--</span></div>
-<div class="r"><span class="l">穿着</span><span class="v" id="cl">--</span></div>
-<div class="thought" id="th">...</div>
-<div class="present" id="pr" style="display:none"></div>
-<div class="nsfw-block" id="nf">
-  <div class="nsfw-tag">NSFW</div>
-  <div class="r"><span class="l">身体</span><span class="v" id="bo"></span></div>
-  <div class="r"><span class="l">衣着</span><span class="v" id="in"></span></div>
-  <div class="r"><span class="l">姿势</span><span class="v" id="po"></span></div>
-</div>
+<div class="h" id="zn">--</div>
+<div class="r"><span class="l">好感度</span><span class="v" id="zav">0/100</span></div>
+<div class="bar"><div class="fill" id="zab" style="width:0;background:var(--muted)"></div></div>
+<div class="al" id="zal">陌生人</div>
+<div class="r"><span class="l">心情</span><span class="v" id="zmo">--</span></div>
+<div class="r"><span class="l">穿着</span><span class="v" id="zcl">--</span></div>
+<div class="thought" id="zth">...</div>
 <script>
-!(async function(){
+(async function(){
   var $=function(id){return document.getElementById(id)};
-  var t=function(id,val){var el=$(id);if(el)el.textContent=val!=null?String(val):'--'};
+  var t=function(id,v){var el=$(id);if(el)el.textContent=v!=null?String(v):'--'};
 
-  function render(c){
-    t('n',c.name||'--');
-    var aff=Number(c.affection)||0;
-    var ac,al;
-    if(aff>=81){ac='var(--pink)';al='无条件信任'}
-    else if(aff>=61){ac='var(--cyan)';al='深厚信赖'}
-    else if(aff>=41){ac='#4ade80';al='熟悉亲近'}
-    else if(aff>=21){ac='#fbbf24';al='初步信任'}
+  function render(ch,aff,mood,cloth,thought){
+    t('zn',ch||'--');
+    var a=Number(aff)||0,ac,al;
+    if(a>=81){ac='#ff7eb3';al='无条件信任'}
+    else if(a>=61){ac='#7c8aff';al='深厚信赖'}
+    else if(a>=41){ac='#4ade80';al='熟悉亲近'}
+    else if(a>=21){ac='#fbbf24';al='初步信任'}
     else{ac='var(--muted)';al='陌生人'}
-    t('av',aff+'/100');$('ab').style.width=aff+'%';$('ab').style.background=ac;t('al',al);
-    t('rl',c.relationship||'--');t('mo',c.mood||'--');t('cl',c.clothing||'--');
-    t('th',c.inner_thought||'...');
+    $('zav').textContent=a+'/100';
+    $('zab').style.width=a+'%';
+    $('zab').style.background=ac;
+    t('zal',al);t('zmo',mood);t('zcl',cloth);t('zth',thought||'...');
   }
 
-  // Read character name from opening message
-  var sc='',cname='';
+  // Read character name from parent SillyTavern
+  var nameMap={'airine':'艾莉尼','bathsheba':'拔示巴','lena':'蕾娜','meme':'米姆','belzeebul':'贝尔泽布特'};
+  var sc='';
   try{
     var chat=window.parent.SillyTavern.getContext().chat;
     for(var i=0;i<Math.min(chat.length,5);i++){
-      var m=chat[i].mes;
-      var match=m.match(/已选择角色：(.+?)[，,\n]/);
+      var m=chat[i].mes||'';
+      var match=m.match(/已选择角色[：:]\s*(.+?)[，,\n]/);
       if(match){sc=match[1].trim();break}
     }
   }catch(e){}
+  render(nameMap[sc]||sc||'--',0,'','','');
 
-  var nameMap={'airine':'艾莉尼','bathsheba':'拔示巴','lena':'蕾娜','meme':'米姆','belzeebul':'贝尔泽布特'};
-  cname=nameMap[sc]||sc||'--';
-  render({name:cname,affection:0,relationship:'陌生人'});
-
-  // Try MVU at message level for real data (via parent window)
-  function findStatData(){
+  // Wait for Mvu, then poll for stat_data using getVariables (TH iframe API)
+  try{await waitGlobalInitialized('Mvu');}catch(e){}
+  
+  function readData(){
     try{
-      var Mvu=window.parent.Mvu||window.Mvu;
-      if(!Mvu||typeof Mvu.getMvuData!=='function') return null;
-      var chat=window.parent.SillyTavern.getContext().chat;
-      for(var i=chat.length-1;i>=0;i--){
-        var mid=chat[i].swipe_id;
-        if(mid===undefined||mid===null) continue;
-        var d=Mvu.getMvuData({type:'message',message_id:mid});
-        if(d&&d.stat_data&&d.stat_data.selected_character) return d.stat_data;
+      // Primary: getVariables with type message (TH iframe API)
+      var sd=null;
+      if(typeof getVariables==='function'){
+        var v=getVariables({type:'message',message_id:getCurrentMessageId?getCurrentMessageId():undefined});
+        sd=v&&v.stat_data?v.stat_data:null;
       }
-    }catch(e){}
-    return null;
-  }
-
-  // Poll for MVU data — data arrives AFTER iframe loads
-  var attempts=0;
-  function tryUpdate(){
-    var sd=findStatData();
-    if(sd){
-      sc=sd.selected_character||sc;
-      var cs=sd.characters||{};var cd=cs[sc]||{};
-      cname=nameMap[sc]||cd.name||sc;
-      render({name:cname,affection:cd.affection,relationship:cd.relationship,mood:cd.mood,clothing:cd.clothing,inner_thought:cd.inner_thought});
+      // Fallback: scan messages via parent.Mvu
+      if(!sd){
+        var Mvu=window.parent.Mvu;
+        if(Mvu&&typeof Mvu.getMvuData==='function'){
+          var c=window.parent.SillyTavern.getContext().chat;
+          for(var i=c.length-1;i>=0;i--){
+            var mid=c[i].swipe_id;
+            if(mid===undefined||mid===null)continue;
+            var d=Mvu.getMvuData({type:'message',message_id:mid});
+            if(d&&d.stat_data&&d.stat_data.selected_character){sd=d.stat_data;break}
+          }
+        }
+      }
+      if(!sd||!sd.selected_character)return false;
+      sc=sd.selected_character;
+      var cd=(sd.characters||{})[sc]||{};
+      render(nameMap[sc]||cd.name||sc,cd.affection,cd.mood,cd.clothing,cd.inner_thought);
       return true;
-    }
-    return false;
+    }catch(e){return false;}
   }
 
-  // Try immediately, then poll every 1s up to 30 times
-  if(!tryUpdate()){
+  if(!readData()){
+    var tries=0;
     var timer=setInterval(function(){
-      attempts++;
-      if(tryUpdate()||attempts>=30) clearInterval(timer);
+      tries++;
+      if(readData()||tries>=30)clearInterval(timer);
     },1000);
   }
 })();
