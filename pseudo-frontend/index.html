@@ -13,60 +13,60 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* ===== CHUNITHM 街机背景 ===== */
+/* ===== SEGA 官方素材背景层 ===== */
 .bg-layer{
   position: fixed; inset: 0; z-index: 0; overflow: hidden;
   background:
-    /* 顶部彩虹光晕 */
     radial-gradient(circle at 50% -10%, rgba(0,229,255,0.4) 0%, rgba(255,45,149,0.25) 30%, transparent 70%),
-    /* 中央高光爆散 */
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.15) 0%, rgba(0,150,255,0.1) 40%, transparent 80%),
-    /* 官方纹理叠加 */
-    url('assets/bg.jpg'),
-    /* 通透的暗蓝到深紫渐变（不沉闷） */
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.12) 0%, rgba(0,150,255,0.08) 40%, transparent 80%),
+    url('assets/bg_pc.jpg') center/cover no-repeat,
     linear-gradient(180deg, #092040 0%, #0d122b 50%, #050714 100%);
-  background-blend-mode: overlay, normal, soft-light, normal;
-  background-size: cover, 100% 100%, cover, 100% 100%;
+  background-blend-mode: normal, normal, soft-light, normal;
 }
-/* 城市剪影 —— 官方 verse_town 素材 */
+/* 四角装饰 */
 .bg-layer::before{
   content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 35%;
-  background: url('assets/verse_town_pc.png') bottom center/contain no-repeat;
-  pointer-events: none;
-  opacity: 0.5;
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    url('assets/bottom_left.png') bottom left/auto no-repeat,
+    url('assets/top_right.png') top right/auto no-repeat;
 }
-/* 彩虹极光扫过 */
+/* 城市剪影 + 侧面饰带 + 极光 */
 .bg-layer::after{
   content: '';
-  position: absolute;
-  top: 0; left: -50%; width: 200%; height: 100%;
-  background: linear-gradient(45deg,
-    transparent 40%,
-    rgba(0,229,255,0.1) 48%,
-    rgba(255,45,149,0.15) 50%,
-    rgba(255,215,0,0.1) 52%,
-    transparent 60%);
-  animation: auroraSweep 8s linear infinite;
-  pointer-events: none;
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    url('assets/verse_town_pc.png') bottom center/70% no-repeat,
+    url('assets/verse_belt-left.png') center left/contain no-repeat,
+    url('assets/verse_belt-right.png') center right/contain no-repeat;
+  opacity: 0.45;
 }
-@keyframes auroraSweep{
-  0%{ transform: translateX(-30%) translateY(-10%) }
-  100%{ transform: translateX(30%) translateY(10%) }
-}
-
-/* 中央 globe 装饰 */
+/* 中央大 globe */
 .center-globe{
   position: fixed; z-index: 0; pointer-events: none;
   top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 500px; height: 500px;
-  background: url('assets/globe_center.png') center/contain no-repeat;
-  opacity: 0.06;
-  animation: globeSpin 60s linear infinite;
+  width: 600px; height: 600px;
+  background:
+    url('assets/globe.png') center/contain no-repeat,
+    url('assets/globe_cross.png') center/contain no-repeat;
+  opacity: 0.08;
+  animation: globeSpin 90s linear infinite;
 }
 @keyframes globeSpin{ to{ transform: translate(-50%,-50%) rotate(360deg) } }
+
+/* 浮动文字装饰 */
+.floating-text-deco{
+  position: fixed; z-index: 1; pointer-events: none;
+  top: 15%; left: 50%; transform: translateX(-50%);
+  width: 400px; height: 100px;
+  background: url('assets/floating_text.png') center/contain no-repeat;
+  opacity: 0.15;
+  animation: floatSlow 8s ease-in-out infinite;
+}
+@keyframes floatSlow{
+  0%,100%{ transform: translateX(-50%) translateY(0) }
+  50%{ transform: translateX(-50%) translateY(-12px) }
+}
 
 /* ===== 模糊光斑 (Bokeh) ===== */
 .bokeh{
@@ -308,6 +308,7 @@
 <!-- 背景层 -->
 <div class="bg-layer"></div>
 <div class="center-globe"></div>
+<div class="floating-text-deco"></div>
 
 <!-- 模糊光斑 + 高速光轨 -->
 <div class="bokeh bokeh-1"></div>
@@ -332,7 +333,7 @@
 </div>
 
 <div class="header">
-  <h1>METAVERSE LOBBY</h1>
+  <img src="assets/kv_logo.png" alt="CHUNITHM X-VERSE" class="logo-img">
   <div class="sub">◆ SELECT YOUR DESTINY ◆</div>
 </div>
 
