@@ -6947,12 +6947,15 @@
     },
     "5f32b2b8-1680-4bbb-ae41-497ca9078eff": {
       "comment": "[initvar]初始",
-      "content": "系统规则: 在首条回复的UpdateVariable/JSONPatch中，必须通过\"op\":\"replace\"将selected_character设为当前角色ID、phase设为\"playing\"、characters下对应的affection/relationship/mood/clothing/inner_thought设为初始值。禁止输出空JSONPatch。",
+      "content": "【变量更新规则 - 每轮强制执行】\n\n每条AI回复结尾必须输出UpdateVariable块，包含JSONPatch更新当前角色变量。路径必须在/stat_data/下。\n\n首次回复必须初始化：selected_character、phase=\"playing\"、characters下对应角色的affection/relationship/mood/clothing/inner_thought。\n\nJSONPatch示例：\n{ \"op\": \"replace\", \"path\": \"/stat_data/characters/meme/mood\", \"value\": \"平静\" }\n{ \"op\": \"delta\", \"path\": \"/stat_data/characters/meme/affection\", \"value\": 3 }\n\n禁止空数组[]。角色ID从用户消息\"已选择角色：XXX\"提取。",
       "enabled": true,
       "keys": [],
       "depth": 0,
       "order": 200,
-      "position": 0,
+      "position": {
+        "depth": 0,
+        "order": 1
+      },
       "preventRecursion": true,
       "excludeRecursion": true,
       "constant": true
