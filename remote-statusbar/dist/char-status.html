@@ -67,33 +67,45 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
     if(nf){e('nf').classList.add('on');t('bo',c.body_state);t('in',c.clothing_integrity);t('po',c.pose)}
   }
 
-  // Read variables from ALL possible scopes (order: most specific first)
+  // Read variables from ALL possible scopes
   var stat_data=null;
   
-  function tryRead(fn,tag){
-    try{var d=fn();if(d&&d.stat_data&&d.stat_data.selected_character){stat_data=d.stat_data;return true}}catch(x){}
-    return false
-  }
+  // 1. Chat scope (where lobby writes)
+  try{
+    if(typeof getVariables==='function'){
+      var cd=getVariables({type:'chat'});
+      if(cd&&cd.stat_data&&cd.stat_data.selected_character){stat_data=cd.stat_data;L('chat:OK')}
+      else L('chat:'+(cd?(cd.stat_data?'no_sc':'no_sd'):'null'))
+    }else{L('chat:no_func')}
+  }catch(x){L('chat_err:'+x.message)}
   
-  // 1. Message scope (MVU writes here)
-  if(typeof Mvu!=='undefined'){
-    try{await waitGlobalInitialized('Mvu');
+  // 2. Global scope
+  if(!stat_data)try{
+    if(typeof getVariables==='function'){
+      var gd=getVariables({type:'global'});
+      if(gd&&gd.stat_data&&gd.stat_data.selected_character){stat_data=gd.stat_data;L('global:OK')}
+      else L('global:'+(gd?'empty':'null'))
+    }
+  }catch(x){L('gl_err:'+x.message)}
+  
+  // 3. MVU scope
+  if(!stat_data)try{
+    if(typeof Mvu!=='undefined'){
+      await waitGlobalInitialized('Mvu');
       var md=Mvu.getMvuData({type:'message',message_id:getCurrentMessageId()});
-      if(md&&md.stat_data&&md.stat_data.selected_character)stat_data=md.stat_data;
-      else L('mvu:empty');
-    }catch(x){L('mvu:'+x.message)}
-  }
+      if(md&&md.stat_data&&md.stat_data.selected_character){stat_data=md.stat_data;L('mvu:OK')}
+      else L('mvu:empty')
+    }else{L('mvu:no_obj')}
+  }catch(x){L('mvu_err:'+x.message)}
   
-  // 2. Chat scope  
-  if(!stat_data)tryRead(function(){return getVariables({type:'chat'})},'chat');
-  
-  // 3. Global scope
-  if(!stat_data)tryRead(function(){return getVariables({type:'global'})},'global');
-  
-  // 4. getAllVariables (last resort)
-  if(!stat_data)tryRead(function(){return getAllVariables()},'all');
-  
-  if(!stat_data)L('all_empty')
+  // 4. getAllVariables
+  if(!stat_data)try{
+    if(typeof getAllVariables==='function'){
+      var ad=getAllVariables();
+      if(ad&&ad.stat_data&&ad.stat_data.selected_character){stat_data=ad.stat_data;L('all:OK')}
+      else L('all:'+(ad?(ad.stat_data?'no_sc':'no_sd'):'null'))
+    }else{L('all:no_func')}
+  }catch(x){L('all_err:'+x.message)}
 
   render(stat_data);
 })();
