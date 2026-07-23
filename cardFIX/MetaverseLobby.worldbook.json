@@ -6944,6 +6944,50 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "纳荷姆"
+    },
+    "5f32b2b8-1680-4bbb-ae41-497ca9078eff": {
+      "comment": "[initvar]初始",
+      "content": "{\n  \"stat_data\": {\n    \"selected_character\": \"\",\n    \"selected_scenario\": 0,\n    \"phase\": \"lobby\",\n    \"characters\": {\n      \"airine\": {\n        \"name\": \"艾莉尼\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"bathsheba\": {\n        \"name\": \"拔示巴\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"lena\": {\n        \"name\": \"蕾娜\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"meme\": {\n        \"name\": \"米姆\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"belzeebul\": {\n        \"name\": \"贝尔泽布特\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      }\n    }\n  }\n}\n",
+      "enabled": false,
+      "keys": [],
+      "depth": 0,
+      "order": 200,
+      "position": 0,
+      "preventRecursion": true,
+      "excludeRecursion": true
+    },
+    "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
+      "comment": "变量输出格式",
+      "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"delta\", \"path\": \"/characters/bathsheba/affection\", \"value\": 5 }\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
+      "enabled": true,
+      "keys": [],
+      "depth": 0,
+      "order": 201,
+      "position": 0,
+      "preventRecursion": true,
+      "excludeRecursion": true
+    },
+    "36f572b3-59e5-4003-96dd-62177de5e7aa": {
+      "comment": "变量列表",
+      "content": "<status_current_variable>\n{{format_message_variable::stat_data}}\n</status_current_variable>",
+      "enabled": true,
+      "keys": [],
+      "depth": 0,
+      "order": 202,
+      "position": 0,
+      "preventRecursion": true,
+      "excludeRecursion": true
+    },
+    "9705fcd0-e961-479c-bda8-bcb1a3198b52": {
+      "comment": "变量更新规则",
+      "content": "变量更新规则:\n  selected_character:\n    type: string\n    check: 根据当前交互的角色设置，仅在选择角色时更新\n  selected_scenario:\n    type: number  \n    check: 根据选择的场景编号设置\n  phase:\n    type: string\n    check: 根据游戏阶段设置：lobby（选角阶段）、playing（游戏进行中）\n  characters:\n    type: object\n    好感度:\n      type: number\n      range: 0~100\n      check: 根据玩家互动进行微调，每次变化幅度 ±1~5。正面互动增加，负面减少。好感度不代表爱情——可能只是信任或兴趣。\n      好感度阶段定义:\n        - 0~20: 陌生人/敌意\n        - 21~40: 警惕但愿意交流\n        - 41~60: 熟悉/初步信任\n        - 61~80: 好感/信赖\n        - 81~90: 深厚情感\n        - 91~100: 无条件信任或极致情感\n    关系阶段:\n      type: string\n      check: 根据好感度和剧情进展更新（陌生人→熟悉→信赖→亲密→灵魂伴侣/宿敌）\n    心情:\n      type: string\n      check: 根据上一轮互动实时更新，需具体描述并附括号说明原因\n    穿着:\n      type: string\n      check: 仅在服装变化时更新\n    当前想法:\n      type: string\n      check: 用第一人称或引语格式表达角色此刻的真实想法。需与角色表面表现形成对比或补充。仅在产生新想法时更新。\n    身体状态:\n      type: string\n      check: 仅在NSFW场景或身体状态发生显著变化时更新（正常/兴奋/疲劳/受伤等）\n    穿着完整度:\n      type: string\n      check: 仅在NSFW场景中服装状态变化时更新（整齐/凌乱/部分脱落/全裸等）\n    姿势:\n      type: string\n      check: 仅在NSFW场景中姿势发生显著变化时更新",
+      "enabled": true,
+      "keys": [],
+      "depth": 0,
+      "order": 203,
+      "position": 0,
+      "preventRecursion": true,
+      "excludeRecursion": true
     }
   }
 }
