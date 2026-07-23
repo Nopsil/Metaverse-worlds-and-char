@@ -6,7 +6,7 @@
 :root {
   --bg: #0a0a14; --surface: #12122a; --border: #1e1e3a;
   --cyan: #7c8aff; --pink: #ff7eb3; --gold: #ffd700;
-  --text: #d0d0e8; --muted: #7070a0; --dim: #404070;
+  --text: #d0d0e8; --muted: #7070a0;
   --font: 'Segoe UI','Microsoft YaHei',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -15,44 +15,27 @@ body{
   padding:10px 12px;font-size:12px;min-width:200px;max-width:300px;
   border:1px solid var(--border);border-radius:8px;
 }
-.header{
-  font-size:14px;font-weight:700;color:var(--cyan);
-  margin-bottom:8px;text-align:center;letter-spacing:1px;
-}
+.header{font-size:14px;font-weight:700;color:var(--cyan);margin-bottom:8px;text-align:center}
 .row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .label{color:var(--muted);font-size:11px}
-.val{color:var(--text);text-align:right;max-width:65%;word-break:break-word}
-/* Affection bar */
+.val{color:var(--text);text-align:right;max-width:65%}
 .aff-row{margin:4px 0}
-.aff-bar{height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
+.aff-bar{height:4px;background:rgba(255,255,255,0.06);border-radius:2px}
 .aff-fill{height:100%;border-radius:2px;transition:width .4s}
 .aff-label{font-size:10px;color:var(--muted);margin-top:2px}
-/* Thought */
-.thought{
-  margin-top:6px;padding:6px 8px;background:var(--surface);
-  border-radius:4px;font-style:italic;color:var(--muted);
-  font-size:11px;line-height:1.4;border-left:2px solid var(--border);
-}
-/* Present chars */
-.present{
-  margin-top:6px;font-size:10px;color:var(--dim);
-  text-align:center;letter-spacing:1px;
-}
-/* NSFW section */
+.thought{margin-top:6px;padding:6px 8px;background:var(--surface);border-radius:4px;font-style:italic;color:var(--muted);font-size:11px;line-height:1.4;border-left:2px solid var(--border)}
+.present{margin-top:6px;font-size:10px;color:var(--muted);text-align:center}
 .nsfw-block{margin-top:4px;display:none}
 .nsfw-block.on{display:block}
-.nsfw-tag{
-  font-size:9px;color:var(--pink);text-align:center;margin-bottom:2px;
-  letter-spacing:1px;font-weight:600;
-}
-/* Loading */
-.loading{text-align:center;color:var(--dim);padding:8px}
+.nsfw-tag{font-size:9px;color:var(--pink);text-align:center;margin-bottom:2px;font-weight:600}
+.debug{font-size:9px;color:var(--pink);margin-top:4px;text-align:center;display:none}
+.debug.on{display:block}
 </style>
 </head>
 <body>
-<div class="loading" id="loading">loading...</div>
+<div class="header" id="name">loading...</div>
+<div class="debug" id="debug"></div>
 <div id="panel" style="display:none">
-  <div class="header" id="name"></div>
   <div class="aff-row">
     <div class="row"><span class="label">好感度</span><span class="val" id="aff-val"></span></div>
     <div class="aff-bar"><div class="aff-fill" id="aff-bar"></div></div>
@@ -72,59 +55,67 @@ body{
 </div>
 <script>
 (async ()=>{
+  const d=document.getElementById('debug');
+  function log(msg){d.textContent+=(d.textContent?' | ':'')+msg;d.classList.add('on')}
+
   try{
-    await waitGlobalInitialized('Mvu');
-    const vars = getVariables({type:'chat'});
-    const sc = vars?.stat_data?.selected_character;
-    // Fallback: try latest message if chat-level not available
-    const msgVars = (!sc) ? getVariables({type:'message', message_id: 'latest'}) : null;
-    const finalSc = sc || msgVars?.stat_data?.selected_character;
-    if(!finalSc){ document.getElementById('loading').textContent='no character'; return; }
+    // Try multiple approaches to get variables
+    let c=null, sc=null, allVars=null;
 
-    const c = vars.stat_data.characters?.[finalSc] || msgVars?.stat_data?.characters?.[finalSc];
-    if(!c){ document.getElementById('loading').textContent=finalSc; return; }
+    // Approach 1: chat-level
+    try{
+      const v=getVariables({type:'chat'});
+      allVars=v; sc=allVars?.stat_data?.selected_character;
+      c=allVars?.stat_data?.characters?.[sc];
+      log('chat:'+(sc||'null'));
+    }catch(e){log('chat_err')}
 
-    // Affection
-    const aff = c.affection ?? 0;
-    let affColor, affLabel;
-    if(aff>=81){ affColor='var(--pink)'; affLabel='无条件信任' }
-    else if(aff>=61){ affColor='var(--cyan)'; affLabel='深厚信赖' }
-    else if(aff>=41){ affColor='#4ade80'; affLabel='熟悉亲近' }
-    else if(aff>=21){ affColor='#fbbf24'; affLabel='初步信任' }
-    else { affColor='var(--dim)'; affLabel='陌生人' }
+    // Approach 2: latest message
+    if(!sc) try{
+      const v=getVariables({type:'message',message_id:'latest'});
+      allVars=v; sc=allVars?.stat_data?.selected_character;
+      c=allVars?.stat_data?.characters?.[sc];
+      log('msg:'+(sc||'null'));
+    }catch(e){log('msg_err')}
 
-    // Basic fields
-    document.getElementById('name').textContent = c.name || sc;
-    document.getElementById('aff-val').textContent = aff + '/100';
-    document.getElementById('aff-bar').style.width = aff + '%';
-    document.getElementById('aff-bar').style.background = affColor;
-    document.getElementById('aff-label').textContent = affLabel;
-    document.getElementById('rel').textContent = c.relationship || '--';
-    document.getElementById('mood').textContent = c.mood || '--';
-    document.getElementById('cloth').textContent = c.clothing || '--';
-    document.getElementById('thought').textContent = c.inner_thought || '...';
+    // Approach 3: Mvu direct
+    if(!sc) try{
+      await waitGlobalInitialized('Mvu');
+      const mvuData=Mvu.getMvuData({type:'message',message_id:'latest'});
+      allVars=mvuData; sc=allVars?.stat_data?.selected_character;
+      c=allVars?.stat_data?.characters?.[sc];
+      log('mvu:'+(sc||'null'));
+    }catch(e){log('mvu_err')}
 
-    // Present characters
-    const present = vars.stat_data?.present_characters;
-    if(present && present !== sc) {
-      document.getElementById('present').textContent = '同行: ' + present;
-    }
+    if(!sc){log('no_char');return}
 
-    // NSFW
-    const body = c.body_state, integ = c.clothing_integrity, pose = c.pose;
-    const hasNsfw = (body && body !== '正常') || (integ && integ !== '整齐') || (pose && pose !== '站立');
-    if(hasNsfw){
+    // Render
+    document.getElementById('name').textContent=c?.name||sc;
+    const aff=c?.affection??0;
+    let affColor,affLabel;
+    if(aff>=81){affColor='var(--pink)';affLabel='无条件信任'}
+    else if(aff>=61){affColor='var(--cyan)';affLabel='深厚信赖'}
+    else if(aff>=41){affColor='#4ade80';affLabel='熟悉亲近'}
+    else if(aff>=21){affColor='#fbbf24';affLabel='初步信任'}
+    else{affColor='var(--muted)';affLabel='陌生人'}
+    document.getElementById('aff-val').textContent=aff+'/100';
+    document.getElementById('aff-bar').style.width=aff+'%';
+    document.getElementById('aff-bar').style.background=affColor;
+    document.getElementById('aff-label').textContent=affLabel;
+    document.getElementById('rel').textContent=c?.relationship||'--';
+    document.getElementById('mood').textContent=c?.mood||'--';
+    document.getElementById('cloth').textContent=c?.clothing||'--';
+    document.getElementById('thought').textContent=c?.inner_thought||'...';
+    const pres=allVars?.stat_data?.present_characters;
+    if(pres&&pres!==sc)document.getElementById('present').textContent='同行: '+pres;
+    if(c?.body_state&&c.body_state!=='正常'||c?.clothing_integrity&&c.clothing_integrity!=='整齐'||c?.pose&&c.pose!=='站立'){
       document.getElementById('nsfw').classList.add('on');
-      document.getElementById('body').textContent = body || '--';
-      document.getElementById('integrity').textContent = integ || '--';
-      document.getElementById('pose').textContent = pose || '--';
+      document.getElementById('body').textContent=c?.body_state||'--';
+      document.getElementById('integrity').textContent=c?.clothing_integrity||'--';
+      document.getElementById('pose').textContent=c?.pose||'--';
     }
-
-    document.getElementById('loading').style.display='none';
     document.getElementById('panel').style.display='block';
-  }catch(e){
-    document.getElementById('loading').textContent='error: '+e.message;
-  }
+  }catch(e){log('err:'+e.message)}
 })();
 </script>
 </body>
