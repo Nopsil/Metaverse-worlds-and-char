@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metaverse Lobby v0.2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --cyan: #00e5ff;
+  --cyan-dark: #006680;
+  --pink: #ff2d95;
+  --pink-dark: #801050;
+  --gold: #ffd700;
+  --white: #f0f0ff;
+  --bg: #020a14;
+  --font-display: 'Orbitron', 'Segoe UI', sans-serif;
+  --font-body: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 赛博网格背景 */
+body::before{
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 顶部光晕 */
+.header-glow{
+  position: fixed;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0,229,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== 标题 ===== */
+.header{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+.header h1{
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  background: linear-gradient(180deg, #fff 0%, var(--cyan) 50%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(0,229,255,0.4));
+  margin-bottom: 6px;
+}
+.header .subtitle{
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--cyan);
+  opacity: 0.7;
+}
+
+/* ===== 角色选择（主视觉区） ===== */
+.stage{
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.char-showcase{
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.char-card{
+  width: 170px;
+  background: linear-gradient(145deg, rgba(10,20,40,0.95), rgba(20,30,60,0.9));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px 14px 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+.char-card::before{
+  content: '';
+  position: absolute;
+  top: -1px; left: 20%; right: 20%; height: 2px;
+  border-radius: 0 0 50% 50%;
+  transition: all 0.3s;
+}
+.char-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.15);
+}
+.char-card:hover::before{
+  background: var(--cyan);
+  box-shadow: 0 0 20px var(--cyan);
+  left: 10%; right: 10%;
+}
+.char-card.selected{
+  border-color: var(--cyan) !important;
+  box-shadow: 0 0 30px rgba(0,229,255,0.2), 0 12px 32px rgba(0,0,0,0.5);
+  background: linear-gradient(145deg, rgba(0,30,60,0.95), rgba(10,40,70,0.9));
+}
+.char-card.selected::before{
+  background: var(--cyan);
+  box-shadow: 0 0 24px var(--cyan), 0 0 48px rgba(0,229,255,0.4);
+  left: 5%; right: 5%;
+}
+
+/* 角色头像区 */
+.char-portrait{
+  width: 90px; height: 90px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 42px;
+}
+.char-portrait .ring{
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.char-card:hover .ring, .char-card.selected .ring{
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px rgba(0,229,255,0.3);
+  animation: ringPulse 2s ease-in-out infinite;
+}
+@keyframes ringPulse{
+  0%,100%{ box-shadow: 0 0 8px rgba(0,229,255,0.2) }
+  50%{ box-shadow: 0 0 20px rgba(0,229,255,0.5) }
+}
+
+.char-name-display{
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.char-epithet{
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+}
+
+/* Rating 风格标签 */
+.rating-tag{
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 1px;
+  display: inline-block;
+  border: 1px solid;
+}
+
+/* ===== 场景选择面板 ===== */
+.scenario-panel{
+  position: relative;
+  z-index: 1;
+  display: none;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 24px;
+  background: linear-gradient(145deg, rgba(10,20,40,0.9), rgba(15,25,50,0.8));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+.scenario-panel.visible{ display: block; animation: fadeUp 0.3s ease-out }
+@keyframes fadeUp{ from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+.scenario-panel h2{
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.scenario-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.scenario-btn{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.scenario-btn:hover{
+  background: rgba(0,229,255,0.06);
+  border-color: rgba(0,229,255,0.2);
+}
+.scenario-btn.selected{
+  background: rgba(0,229,255,0.1);
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px rgba(0,229,255,0.15);
+}
+.scenario-btn.selected::after{
+  content: '◆';
+  position: absolute;
+  top: 8px; right: 10px;
+  font-size: 8px;
+  color: var(--cyan);
+}
+.scenario-btn .s-title{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.scenario-btn .s-desc{
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+.scenario-btn .s-badge{
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  background: rgba(255,45,149,0.15);
+  color: var(--pink);
+  border: 1px solid rgba(255,45,149,0.3);
+}
+
+/* ===== 出发按钮 ===== */
+.launch-area{
+  position: relative;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  padding: 10px 0 40px;
+}
+.launch-area.visible{ display: flex; animation: fadeUp 0.3s ease-out }
+
+.launch-btn{
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  padding: 16px 56px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--cyan) 0%, #0090c0 50%, var(--pink) 100%);
+  box-shadow: 0 0 30px rgba(0,229,255,0.3), 0 8px 24px rgba(0,0,0,0.4);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.launch-btn::after{
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+.launch-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(0,229,255,0.5), 0 12px 32px rgba(0,0,0,0.5);
+}
+.launch-btn:hover::after{ left: 100% }
+.launch-btn:active{ transform: scale(0.97) }
+
+/* 底部状态 */
+.bottom-status{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 1px;
+}
+
+/* 响应式 */
+@media(max-width:640px){
+  .header h1{ font-size: 28px; letter-spacing: 4px }
+  .char-showcase{ gap: 8px }
+  .char-card{ width: 130px; padding: 14px 10px 12px }
+  .char-portrait{ width: 64px; height: 64px; font-size: 30px }
+  .scenario-grid{ grid-template-columns: 1fr 1fr }
+}
+</style>
+</head>
+<body>
+
+<div class="header-glow"></div>
+
+<div class="header">
+  <h1>METAVERSE LOBBY</h1>
+  <div class="subtitle">▼ SELECT YOUR DESTINY ▼</div>
+</div>
+
+<div class="stage">
+  <div class="char-showcase" id="chars"></div>
+</div>
+
+<div class="scenario-panel" id="scenarios">
+  <h2>◆ CHOOSE SCENARIO ◆</h2>
+  <div class="scenario-grid" id="scenario-list"></div>
+</div>
+
+<div class="launch-area" id="confirm">
+  <button class="launch-btn" onclick="launch()">GAME START</button>
+</div>
+
+<div class="bottom-status" id="status"></div>
+
+<script>
+const chars = [
+  {name:'艾莉尼', epithet:'Twilight Will', emoji:'🌌', rating:'Lv.??', color:['#7c8aff','#4a5aff'], scenarios:[
+    {title:'漂流者与晨风', desc:'次元裂缝中与风之战士的偶然相遇——两个孤独旅人的轨迹在此交叠。', badge:''},
+    {title:'次元裂缝', desc:'时空的裂隙扩大了。每一次跳跃都可能改变一切。', badge:''},
+    {title:'外传·邂逅', desc:'在异世界中与威廉和安克擦肩。一段未曾被记录的旅程。', badge:''},
+    {title:'乐园遗迹', desc:'废弃的乐园中隐藏着关于她世界的秘密。她不再是旁观者。', badge:''},
+    {title:'NSFW', desc:'在乐园的深夜，记忆与触感从未如此清晰。', badge:'NSFW'}
+  ]},
+  {name:'拔示巴', epithet:'Ashidefill', emoji:'👑', rating:'Lv.??', color:['#ff4d4d','#cc0000'], scenarios:[
+    {title:'命运之子的王座', desc:'废墟王座上，被崇拜者环绕的拔示巴。外来者的出现打破沉默的仪式。', badge:''},
+    {title:'废土流浪者', desc:'她离开了圣堂。龟裂大地上两个流亡者的道路交叉了。', badge:''},
+    {title:'圣堂反叛', desc:'当圣堂成为囚笼，拔示巴的耐心到了尽头。', badge:''},
+    {title:'战斗联合', desc:'面对共同的敌人，她选择了暂时的联盟。不是信任——是实用。', badge:''},
+    {title:'NSFW', desc:'约定的夜晚。她的王座不需要祈祷——只需要服从。', badge:'NSFW'}
+  ]},
+  {name:'蕾娜', epithet:'Ishmael', emoji:'🔫', rating:'Lv.??', color:['#ff8c42','#e06020'], scenarios:[
+    {title:'逃亡者的选择', desc:'伊欧尼亚的废墟还在冒烟。11人死了——她是第12个。', badge:''},
+    {title:'伊欧尼亚的幸存者', desc:'唯一的生还者。但"生还"从来不等同于"活着"。', badge:''},
+    {title:'焦土独行', desc:'大地裂成碎片。她不再指望有人跟上她的脚步。', badge:''},
+    {title:'共同的敌人', desc:'仇人的名单上两个名字重叠了。试一试——不是信任，是实用。', badge:''},
+    {title:'NSFW', desc:'藏身处的夜晚。枪套没有解开——但有些事比扣扳机更需要勇气。', badge:'NSFW'}
+  ]},
+  {name:'米姆', epithet:'Mikura', emoji:'💜', rating:'Lv.??', color:['#9b59b6','#7d3c98'], scenarios:[
+    {title:'光之塔的旅伴', desc:'新世界的入口，她站在你身边。"没有受伤也可以检查一下哦——免费的！"', badge:''},
+    {title:'疗伤的巫女', desc:'蘑菇林边缘，她展开绷带和古老的医术。温柔得不属于这个废墟时代。', badge:''},
+    {title:'异世界的导师', desc:'古老的知识需要传递者。她选择开口，选择信任。', badge:''},
+    {title:'约定的尽头', desc:'泰斯塔蒙特睁开了眼。约定的代价即将清算。', badge:''},
+    {title:'NSFW', desc:'月光透过光之塔的裂窗洒下。她说这只是"另一种对话"。', badge:'NSFW'}
+  ]},
+  {name:'贝尔泽布特', epithet:'Velzub', emoji:'🕷️', rating:'Lv.??', color:['#00e5ff','#0080b0'], scenarios:[
+    {title:'深渊的低语', desc:'纯数据构成的深渊中，一个声音呼唤你的名字。她不是敌人——但也不是朋友。', badge:''},
+    {title:'猫戏老鼠', desc:'你被困在她的数据迷宫里。每条走廊都是死路——除非她让你通过。', badge:''},
+    {title:'涅墨西斯会议', desc:'混沌七器的残存者会面了。旧日的誓言，今日的重量。', badge:''},
+    {title:'程序觉醒', desc:'一段无法删除的代码。一个不该存在的自我意识。', badge:''},
+    {title:'NSFW', desc:'一魂双体。今晚——触碰的会是谁？感知到触碰的又会是谁？', badge:'NSFW'}
+  ]}
+];
+
+let selectedChar = -1, selectedScenario = -1;
+
+function renderChars(){
+  document.getElementById('chars').innerHTML = chars.map((c,i) => `
+    <div class="char-card${i===selectedChar?' selected':''}" onclick="selectChar(${i})">
+      <div class="char-portrait" style="background:radial-gradient(circle, ${c.color[0]}22 0%, transparent 70%)">
+        <div class="ring"></div>
+        ${c.emoji}
+      </div>
+      <div class="char-name-display">${c.name}</div>
+      <div class="char-epithet">${c.epithet}</div>
+      <div class="rating-tag" style="border-color:${c.color[0]}44;color:${c.color[0]}">${c.rating}</div>
+    </div>
+  `).join('');
+}
+
+function selectChar(i){
+  selectedChar = i; selectedScenario = -1;
+  renderChars();
+  renderScenarios();
+  document.getElementById('scenarios').classList.add('visible');
+  document.getElementById('confirm').classList.remove('visible');
+  document.getElementById('status').textContent = '';
+}
+
+function renderScenarios(){
+  const c = chars[selectedChar];
+  document.getElementById('scenario-list').innerHTML = c.scenarios.map((s,j) => `
+    <div class="scenario-btn${j===selectedScenario?' selected':''}" onclick="selectScenario(${j})">
+      <div class="s-title">${s.title}</div>
+      <div class="s-desc">${s.desc}</div>
+      ${s.badge ? '<div class="s-badge">'+s.badge+'</div>' : ''}
+    </div>
+  `).join('');
+}
+
+function selectScenario(j){
+  selectedScenario = j;
+  renderScenarios();
+  document.getElementById('confirm').classList.add('visible');
+  const c = chars[selectedChar], s = c.scenarios[j];
+  document.getElementById('status').textContent = `◆ ${c.name} · ${s.title} ◆`;
+}
+
+function launch(){
+  if(selectedChar<0 || selectedScenario<0) return;
+  const c = chars[selectedChar], s = c.scenarios[selectedScenario];
+  const idx = selectedChar * 5 + selectedScenario + 1;
+  document.getElementById('status').textContent = `>> LAUNCHING: ${c.name} · ${s.title} [#${idx}] <<`;
+}
+
+renderChars();
+</script>
+</body>
+</html>
