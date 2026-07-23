@@ -6947,14 +6947,15 @@
     },
     "5f32b2b8-1680-4bbb-ae41-497ca9078eff": {
       "comment": "[initvar]初始",
-      "content": "{\n  \"stat_data\": {\n    \"selected_character\": \"\",\n    \"selected_scenario\": 0,\n    \"phase\": \"lobby\",\n    \"characters\": {\n      \"airine\": {\n        \"name\": \"艾莉尼\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"bathsheba\": {\n        \"name\": \"拔示巴\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"lena\": {\n        \"name\": \"蕾娜\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"meme\": {\n        \"name\": \"米姆\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      },\n      \"belzeebul\": {\n        \"name\": \"贝尔泽布特\",\n        \"affection\": 0,\n        \"relationship\": \"陌生人\",\n        \"mood\": \"\",\n        \"clothing\": \"\",\n        \"inner_thought\": \"\",\n        \"body_state\": \"正常\",\n        \"clothing_integrity\": \"整齐\",\n        \"pose\": \"站立\"\n      }\n    }\n  }\n}\n",
+      "content": "系统规则: 在首条回复的UpdateVariable/JSONPatch中，必须通过\"op\":\"replace\"将selected_character设为当前角色ID、phase设为\"playing\"、characters下对应的affection/relationship/mood/clothing/inner_thought设为初始值。禁止输出空JSONPatch。",
       "enabled": true,
       "keys": [],
       "depth": 0,
       "order": 200,
       "position": 0,
       "preventRecursion": true,
-      "excludeRecursion": true
+      "excludeRecursion": true,
+      "constant": true
     },
     "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
       "comment": "变量输出格式",
