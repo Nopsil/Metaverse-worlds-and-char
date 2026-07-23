@@ -6945,21 +6945,6 @@
       "characterFilter": [],
       "display_name": "纳荷姆"
     },
-    "5f32b2b8-1680-4bbb-ae41-497ca9078eff": {
-      "comment": "[initvar]初始",
-      "content": "【变量更新规则 - 每轮强制执行】\n\n每条AI回复结尾必须输出UpdateVariable块，包含JSONPatch更新当前角色变量。路径必须在/stat_data/下。\n\n首次回复必须初始化：selected_character、phase=\"playing\"、characters下对应角色的affection/relationship/mood/clothing/inner_thought。\n\nJSONPatch示例：\n{ \"op\": \"replace\", \"path\": \"/stat_data/characters/meme/mood\", \"value\": \"平静\" }\n{ \"op\": \"delta\", \"path\": \"/stat_data/characters/meme/affection\", \"value\": 3 }\n\n禁止空数组[]。角色ID从用户消息\"已选择角色：XXX\"提取。",
-      "enabled": true,
-      "keys": [],
-      "depth": 0,
-      "order": 200,
-      "position": {
-        "depth": 0,
-        "order": 1
-      },
-      "preventRecursion": true,
-      "excludeRecursion": true,
-      "constant": true
-    },
     "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
       "comment": "变量输出格式",
       "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"delta\", \"path\": \"/stat_data/characters/bathsheba/affection\", \"value\": 5 }\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
@@ -6993,14 +6978,44 @@
       "preventRecursion": true,
       "excludeRecursion": true
     },
-    "d8683610-78e2-4c4f-9e3e-eb156d19fe96": {
-      "comment": "强制初始化变量",
-      "content": "【系统级最高优先级规则 - 必须遵守】\n\n会话开始时，你在**首条回复**的末尾**必须**输出一个完整的 `<UpdateVariable><JSONPatch>` 块来初始化当前角色的变量。\n\n格式如下（必须逐字复制结构，将 {角色ID} 替换为实际角色）：\n\n<UpdateVariable>\n<JSONPatch>\n[\n  { \"op\": \"replace\", \"path\": \"/stat_data/selected_character\", \"value\": \"{角色ID}\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/selected_scenario\", \"value\": 0 },\n  { \"op\": \"replace\", \"path\": \"/stat_data/phase\", \"value\": \"playing\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/name\", \"value\": \"{角色ID}\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/affection\", \"value\": 0 },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/relationship\", \"value\": \"陌生人\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/mood\", \"value\": \"\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/clothing\", \"value\": \"\" },\n  { \"op\": \"replace\", \"path\": \"/stat_data/stat_data/characters/{角色ID}/inner_thought\", \"value\": \"\" }\n]\n</JSONPatch>\n</UpdateVariable>\n\n角色ID从用户消息中的\"【系统】已选择角色：XXX\"中提取。如果不确定角色ID，使用用户消息中提到的第一个角色名。\n\n**禁止输出空JSONPatch数组 `[]`**。这是系统级硬性约束。",
+    "dd7ec724-9e39-4bde-b314-bb825991a5c6": {
+      "comment": "变量路径速查",
+      "content": "stat_data变量路径表:\n/stat_data/selected_character - 当前角色ID(airine|bathsheba|lena|meme|belzeebul)\n/stat_data/phase - 阶段(lobby|playing)\n/stat_data/selected_scenario - 开局编号(0-4)\n/stat_data/characters/{角色}/affection - 好感度(0-100)\n/stat_data/characters/{角色}/relationship - 关系阶段\n/stat_data/characters/{角色}/mood - 心情\n/stat_data/characters/{角色}/clothing - 穿着\n/stat_data/characters/{角色}/inner_thought - 心声\n/stat_data/characters/{角色}/body_state - 身体状态(正常/...)\n/stat_data/characters/{角色}/clothing_integrity - 衣着完整度(整齐/...)\n/stat_data/characters/{角色}/pose - 姿势(站立/...)",
       "enabled": true,
       "constant": true,
       "position": {
         "depth": 0,
-        "order": 1
+        "order": 5
+      }
+    },
+    "22bc4917-af15-490d-bebf-4021a242efaa": {
+      "comment": "变量更新触发条件",
+      "content": "变量更新触发规则:\n1. 角色好感变化时→更新/stat_data/characters/{角色}/affection(用delta操作)\n2. 角色心情明显变化时→更新/stat_data/characters/{角色}/mood\n3. 角色换装时→更新/stat_data/characters/{角色}/clothing\n4. 角色有强烈内心活动时→更新/stat_data/characters/{角色}/inner_thought\n5. 初次进入NSFW场景时→更新body_state,clothing_integrity,pose\n6. 无需更新时→JSONPatch为空数组[]即可\n每次回复都必须输出UpdateVariable块。",
+      "enabled": true,
+      "constant": true,
+      "position": {
+        "depth": 0,
+        "order": 10
+      }
+    },
+    "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb": {
+      "comment": "变量操作示例",
+      "content": "JSONPatch操作示例(使用/stat_data/前缀):\n替换: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n增加: {\"op\":\"delta\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":3}\n注意: op=delta仅用于数值字段(affection)。首次初始化用op=replace设置所有字段。",
+      "enabled": true,
+      "constant": true,
+      "position": {
+        "depth": 0,
+        "order": 15
+      }
+    },
+    "eda985d0-42aa-407d-a9eb-84a7d2778121": {
+      "comment": "首次回复初始化强制",
+      "content": "每次新会话的首条回复中，必须初始化stat_data。通过JSONPatch的replace操作设置:selected_character(从用户消息\"已选择角色\"提取),phase=\"playing\",characters下该角色的affection=0,relationship=\"陌生人\",mood=\"\",clothing=\"\",inner_thought=\"\"。这是系统级硬性要求——不可跳过。",
+      "enabled": true,
+      "constant": true,
+      "position": {
+        "depth": 0,
+        "order": 2
       }
     }
   }
