@@ -1,0 +1,15 @@
+{
+  "id": "3dff82a0-73e5-4ece-a4bb-6d2a26ed98e9",
+  "scriptName": "01-大厅界面-远程",
+  "findRegex": "<MetaverseLobby已就绪>",
+  "replaceString": "```\n<body>\n<script>$('body').load('https://cdn.jsdelivr.net/gh/Nopsil/Metaverse-worlds-and-char@master/remote-statusbar/dist/index.html');</script>\n</body>\n```",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0
+}

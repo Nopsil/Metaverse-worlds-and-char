@@ -1,0 +1,15 @@
+{
+  "id": "75cdb651-bba1-4017-9287-0cd44b01acef",
+  "scriptName": "02-大厅界面-本地",
+  "findRegex": "<MetaverseLobby已就绪>",
+  "replaceString": "```\n<body>\n<script>$('body').load('http://localhost:5500/index.html');</script>\n</body>\n```",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": true,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0
+}

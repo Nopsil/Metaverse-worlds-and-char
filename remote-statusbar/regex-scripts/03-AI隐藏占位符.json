@@ -1,0 +1,15 @@
+{
+  "id": "4d78fae0-0e50-444c-869b-360514c2682b",
+  "scriptName": "03-AI隐藏占位符",
+  "findRegex": "<MetaverseLobby已就绪>",
+  "replaceString": "",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": true,
+  "substituteRegex": 0
+}
