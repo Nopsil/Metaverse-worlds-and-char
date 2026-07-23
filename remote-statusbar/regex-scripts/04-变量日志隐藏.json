@@ -1,0 +1,15 @@
+{
+  "id": "d78b73b9-7870-40fa-b0e0-e926e254a237",
+  "scriptName": "04-变量日志隐藏",
+  "findRegex": "<UpdateVariable>[\\s\\S]*?<\\/UpdateVariable>",
+  "replaceString": "[系统日志已折叠]",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 1
+}
