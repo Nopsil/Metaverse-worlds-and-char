@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0f0;font-family:'Segoe UI','Microsoft YaHei',sans-serif;padding:16px}
+h2{color:#7c8aff;margin-bottom:12px;font-size:18px}
+.char-card{background:#13131f;border:1px solid #2a2a3f;border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;transition:all .2s}
+.char-card:hover{background:#1e1e30;border-color:#4a4a8f}
+.char-name{font-weight:600;font-size:16px;margin-bottom:4px}
+.char-desc{font-size:12px;color:#8888aa}
+.scenario-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.scenario-btn{background:#1e1e30;border:1px solid #2a2a3f;border-radius:4px;padding:4px 10px;font-size:11px;color:#8888aa;cursor:pointer}
+.scenario-btn:hover{background:#2a2a44;color:#ccc;border-color:#4a4a8f}
+.scenario-btn.selected{background:#2a2a44;color:#7c8aff;border-color:#7c8aff}
+</style>
+</head>
+<body>
+<h2>Metaverse Lobby</h2>
+<div id="chars"></div>
+<div id="status" style="margin-top:12px;font-size:11px;color:#555577"></div>
+<script>
+const chars=[
+  {name:'艾莉尼',scenarios:['漂流者与晨风','次元裂缝','外传邂逅','乐园遗迹','NSFW']},
+  {name:'拔示巴',scenarios:['命运之子的王座','废土流浪者','圣堂反叛','战斗联合','NSFW']},
+  {name:'蕾娜',scenarios:['逃亡者的选择','伊欧尼亚的幸存者','焦土独行','共同的敌人','NSFW']},
+  {name:'米姆',scenarios:['光之塔的旅伴','疗伤的巫女','异世界的导师','约定的尽头','NSFW']},
+  {name:'贝尔泽布特',scenarios:['深渊的低语','猫戏老鼠','涅墨西斯会议','程序觉醒','NSFW']}
+];
+const el=document.getElementById('chars');
+chars.forEach((c,i)=>{
+  const card=document.createElement('div');
+  card.className='char-card';
+  card.innerHTML='<div class=\"char-name\">'+c.name+'</div><div class=\"scenario-list\">'+c.scenarios.map((s,j)=>'<span class=\"scenario-btn\" data-c=\"'+i+'\" data-s=\"'+j+'\">'+s+'</span>').join('')+'</div>';
+  el.appendChild(card);
+});
+document.querySelectorAll('.scenario-btn').forEach(b=>b.addEventListener('click',function(){
+  document.querySelectorAll('.scenario-btn.selected').forEach(s=>s.classList.remove('selected'));
+  this.classList.add('selected');
+  const ci=parseInt(this.dataset.c),si=parseInt(this.dataset.s);
+  document.getElementById('status').textContent='已选择: '+chars[ci].name+' - '+chars[ci].scenarios[si];
+}));
+</script>
+</body>
+</html>
