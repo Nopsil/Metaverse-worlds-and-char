@@ -1,0 +1,15 @@
+{
+  "id": "77f40a01-c0bf-4a51-a0da-5a8a1baef5c7",
+  "scriptName": "07-角色状态栏-AI隐藏",
+  "findRegex": "<StatusPlaceHolderImpl/>",
+  "replaceString": "",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": true,
+  "substituteRegex": 0
+}
