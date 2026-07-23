@@ -5,6 +5,7 @@
   "replaceString": "```\n<body>\n<script>$('body').load('https://cdn.jsdelivr.net/gh/Nopsil/Metaverse-worlds-and-char@master/remote-statusbar/dist/char-status.html');</script>\n</body>\n```",
   "trimStrings": [],
   "placement": [
+    1,
     2
   ],
   "disabled": false,
