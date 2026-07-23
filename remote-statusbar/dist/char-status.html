@@ -74,7 +74,7 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
   try{
     if(typeof getVariables==='function'){
       var cd=getVariables({type:'chat'});
-      if(cd&&cd.stat_data&&cd.stat_data.selected_character){stat_data=cd.stat_data;L('chat:OK')}
+      if(cd){if(cd.stat_data&&cd.stat_data.selected_character){stat_data=cd.stat_data;L("chat:OK")}else if(cd.selected_character){stat_data=cd;L("chat:flat")}else L("chat:no_sc")}else L("chat:null"){stat_data=cd.stat_data;L('chat:OK')}
       else L('chat:'+(cd?(cd.stat_data?'no_sc':'no_sd'):'null'))
     }else{L('chat:no_func')}
   }catch(x){L('chat_err:'+x.message)}
