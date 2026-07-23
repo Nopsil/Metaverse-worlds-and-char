@@ -3531,32 +3531,6 @@
       "promptOnly": false,
       "runOnEdit": true,
       "substituteRegex": 0
-    },
-    "02-元数据美化": {
-      "id": "04180e57-fdb7-49b7-8a0d-85642869a9a6",
-      "findRegex": "/<UpdateVariable(?:variable)?>\\s*(.*)\\s*<\\/UpdateVariable(?:variable)?>/gsi",
-      "replaceString": "<details style=\"margin:8px 0;background:#1a1b26;border-radius:6px;overflow:hidden\"><summary style=\"padding:8px 14px;cursor:pointer;color:#888;font-size:12px;font-family:monospace\">Sync</summary><div style=\"padding:10px 14px;font-size:11px;color:#ccc;font-family:monospace;white-space:pre-wrap;max-height:120px;overflow:auto;border-top:1px solid #2a2a3f\"></div></details>",
-      "placement": [
-        2
-      ],
-      "disabled": false,
-      "markdownOnly": true,
-      "promptOnly": false,
-      "runOnEdit": true,
-      "substituteRegex": 1
-    },
-    "03-元数据隐藏(AI)": {
-      "id": "ac93ecea-9b7e-46a8-b4ce-29f10d235a47",
-      "findRegex": "/<UpdateVariable(?:variable)?>\\s*(.*)\\s*<\\/UpdateVariable(?:variable)?>/gsi",
-      "replaceString": "",
-      "placement": [
-        2
-      ],
-      "disabled": false,
-      "markdownOnly": false,
-      "promptOnly": true,
-      "runOnEdit": true,
-      "substituteRegex": 1
     }
   }
 }
