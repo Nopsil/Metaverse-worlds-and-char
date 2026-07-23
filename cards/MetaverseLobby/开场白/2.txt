@@ -8,20 +8,20 @@
 
 
 <UpdateVariable>
-<initvar>
-selected_character: "airine"
-selected_scenario: 1
-phase: "playing"
-characters:
-  airine:
-    name: "airine"
-    affection: 0
-    relationship: "陌生人"
-    mood: ""
-    clothing: ""
-    inner_thought: ""
-    body_state: "正常"
-    clothing_integrity: "整齐"
-    pose: "站立"
-</initvar>
+<JSONPatch>
+[
+  { "op": "replace", "path": "/stat_data/selected_character", "value": "airine" },
+  { "op": "replace", "path": "/stat_data/selected_scenario", "value": 1 },
+  { "op": "replace", "path": "/stat_data/phase", "value": "playing" },
+  { "op": "replace", "path": "/stat_data/characters/airine/name", "value": "airine" },
+  { "op": "replace", "path": "/stat_data/characters/airine/affection", "value": 0 },
+  { "op": "replace", "path": "/stat_data/characters/airine/relationship", "value": "陌生人" },
+  { "op": "replace", "path": "/stat_data/characters/airine/mood", "value": "" },
+  { "op": "replace", "path": "/stat_data/characters/airine/clothing", "value": "" },
+  { "op": "replace", "path": "/stat_data/characters/airine/inner_thought", "value": "" },
+  { "op": "replace", "path": "/stat_data/characters/airine/body_state", "value": "正常" },
+  { "op": "replace", "path": "/stat_data/characters/airine/clothing_integrity", "value": "整齐" },
+  { "op": "replace", "path": "/stat_data/characters/airine/pose", "value": "站立" }
+]
+</JSONPatch>
 </UpdateVariable>
