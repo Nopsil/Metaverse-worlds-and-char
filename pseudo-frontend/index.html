@@ -3,32 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metaverse Lobby v0.3</title>
+<title>Metaverse Lobby v0.4</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 :root {
-  --cyan: #00e5ff;
-  --pink: #ff2d95;
-  --gold: #ffd700;
+  --cyan: #00e5ff; --pink: #ff2d95; --gold: #ffd700;
   --white: #f0f0ff;
   --font-display: 'Noto Sans JP', 'Microsoft YaHei', sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* ===== 高亮渐变背景（CHUNITHM VERSE 天空城） ===== */
-body{
+/* ===== 背景层 ===== */
+.bg-layer{
+  position: fixed; inset: 0; z-index: 0; overflow: hidden;
   background:
-    radial-gradient(ellipse at 60% 0%, #1a3a68 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 30%, #2a1050 0%, transparent 40%),
-    radial-gradient(ellipse at 70% 70%, #102040 0%, transparent 50%),
-    #020612;
-  color: var(--white);
-  font-family: var(--font-display);
-  min-height: 100vh;
-  overflow-x: hidden;
+    /* 中心白光爆散 */
+    radial-gradient(ellipse 50% 40% at 50% 20%, #fff 0%, rgba(220,240,255,0.7) 5%, rgba(120,200,255,0.35) 15%, rgba(50,150,220,0.15) 30%, transparent 55%),
+    /* 左侧品红暖光 */
+    radial-gradient(ellipse 35% 50% at 20% 45%, rgba(255,45,149,0.25) 0%, transparent 60%),
+    /* 右侧青蓝冷光 */
+    radial-gradient(ellipse 35% 50% at 80% 45%, rgba(0,229,255,0.2) 0%, transparent 60%),
+    /* 底部金色微光 */
+    radial-gradient(ellipse 60% 20% at 50% 90%, rgba(255,215,0,0.1) 0%, transparent 70%),
+    /* 深空底色 */
+    linear-gradient(180deg, #0a1a3a 0%, #020612 50%, #030818 100%);
 }
-/* 彩虹光带 */
+
+/* 透视网格 */
+.bg-layer::before{
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    /* 水平线——透视渐远 */
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,229,255,0.04) 39px, rgba(0,229,255,0.04) 40px),
+    /* 竖直线 */
+    repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,229,255,0.03) 49px, rgba(0,229,255,0.03) 50px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 70%);
+}
+
+/* 顶部大光晕 */
+.bg-layer::after{
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, rgba(0,229,255,0.1) 30%, transparent 70%);
+  animation: glowBreathe 4s ease-in-out infinite;
+}
+@keyframes glowBreathe{
+  0%,100%{ opacity: 0.7; transform: translateX(-50%) scale(1) }
+  50%{ opacity: 1; transform: translateX(-50%) scale(1.08) }
+}
+
+/* ===== 浮空几何体 ===== */
+.geo{
+  position: fixed; z-index: 1; pointer-events: none;
+}
+
+/* 菱形 1 —— 左上 */
+.geo-diamond-1{
+  top: 8%; left: 10%;
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, rgba(255,215,0,0.5), rgba(255,45,149,0.3));
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  filter: blur(1px);
+  animation: floatSlow 7s ease-in-out infinite;
+}
+/* 菱形 2 —— 右上 */
+.geo-diamond-2{
+  top: 25%; right: 8%;
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, rgba(0,229,255,0.5), rgba(255,255,255,0.3));
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  filter: blur(1px);
+  animation: floatSlow 9s ease-in-out infinite 1s;
+}
+/* 菱形 3 —— 中左 */
+.geo-diamond-3{
+  top: 50%; left: 5%;
+  width: 30px; height: 30px;
+  background: rgba(255,45,149,0.35);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  animation: floatSlow 8s ease-in-out infinite 2s;
+}
+/* 大星形 —— 右侧中 */
+.geo-star{
+  top: 55%; right: 12%;
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, rgba(0,229,255,0.25), rgba(255,255,255,0.1));
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  filter: blur(2px);
+  animation: floatSlow 11s ease-in-out infinite 3s, starSpin 20s linear infinite;
+}
+@keyframes starSpin{ to{transform:rotate(360deg)} }
+
+/* 小光点 */
+.geo-dot{
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan), 0 0 12px rgba(0,229,255,0.4);
+  animation: dotPulse 3s ease-in-out infinite;
+}
+.geo-dot:nth-child(1){ top: 15%; left: 30%; animation-delay: 0s }
+.geo-dot:nth-child(2){ top: 35%; left: 65%; animation-delay: 0.8s; background: var(--pink); box-shadow: 0 0 6px var(--pink) }
+.geo-dot:nth-child(3){ top: 70%; left: 25%; animation-delay: 1.6s; background: var(--gold); box-shadow: 0 0 6px var(--gold) }
+.geo-dot:nth-child(4){ top: 60%; left: 75%; animation-delay: 2.4s }
+.geo-dot:nth-child(5){ top: 20%; left: 80%; animation-delay: 3.2s; background: var(--pink); box-shadow: 0 0 6px var(--pink) }
+@keyframes dotPulse{ 0%,100%{opacity:0.3;transform:scale(1)} 50%{opacity:1;transform:scale(2)} }
+
+/* 光带 —— 斜向扫描 */
+.geo-streak{
+  width: 300px; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.4), rgba(255,255,255,0.6), rgba(0,229,255,0.4), transparent);
+  border-radius: 1px;
+  animation: streakSlide 6s linear infinite;
+}
+.geo-streak:nth-child(1){ top: 30%; left: -300px; transform: rotate(-15deg); animation-delay: 0s }
+.geo-streak:nth-child(2){ top: 65%; left: -300px; transform: rotate(-20deg); animation-delay: 3s; width: 200px; opacity: 0.5 }
+@keyframes streakSlide{ 0%{ left: -300px } 100%{ left: 110% } }
+
+@keyframes floatSlow{
+  0%,100%{ transform: translateY(0) rotate(0deg) }
+  25%{ transform: translateY(-15px) rotate(5deg) }
+  75%{ transform: translateY(10px) rotate(-3deg) }
+}
+
+/* ===== 彩虹光条 ===== */
 .rainbow-top{
   height: 3px;
   background: linear-gradient(90deg, var(--pink), var(--cyan), var(--gold), var(--pink));
@@ -44,216 +145,131 @@ body{
 
 /* ===== 标题 ===== */
 .header{
-  text-align: center;
-  padding: 32px 20px 16px;
-  position: relative;
+  position: relative; z-index: 2;
+  text-align: center; padding: 36px 20px 16px;
 }
 .header h1{
-  font-size: 38px;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: 4px;
+  font-size: 38px; font-weight: 900; font-style: italic; letter-spacing: 4px;
   background: linear-gradient(180deg, #fff 0%, var(--cyan) 55%, var(--pink) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 16px rgba(0,229,255,0.5));
 }
-.header .sub{
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: var(--cyan);
-  opacity: 0.8;
-  margin-top: 4px;
-}
+.header .sub{ font-size: 12px; letter-spacing: 3px; color: var(--cyan); opacity: 0.8; margin-top: 4px }
 
 /* ===== 角色卡片 ===== */
 .char-row{
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px 20px 10px;
-  flex-wrap: wrap;
+  position: relative; z-index: 2;
+  display: flex; gap: 20px; justify-content: center; padding: 20px 20px 10px; flex-wrap: wrap;
 }
-
 .char-card{
   width: 180px;
-  background: linear-gradient(170deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(170deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
-  cursor: pointer;
-  transition: all 0.25s ease-out;
-  position: relative;
-  overflow: hidden;
+  cursor: pointer; transition: all 0.25s ease-out;
+  position: relative; overflow: hidden;
 }
 .char-card::before{
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(170deg, rgba(0,229,255,0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.25s;
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(170deg, rgba(0,229,255,0.1), transparent 60%);
+  opacity: 0; transition: opacity 0.25s;
 }
-.char-card:hover{
-  transform: translateY(-3px);
-  border-color: rgba(0,229,255,0.4);
-  box-shadow: 0 8px 24px rgba(0,229,255,0.15);
-}
+.char-card:hover{ transform: translateY(-3px); border-color: rgba(0,229,255,0.4); box-shadow: 0 8px 24px rgba(0,229,255,0.15) }
 .char-card:hover::before{ opacity: 1 }
 .char-card.selected{
   border-color: var(--cyan);
   box-shadow: 0 0 20px rgba(0,229,255,0.3), 0 8px 24px rgba(0,0,0,0.4);
-  background: linear-gradient(170deg, rgba(0,229,255,0.12), rgba(255,45,149,0.04));
+  background: linear-gradient(170deg, rgba(0,229,255,0.14), rgba(255,45,149,0.06));
 }
-
-/* 角色立绘区 */
 .char-visual{
-  height: 170px;
-  position: relative;
+  height: 170px; position: relative;
   display: flex; align-items: flex-end; justify-content: center;
-  font-size: 56px;
-  padding-bottom: 8px;
+  font-size: 56px; padding-bottom: 8px;
 }
 .char-visual .rank-badge{
-  position: absolute;
-  top: 8px; left: 14px;
+  position: absolute; top: 8px; left: 14px;
   background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(20,20,40,0.7));
   border: 1px solid rgba(255,215,0,0.4);
-  padding: 2px 10px;
-  font-size: 10px;
-  font-weight: 900;
-  font-style: italic;
-  color: var(--gold);
-  letter-spacing: 1px;
+  padding: 2px 10px; font-size: 10px; font-weight: 900; font-style: italic;
+  color: var(--gold); letter-spacing: 1px;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 .char-visual .level-tag{
-  position: absolute;
-  bottom: 6px; right: 10px;
-  font-size: 10px;
-  font-weight: 900;
-  font-style: italic;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 1px;
+  position: absolute; bottom: 6px; right: 10px;
+  font-size: 10px; font-weight: 900; font-style: italic;
+  color: rgba(255,255,255,0.3); letter-spacing: 1px;
 }
-
-/* 角色信息区 */
 .char-info{
   padding: 10px 14px 14px;
   background: linear-gradient(0deg, rgba(0,0,0,0.4), transparent);
   position: relative;
 }
-.char-name{
-  font-size: 15px;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 1px;
-  color: var(--white);
-}
-.char-epithet{
-  font-size: 10px;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 1px;
-  margin-top: 1px;
-}
-
-/* 选中高亮条 */
+.char-name{ font-size: 15px; font-weight: 700; font-style: italic; letter-spacing: 1px; color: var(--white) }
+.char-epithet{ font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 1px; margin-top: 1px }
 .char-card.selected .char-info::after{
-  content: '';
-  position: absolute;
-  bottom: 0; left: 14px; right: 14px;
-  height: 2px;
+  content: ''; position: absolute; bottom: 0; left: 14px; right: 14px; height: 2px;
   background: linear-gradient(90deg, var(--cyan), var(--pink));
   box-shadow: 0 0 6px var(--cyan);
 }
 
 /* ===== 场景面板 ===== */
 .scene-panel{
-  display: none;
-  max-width: 900px;
-  margin: 8px auto;
-  padding: 20px 24px;
+  position: relative; z-index: 2;
+  display: none; max-width: 900px; margin: 8px auto; padding: 20px 24px;
 }
 .scene-panel.on{ display: block; animation: fadeUp 0.25s ease-out }
 @keyframes fadeUp{ from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-
 .scene-panel h2{
-  font-size: 14px; font-weight: 700; font-style: italic;
-  letter-spacing: 2px; color: var(--cyan);
-  text-align: center; margin-bottom: 14px;
+  font-size: 14px; font-weight: 700; font-style: italic; letter-spacing: 2px;
+  color: var(--cyan); text-align: center; margin-bottom: 14px;
 }
-
-.scene-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 12px;
-}
-
+.scene-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px }
 .scene-btn{
-  background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.1);
   clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
-  padding: 18px 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
+  padding: 18px 14px; cursor: pointer; transition: all 0.2s; position: relative;
 }
-.scene-btn:hover{
-  background: rgba(0,229,255,0.06);
-  border-color: rgba(0,229,255,0.25);
-  transform: translateY(-2px);
-}
+.scene-btn:hover{ background: rgba(0,229,255,0.06); border-color: rgba(0,229,255,0.25); transform: translateY(-2px) }
 .scene-btn.selected{
-  background: rgba(0,229,255,0.1);
-  border-color: var(--cyan);
+  background: rgba(0,229,255,0.1); border-color: var(--cyan);
   box-shadow: 0 0 14px rgba(0,229,255,0.2);
 }
-.scene-btn .st-title{
-  font-size: 14px; font-weight: 700; font-style: italic;
-  color: var(--white); margin-bottom: 4px;
-}
-.scene-btn .st-desc{
-  font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.4;
-}
+.scene-btn .st-title{ font-size: 14px; font-weight: 700; font-style: italic; color: var(--white); margin-bottom: 4px }
+.scene-btn .st-desc{ font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.4 }
 .scene-btn .st-badge{
-  display: inline-block; margin-top: 6px;
-  padding: 2px 8px; font-size: 9px; font-weight: 900; font-style: italic;
-  letter-spacing: 1px;
-  background: rgba(255,45,149,0.12);
-  color: var(--pink);
+  display: inline-block; margin-top: 6px; padding: 2px 8px;
+  font-size: 9px; font-weight: 900; font-style: italic; letter-spacing: 1px;
+  background: rgba(255,45,149,0.12); color: var(--pink);
   border: 1px solid rgba(255,45,149,0.3);
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
 /* ===== 确认按钮 ===== */
 .launch-wrap{
+  position: relative; z-index: 2;
   display: none; justify-content: center; padding: 6px 0 40px;
 }
 .launch-wrap.on{ display: flex; animation: fadeUp 0.25s ease-out }
-
 .launch-btn{
-  font-size: 20px; font-weight: 900; font-style: italic;
-  letter-spacing: 4px;
-  padding: 16px 64px;
-  border: none; cursor: pointer; color: #fff;
+  font-size: 20px; font-weight: 900; font-style: italic; letter-spacing: 4px;
+  padding: 16px 64px; border: none; cursor: pointer; color: #fff;
   background: linear-gradient(135deg, var(--cyan), #0088c0 50%, var(--pink));
   clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
   box-shadow: 0 0 24px rgba(0,229,255,0.3), 0 6px 20px rgba(0,0,0,0.4);
   transition: all 0.2s;
 }
-.launch-btn:hover{
-  transform: scale(1.04);
-  box-shadow: 0 0 40px rgba(0,229,255,0.5), 0 8px 28px rgba(0,0,0,0.5);
-}
+.launch-btn:hover{ transform: scale(1.04); box-shadow: 0 0 40px rgba(0,229,255,0.5), 0 8px 28px rgba(0,0,0,0.5) }
 .launch-btn:active{ transform: scale(0.97) }
 
-/* ===== 状态栏 ===== */
+/* ===== 状态 ===== */
 .status-bar{
+  position: relative; z-index: 2;
   text-align: center; padding: 10px;
   font-size: 11px; font-style: italic; letter-spacing: 1px;
   color: rgba(255,255,255,0.25);
 }
 
-/* 响应式 */
 @media(max-width:640px){
   .header h1{ font-size: 26px }
   .char-row{ gap: 12px }
@@ -264,6 +280,22 @@ body{
 </style>
 </head>
 <body>
+
+<!-- 背景层 -->
+<div class="bg-layer"></div>
+
+<!-- 浮空几何体 -->
+<div class="geo geo-diamond-1"></div>
+<div class="geo geo-diamond-2"></div>
+<div class="geo geo-diamond-3"></div>
+<div class="geo geo-star"></div>
+<div class="geo geo-dot"></div>
+<div class="geo geo-dot"></div>
+<div class="geo geo-dot"></div>
+<div class="geo geo-dot"></div>
+<div class="geo geo-dot"></div>
+<div class="geo geo-streak"></div>
+<div class="geo geo-streak"></div>
 
 <div class="rainbow-top"></div>
 <div class="rainbow-bottom"></div>
@@ -324,55 +356,28 @@ const chars = [
     {title:'NSFW', desc:'一魂双体。今晚——触碰的会是谁？感知到触碰的又会是谁？', badge:'NSFW'}
   ]}
 ];
-
-let selC = -1, selS = -1;
-
+let selC=-1,selS=-1;
 function renderChars(){
-  document.getElementById('chars').innerHTML = chars.map((c,i) => `
+  document.getElementById('chars').innerHTML=chars.map((c,i)=>`
     <div class="char-card${i===selC?' selected':''}" onclick="pickChar(${i})">
       <div class="char-visual" style="background:radial-gradient(ellipse at 50% 120%, ${c.color}22 0%, transparent 60%)">
-        <div class="rank-badge">${c.rank}</div>
-        <span>${c.emoji}</span>
+        <div class="rank-badge">${c.rank}</div><span>${c.emoji}</span>
         <div class="level-tag">LV.??</div>
       </div>
-      <div class="char-info">
-        <div class="char-name">${c.name}</div>
-        <div class="char-epithet">${c.epithet}</div>
-      </div>
-    </div>
-  `).join('');
+      <div class="char-info"><div class="char-name">${c.name}</div><div class="char-epithet">${c.epithet}</div></div>
+    </div>`).join('');
 }
-
-function pickChar(i){ selC = i; selS = -1; renderChars(); renderScenes();
-  document.getElementById('scenes').classList.add('on');
-  document.getElementById('confirm').classList.remove('on');
-  document.getElementById('status').textContent = '';
-}
-
+function pickChar(i){selC=i;selS=-1;renderChars();renderScenes();$('scenes').classList.add('on');$('confirm').classList.remove('on');$('status').textContent=''}
 function renderScenes(){
-  const c = chars[selC];
-  document.getElementById('scene-list').innerHTML = c.scenarios.map((s,j) => `
+  $('scene-list').innerHTML=chars[selC].scenarios.map((s,j)=>`
     <div class="scene-btn${j===selS?' selected':''}" onclick="pickScene(${j})">
-      <div class="st-title">${s.title}</div>
-      <div class="st-desc">${s.desc}</div>
+      <div class="st-title">${s.title}</div><div class="st-desc">${s.desc}</div>
       ${s.badge?'<div class="st-badge">'+s.badge+'</div>':''}
-    </div>
-  `).join('');
+    </div>`).join('');
 }
-
-function pickScene(j){ selS = j; renderScenes();
-  document.getElementById('confirm').classList.add('on');
-  const c = chars[selC];
-  document.getElementById('status').textContent = `◆ ${c.name} · ${c.scenarios[j].title} ◆`;
-}
-
-function launch(){
-  if(selC<0||selS<0) return;
-  const c = chars[selC], s = c.scenarios[selS];
-  const idx = selC*5+selS+1;
-  document.getElementById('status').textContent = `>> LAUNCHING: ${c.name} · ${s.title} [#${idx}] <<`;
-}
-
+function pickScene(j){selS=j;renderScenes();$('confirm').classList.add('on');$('status').textContent='◆ '+chars[selC].name+' · '+chars[selC].scenarios[j].title+' ◆'}
+function launch(){if(selC<0||selS<0)return;$('status').textContent='>> LAUNCHING: '+chars[selC].name+' · '+chars[selC].scenarios[selS].title+' <<'}
+function $(id){return document.getElementById(id)}
 renderChars();
 </script>
 </body>
