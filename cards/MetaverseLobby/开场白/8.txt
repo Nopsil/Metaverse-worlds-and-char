@@ -7,3 +7,23 @@
 她合上战报，抬起眼。红瞳扫过{{user}}的面孔时，目光中闪过一丝审视——像在打量一件刚送来的工具。她没有招手，只是用下巴朝面前的地面点了点，动作随意却不容置疑。
 
 "新来的。站那么远干什么，怕我吃了你？"她的语调冷淡，嘴角微翘——那是不怀好意的弧度。"叫什么？被发配到这儿来是你的倒霉，不过比死在战场上强。至少在我面前，你能死得明白一些。——当然，前提是你别惹我不高兴。"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "bathsheba"
+selected_scenario: 2
+phase: "playing"
+characters:
+  bathsheba:
+    name: "bathsheba"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

@@ -9,3 +9,23 @@
 她顿了顿，似乎在犹豫要不要问下一个问题。
 
 "你叫什么？算了，机械种大概也不会说名字。"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "lena"
+selected_scenario: 3
+phase: "playing"
+characters:
+  lena:
+    name: "lena"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

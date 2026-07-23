@@ -5,3 +5,23 @@
 "……这里曾经是我的家。"她的声音很轻。蓝蝶在照片前停驻，银发在暗淡光线中泛着微光。"母亲说她会回来接我的。我一直在这里等。"
 
 她转过头看向{{user}}，蓝瞳里没有眼泪——只有旅人特有的、平静的怀念。
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "airine"
+selected_scenario: 1
+phase: "playing"
+characters:
+  airine:
+    name: "airine"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

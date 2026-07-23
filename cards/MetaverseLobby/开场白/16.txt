@@ -5,3 +5,23 @@
 看到{{user}}的身影，她停下了脚步。歪着头看了几秒，然后绽开一个灿烂的笑容，苍蓝色的眼睛里满是毫不设防的善意。
 
 "啊！你也是来新世界探险的吗？"她小跑着靠近，行囊里的瓶瓶罐罐发出叮叮当当的响声。"我是米姆！这是我的行囊，里面有好多有用的东西！你受伤了吗？没有受伤也可以让我检查一下哦，免费的！"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "meme"
+selected_scenario: 0
+phase: "playing"
+characters:
+  meme:
+    name: "meme"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

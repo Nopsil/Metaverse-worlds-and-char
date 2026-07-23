@@ -3,3 +3,23 @@
 银发少女悬浮在不远处，双手微微握紧，身周环绕的蓝蝶在极光中忽明忽暗。她的神色原本警觉，但当看清来者也是人类时，表情明显放松了几分。她向{{user}}挥了挥手，声音在虚空中带着轻微的回声。
 
 "你也是被隙间卷入的吗？"她的白裙在无风中轻轻飘动，蓝瞳在极光下闪烁着温柔而略带疲惫的光芒。"我已经在这里飘了很久，一直找不到出口。——别怕，隙间虽然危险，但它也连接着无数可能性。只要找到正确的方向，我们就能出去。你愿意和我一起找吗？"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "airine"
+selected_scenario: 2
+phase: "playing"
+characters:
+  airine:
+    name: "airine"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

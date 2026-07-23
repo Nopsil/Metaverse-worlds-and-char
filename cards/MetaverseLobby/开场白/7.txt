@@ -7,3 +7,23 @@
 听到身后的动静，她转过身来。红瞳在虚无中格外暗沉，但里面没有惊讶，只有一种被打断的烦躁。
 
 "……你居然能到这里来。"她的语气冷了下来，像刀刃贴在皮肤上。"有意思。不过我没兴趣问你怎么进来的——我只想知道，你是来送死的，还是来看我笑话的？如果是后者，你可以跟这些灰烬一起飘了。"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "bathsheba"
+selected_scenario: 1
+phase: "playing"
+characters:
+  bathsheba:
+    name: "bathsheba"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

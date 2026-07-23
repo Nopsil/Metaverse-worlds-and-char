@@ -9,3 +9,23 @@
 她沉默了一会儿，看着远处破碎的穹顶。然后回过头。
 
 "你有地方去吗？我们可以一起走。至少两个人比一个人更容易活下来。"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "lena"
+selected_scenario: 2
+phase: "playing"
+characters:
+  lena:
+    name: "lena"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

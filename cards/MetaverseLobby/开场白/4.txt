@@ -5,3 +5,23 @@
 屋子里没有她。但这些痕迹无声地讲述着她的童年——那个还没有蓝蝶相伴的、用蜡笔画向日葵的小女孩，曾经在这里住过。
 
 阳光从穹顶洒下，落在那些泛黄的画纸上。画中的向日葵依然在微笑，而画她的人早已踏上了永不停歇的旅途。
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "airine"
+selected_scenario: 3
+phase: "playing"
+characters:
+  airine:
+    name: "airine"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

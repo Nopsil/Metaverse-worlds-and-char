@@ -9,3 +9,23 @@
 她抬起眼，血痕在她苍白的脸上格外醒目，但她在笑。
 
 "很壮观，不是吗？这一切——都是我干的。你觉得呢？"
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "bathsheba"
+selected_scenario: 3
+phase: "playing"
+characters:
+  bathsheba:
+    name: "bathsheba"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>

@@ -9,3 +9,23 @@
 "你醒了！太好了！"她的声音轻轻上扬。"你的伤口不深，但感染了新世界的一种病毒，如果不处理会很麻烦的。——别动，我再给你换一次草药。疼的话可以叫出来哦，我不会笑你的！"
 
 她说着又拿起一卷新绷带。有那么一瞬，她的手指停了一下，眼神飘向了帐篷外——然后又迅速收回来。那只是一秒的事，但足够让人感到一丝不协调。
+
+
+<UpdateVariable>
+<initvar>
+selected_character: "meme"
+selected_scenario: 3
+phase: "playing"
+characters:
+  meme:
+    name: "meme"
+    affection: 0
+    relationship: "陌生人"
+    mood: ""
+    clothing: ""
+    inner_thought: ""
+    body_state: "正常"
+    clothing_integrity: "整齐"
+    pose: "站立"
+</initvar>
+</UpdateVariable>
