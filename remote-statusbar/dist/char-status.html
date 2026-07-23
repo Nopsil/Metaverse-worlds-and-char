@@ -74,12 +74,15 @@ body{
 (async ()=>{
   try{
     await waitGlobalInitialized('Mvu');
-    const vars = getVariables({type:'message', message_id: getCurrentMessageId()});
+    const vars = getVariables({type:'chat'});
     const sc = vars?.stat_data?.selected_character;
-    if(!sc){ document.getElementById('loading').textContent='no character'; return; }
+    // Fallback: try latest message if chat-level not available
+    const msgVars = (!sc) ? getVariables({type:'message', message_id: 'latest'}) : null;
+    const finalSc = sc || msgVars?.stat_data?.selected_character;
+    if(!finalSc){ document.getElementById('loading').textContent='no character'; return; }
 
-    const c = vars.stat_data.characters?.[sc];
-    if(!c){ document.getElementById('loading').textContent=sc; return; }
+    const c = vars.stat_data.characters?.[finalSc] || msgVars?.stat_data?.characters?.[finalSc];
+    if(!c){ document.getElementById('loading').textContent=finalSc; return; }
 
     // Affection
     const aff = c.affection ?? 0;
