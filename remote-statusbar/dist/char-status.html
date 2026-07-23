@@ -82,8 +82,8 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft Ya
       // Scan recent messages for stat_data (newest first)
       var chat=SillyTavern.getContext().chat;
       for(var i=chat.length-1;i>=0;i--){
-        var mid=chat[i].message_id||chat[i].id;
-        if(!mid) continue;
+        var mid=chat[i].swipe_id;
+        if(mid===undefined||mid===null) continue;
         var d=Mvu.getMvuData({type:'message',message_id:mid});
         if(d&&d.stat_data&&d.stat_data.selected_character) return d.stat_data;
       }
