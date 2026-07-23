@@ -105,6 +105,28 @@
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
 }
 
+/* ===== 街机顶栏 ===== */
+.arcade-bar{
+  position: relative; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 24px; background: rgba(0,0,0,0.7);
+  border-bottom: 2px solid var(--cyan);
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: 12px; letter-spacing: 1px;
+}
+.arcade-user{ display: flex; align-items: center; gap: 8px }
+.arcade-p1{
+  background: var(--cyan); color: #000;
+  padding: 1px 6px; font-size: 10px; font-weight: 900;
+}
+.arcade-name{ color: var(--white); opacity: 0.7 }
+.arcade-rating{
+  background: linear-gradient(90deg, var(--gold), #ff8c00);
+  color: #000; padding: 2px 8px; font-size: 10px;
+}
+.arcade-rating b{ font-size: 13px }
+.arcade-info{ color: var(--text-dim) }
+
 /* ===== 标题 ===== */
 .header{
   position: relative; z-index: 2;
@@ -125,24 +147,38 @@
 }
 .char-card{
   width: 180px;
-  background: linear-gradient(170deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(170deg, rgba(12,18,38,0.9), rgba(8,12,28,0.95));
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
-  cursor: pointer; transition: all 0.25s ease-out;
+  cursor: pointer; transition: all 0.25s cubic-bezier(0.175,0.885,0.32,1.275);
   position: relative; overflow: hidden;
+  box-shadow: -4px 4px 15px rgba(0,0,0,0.5);
 }
+/* 霓虹边缘——box-shadow 不会被 clip-path 裁掉 */
 .char-card::before{
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(170deg, rgba(0,229,255,0.1), transparent 60%);
+  content: '';
+  position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 1.5px rgba(0,229,255,0.2);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  transition: all 0.25s;
+  pointer-events: none;
+  z-index: 5;
+}
+.char-card::after{
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(170deg, rgba(0,229,255,0.12), transparent 60%);
   opacity: 0; transition: opacity 0.25s;
+  pointer-events: none;
 }
-.char-card:hover{ transform: translateY(-3px); border-color: rgba(0,229,255,0.4); box-shadow: 0 8px 24px rgba(0,229,255,0.15) }
-.char-card:hover::before{ opacity: 1 }
+.char-card:hover{ transform: translateY(-3px); box-shadow: -4px 4px 20px rgba(0,229,255,0.2) }
+.char-card:hover::after{ opacity: 1 }
+.char-card:hover::before{ box-shadow: inset 0 0 0 1.5px rgba(0,229,255,0.6) }
 .char-card.selected{
-  border-color: var(--cyan);
-  box-shadow: 0 0 20px rgba(0,229,255,0.3), 0 8px 24px rgba(0,0,0,0.4);
-  background: linear-gradient(170deg, rgba(0,229,255,0.14), rgba(255,45,149,0.06));
+  box-shadow: 0 0 25px rgba(0,229,255,0.5), 0 8px 24px rgba(0,0,0,0.5);
+  background: linear-gradient(170deg, rgba(0,229,255,0.18), rgba(255,45,149,0.08));
 }
+.char-card.selected::before{ box-shadow: inset 0 0 0 2px var(--cyan), inset 0 0 20px rgba(0,229,255,0.2) }
+.char-card.selected::after{ opacity: 1 }
 .char-visual{
   height: 170px; position: relative;
   display: flex; align-items: flex-end; justify-content: center;
@@ -187,25 +223,35 @@
 }
 .scene-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px }
 .scene-btn{
-  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(160deg, rgba(12,18,38,0.9), rgba(8,12,28,0.95));
   clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
-  padding: 18px 14px; cursor: pointer; transition: all 0.2s; position: relative;
+  padding: 16px 14px; cursor: pointer; transition: all 0.25s cubic-bezier(0.175,0.885,0.32,1.275);
+  position: relative;
+  box-shadow: -2px 2px 10px rgba(0,0,0,0.4);
 }
-.scene-btn:hover{ background: rgba(0,229,255,0.06); border-color: rgba(0,229,255,0.25); transform: translateY(-2px) }
+.scene-btn::before{
+  content: '';
+  position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(0,229,255,0.15);
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+  transition: all 0.25s;
+  pointer-events: none;
+}
+.scene-btn:hover{ transform: translateY(-2px); box-shadow: -2px 2px 14px rgba(0,229,255,0.2) }
+.scene-btn:hover::before{ box-shadow: inset 0 0 0 1px rgba(0,229,255,0.5) }
 .scene-btn.selected{
-  background: rgba(0,229,255,0.1); border-color: var(--cyan);
-  box-shadow: 0 0 14px rgba(0,229,255,0.2);
+  background: linear-gradient(160deg, rgba(0,229,255,0.14), rgba(255,45,149,0.06));
+  box-shadow: 0 0 18px rgba(0,229,255,0.3);
 }
-.scene-btn .st-title{ font-size: 14px; font-weight: 700; font-style: italic; color: var(--white); margin-bottom: 4px }
-.scene-btn .st-desc{ font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.4 }
-.scene-btn .st-badge{
-  display: inline-block; margin-top: 6px; padding: 2px 8px;
-  font-size: 9px; font-weight: 900; font-style: italic; letter-spacing: 1px;
-  background: rgba(255,45,149,0.12); color: var(--pink);
-  border: 1px solid rgba(255,45,149,0.3);
-  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-}
+.scene-btn.selected::before{ box-shadow: inset 0 0 0 1.5px var(--cyan), inset 0 0 12px rgba(0,229,255,0.15) }
+.st-top{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px }
+.st-track-no{ font-size: 9px; font-weight: 900; font-style: italic; color: var(--text-dim); letter-spacing: 1px }
+.st-level{ font-size: 9px; font-weight: 900; font-style: italic; padding: 1px 6px; letter-spacing: 1px }
+.st-level.master{ background: rgba(155,89,182,0.2); color: #9b59b6; border: 1px solid rgba(155,89,182,0.3) }
+.st-level.danger{ background: rgba(255,45,149,0.15); color: var(--pink); border: 1px solid rgba(255,45,149,0.3) }
+.scene-btn .st-title{ font-size: 14px; font-weight: 700; font-style: italic; color: var(--white); margin-bottom: 3px }
+.scene-btn .st-desc{ font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.4; margin-bottom: 6px }
+.st-meta{ font-size: 9px; color: var(--text-dim); letter-spacing: 1px }
 
 /* ===== 确认按钮 ===== */
 .launch-wrap{
@@ -214,14 +260,22 @@
 }
 .launch-wrap.on{ display: flex; animation: fadeUp 0.25s ease-out }
 .launch-btn{
-  font-size: 20px; font-weight: 900; font-style: italic; letter-spacing: 4px;
-  padding: 16px 64px; border: none; cursor: pointer; color: #fff;
+  font-size: 22px; font-weight: 900; font-style: italic; letter-spacing: 4px;
+  padding: 16px 80px; border: none; cursor: pointer; color: #fff;
   background: linear-gradient(135deg, var(--cyan), #0088c0 50%, var(--pink));
   clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
-  box-shadow: 0 0 24px rgba(0,229,255,0.3), 0 6px 20px rgba(0,0,0,0.4);
-  transition: all 0.2s;
+  box-shadow: 0 0 30px rgba(0,229,255,0.5), inset 0 0 20px rgba(255,255,255,0.2), 0 6px 20px rgba(0,0,0,0.4);
+  transition: all 0.2s; position: relative; overflow: hidden;
 }
-.launch-btn:hover{ transform: scale(1.04); box-shadow: 0 0 40px rgba(0,229,255,0.5), 0 8px 28px rgba(0,0,0,0.5) }
+.launch-btn::after{
+  content: '';
+  position: absolute; top: -50%; left: -60%; width: 40%; height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: rotate(30deg);
+  animation: btnShine 3s ease-in-out infinite;
+}
+@keyframes btnShine{ 0%{ left: -60% } 30%{ left: 140% } 100%{ left: 140% } }
+.launch-btn:hover{ transform: scale(1.04); box-shadow: 0 0 50px rgba(0,229,255,0.7), inset 0 0 25px rgba(255,255,255,0.4), 0 8px 28px rgba(0,0,0,0.5) }
 .launch-btn:active{ transform: scale(0.97) }
 
 /* ===== 状态 ===== */
@@ -257,6 +311,16 @@
 
 <div class="rainbow-top"></div>
 <div class="rainbow-bottom"></div>
+
+<!-- 街机顶栏 -->
+<div class="arcade-bar">
+  <div class="arcade-user">
+    <span class="arcade-p1">1P</span>
+    <span class="arcade-name">USER</span>
+    <span class="arcade-rating">RATING <b>15.25</b></span>
+  </div>
+  <div class="arcade-info">MAP: METAVERSE_01 ◆ TRACK SELECT</div>
+</div>
 
 <div class="header">
   <h1>METAVERSE LOBBY</h1>
@@ -327,11 +391,19 @@ function renderChars(){
 }
 function pickChar(i){selC=i;selS=-1;renderChars();renderScenes();$('scenes').classList.add('on');$('confirm').classList.remove('on');$('status').textContent=''}
 function renderScenes(){
-  $('scene-list').innerHTML=chars[selC].scenarios.map((s,j)=>`
+  $('scene-list').innerHTML=chars[selC].scenarios.map((s,j)=>{
+    const nsfw=s.badge==='NSFW';
+    return `
     <div class="scene-btn${j===selS?' selected':''}" onclick="pickScene(${j})">
-      <div class="st-title">${s.title}</div><div class="st-desc">${s.desc}</div>
-      ${s.badge?'<div class="st-badge">'+s.badge+'</div>':''}
-    </div>`).join('');
+      <div class="st-top">
+        <span class="st-track-no">TRACK 0${j+1}</span>
+        <span class="st-level ${nsfw?'danger':'master'}">${nsfw?'WORLD END':'LV.'+(12+j)+'+'}</span>
+      </div>
+      <div class="st-title">${s.title}</div>
+      <div class="st-desc">${s.desc}</div>
+      <div class="st-meta">${nsfw?'◆ NSFW SCENARIO':'BPM 180 ◆ RECORD: ALL JUSTICE'}</div>
+    </div>`;
+  }).join('');
 }
 function pickScene(j){selS=j;renderScenes();$('confirm').classList.add('on');$('status').textContent='◆ '+chars[selC].name+' · '+chars[selC].scenarios[j].title+' ◆'}
 function launch(){if(selC<0||selS<0)return;$('status').textContent='>> LAUNCHING: '+chars[selC].name+' · '+chars[selC].scenarios[selS].title+' <<'}
