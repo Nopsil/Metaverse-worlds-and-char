@@ -62,8 +62,16 @@ body{
     // Try multiple approaches to get variables
     let c=null, sc=null, allVars=null;
 
-    // Approach 1: chat-level
+    // Approach 0: getAllVariables (v2.0's method)
     try{
+      const v=getAllVariables();
+      sc=v?.stat_data?.selected_character;
+      c=v?.stat_data?.characters?.[sc];
+      log('all:'+(sc||'null'));
+    }catch(e){log('all_err')}
+
+    // Approach 1: chat-level
+    if(!sc) try{
       const v=getVariables({type:'chat'});
       allVars=v; sc=allVars?.stat_data?.selected_character;
       c=allVars?.stat_data?.characters?.[sc];
@@ -81,7 +89,7 @@ body{
     // Approach 3: Mvu direct
     if(!sc) try{
       await waitGlobalInitialized('Mvu');
-      const mvuData=Mvu.getMvuData({type:'message',message_id:'latest'});
+      const mvuData=Mvu.getMvuData({type:'message',message_id:getCurrentMessageId()});
       allVars=mvuData; sc=allVars?.stat_data?.selected_character;
       c=allVars?.stat_data?.characters?.[sc];
       log('mvu:'+(sc||'null'));
