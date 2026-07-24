@@ -6947,7 +6947,7 @@
     },
     "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
       "comment": "[mvu_update]变量输出格式",
-      "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"delta\", \"path\": \"/stat_data/characters/bathsheba/affection\", \"value\": 5 }\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
+      "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/affection\", \"value\": 5 }  // 完整值非增量\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
       "enabled": true,
       "keys": [],
       "depth": 0,
@@ -7036,7 +7036,7 @@
     },
     "22bc4917-af15-490d-bebf-4021a242efaa": {
       "comment": "[mvu_update]变量更新触发条件",
-      "content": "变量更新触发规则:\n1. 角色好感变化时→更新/stat_data/characters/{角色}/affection(用delta操作)\n2. 角色心情明显变化时→更新/stat_data/characters/{角色}/mood\n3. 角色换装时→更新/stat_data/characters/{角色}/clothing\n4. 角色有强烈内心活动时→更新/stat_data/characters/{角色}/inner_thought\n5. 初次进入NSFW场景时→更新body_state,clothing_integrity,pose\n6. 无需更新时→JSONPatch为空数组[]即可\n每次回复都必须输出UpdateVariable块。",
+      "content": "变量更新触发规则:\n1. 角色好感变化时→更新/stat_data/characters/{角色}/affection(用replace操作输出完整值，如从0→1写\"value\":1)\n2. 角色心情明显变化时→更新/stat_data/characters/{角色}/mood\n3. 角色换装时→更新/stat_data/characters/{角色}/clothing\n4. 角色有强烈内心活动时→更新/stat_data/characters/{角色}/inner_thought\n5. 初次进入NSFW场景时→更新body_state,clothing_integrity,pose\n6. 无需更新时→JSONPatch为空数组[]即可\n每次回复都必须输出UpdateVariable块。",
       "enabled": true,
       "constant": true,
       "position": 0,
@@ -7082,7 +7082,7 @@
     },
     "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb": {
       "comment": "[mvu_update]变量操作示例",
-      "content": "JSONPatch操作示例(使用/stat_data/前缀):\n替换: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n增加: {\"op\":\"delta\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":3}\n注意: op=delta仅用于数值字段(affection)。首次初始化用op=replace设置所有字段。",
+      "content": "JSONPatch操作示例(使用/stat_data/前缀):\n替换: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n增加: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":3}  // 好感度用replace写完整值(非delta增量)\n注意: affection用replace写完整值(如0→5写5,5→8写8)。其他需要累积的数值字段同样用replace写完整值。首次初始化用op=replace。",
       "enabled": true,
       "constant": true,
       "position": 0,
