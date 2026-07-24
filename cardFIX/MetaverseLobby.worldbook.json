@@ -7261,6 +7261,42 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "[mvu_plot]选择栏/输出末尾格式"
+    },
+    "force-path-format-0001": {
+      "uid": "force-path-format-0001",
+      "displayName": "⚡ JSONPatch路径强制格式",
+      "content": "JSONPatch路径必须使用完整前缀: /stat_data/characters/{英文ID}/{字段}。\n角色英文ID: airine=艾莉尼, bathsheba=拔示巴, lena=蕾娜, meme=米姆, belzeebul=贝尔泽布特\n字段: affection(好感度), mood(心情), clothing(穿着), inner_thought(心声), relationship(关系)\naffection用op=replace写完整值(如0变1写\"value\":1, 非delta增量)。\n禁止用中文路径如/米姆/好感度。",
+      "comment": "force-path-format",
+      "constant": true,
+      "enabled": true,
+      "position": 0,
+      "depth": 0,
+      "order": 0,
+      "key": [],
+      "keys": [],
+      "keysecondary": [],
+      "probability": 100,
+      "useProbability": true,
+      "selective": false,
+      "caseSensitive": false
+    },
+    "force-output-short-0002": {
+      "uid": "force-output-short",
+      "displayName": "⚡ 每轮结尾必须输出变量",
+      "content": "每次回复结尾必须输出UpdateVariable块：\n<UpdateVariable>\n<JSONPatch>\n[\n  {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":1},\n  {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n]\n</JSONPatch>\n</UpdateVariable>\n注意：affection用replace写完整值，不用delta。路径必须/stat_data开头。",
+      "comment": "force-output",
+      "constant": true,
+      "enabled": true,
+      "position": 0,
+      "depth": 0,
+      "order": 1,
+      "key": [],
+      "keys": [],
+      "keysecondary": [],
+      "probability": 100,
+      "useProbability": true,
+      "selective": false,
+      "caseSensitive": false
     }
   }
 }
