@@ -44,7 +44,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "世界设定"
+      "display_name": "世界设定",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "1": {
       "uid": 1,
@@ -89,7 +94,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "时间线"
+      "display_name": "时间线",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "2": {
       "uid": 2,
@@ -134,7 +144,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "Metaverse核心层"
+      "display_name": "Metaverse核心层",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "3": {
       "uid": 3,
@@ -179,7 +194,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "中间层世界群"
+      "display_name": "中间层世界群",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "4": {
       "uid": 4,
@@ -224,7 +244,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "最外周部"
+      "display_name": "最外周部",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "5": {
       "uid": 5,
@@ -269,7 +294,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "地上世界"
+      "display_name": "地上世界",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "6": {
       "uid": 6,
@@ -314,7 +344,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "框架主脑"
+      "display_name": "框架主脑",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "7": {
       "uid": 7,
@@ -359,7 +394,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "工厂"
+      "display_name": "工厂",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "8": {
       "uid": 8,
@@ -404,7 +444,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "MIR系列"
+      "display_name": "MIR系列",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "9": {
       "uid": 9,
@@ -449,7 +494,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "涅墨西斯势力"
+      "display_name": "涅墨西斯势力",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "10": {
       "uid": 10,
@@ -500,7 +550,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "革新者"
+      "display_name": "革新者",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "11": {
       "uid": 11,
@@ -549,7 +604,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "LOGOS"
+      "display_name": "LOGOS",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "12": {
       "uid": 12,
@@ -598,7 +658,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拾荒者"
+      "display_name": "拾荒者",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "13": {
       "uid": 13,
@@ -646,7 +711,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "IDC"
+      "display_name": "IDC",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "14": {
       "uid": 14,
@@ -695,7 +765,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "恩迪商会"
+      "display_name": "恩迪商会",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "15": {
       "uid": 15,
@@ -746,7 +821,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "独立旅人"
+      "display_name": "独立旅人",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "16": {
       "uid": 16,
@@ -796,7 +876,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "卡斯比裂谷"
+      "display_name": "卡斯比裂谷",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "17": {
       "uid": 17,
@@ -848,7 +933,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "安特路亚"
+      "display_name": "安特路亚",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "18": {
       "uid": 18,
@@ -901,7 +991,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "狄安娜·普利梅拉(XES-72)"
+      "display_name": "狄安娜·普利梅拉(XES-72)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "19": {
       "uid": 19,
@@ -953,7 +1048,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "露娜·诺瓦(XGN-72)"
+      "display_name": "露娜·诺瓦(XGN-72)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "20": {
       "uid": 20,
@@ -1006,7 +1106,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "阿雷斯"
+      "display_name": "阿雷斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "21": {
       "uid": 21,
@@ -1060,7 +1165,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "塞拉菲塔"
+      "display_name": "塞拉菲塔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "22": {
       "uid": 22,
@@ -1112,7 +1222,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "贝尔泽布特·涅墨西斯"
+      "display_name": "贝尔泽布特·涅墨西斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "23": {
       "uid": 23,
@@ -1161,7 +1276,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米姆·米库拉"
+      "display_name": "米姆·米库拉",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "24": {
       "uid": 24,
@@ -1212,7 +1332,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "蕾娜·伊修梅尔"
+      "display_name": "蕾娜·伊修梅尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "25": {
       "uid": 25,
@@ -1262,7 +1387,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拔示巴·阿西德菲尔"
+      "display_name": "拔示巴·阿西德菲尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "26": {
       "uid": 26,
@@ -1312,7 +1442,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾莉尼·居里亚斯"
+      "display_name": "艾莉尼·居里亚斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "27": {
       "uid": 27,
@@ -1364,7 +1499,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "威廉·温斯雷特"
+      "display_name": "威廉·温斯雷特",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "28": {
       "uid": 28,
@@ -1413,7 +1553,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "林内"
+      "display_name": "林内",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "29": {
       "uid": 29,
@@ -1463,7 +1608,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "捷夫提"
+      "display_name": "捷夫提",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "30": {
       "uid": 30,
@@ -1519,7 +1669,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "提丰"
+      "display_name": "提丰",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "31": {
       "uid": 31,
@@ -1571,7 +1726,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "尤巴尔·霍尔米斯达斯"
+      "display_name": "尤巴尔·霍尔米斯达斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "32": {
       "uid": 32,
@@ -1622,7 +1782,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "缇欧"
+      "display_name": "缇欧",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "33": {
       "uid": 33,
@@ -1673,7 +1838,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "梅德"
+      "display_name": "梅德",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "34": {
       "uid": 34,
@@ -1729,7 +1899,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "厄里斯"
+      "display_name": "厄里斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "35": {
       "uid": 35,
@@ -1778,7 +1953,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拉尔瓦"
+      "display_name": "拉尔瓦",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "36": {
       "uid": 36,
@@ -1827,7 +2007,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "玛利亚·居里亚斯"
+      "display_name": "玛利亚·居里亚斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "37": {
       "uid": 37,
@@ -1875,7 +2060,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "阿斯托尔"
+      "display_name": "阿斯托尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "38": {
       "uid": 38,
@@ -1926,7 +2116,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "安克"
+      "display_name": "安克",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "39": {
       "uid": 39,
@@ -1975,7 +2170,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "希尔德"
+      "display_name": "希尔德",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "40": {
       "uid": 40,
@@ -2025,7 +2225,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "该隐"
+      "display_name": "该隐",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "41": {
       "uid": 41,
@@ -2078,7 +2283,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "亚哈"
+      "display_name": "亚哈",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "42": {
       "uid": 42,
@@ -2128,7 +2338,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "天狼星(MDA-01)"
+      "display_name": "天狼星(MDA-01)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "43": {
       "uid": 43,
@@ -2178,7 +2393,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾克雷尔"
+      "display_name": "艾克雷尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "44": {
       "uid": 44,
@@ -2236,7 +2456,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "泰斯塔蒙特·涅墨西斯"
+      "display_name": "泰斯塔蒙特·涅墨西斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "45": {
       "uid": 45,
@@ -2285,7 +2510,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "迪安"
+      "display_name": "迪安",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "46": {
       "uid": 46,
@@ -2335,7 +2565,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾弗雷特·温斯雷特"
+      "display_name": "艾弗雷特·温斯雷特",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "47": {
       "uid": 47,
@@ -2383,7 +2618,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "格雷"
+      "display_name": "格雷",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "48": {
       "uid": 48,
@@ -2433,7 +2673,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拉维娜"
+      "display_name": "拉维娜",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "49": {
       "uid": 49,
@@ -2482,7 +2727,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "毛毛"
+      "display_name": "毛毛",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "50": {
       "uid": 50,
@@ -2534,7 +2784,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "凯南·梅尔维亚斯"
+      "display_name": "凯南·梅尔维亚斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "51": {
       "uid": 51,
@@ -2585,7 +2840,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "WISEMAN"
+      "display_name": "WISEMAN",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "52": {
       "uid": 52,
@@ -2637,7 +2897,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "潘多拉"
+      "display_name": "潘多拉",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "53": {
       "uid": 53,
@@ -2687,7 +2952,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米斯拉·特尔塞拉"
+      "display_name": "米斯拉·特尔塞拉",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "54": {
       "uid": 54,
@@ -2737,7 +3007,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "尼亚·尤迪特"
+      "display_name": "尼亚·尤迪特",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "55": {
       "uid": 55,
@@ -2790,7 +3065,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "赫卡蒂(MIR-201)"
+      "display_name": "赫卡蒂(MIR-201)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "56": {
       "uid": 56,
@@ -2840,7 +3120,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾尔·利贝尔德"
+      "display_name": "艾尔·利贝尔德",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "57": {
       "uid": 57,
@@ -2889,7 +3174,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "萨尔贡·菲尔纳斯"
+      "display_name": "萨尔贡·菲尔纳斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "58": {
       "uid": 58,
@@ -2938,7 +3228,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "丹迪"
+      "display_name": "丹迪",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "59": {
       "uid": 59,
@@ -2989,7 +3284,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "雪儿"
+      "display_name": "雪儿",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "60": {
       "uid": 60,
@@ -3041,7 +3341,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "塞拉菲娜"
+      "display_name": "塞拉菲娜",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "61": {
       "uid": 61,
@@ -3088,7 +3393,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拉托娜·海兹"
+      "display_name": "拉托娜·海兹",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "62": {
       "uid": 62,
@@ -3135,7 +3445,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "提亚马特(RG-XXX)"
+      "display_name": "提亚马特(RG-XXX)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "63": {
       "uid": 63,
@@ -3182,7 +3497,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "断绝的破坏神"
+      "display_name": "断绝的破坏神",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "64": {
       "uid": 64,
@@ -3229,7 +3549,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "格兰雷斯"
+      "display_name": "格兰雷斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "65": {
       "uid": 65,
@@ -3276,7 +3601,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "达因斯雷夫(RG-XIII)"
+      "display_name": "达因斯雷夫(RG-XIII)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "66": {
       "uid": 66,
@@ -3323,7 +3653,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "修伯利斯(Supplice)"
+      "display_name": "修伯利斯(Supplice)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "67": {
       "uid": 67,
@@ -3370,7 +3705,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "利希德修茨"
+      "display_name": "利希德修茨",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "68": {
       "uid": 68,
@@ -3420,7 +3760,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "塞蕾·海兹"
+      "display_name": "塞蕾·海兹",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "69": {
       "uid": 69,
@@ -3470,7 +3815,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "安歇尔与西梅翁"
+      "display_name": "安歇尔与西梅翁",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "70": {
       "uid": 70,
@@ -3523,7 +3873,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "尼加尔"
+      "display_name": "尼加尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "71": {
       "uid": 71,
@@ -3570,7 +3925,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "布里兰特(Brillante ES1)"
+      "display_name": "布里兰特(Brillante ES1)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "72": {
       "uid": 72,
@@ -3623,7 +3983,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "斯托姆"
+      "display_name": "斯托姆",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "73": {
       "uid": 73,
@@ -3670,7 +4035,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "格拉维·诺瓦"
+      "display_name": "格拉维·诺瓦",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "74": {
       "uid": 74,
@@ -3717,7 +4087,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "贝格尔米尔"
+      "display_name": "贝格尔米尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "75": {
       "uid": 75,
@@ -3770,7 +4145,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "远古之蓝"
+      "display_name": "远古之蓝",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "76": {
       "uid": 76,
@@ -3817,7 +4197,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "金恩·载因"
+      "display_name": "金恩·载因",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "77": {
       "uid": 77,
@@ -3867,7 +4252,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "古龙(纳格尔法尔之卵)"
+      "display_name": "古龙(纳格尔法尔之卵)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "78": {
       "uid": 78,
@@ -3915,7 +4305,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "塞夏特·夏福特利希"
+      "display_name": "塞夏特·夏福特利希",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "79": {
       "uid": 79,
@@ -3962,7 +4357,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "索尔娜"
+      "display_name": "索尔娜",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "80": {
       "uid": 80,
@@ -4009,7 +4409,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "奥米茄·昆提斯"
+      "display_name": "奥米茄·昆提斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "81": {
       "uid": 81,
@@ -4060,7 +4465,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "伊泽维尔·亚戈鲁修"
+      "display_name": "伊泽维尔·亚戈鲁修",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "82": {
       "uid": 82,
@@ -4110,7 +4520,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "约拿·莱泽"
+      "display_name": "约拿·莱泽",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "83": {
       "uid": 83,
@@ -4159,7 +4574,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "基德翁·莱泽"
+      "display_name": "基德翁·莱泽",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "84": {
       "uid": 84,
@@ -4208,7 +4628,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米利安姆·贝米朵巴尔"
+      "display_name": "米利安姆·贝米朵巴尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "85": {
       "uid": 85,
@@ -4257,7 +4682,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "萨乌尔·凯姆"
+      "display_name": "萨乌尔·凯姆",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "86": {
       "uid": 86,
@@ -4308,7 +4738,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "布鲁·斯坦因"
+      "display_name": "布鲁·斯坦因",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "87": {
       "uid": 87,
@@ -4355,7 +4790,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米吉多·科古"
+      "display_name": "米吉多·科古",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "88": {
       "uid": 88,
@@ -4404,7 +4844,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "梅尼·特尔塞拉"
+      "display_name": "梅尼·特尔塞拉",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "89": {
       "uid": 89,
@@ -4453,7 +4898,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "泽法·尼亚德"
+      "display_name": "泽法·尼亚德",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "90": {
       "uid": 90,
@@ -4501,7 +4951,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "索罗·摩尼亚"
+      "display_name": "索罗·摩尼亚",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "91": {
       "uid": 91,
@@ -4548,7 +5003,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "约基姆·雅木尔"
+      "display_name": "约基姆·雅木尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "92": {
       "uid": 92,
@@ -4595,7 +5055,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾萨克·多米南斯VIII"
+      "display_name": "艾萨克·多米南斯VIII",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "93": {
       "uid": 93,
@@ -4642,7 +5107,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米卡·多米南斯III"
+      "display_name": "米卡·多米南斯III",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "94": {
       "uid": 94,
@@ -4689,7 +5159,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "马尔杜克·阿尼玛特"
+      "display_name": "马尔杜克·阿尼玛特",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "95": {
       "uid": 95,
@@ -4736,7 +5211,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾娃·多米南斯XII"
+      "display_name": "艾娃·多米南斯XII",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "96": {
       "uid": 96,
@@ -4783,7 +5263,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾莉夏·穆尔西亚"
+      "display_name": "艾莉夏·穆尔西亚",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "97": {
       "uid": 97,
@@ -4830,7 +5315,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "纳丁·纳塔奈尔"
+      "display_name": "纳丁·纳塔奈尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "98": {
       "uid": 98,
@@ -4877,7 +5367,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "德威格"
+      "display_name": "德威格",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "99": {
       "uid": 99,
@@ -4924,7 +5419,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "安夏尔·奥达奇亚"
+      "display_name": "安夏尔·奥达奇亚",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "100": {
       "uid": 100,
@@ -4971,7 +5471,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾斯特尔·亚戈鲁修"
+      "display_name": "艾斯特尔·亚戈鲁修",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "101": {
       "uid": 101,
@@ -5018,7 +5523,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "蕾亚·艾·弗拉达"
+      "display_name": "蕾亚·艾·弗拉达",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "102": {
       "uid": 102,
@@ -5065,7 +5575,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "沃特"
+      "display_name": "沃特",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "103": {
       "uid": 103,
@@ -5114,7 +5629,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "赛罗·达文斯"
+      "display_name": "赛罗·达文斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "104": {
       "uid": 104,
@@ -5162,7 +5682,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "洛特·十二"
+      "display_name": "洛特·十二",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "105": {
       "uid": 105,
@@ -5210,7 +5735,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "NEO"
+      "display_name": "NEO",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "106": {
       "uid": 106,
@@ -5258,7 +5788,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "皮埃尔"
+      "display_name": "皮埃尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "107": {
       "uid": 107,
@@ -5306,7 +5841,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "利兹利斯威尔"
+      "display_name": "利兹利斯威尔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "108": {
       "uid": 108,
@@ -5354,7 +5894,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拉菲恩"
+      "display_name": "拉菲恩",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "109": {
       "uid": 109,
@@ -5401,7 +5946,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "调谐者"
+      "display_name": "调谐者",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "110": {
       "uid": 110,
@@ -5450,7 +6000,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "瓦尔马西亚的亡灵"
+      "display_name": "瓦尔马西亚的亡灵",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "111": {
       "uid": 111,
@@ -5501,7 +6056,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "威廉·温斯雷特(晨风)"
+      "display_name": "威廉·温斯雷特(晨风)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "112": {
       "uid": 112,
@@ -5554,7 +6114,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾莉尼·居里亚斯(幼年)"
+      "display_name": "艾莉尼·居里亚斯(幼年)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "113": {
       "uid": 113,
@@ -5604,7 +6169,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "安克(旋风)"
+      "display_name": "安克(旋风)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "114": {
       "uid": 114,
@@ -5652,7 +6222,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "海伯里昂"
+      "display_name": "海伯里昂",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "115": {
       "uid": 115,
@@ -5702,7 +6277,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "吉格拉ット(恒存之都)"
+      "display_name": "吉格拉ット(恒存之都)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "116": {
       "uid": 116,
@@ -5751,7 +6331,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "艾比斯"
+      "display_name": "艾比斯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "117": {
       "uid": 117,
@@ -5800,7 +6385,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "灾厄简"
+      "display_name": "灾厄简",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "118": {
       "uid": 118,
@@ -5849,7 +6439,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "海凯"
+      "display_name": "海凯",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "119": {
       "uid": 119,
@@ -5897,7 +6492,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "贝奈黛塔"
+      "display_name": "贝奈黛塔",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "120": {
       "uid": 120,
@@ -5945,7 +6545,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "莉扎"
+      "display_name": "莉扎",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "121": {
       "uid": 121,
@@ -5993,7 +6598,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "诺瓦"
+      "display_name": "诺瓦",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "122": {
       "uid": 122,
@@ -6040,7 +6650,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "混沌巨人(雷布尔)"
+      "display_name": "混沌巨人(雷布尔)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "123": {
       "uid": 123,
@@ -6087,7 +6702,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "觉醒者·巴西安"
+      "display_name": "觉醒者·巴西安",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "124": {
       "uid": 124,
@@ -6134,7 +6754,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "马尔库特的女神"
+      "display_name": "马尔库特的女神",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "125": {
       "uid": 125,
@@ -6186,7 +6811,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "尼亚·拔示巴"
+      "display_name": "尼亚·拔示巴",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "126": {
       "uid": 126,
@@ -6234,7 +6864,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "索罗·摩尼亚(Metaverse)"
+      "display_name": "索罗·摩尼亚(Metaverse)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "127": {
       "uid": 127,
@@ -6282,7 +6917,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "米斯拉·特尔塞拉(Metaverse)"
+      "display_name": "米斯拉·特尔塞拉(Metaverse)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "128": {
       "uid": 128,
@@ -6335,7 +6975,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "拔示巴·阿西德菲尔(Metaverse异体)"
+      "display_name": "拔示巴·阿西德菲尔(Metaverse异体)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "129": {
       "uid": 129,
@@ -6393,7 +7038,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "塞蕾娜(MIR-203)"
+      "display_name": "塞蕾娜(MIR-203)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "130": {
       "uid": 130,
@@ -6442,7 +7092,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "轩辕十四(MDA-21)"
+      "display_name": "轩辕十四(MDA-21)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "131": {
       "uid": 131,
@@ -6495,7 +7150,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "阿尔忒弥斯(MIR-202)"
+      "display_name": "阿尔忒弥斯(MIR-202)",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "132": {
       "uid": 132,
@@ -6540,7 +7200,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "扮演准则（系统用）"
+      "display_name": "扮演准则（系统用）",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "133": {
       "uid": 133,
@@ -6585,7 +7250,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "AI生成约束"
+      "display_name": "AI生成约束",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "200": {
       "uid": 200,
@@ -6644,7 +7314,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】电脑世界篇-开始"
+      "display_name": "【时代门控】电脑世界篇-开始",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "201": {
       "uid": 201,
@@ -6689,7 +7364,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】电脑世界篇-结束"
+      "display_name": "【时代门控】电脑世界篇-结束",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "210": {
       "uid": 210,
@@ -6750,7 +7430,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】地上真人篇-开始"
+      "display_name": "【时代门控】地上真人篇-开始",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "211": {
       "uid": 211,
@@ -6795,7 +7480,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】地上真人篇-结束"
+      "display_name": "【时代门控】地上真人篇-结束",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "220": {
       "uid": 220,
@@ -6849,7 +7539,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】新世界篇-开始"
+      "display_name": "【时代门控】新世界篇-开始",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "221": {
       "uid": 221,
@@ -6894,7 +7589,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "【时代门控】新世界篇-结束"
+      "display_name": "【时代门控】新世界篇-结束",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "222": {
       "uid": 222,
@@ -6943,10 +7643,15 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "纳荷姆"
+      "display_name": "纳荷姆",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "fbc1d25b-eaeb-471f-9ccb-933e82eba112": {
-      "comment": "[mvu_update]变量输出格式",
+      "comment": "变量输出格式",
       "content": "变量输出格式:\n  rule:\n    - 每次回复结尾必须输出变量更新分析和命令\n    - 更新命令遵循 JSON Patch (RFC 6902) 格式，必须是有效的 JSON 数组\n    - 支持的操作: replace (替换已有路径的值), delta (对数值路径增减), insert (新增), remove (删除)\n    - 不要更新以 _ 开头的字段名（它们是只读的）\n  format: |-\n    <UpdateVariable>\n    <Analysis>$分析内容（英文，不超过80词）\n    - 计算时间流逝\n    - 判断是否需要大幅更新\n    - 分析每个变量是否需要更新\n    </Analysis>\n    <JSONPatch>\n    [\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/mood\", \"value\": \"新的心情\" },\n      { \"op\": \"replace\", \"path\": \"/stat_data/characters/bathsheba/affection\", \"value\": 5 }  // 完整值非增量\n    ]\n    </JSONPatch>\n    </UpdateVariable>",
       "enabled": true,
       "keys": [],
@@ -6957,7 +7662,12 @@
       "excludeRecursion": true,
       "display_name": "[mvu_update]变量输出格式",
       "constant": true,
-      "uid": "fbc1d25b-eaeb-471f-9ccb-933e82eba112"
+      "uid": "fbc1d25b-eaeb-471f-9ccb-933e82eba112",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "36f572b3-59e5-4003-96dd-62177de5e7aa": {
       "comment": "读取变量/当前变量stat_data",
@@ -6972,7 +7682,12 @@
       "display_name": "读取变量/当前变量stat_data",
       "constant": true,
       "disable": false,
-      "uid": "36f572b3-59e5-4003-96dd-62177de5e7aa"
+      "uid": "36f572b3-59e5-4003-96dd-62177de5e7aa",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "9705fcd0-e961-479c-bda8-bcb1a3198b52": {
       "comment": "[mvu_update]变量更新规则",
@@ -6986,10 +7701,15 @@
       "excludeRecursion": true,
       "display_name": "[mvu_update]变量更新规则",
       "constant": true,
-      "uid": "9705fcd0-e961-479c-bda8-bcb1a3198b52"
+      "uid": "9705fcd0-e961-479c-bda8-bcb1a3198b52",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "dd7ec724-9e39-4bde-b314-bb825991a5c6": {
-      "comment": "[mvu_update]变量路径速查",
+      "comment": "变量路径速查",
       "content": "stat_data变量路径表:\n/stat_data/selected_character - 当前角色ID(airine|bathsheba|lena|meme|belzeebul)\n/stat_data/phase - 阶段(lobby|playing)\n/stat_data/selected_scenario - 开局编号(0-4)\n/stat_data/characters/{角色}/affection - 好感度(0-100)\n/stat_data/characters/{角色}/relationship - 关系阶段\n/stat_data/characters/{角色}/mood - 心情\n/stat_data/characters/{角色}/clothing - 穿着\n/stat_data/characters/{角色}/inner_thought - 心声\n/stat_data/characters/{角色}/body_state - 身体状态(正常/...)\n/stat_data/characters/{角色}/clothing_integrity - 衣着完整度(整齐/...)\n/stat_data/characters/{角色}/pose - 姿势(站立/...)",
       "enabled": true,
       "constant": true,
@@ -7032,10 +7752,15 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "[mvu_update]变量路径速查",
-      "uid": "dd7ec724-9e39-4bde-b314-bb825991a5c6"
+      "uid": "dd7ec724-9e39-4bde-b314-bb825991a5c6",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "22bc4917-af15-490d-bebf-4021a242efaa": {
-      "comment": "[mvu_update]变量更新触发条件",
+      "comment": "变量更新触发条件",
       "content": "变量更新触发规则:\n1. 角色好感变化时→更新/stat_data/characters/{角色}/affection(用replace操作输出完整值，如从0→1写\"value\":1)\n2. 角色心情明显变化时→更新/stat_data/characters/{角色}/mood\n3. 角色换装时→更新/stat_data/characters/{角色}/clothing\n4. 角色有强烈内心活动时→更新/stat_data/characters/{角色}/inner_thought\n5. 初次进入NSFW场景时→更新body_state,clothing_integrity,pose\n6. 无需更新时→JSONPatch为空数组[]即可\n每次回复都必须输出UpdateVariable块。",
       "enabled": true,
       "constant": true,
@@ -7078,10 +7803,15 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "[mvu_update]变量更新触发条件",
-      "uid": "22bc4917-af15-490d-bebf-4021a242efaa"
+      "uid": "22bc4917-af15-490d-bebf-4021a242efaa",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb": {
-      "comment": "[mvu_update]变量操作示例",
+      "comment": "变量操作示例",
       "content": "JSONPatch操作示例(使用/stat_data/前缀):\n替换: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/mood\",\"value\":\"平静\"}\n增加: {\"op\":\"replace\",\"path\":\"/stat_data/characters/meme/affection\",\"value\":3}  // 好感度用replace写完整值(非delta增量)\n注意: affection用replace写完整值(如0→5写5,5→8写8)。其他需要累积的数值字段同样用replace写完整值。首次初始化用op=replace。",
       "enabled": true,
       "constant": true,
@@ -7124,10 +7854,15 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "[mvu_update]变量操作示例",
-      "uid": "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb"
+      "uid": "f83fea3d-055d-42ba-8c8d-9d57cfb41cdb",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "eda985d0-42aa-407d-a9eb-84a7d2778121": {
-      "comment": "[mvu_update]首次回复初始化",
+      "comment": "首次回复初始化",
       "content": "每次新会话的首条回复中，必须初始化stat_data。通过JSONPatch的replace操作设置:selected_character(从用户消息\"已选择角色\"提取),phase=\"playing\",characters下该角色的affection=0,relationship=\"陌生人\",mood=\"\",clothing=\"\",inner_thought=\"\"。这是系统级硬性要求——不可跳过。",
       "enabled": true,
       "constant": true,
@@ -7170,7 +7905,12 @@
       "triggers": [],
       "characterFilter": [],
       "display_name": "[mvu_update]首次回复初始化",
-      "uid": "eda985d0-42aa-407d-a9eb-84a7d2778121"
+      "uid": "eda985d0-42aa-407d-a9eb-84a7d2778121",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "initvar-0001-metaverse-baseline": {
       "uid": "initvar-0001-metaverse-baseline",
@@ -7215,7 +7955,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "[InitVar]变量初始化勿开"
+      "display_name": "[InitVar]变量初始化勿开",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "selectbar-0001-output-format": {
       "uid": "selectbar-0001-output-format",
@@ -7260,7 +8005,12 @@
       "matchCreatorNotes": false,
       "triggers": [],
       "characterFilter": [],
-      "display_name": "[mvu_plot]选择栏/输出末尾格式"
+      "display_name": "[mvu_plot]选择栏/输出末尾格式",
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "force-path-format-0001": {
       "uid": "force-path-format-0001",
@@ -7278,7 +8028,12 @@
       "probability": 100,
       "useProbability": true,
       "selective": false,
-      "caseSensitive": false
+      "caseSensitive": false,
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     },
     "force-output-short-0002": {
       "uid": "force-output-short",
@@ -7296,7 +8051,12 @@
       "probability": 100,
       "useProbability": true,
       "selective": false,
-      "caseSensitive": false
+      "caseSensitive": false,
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
     }
   }
 }
