@@ -6,103 +6,134 @@
 <title>Metaverse Lobby</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a14;color:#d0d0e8;font:14px 'Segoe UI','Microsoft YaHei',sans-serif;overflow:hidden;height:100vh}
-#app{display:flex;height:100vh}
-#sidebar{width:260px;background:#0d0d1a;border-right:1px solid #1e1e3a;padding:16px;overflow-y:auto;flex-shrink:0}
-#sidebar h2{color:#7c8aff;font-size:16px;margin-bottom:12px;text-align:center}
-.char-btn{display:block;width:100%;padding:10px 12px;margin:6px 0;background:#12122a;border:1px solid #1e1e3a;border-radius:6px;color:#d0d0e8;cursor:pointer;text-align:left;transition:all .2s}
+body{background:#0a0a14;color:#d0d0e8;font:14px/1.6 'Segoe UI','Microsoft YaHei',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column}
+#topbar{background:#0d0d1a;padding:8px 16px;border-bottom:1px solid #1e1e3a;display:flex;align-items:center;gap:12px;flex-shrink:0}
+#topbar h1{color:#7c8aff;font-size:15px;margin-right:auto}
+#topbar .badge{font-size:11px;padding:2px 8px;border-radius:4px;opacity:.7}
+.badge-th{background:#1a3a1a;color:#4ade80}.badge-demo{background:#1a1a3a;color:#7070a0}
+#layout{display:flex;flex:1;overflow:hidden}
+#sidebar{width:260px;background:#0d0d1a;border-right:1px solid #1e1e3a;overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column}
+#char-pick{padding:12px}
+#char-pick h3{color:#7c8aff;font-size:13px;margin-bottom:8px;text-align:center}
+.char-btn{display:block;width:100%;padding:8px 10px;margin:4px 0;background:#12122a;border:1px solid #1e1e3a;border-radius:6px;color:#d0d0e8;cursor:pointer;text-align:left;transition:all .15s;font-size:13px}
 .char-btn:hover{background:#1a1a3a;border-color:#7c8aff}
-.char-btn.selected{background:#1a1a4a;border-color:#7c8aff;box-shadow:0 0 8px rgba(124,138,255,.3)}
-.char-btn .name{font-weight:700;font-size:15px}
-.char-btn .sub{font-size:11px;color:#7070a0;margin-top:2px}
-#status-card{background:#12122a;border:1px solid #1e1e3a;border-radius:8px;padding:12px;margin-top:16px}
-#status-card h3{color:#7c8aff;font-size:13px;margin-bottom:8px;text-align:center}
-.stat-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:12px}
-.stat-label{color:#7070a0}.stat-val{text-align:right}
-.aff-bar{height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin:4px 0}.aff-fill{height:100%;border-radius:2px;transition:width .4s}
-.thought-box{margin-top:8px;padding:8px;background:#0d0d1a;border-radius:4px;font-style:italic;color:#7070a0;font-size:11px;line-height:1.4;border-left:2px solid #1e1e3a}
-#main{flex:1;display:flex;flex-direction:column}
+.char-btn.sel{background:#1a1a4a;border-color:#7c8aff;box-shadow:0 0 6px rgba(124,138,255,.25)}
+.char-btn .cn{font-weight:700}.char-btn .ct{font-size:10px;color:#7070a0}
+#status-card{margin:12px;padding:12px;background:#12122a;border:1px solid #1e1e3a;border-radius:8px}
+#status-card h3{color:#7c8aff;font-size:12px;margin-bottom:6px;text-align:center}
+.sr{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:11px}
+.sl{color:#7070a0}.sv{text-align:right}
+.aff-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin:3px 0}.aff-fill{height:100%;border-radius:2px;transition:width .3s}
+.thought-box{margin-top:8px;padding:6px 8px;background:#0d0d1a;border-radius:4px;font-style:italic;color:#7070a0;font-size:10px;line-height:1.4;border-left:2px solid #1e1e3a}
+#main{flex:1;display:flex;flex-direction:column;overflow:hidden}
 #messages{flex:1;overflow-y:auto;padding:16px}
-.msg{margin-bottom:12px;padding:8px 12px;border-radius:8px;max-width:80%;line-height:1.6}
+.msg{margin-bottom:10px;padding:10px 14px;border-radius:8px;max-width:85%;line-height:1.6;white-space:pre-wrap;word-break:break-word}
 .msg.user{background:#1a1a3a;margin-left:auto;border-bottom-right-radius:2px}
-.msg.char{background:#12122a;margin-right:auto;border-bottom-left-radius:2px;border-left:2px solid #7c8aff}
-#input-area{display:flex;padding:12px;background:#0d0d1a;border-top:1px solid #1e1e3a}
-#input-area input{flex:1;padding:10px 14px;background:#12122a;border:1px solid #1e1e3a;border-radius:20px;color:#d0d0e8;font-size:14px;outline:none}
-#input-area input:focus{border-color:#7c8aff}
-#input-area button{padding:10px 20px;margin-left:8px;background:#7c8aff;border:none;border-radius:20px;color:#fff;font-weight:700;cursor:pointer}
-#input-area button:disabled{opacity:.4;cursor:not-allowed}
-.typing{color:#7070a0;font-style:italic;padding:8px 16px}
-#env-badge{position:fixed;top:8px;right:8px;padding:4px 10px;border-radius:4px;font-size:11px;opacity:.7}
-#env-badge.th{background:#1a3a1a;color:#4ade80}
-#env-badge.api{background:#3a1a1a;color:#fbbf24}
-#env-badge.demo{background:#1a1a3a;color:#7070a0}
+.msg.ai{background:#12122a;margin-right:auto;border-bottom-left-radius:2px;border-left:2px solid #7c8aff}
+.typing{color:#7070a0;font-style:italic;padding:8px 16px;font-size:13px}
+#input-row{display:flex;padding:10px 16px;background:#0d0d1a;border-top:1px solid #1e1e3a;flex-shrink:0}
+#input-row input{flex:1;padding:9px 14px;background:#12122a;border:1px solid #1e1e3a;border-radius:20px;color:#d0d0e8;font-size:13px;outline:none}
+#input-row input:focus{border-color:#7c8aff}
+#input-row button{padding:9px 18px;margin-left:8px;background:#7c8aff;border:none;border-radius:20px;color:#fff;font-weight:700;cursor:pointer;font-size:13px}
+#input-row button:disabled{opacity:.4;cursor:not-allowed}
 </style>
 </head>
 <body>
-<div id="app">
+
+<div id="topbar">
+  <h1>✦ Metaverse Lobby</h1>
+  <span id="env-badge" class="badge badge-demo">独立模式</span>
+</div>
+
+<div id="layout">
   <div id="sidebar">
-    <h2>✦ Metaverse Lobby ✦</h2>
-    <div id="char-list"></div>
+    <div id="char-pick">
+      <h3>选择角色</h3>
+      <div id="char-list"></div>
+    </div>
     <div id="status-card">
-      <h3 id="status-name">--</h3>
-      <div class="stat-row"><span class="stat-label">好感度</span><span class="stat-val" id="st-aff">0/100</span></div>
+      <h3 id="st-name">--</h3>
+      <div class="sr"><span class="sl">好感度</span><span class="sv" id="st-aff">0/100</span></div>
       <div class="aff-bar"><div class="aff-fill" id="st-aff-bar" style="width:0;background:#7070a0"></div></div>
-      <div class="stat-row"><span class="stat-label">心情</span><span class="stat-val" id="st-mood">--</span></div>
-      <div class="stat-row"><span class="stat-label">穿着</span><span class="stat-val" id="st-cloth">--</span></div>
-      <div class="thought-box" id="st-thought">选择角色后开始对话</div>
+      <div class="sr"><span class="sl">心情</span><span class="sv" id="st-mood">--</span></div>
+      <div class="sr"><span class="sl">穿着</span><span class="sv" id="st-cloth">--</span></div>
+      <div class="thought-box" id="st-thought">选择角色后开始</div>
     </div>
   </div>
   <div id="main">
-    <div id="messages"></div>
-    <div id="input-area">
-      <input id="inp" type="text" placeholder="输入消息..." disabled />
-      <button id="send-btn" disabled>发送</button>
+    <div id="messages"><div class="typing">✦ 请在左侧选择一位角色开始旅程</div></div>
+    <div id="input-row">
+      <input id="inp" placeholder="输入消息..." disabled />
+      <button id="send" disabled>发送</button>
     </div>
   </div>
 </div>
-<div id="env-badge" class="demo">独立模式</div>
+
 <script>
-// ==================== TH 桥接 ====================
-var TH = (function(){
-  var api = { available: false, mode: 'demo' };
+// =================== TH 桥接 ===================
+var BRIDGE = { mode:'demo', available:false };
+
+(function buildBridge(){
+  // Probe functions at multiple scopes
   function pick(name){
     try{ if(typeof window[name]==='function') return window[name]; }catch(e){}
-    try{ if(window.TavernHelper) return window.TavernHelper[name].bind(window.TavernHelper); }catch(e){}
-    try{ if(window.parent && window.parent[name]) return window.parent[name]; }catch(e){}
+    try{ if(window.TavernHelper&&typeof window.TavernHelper[name]==='function') return window.TavernHelper[name].bind(window.TavernHelper); }catch(e){}
+    try{ if(window.parent&&typeof window.parent[name]==='function') return window.parent[name]; }catch(e){}
     return null;
   }
-  api.getChatMessages = pick('getChatMessages');
-  api.setChatMessages = pick('setChatMessages');
-  api.generate = pick('generate');
-  api.triggerSlash = pick('triggerSlash');
-  api.eventOn = pick('eventOn');
-  api.available = !!(api.getChatMessages && (api.generate || api.triggerSlash));
-  if(api.available) api.mode = 'th';
-  else if(window.aiHost) api.mode = 'api';
-  return api;
+  
+  BRIDGE.getChatMessages = pick('getChatMessages');
+  BRIDGE.generate = pick('generate');
+  BRIDGE.triggerSlash = pick('triggerSlash');
+  BRIDGE.eventOn = pick('eventOn');
+  
+  // Try accessing parent SillyTavern
+  try{
+    if(!BRIDGE.getChatMessages && window.parent && window.parent.SillyTavern){
+      BRIDGE.getChatMessages = function(){
+        var chat = window.parent.SillyTavern.getContext().chat;
+        return chat.map(function(m,i){ return {
+          message_id: i, name: m.name, role: m.is_user?'user':(m.is_system?'system':'assistant'),
+          is_hidden: m.is_system, message: m.mes, data: m.variables?m.variables[0]:{}
+        };});
+      };
+    }
+  }catch(e){}
+  
+  BRIDGE.available = !!(BRIDGE.getChatMessages && (BRIDGE.generate||BRIDGE.triggerSlash));
+  if(BRIDGE.available){
+    BRIDGE.mode = 'th';
+    document.getElementById('env-badge').textContent = '酒馆连接';
+    document.getElementById('env-badge').className = 'badge badge-th';
+  }
 })();
 
-// ==================== 状态 ====================
-var S = {
-  chars: [
-    {id:'airine', name:'艾莉尼·居里亚斯', sub:'次元旅人 · Twilight Will'},
-    {id:'bathsheba', name:'拔示巴·阿西德菲尔', sub:'圣堂的审判者 · 母体'},
-    {id:'lena', name:'蕾娜·伊修梅尔', sub:'归还者 · 12人中唯一的幸存者'},
-    {id:'meme', name:'米姆·米库拉', sub:'归还种 · 泰斯塔蒙特宿主'},
-    {id:'belzeebul', name:'贝尔泽布特·涅墨西斯', sub:'混沌七器 · 欺瞒的使徒'}
-  ],
-  selected: null,
-  history: [],
-  stat: { affection: 0, mood: '--', clothing: '--', inner_thought: '选择角色后开始对话' },
+// =================== 数据 ===================
+var CHARS = [
+  {id:'airine', name:'艾莉尼', tag:'次元旅人·Twilight Will'},
+  {id:'bathsheba', name:'拔示巴', tag:'圣堂审判者·母体'},
+  {id:'lena', name:'蕾娜', tag:'归还者·唯一幸存者'},
+  {id:'meme', name:'米姆', tag:'归还种·泰斯塔蒙特宿主'},
+  {id:'belzeebul', name:'贝尔泽布特', tag:'混沌七器·欺瞒使徒'}
+];
+
+var STATE = {
+  char: null,       // selected character id
+  history: [],      // {role:'user'|'ai', text:string}
+  stat: {characters:{}},  // accumulated stat_data
   loading: false
 };
 
-function saveState(){ localStorage.setItem('ml-frontend', JSON.stringify(S)); }
-function loadState(){
-  try{ var d=JSON.parse(localStorage.getItem('ml-frontend')); if(d){ S.selected=d.selected; S.history=d.history||[]; } }catch(e){}
+// Persistence
+function save(){ try{ localStorage.setItem('ml-frontend', JSON.stringify(STATE)); }catch(e){} }
+function load(){
+  try{
+    var raw = localStorage.getItem('ml-frontend');
+    if(raw){ var d=JSON.parse(raw); STATE.char=d.char; STATE.history=d.history||[]; STATE.stat=d.stat||{characters:{}}; }
+  }catch(e){}
 }
 
-// ==================== JSONPatch 解析 ====================
+// =================== JSONPatch ===================
 function parseJSONPatch(text){
   var m = text.match(/<JSONPatch>\s*\[([\s\S]*?)\]\s*<\/JSONPatch>/);
   if(!m) return null;
@@ -112,9 +143,10 @@ function parseJSONPatch(text){
 function applyPatches(stat, patches){
   if(!patches) return stat;
   for(var i=0;i<patches.length;i++){
-    var p=patches[i], parts=(p.path||'').replace('/stat_data/','').split('/');
+    var p=patches[i];
     if(!p.path||p.path.indexOf('/stat_data/')!==0) continue;
-    var t=stat; for(var j=0;j<parts.length-1;j++){ if(!t[parts[j]]) t[parts[j]]={}; t=t[parts[j]]; }
+    var parts=p.path.replace('/stat_data/','').split('/');
+    var t=stat; for(var j=0;j<parts.length-1;j++){ if(!t[parts[j]])t[parts[j]]={};t=t[parts[j]]; }
     var key=parts[parts.length-1];
     if(p.op==='replace') t[key]=p.value;
     else if(p.op==='delta') t[key]=(Number(t[key])||0)+Number(p.value||0);
@@ -122,164 +154,232 @@ function applyPatches(stat, patches){
   return stat;
 }
 
-function cl(v){ if(typeof v==='string') return v.replace(/ ?\(json_patch\)/,'').replace(/^->/,''); return v; }
+function clean(v){ if(typeof v==='string') return v.replace(/ ?\(json_patch\)/,'').replace(/^->/,''); return v; }
 
-// ==================== UI 渲染 ====================
+// Strip UpdateVariable blocks from display text
+function stripMvu(text){
+  return text.replace(/<UpdateVariable>[\s\S]*?<\/UpdateVariable>/gi,'')
+             .replace(/<JSONPatch>[\s\S]*?<\/JSONPatch>/gi,'')
+             .replace(/<Analysis>[\s\S]*?<\/Analysis>/gi,'')
+             .trim();
+}
+
+// =================== 渲染 ===================
+var $=function(id){return document.getElementById(id);};
+var T=function(id,v){var el=$(id);if(el)el.textContent=v!=null?String(v):'--';};
+
 function renderChars(){
-  var el=document.getElementById('char-list');
-  el.innerHTML = S.chars.map(function(c){
-    var sel = S.selected===c.id ? ' selected' : '';
-    return '<button class="char-btn'+sel+'" onclick="selectChar(\''+c.id+'\')"><div class="name">'+c.name+'</div><div class="sub">'+c.sub+'</div></button>';
+  var list = CHARS.map(function(c){
+    var cls = STATE.char===c.id ? 'char-btn sel' : 'char-btn';
+    return '<button class="'+cls+'" onclick="pickChar(\''+c.id+'\')"><span class="cn">'+c.name+'</span><br><span class="ct">'+c.tag+'</span></button>';
   }).join('');
+  $('char-list').innerHTML = list;
 }
 
 function renderStatus(){
-  if(!S.selected){
-    document.getElementById('status-name').textContent='--';
-    return;
-  }
-  var cd = (S.stat.characters||{})[S.selected]||{};
+  if(!STATE.char){ $('st-name').textContent='--'; return; }
+  var cd = (STATE.stat.characters||{})[STATE.char]||{};
   var aff = Number(cd.affection)||0;
   var ac='#7070a0';
   if(aff>=81) ac='#ff7eb3'; else if(aff>=61) ac='#7c8aff'; else if(aff>=41) ac='#4ade80'; else if(aff>=21) ac='#fbbf24';
   
-  var charName = S.chars.find(function(c){return c.id===S.selected;});
-  document.getElementById('status-name').textContent = charName ? charName.name : S.selected;
-  document.getElementById('st-aff').textContent = aff+'/100';
-  document.getElementById('st-aff-bar').style.width = aff+'%';
-  document.getElementById('st-aff-bar').style.background = ac;
-  document.getElementById('st-mood').textContent = cl(cd.mood)||'--';
-  document.getElementById('st-cloth').textContent = cl(cd.clothing)||'--';
-  document.getElementById('st-thought').textContent = cl(cd.inner_thought)||'...';
+  var cn = CHARS.find(function(c){return c.id===STATE.char;});
+  $('st-name').textContent = cn ? cn.name : STATE.char;
+  $('st-aff').textContent = aff+'/100';
+  $('st-aff-bar').style.width = aff+'%';
+  $('st-aff-bar').style.background = ac;
+  T('st-mood', clean(cd.mood));
+  T('st-cloth', clean(cd.clothing));
+  T('st-thought', clean(cd.inner_thought)||'...');
 }
 
 function renderMessages(){
-  var el=document.getElementById('messages');
-  el.innerHTML = S.history.map(function(m){
-    var cls = m.role==='user' ? 'msg user' : 'msg char';
+  var html = STATE.history.map(function(m){
+    var cls = m.role==='user' ? 'msg user' : 'msg ai';
     return '<div class="'+cls+'">'+m.text+'</div>';
   }).join('');
-  if(S.loading) el.innerHTML += '<div class="typing">✦ 生成中...</div>';
-  el.scrollTop = el.scrollHeight;
+  if(STATE.loading) html += '<div class="typing">✦ 生成中...</div>';
+  $('messages').innerHTML = html || '<div class="typing">✦ 请在左侧选择一位角色开始旅程</div>';
+  $('messages').scrollTop = $('messages').scrollHeight;
 }
 
 function renderAll(){ renderChars(); renderStatus(); renderMessages(); }
 
-// ==================== 角色选择 ====================
-function selectChar(id){
-  S.selected = id;
-  S.stat = { characters: {} };
-  S.history = [];
+// =================== 角色选择 ===================
+function pickChar(id){
+  if(STATE.loading) return;
+  STATE.char = id;
+  STATE.history = [];
+  STATE.stat = {characters:{}};
+  save();
   renderAll();
-  document.getElementById('inp').disabled = false;
-  document.getElementById('send-btn').disabled = false;
-  saveState();
+  $('inp').disabled = false;
+  $('send').disabled = false;
+  $('inp').focus();
   
   // Send character selection to AI
-  var charName = S.chars.find(function(c){return c.id===id;});
-  var msg = '已选择角色：'+charName.name;
-  S.history.push({role:'user', text:msg});
-  sendToAI(msg);
+  var cn = CHARS.find(function(c){return c.id===id;});
+  var selMsg = '已选择角色：'+cn.name;
+  STATE.history.push({role:'user', text:selMsg});
+  renderMessages();
+  sendToAI(selMsg);
 }
 
-// ==================== AI 通信 ====================
+// =================== AI 通信 ===================
 function sendToAI(text){
-  S.loading = true;
+  STATE.loading = true;
   renderMessages();
   
-  if(TH.available){
-    // TH bridge mode
-    TH.generate({user_input: text}).then(function(res){
-      onAIResponse(res);
-    }).catch(function(e){
-      console.error('TH error:', e);
-      var fallback = '（AI 未响应，请检查酒馆连接）';
-      S.history.push({role:'char', text:fallback});
-      S.loading = false;
+  if(BRIDGE.available){
+    // === TH bridge mode ===
+    var sent = false;
+    
+    // Method 1: TavernHelper.generate
+    if(BRIDGE.generate && !sent){
+      try{
+        sent = true;
+        BRIDGE.generate({user_input: text, should_stream: true}).then(function(){
+          // Wait for MESSAGE_RECEIVED event to fire
+        }).catch(function(e){
+          console.error('generate failed:', e);
+          STATE.loading = false;
+          renderAll();
+        });
+      }catch(e){ sent = false; }
+    }
+    
+    // Method 2: triggerSlash fallback
+    if(BRIDGE.triggerSlash && !sent){
+      try{
+        sent = true;
+        BRIDGE.triggerSlash('/send-as name="'+STATE.char+'" '+text);
+      }catch(e){ sent = false; }
+    }
+    
+    if(!sent){
+      STATE.loading = false;
       renderAll();
-    });
+    }
   } else {
-    // Demo/standalone mode
+    // === Demo mode ===
     setTimeout(function(){
+      var demoText = '（演示模式 — 请在酒馆中打开此页面以连接AI引擎）';
       var patches = parseJSONPatch(text);
-      if(patches){ S.stat = applyPatches(S.stat, patches); }
-      var demoReply = '（演示模式 — 请在酒馆中打开此页面以连接AI）';
-      if(S.selected){
-        var nm = S.chars.find(function(c){return c.id===S.selected;});
-        if(nm) demoReply = '['+nm.name+'] 在这片电子的领域中，又一位旅人选择了她的命运。';
+      if(patches){ STATE.stat = applyPatches(STATE.stat, patches); }
+      STATE.history.push({role:'ai', text: demoText});
+      STATE.loading = false;
+      save();
+      renderAll();
+    }, 600);
+  }
+}
+
+// Listen for AI responses
+if(BRIDGE.available && BRIDGE.eventOn){
+  BRIDGE.eventOn('MESSAGE_RECEIVED', function(msgId){
+    setTimeout(function(){
+      if(!BRIDGE.getChatMessages) return;
+      var msgs = BRIDGE.getChatMessages();
+      if(!msgs||!msgs.length) return;
+      
+      // Get latest AI message
+      var lastAI = null;
+      for(var i=msgs.length-1;i>=0;i--){
+        if(msgs[i].role==='assistant'&&!msgs[i].is_hidden){
+          lastAI = msgs[i]; break;
+        }
       }
-      S.history.push({role:'char', text:demoReply});
-      S.loading = false;
-      saveState();
+      if(!lastAI) return;
+      
+      var text = lastAI.message || '';
+      var patches = parseJSONPatch(text);
+      if(patches){
+        STATE.stat = applyPatches(STATE.stat, patches);
+      }
+      text = stripMvu(text);
+      
+      // Avoid duplicates
+      var lastEntry = STATE.history[STATE.history.length-1];
+      if(lastEntry && lastEntry.role==='ai' && lastEntry.text===text) return;
+      
+      STATE.history.push({role:'ai', text: text});
+      STATE.loading = false;
+      save();
       renderAll();
     }, 500);
-  }
+  });
+  
+  BRIDGE.eventOn('MESSAGE_SENT', function(){
+    // User message sent — handled by our send flow
+  });
 }
 
-function onAIResponse(res){
-  S.loading = false;
-  var text = res || '';
-  // Parse JSONPatch from AI output
-  var patches = parseJSONPatch(text);
-  if(patches){
-    S.stat = applyPatches(S.stat, patches);
-    // Clean tags from display
-    text = text.replace(/<UpdateVariable>[\s\S]*?<\/UpdateVariable>/gi, '').trim();
-  }
-  S.history.push({role:'char', text: text});
-  saveState();
-  renderAll();
-}
+// Also try Mvu data sync as fallback
+(function pollMvu(){
+  if(!BRIDGE.available) return;
+  setTimeout(function(){
+    try{
+      var chat = window.parent.SillyTavern.getContext().chat;
+      if(!chat||!chat.length) return;
+      for(var i=chat.length-1;i>=0;i--){
+        var mid = chat[i].swipe_id;
+        if(mid===undefined||mid===null) continue;
+        try{
+          var Mvu = window.parent.Mvu;
+          var d = Mvu.getMvuData({type:'message', message_id: mid});
+          if(d&&d.stat_data&&d.stat_data.characters){
+            if(JSON.stringify(d.stat_data)!==JSON.stringify(STATE.stat)){
+              STATE.stat = d.stat_data;
+              renderStatus();
+            }
+          }
+        }catch(e){}
+      }
+    }catch(e){}
+    pollMvu();
+  }, 3000);
+})();
 
-// ==================== 事件绑定 ====================
-document.getElementById('send-btn').addEventListener('click', function(){
-  var inp = document.getElementById('inp');
+// =================== 输入 ===================
+$('send').addEventListener('click', function(){
+  var inp = $('inp');
   var text = inp.value.trim();
-  if(!text || !S.selected || S.loading) return;
+  if(!text||!STATE.char||STATE.loading) return;
   inp.value = '';
-  S.history.push({role:'user', text: text});
+  STATE.history.push({role:'user', text: text});
   renderMessages();
   sendToAI(text);
 });
 
-document.getElementById('inp').addEventListener('keydown', function(e){
-  if(e.key==='Enter') document.getElementById('send-btn').click();
+$('inp').addEventListener('keydown', function(e){
+  if(e.key==='Enter') $('send').click();
 });
 
-// ==================== 初始化 ====================
-(function init(){
-  // Update env badge
-  var badge = document.getElementById('env-badge');
-  if(TH.available){
-    badge.textContent = '酒馆连接';
-    badge.className = 'th';
-  }
-  
-  loadState();
-  renderAll();
-  
-  // Listen for new messages from ST
-  if(TH.eventOn){
-    TH.eventOn('MESSAGE_RECEIVED', function(){
-      if(TH.getChatMessages){
-        var msgs = TH.getChatMessages();
-        // Sync history from ST
-        if(msgs && msgs.length > S.history.length){
-          S.history = msgs.map(function(m){
-            return {role: m.is_user?'user':'char', text: m.mes||''};
-          });
-          // Parse latest patches
-          for(var i=msgs.length-1;i>=0;i--){
-            var p = parseJSONPatch(msgs[i].mes||'');
-            if(p){ S.stat = applyPatches(S.stat, p); break; }
-          }
-          saveState();
-          renderAll();
-        }
+// =================== 初始化 ===================
+load();
+renderAll();
+if(STATE.char){ $('inp').disabled=false; $('send').disabled=false; }
+
+// Sync from ST history on load
+if(BRIDGE.available && BRIDGE.getChatMessages && !STATE.history.length){
+  setTimeout(function(){
+    var msgs = BRIDGE.getChatMessages();
+    if(!msgs||!msgs.length) return;
+    STATE.history = [];
+    for(var i=0;i<msgs.length;i++){
+      var m=msgs[i];
+      if(m.is_hidden) continue;
+      var text = m.message||'';
+      if(m.role==='assistant'){
+        var patches = parseJSONPatch(text);
+        if(patches) STATE.stat = applyPatches(STATE.stat, patches);
+        text = stripMvu(text);
       }
-    });
-  }
-})();
+      STATE.history.push({role: m.role==='user'?'user':'ai', text: text});
+    }
+    renderAll();
+  }, 1000);
+}
 </script>
 </body>
 </html>
