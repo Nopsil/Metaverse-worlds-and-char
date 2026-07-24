@@ -7960,7 +7960,8 @@
         "prevent_incoming": true,
         "prevent_outgoing": true,
         "delay_until": null
-      }
+      },
+      "enabled": false
     },
     "selectbar-0001-output-format": {
       "uid": "selectbar-0001-output-format",
@@ -8045,6 +8046,29 @@
       "position": 0,
       "depth": 0,
       "order": 1,
+      "key": [],
+      "keys": [],
+      "keysecondary": [],
+      "probability": 100,
+      "useProbability": true,
+      "selective": false,
+      "caseSensitive": false,
+      "recursion": {
+        "prevent_incoming": true,
+        "prevent_outgoing": true,
+        "delay_until": null
+      }
+    },
+    "readvar-ejs-0001": {
+      "uid": "readvar-ejs-0001",
+      "displayName": "读取变量",
+      "content": "{{get_message_variable::stat_data}}",
+      "comment": "读取变量",
+      "constant": true,
+      "enabled": true,
+      "position": 0,
+      "depth": 0,
+      "order": 2,
       "key": [],
       "keys": [],
       "keysecondary": [],
