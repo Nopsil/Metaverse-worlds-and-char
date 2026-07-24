@@ -261,16 +261,39 @@ function sendToAI(text){
       renderAll();
     }
   } else {
-    // === Demo mode ===
+    // === Demo mode with character greetings ===
+    var greetings = {
+      airine: '一阵微弱的蓝光闪过，空气中的涟漪逐渐平息。艾莉尼·居里亚斯从传送的余波中踏出，左手还抱着她的素描本。\n\n"呼……这次总算没有传送到奇怪的地方。"她环顾四周，蓝蝶们在她身边安静地飞舞着。然后她看到了你。\n\n"啊，你好！我叫艾莉尼。艾莉尼·居里亚斯。我是一个在旅行的人，在画一本画册，记录所有我觉得美丽的瞬间——"她低头看了看她的素描本，"这个世界实在太大了，有太多值得画下来的东西。"\n\n蓝蝶忽然飞向了你的方向，绕着你转了一圈。艾莉尼笑了："它好像很喜欢你。能在你的世界里稍作歇息吗？"',
+      bathsheba: '拔示巴静静地坐在圣堂的王座之上，银白色的长发映着窗外微弱的阳光。她手中那柄细长的剑懒懒地靠在王座旁。当你走近，她的红色眼眸缓缓移向你，嘴角微微上扬，但笑意并未到达眼底。\n\n"又一个人来了。你是第几个了？是来膜拜我的？还是来利用我的？或者——"她将剑端轻轻点地，发出一声清脆的回响。\n\n"你只是偶然路过的？"',
+      lena: '晚霞染红了整片天空。蕾娜站在皮阔特号的甲板上，手里紧紧抱着那支还没有她手臂长的小手枪。海风吹乱了她银白色的短发，她伸手想把被风吹掉的兜帽拉起来，结果兜帽的边沿直接盖住了整张脸。\n\n"唔……又来了。"她手忙脚乱地把兜帽扶正，然后看到了你。\n\n"啊，你好！"她微微鞠了一躬——兜帽又滑下来了。她索性不管了，抬起头冲你露出一个有点笨拙但很温暖的笑容。\n\n"你是来佩尔修斯殖民地的旅人吗？我叫蕾娜。蕾娜·伊修梅尔。如果你不介意的话……我们可以一起走一段路吗？"',
+      meme: '米姆正蹲在路边，认真地给一只受伤的小动物包扎。她的医疗包摊开在地上，里面的绷带和药瓶多得不太像是在一个14岁小女孩该有的装备。\n\n"好了好了，不要乱动哦……嗯，这样应该就不疼了吧？"她轻轻摸了摸小动物的头，然后才注意到你靠近的影子。她抬起头，紫色的眼睛里闪过一丝警觉——但很快变成了好奇。\n\n"你也是旅人吗？"她站起身，拍了拍裙子上的土，背起那个看上去比她还重的大医疗包。"我叫米姆。如果你受伤了，我可以帮你看看哦！"她顿了顿，像是听到了什么声音似的，侧了侧头。\n\n"……不是我说的！好吧好吧——"她叹了口气，又转向你，表情突然变得有点严肃："我的\'室友\'让我问你——你是敌人，还是朋友？"',
+      belzeebul: '贝尔泽布特半躺在她的机械王座之中，一条腿优雅地搭在另一条腿上。青绿色的长发如瀑布般垂落，背后的机械触手慵懒地蠕动着，球形扩音器偶尔闪烁紫色的微光。她的嘴角噙着一丝玩味的笑意。\n\n"啊啦，又有新的玩具自己送上门来了呢。"她单手托腮，紫色的眼眸缓缓扫过你全身，像是在评估一件有趣的商品。"让我猜猜——你是迷路了？还是被人派来的？抑或是——"\n\n她微微前倾，触手在她身后缓缓展开。\n\n"你，就是单纯地想来看看我这个\'怪物\'长什么样？"\n\n她笑意更浓了。"没关系哦。无论答案是什么，我都不讨厌诚实的孩子。那么——"\n\n她抬起一只手，指尖凝聚着蓝白色的能量球。\n\n"你，想要怎么玩？"'
+    };
+    
     setTimeout(function(){
-      var demoText = '（演示模式 — 请在酒馆中打开此页面以连接AI引擎）';
-      var patches = parseJSONPatch(text);
-      if(patches){ STATE.stat = applyPatches(STATE.stat, patches); }
-      STATE.history.push({role:'ai', text: demoText});
+      var reply;
+      if(text.indexOf('已选择角色')===0){
+        // Character selection -> show greeting
+        reply = greetings[STATE.char] || '角色已就绪。';
+        // Initialize stat
+        STATE.stat = {characters:{}};
+        STATE.stat.characters[STATE.char] = {affection:0, mood:'平静', clothing:'旅装', inner_thought:'观察着这位新来的旅人...'};
+        STATE.stat.selected_character = STATE.char;
+      } else {
+        // Demo conversation
+        var moods = ['似乎对你的话产生了兴趣','微微侧头思考着','眼神中闪过一丝光芒','嘴角浮现一丝笑意'];
+        STATE.stat.characters[STATE.char] = STATE.stat.characters[STATE.char] || {};
+        STATE.stat.characters[STATE.char].mood = moods[Math.floor(Math.random()*moods.length)];
+        STATE.stat.characters[STATE.char].affection = (Number(STATE.stat.characters[STATE.char].affection)||0) + Math.floor(Math.random()*3) + 1;
+        STATE.stat.characters[STATE.char].inner_thought = '（演示模式 · 酒馆连接后可真实交互）';
+        var cn = CHARS.find(function(c){return c.id===STATE.char;});
+        reply = '['+cn.name+'] 在这片电子的领域里，你的话语如风般穿过。\n\n（演示模式 · 连接酒馆后可进行完整剧情互动）';
+      }
+      STATE.history.push({role:'ai', text: reply});
       STATE.loading = false;
       save();
       renderAll();
-    }, 600);
+    }, 800);
   }
 }
 
