@@ -72,6 +72,12 @@ body{background:#0a0a14;color:#d0d0e8;font:14px/1.6 'Segoe UI','Microsoft YaHei'
 <script>
 // =================== TH 桥接 ===================
 var BRIDGE = { mode:'demo', available:false };
+function switchBadge(mode){
+  var b = document.getElementById('env-badge');
+  if(mode==='th'){ b.textContent='酒馆连接'; b.className='badge badge-th'; }
+  else { b.textContent='独立模式'; b.className='badge badge-demo'; }
+}
+function registerTHListener(){
 
 (function buildBridge(){
   // Probe functions at multiple scopes
@@ -103,8 +109,31 @@ var BRIDGE = { mode:'demo', available:false };
   BRIDGE.available = !!(BRIDGE.getChatMessages && (BRIDGE.generate||BRIDGE.triggerSlash));
   if(BRIDGE.available){
     BRIDGE.mode = 'th';
-    document.getElementById('env-badge').textContent = '酒馆连接';
-    document.getElementById('env-badge').className = 'badge badge-th';
+    switchBadge('th');
+  }
+  
+  // Retry: TH blob bridge may inject async
+  if(!BRIDGE.available){
+    var retries = 0;
+    var retryInterval = setInterval(function(){
+      retries++;
+      BRIDGE.getChatMessages = BRIDGE.getChatMessages || pick('getChatMessages');
+      BRIDGE.generate = BRIDGE.generate || pick('generate');
+      BRIDGE.triggerSlash = BRIDGE.triggerSlash || pick('triggerSlash');
+      BRIDGE.eventOn = BRIDGE.eventOn || pick('eventOn');
+      BRIDGE.available = !!(BRIDGE.getChatMessages && (BRIDGE.generate||BRIDGE.triggerSlash));
+      if(BRIDGE.available){
+        BRIDGE.mode = 'th';
+        switchBadge('th');
+        clearInterval(retryInterval);
+        console.log('[ML] TH bridge connected after '+retries+' retries');
+        // Re-register event listener now that bridge is available
+        registerTHListener();
+      }
+      if(retries >= 15) clearInterval(retryInterval);
+    }, 1000);
+  } else {
+    registerTHListener();
   }
 })();
 
@@ -297,8 +326,8 @@ function sendToAI(text){
   }
 }
 
-// Listen for AI responses
-if(BRIDGE.available && BRIDGE.eventOn){
+function registerTHListener(){
+  if(!BRIDGE.eventOn) return;
   BRIDGE.eventOn('MESSAGE_RECEIVED', function(msgId){
     setTimeout(function(){
       if(!BRIDGE.getChatMessages) return;
@@ -332,10 +361,9 @@ if(BRIDGE.available && BRIDGE.eventOn){
     }, 500);
   });
   
-  BRIDGE.eventOn('MESSAGE_SENT', function(){
-    // User message sent — handled by our send flow
-  });
-}
+  BRIDGE.eventOn('MESSAGE_SENT', function(){});
+
+} // end registerTHListener
 
 // Also try Mvu data sync as fallback
 (function pollMvu(){
